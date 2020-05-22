@@ -6,7 +6,7 @@ GO
 IF NOT EXISTS (
     SELECT [name]
         FROM sys.databases
-        WHERE [name] = N'webapidemodb'
+        WHERE [name] = N'namedemodb'
 )
 CREATE DATABASE webapidemodb
 GO
