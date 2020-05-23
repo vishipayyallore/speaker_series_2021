@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "GrpcGreater": {
+    "College.Services": {
       "commandName": "Project",
       "launchBrowser": false,
       "applicationUrl": "https://localhost:5001",
