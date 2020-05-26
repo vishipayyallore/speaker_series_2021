@@ -1,5 +1,5 @@
-﻿using College.Api.Entities;
-using College.Api.Persistence;
+﻿using College.Api.Persistence;
+using College.ApplicationCore.Entities;
 
 namespace College.Api.BLL
 {

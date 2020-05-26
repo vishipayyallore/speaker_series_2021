@@ -1,6 +1,6 @@
 ﻿using College.Api.BLL;
-using College.Api.Common;
 using College.Api.Persistence;
+using College.ApplicationCore.Constants;
 using College.GrpcServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

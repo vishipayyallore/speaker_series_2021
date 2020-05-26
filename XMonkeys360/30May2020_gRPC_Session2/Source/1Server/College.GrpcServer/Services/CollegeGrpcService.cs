@@ -1,5 +1,5 @@
 ﻿using College.Api.BLL;
-using College.Api.Entities;
+using College.ApplicationCore.Entities;
 using College.GrpcServer.Protos;
 using Grpc.Core;
 using System;

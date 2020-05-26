@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <ProjectReference Include="..\College.ApplicationCore\College.ApplicationCore.csproj" />
   </ItemGroup>
 
 </Project>

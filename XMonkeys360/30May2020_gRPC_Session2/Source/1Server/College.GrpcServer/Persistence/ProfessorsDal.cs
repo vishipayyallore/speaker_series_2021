@@ -1,4 +1,4 @@
-﻿using College.Api.Entities;
+﻿using College.ApplicationCore.Entities;
 
 namespace College.Api.Persistence
 {
