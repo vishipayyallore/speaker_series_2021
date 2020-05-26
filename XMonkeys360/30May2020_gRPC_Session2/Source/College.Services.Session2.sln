@@ -28,11 +28,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5WindowsFormClient", "5Wind
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "1Server\College.GrpcServer\College.GrpcServer.csproj", "{2B450FE1-0D57-4CEA-BC79-679218F8EC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ApplicationCore", "1Server\College.ApplicationCore\College.ApplicationCore.csproj", "{0AAE040D-C54E-41DB-B807-4D106CD4E36D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ApplicationCore", "1Server\College.ApplicationCore\College.ApplicationCore.csproj", "{0AAE040D-C54E-41DB-B807-4D106CD4E36D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ServerBLL", "1Server\College.ServerBll\College.ServerBLL.csproj", "{D4427A0E-9A57-4B2F-A433-F6807BC1055B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServerBLL", "1Server\College.ServerBll\College.ServerBLL.csproj", "{D4427A0E-9A57-4B2F-A433-F6807BC1055B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ServerDAL", "1Server\College.ServerDAL\College.ServerDAL.csproj", "{40795BAD-31BE-4865-A3D8-8075582274CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServerDAL", "1Server\College.ServerDAL\College.ServerDAL.csproj", "{40795BAD-31BE-4865-A3D8-8075582274CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeGrpc.ConsoleClient", "2ConsoleClient\CollegeGrpc.ConsoleClient\CollegeGrpc.ConsoleClient.csproj", "{754A463F-3424-487E-A6F0-0B46FC7AA142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeGrpc.WebApiClient", "3WebApiClient\CollegeGrpc.WebApiClient\CollegeGrpc.WebApiClient.csproj", "{C82618CE-259E-4A25-82F2-971E6173FFBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeGrpc.WorkerServiceClient", "4WorkerProcessClient\CollegeGrpc.WorkerServiceClient\CollegeGrpc.WorkerServiceClient.csproj", "{0B23CC54-BEBC-4B42-8292-9E00F29C5686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeGrpc.WindowsFormClient", "5WindowsFormClient\CollegeGrpc.WindowsFormClient\CollegeGrpc.WindowsFormClient.csproj", "{C67801E3-048C-4C04-AB33-4514E8EAA5E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +64,22 @@ Global
 		{40795BAD-31BE-4865-A3D8-8075582274CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40795BAD-31BE-4865-A3D8-8075582274CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40795BAD-31BE-4865-A3D8-8075582274CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{754A463F-3424-487E-A6F0-0B46FC7AA142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754A463F-3424-487E-A6F0-0B46FC7AA142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754A463F-3424-487E-A6F0-0B46FC7AA142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754A463F-3424-487E-A6F0-0B46FC7AA142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82618CE-259E-4A25-82F2-971E6173FFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82618CE-259E-4A25-82F2-971E6173FFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82618CE-259E-4A25-82F2-971E6173FFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82618CE-259E-4A25-82F2-971E6173FFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B23CC54-BEBC-4B42-8292-9E00F29C5686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B23CC54-BEBC-4B42-8292-9E00F29C5686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B23CC54-BEBC-4B42-8292-9E00F29C5686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B23CC54-BEBC-4B42-8292-9E00F29C5686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67801E3-048C-4C04-AB33-4514E8EAA5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67801E3-048C-4C04-AB33-4514E8EAA5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67801E3-048C-4C04-AB33-4514E8EAA5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67801E3-048C-4C04-AB33-4514E8EAA5E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +94,10 @@ Global
 		{0AAE040D-C54E-41DB-B807-4D106CD4E36D} = {E5AEF6D7-E8A7-4DAC-9B04-126D10523EFC}
 		{D4427A0E-9A57-4B2F-A433-F6807BC1055B} = {E5AEF6D7-E8A7-4DAC-9B04-126D10523EFC}
 		{40795BAD-31BE-4865-A3D8-8075582274CE} = {E5AEF6D7-E8A7-4DAC-9B04-126D10523EFC}
+		{754A463F-3424-487E-A6F0-0B46FC7AA142} = {FE2FC503-7949-4D78-976E-2C178B1BE4C8}
+		{C82618CE-259E-4A25-82F2-971E6173FFBF} = {BFF7D9CA-CD27-4722-AA56-8D215DD19A48}
+		{0B23CC54-BEBC-4B42-8292-9E00F29C5686} = {A935C6E8-9BA7-49FA-BEB9-794F2568673A}
+		{C67801E3-048C-4C04-AB33-4514E8EAA5E0} = {BCEB3A1D-6CCA-4468-AD37-7B0B45B197C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14636856-96F6-4AFF-9CE6-13413B0A4588}
