@@ -1,12 +1,64 @@
-﻿using System;
+﻿using ClientApps.Common.Utilities;
+using College.GrpcServer.Protos;
+using Google.Protobuf.WellKnownTypes;
+using Grpc.Net.Client;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using static College.GrpcServer.Protos.CollegeService;
+
+using static System.Console;
 
 namespace CollegeGrpc.ConsoleClient
 {
+
     class Program
     {
-        static void Main(string[] args)
+
+        static private CollegeServiceClient _client;
+        private static IConfiguration _config;
+
+        static protected CollegeServiceClient Client
         {
-            Console.WriteLine("Hello World!");
+            get
+            {
+                if (_client == null)
+                {
+                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"]);
+                    _client = new CollegeServiceClient(channel);
+                }
+                return _client;
+            }
+        }
+
+        static async Task Main(string[] args)
+        {
+            _config = new ConfigurationBuilder()
+                            .SetBasePath(Directory.GetCurrentDirectory())
+                            .AddJsonFile("appsettings.json").Build();
+
+            // Add New Professor
+            NewProfessorRequest professorNew = GenerateNewProfessor();
+
+            var newlyAddedProfessor = await Client.AddProfessorAsync(professorNew);
+            WriteLine($"New Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
+
+            Console.WriteLine("\n\nPress any key ...");
+            Console.ReadKey();
+        }
+
+        private static NewProfessorRequest GenerateNewProfessor()
+        {
+            return new NewProfessorRequest()
+            {
+                Name = NameGenerator.GenerateName(12),
+                Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-5).ToUniversalTime()),
+                Teaches = "CSharp, Java",
+                Salary = 1234.56,
+                IsPhd = true
+            };
         }
     }
+
 }
