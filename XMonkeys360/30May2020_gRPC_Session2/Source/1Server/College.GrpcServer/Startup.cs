@@ -1,7 +1,9 @@
-﻿using College.Api.BLL;
-using College.Api.Persistence;
-using College.ApplicationCore.Constants;
+﻿using College.ApplicationCore.Constants;
+using College.ApplicationCore.Interfaces;
 using College.GrpcServer.Services;
+using College.ServerBLL;
+using College.ServerDAL;
+using College.ServerDAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,8 +35,8 @@ namespace College.GrpcServer
 
             // Application Services
             //TODO: THIS SHOULD BE DONE USING INTERFACES
-            services.AddScoped<ProfessorsBll>();
-            services.AddScoped<ProfessorsDal>();
+            services.AddScoped<IProfessorBLL, ProfessorBLL>();
+            services.AddScoped<IProfessorDAL, ProfessorDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

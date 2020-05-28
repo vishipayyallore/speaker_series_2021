@@ -11,11 +11,13 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\College.ApplicationCore\College.ApplicationCore.csproj" />
+    <ProjectReference Include="..\College.ServerBll\College.ServerBLL.csproj" />
+    <ProjectReference Include="..\College.ServerDAL\College.ServerDAL.csproj" />
   </ItemGroup>
 
 </Project>

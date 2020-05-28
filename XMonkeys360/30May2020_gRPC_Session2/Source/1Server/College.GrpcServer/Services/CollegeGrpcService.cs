@@ -1,5 +1,5 @@
-﻿using College.Api.BLL;
-using College.ApplicationCore.Entities;
+﻿using College.ApplicationCore.Entities;
+using College.ApplicationCore.Interfaces;
 using College.GrpcServer.Protos;
 using Grpc.Core;
 using System;
@@ -10,9 +10,9 @@ namespace College.GrpcServer.Services
 
     public class CollegeGrpcService : CollegeService.CollegeServiceBase
     {
-        private readonly ProfessorsBll _professorsBll;
+        private readonly IProfessorBLL _professorsBll;
 
-        public CollegeGrpcService(ProfessorsBll professorsBll)
+        public CollegeGrpcService(IProfessorBLL professorsBll)
         {
             _professorsBll = professorsBll;
         }

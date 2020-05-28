@@ -1,7 +1,7 @@
 ﻿using College.ApplicationCore.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace College.Api.Persistence
+namespace College.ServerDAL.Persistence
 {
 
     public class CollegeDbContext : DbContext
