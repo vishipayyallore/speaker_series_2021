@@ -34,17 +34,25 @@ namespace CollegeGrpc.ConsoleClient
 
         static async Task Main(string[] args)
         {
+            string response = "Y";
             _config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
 
-            // Add New Professor
-            NewProfessorRequest professorNew = GenerateNewProfessor();
+            WriteLine("\n\nCreating New Professor ...");
+            while(response == "Y")
+            {
+                // Add New Professor
+                NewProfessorRequest professorNew = GenerateNewProfessor();
 
-            var newlyAddedProfessor = await Client.AddProfessorAsync(professorNew);
-            WriteLine($"New Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
+                var newlyAddedProfessor = await Client.AddProfessorAsync(professorNew);
+                WriteLine($"\n\nNew Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
 
-            Console.WriteLine("\n\nPress any key ...");
+                WriteLine("\n\nDo you want to create New Professor: {Y/N}");
+                response = ReadKey().KeyChar.ToString().ToUpper();
+            }
+
+            Console.WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
             Console.ReadKey();
         }
 

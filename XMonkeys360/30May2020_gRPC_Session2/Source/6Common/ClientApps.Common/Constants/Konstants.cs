@@ -1,7 +1,7 @@
 ﻿namespace ClientApps.Common.Constants
 {
 
-    public static class Konstants
+    internal static class Konstants
     {
 
         public static class GenerateName

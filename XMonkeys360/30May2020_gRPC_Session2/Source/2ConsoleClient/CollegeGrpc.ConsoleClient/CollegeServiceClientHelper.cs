@@ -3,6 +3,7 @@ using static College.GrpcServer.Protos.CollegeService;
 
 namespace CollegeGrpc.ConsoleClient
 {
+
     public class CollegeServiceClientHelper
     {
         static private CollegeServiceClient _client;
