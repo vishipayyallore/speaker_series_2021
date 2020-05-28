@@ -14,8 +14,10 @@ using Microsoft.Extensions.Hosting;
 
 namespace College.GrpcServer
 {
+
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,7 +36,6 @@ namespace College.GrpcServer
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
             // Application Services
-            //TODO: THIS SHOULD BE DONE USING INTERFACES
             services.AddScoped<IProfessorBLL, ProfessorBLL>();
             services.AddScoped<IProfessorDAL, ProfessorDAL>();
         }
@@ -60,5 +61,7 @@ namespace College.GrpcServer
                 });
             });
         }
+
     }
+
 }

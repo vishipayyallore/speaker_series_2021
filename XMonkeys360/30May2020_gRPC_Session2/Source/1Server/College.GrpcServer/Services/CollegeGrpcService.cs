@@ -2,6 +2,7 @@
 using College.ApplicationCore.Interfaces;
 using College.GrpcServer.Protos;
 using Grpc.Core;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -11,14 +12,19 @@ namespace College.GrpcServer.Services
     public class CollegeGrpcService : CollegeService.CollegeServiceBase
     {
         private readonly IProfessorBLL _professorsBll;
+        private readonly ILogger<CollegeGrpcService> _logger;
 
-        public CollegeGrpcService(IProfessorBLL professorsBll)
+        public CollegeGrpcService(IProfessorBLL professorsBll, ILogger<CollegeGrpcService> logger)
         {
             _professorsBll = professorsBll;
+
+            _logger = logger;
         }
 
         public override Task<NewProfessorResponse> AddProfessor(NewProfessorRequest request, ServerCallContext context)
         {
+            _logger.Log(LogLevel.Debug, "Request Received for CollegeGrpcService::AddProfessor");
+
             var newProfessor = new NewProfessorResponse
             {
                 Message = "success"
@@ -36,6 +42,8 @@ namespace College.GrpcServer.Services
             var results = _professorsBll.AddProfessor(professor);
 
             newProfessor.ProfessorId = results.ProfessorId.ToString();
+
+            _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::AddProfessor");
 
             return Task.FromResult(newProfessor);
         }
