@@ -61,7 +61,7 @@ namespace CollegeGrpc.ConsoleClient
             return new NewProfessorRequest()
             {
                 Name = NameGenerator.GenerateName(12),
-                Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-5).ToUniversalTime()),
+                Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-1 * RandomNumberGenerator.GetRandomValue(1, 10)).ToUniversalTime()),
                 Teaches = "CSharp, Java",
                 Salary = 1234.56,
                 IsPhd = true
