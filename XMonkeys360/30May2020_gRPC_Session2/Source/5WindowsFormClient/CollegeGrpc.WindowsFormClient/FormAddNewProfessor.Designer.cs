@@ -1,6 +1,6 @@
 ﻿namespace CollegeGrpc.WindowsFormClient
 {
-    partial class Form1
+    partial class FormAddNewProfessor
     {
         /// <summary>
         ///  Required designer variable.
@@ -151,8 +151,9 @@
             this.buttonClose.TabIndex = 9;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // Form1
+            // FormAddNewProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +169,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FormAddNewProfessor";
             this.Text = "Add New Professor";
             this.ResumeLayout(false);
             this.PerformLayout();
