@@ -1,7 +1,7 @@
 ﻿namespace ClientApps.Common.Constants
 {
 
-    internal static class Konstants
+    public static class Konstants
     {
 
         public static class GenerateName
@@ -18,10 +18,9 @@
 
         public static class AddressConstants
         {
-            public static string[] EnrollmentTypes = { "General", "Bank", "Business", "Employment" };
-
-            public static string[] EnrollmentStatus = { "Pending", "In Progress", "Rejected", "Enrolled" };
+            public static string[] EnrollmentTypes = { "Internal Exams", "Lab Session", "Library Usage", "External Exams" };
         }
+
     }
 
 }

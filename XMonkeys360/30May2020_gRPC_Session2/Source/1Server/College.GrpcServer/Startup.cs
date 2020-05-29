@@ -35,9 +35,13 @@ namespace College.GrpcServer
             var connectionString = Configuration[Constants.SQLDataStore.ConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
-            // Application Services
+            // College Application Services
             services.AddScoped<IProfessorBLL, ProfessorBLL>();
             services.AddScoped<IProfessorDAL, ProfessorDAL>();
+
+            // Address Book Application Services
+            services.AddScoped<IAddressBLL, AddressBLL>();
+            services.AddScoped<IAddressDAL, AddressDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +58,7 @@ namespace College.GrpcServer
             {
                 endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapGrpcService<CollegeGrpcService>();
+                endpoints.MapGrpcService<AddressBookService>(); 
 
                 endpoints.MapGet("/", async context =>
                 {
