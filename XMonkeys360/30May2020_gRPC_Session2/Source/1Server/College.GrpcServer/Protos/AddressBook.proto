@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "College.GrpcServer.Protos";
+
+package addressserver;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service AddressBookServer {
+  rpc AddAddress (AddAddressRequest) returns (AddAddressResponse);
+}
+
+message AddAddressRequest {
+  string name = 1;
+  string studentId = 2;
+  string fullAddress = 3;
+  string enrollment = 4;
+  string enrollmentStatus = 5;
+}
+
+message AddAddressResponse {
+  string id = 1;
+  string message = 2;
+}

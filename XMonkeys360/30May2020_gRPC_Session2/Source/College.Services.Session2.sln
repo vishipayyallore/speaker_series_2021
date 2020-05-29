@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", 
 		..\SQLScripts\2Create_Students.sql = ..\SQLScripts\2Create_Students.sql
 		..\SQLScripts\3Insert_Professors.sql = ..\SQLScripts\3Insert_Professors.sql
 		..\SQLScripts\4Insert_Students.sql = ..\SQLScripts\4Insert_Students.sql
+		..\SQLScripts\5Create_AddressBook.sql = ..\SQLScripts\5Create_AddressBook.sql
 		..\SQLScripts\Create_Database.sql = ..\SQLScripts\Create_Database.sql
 	EndProjectSection
 EndProject

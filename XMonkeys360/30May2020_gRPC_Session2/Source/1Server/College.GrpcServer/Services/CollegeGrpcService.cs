@@ -5,11 +5,12 @@ using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using static College.GrpcServer.Protos.CollegeService;
 
 namespace College.GrpcServer.Services
 {
 
-    public class CollegeGrpcService : CollegeService.CollegeServiceBase
+    public class CollegeGrpcService : CollegeServiceBase
     {
         private readonly IProfessorBLL _professorsBll;
         private readonly ILogger<CollegeGrpcService> _logger;

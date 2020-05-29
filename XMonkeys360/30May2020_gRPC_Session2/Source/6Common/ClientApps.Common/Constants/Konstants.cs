@@ -16,6 +16,12 @@
             public static string FullAddress = "Flat Number: {0}, {1} Apartments, Street: {2}, Hyderabad.";
         }
 
+        public static class AddressConstants
+        {
+            public static string[] EnrollmentTypes = { "General", "Bank", "Business", "Employment" };
+
+            public static string[] EnrollmentStatus = { "Pending", "In Progress", "Rejected", "Enrolled" };
+        }
     }
 
 }

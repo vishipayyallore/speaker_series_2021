@@ -32,7 +32,7 @@ namespace College.GrpcServer
             services.AddGrpc();
 
             // Adding EF Core
-            var connectionString = Configuration[Constants.ConnectionString];
+            var connectionString = Configuration[Constants.SQLDataStore.ConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
             // Application Services

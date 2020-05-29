@@ -87,6 +87,7 @@
             // 
             // textBoxName
             // 
+            this.textBoxName.ForeColor = System.Drawing.Color.Navy;
             this.textBoxName.Location = new System.Drawing.Point(112, 14);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(274, 27);
@@ -94,6 +95,7 @@
             // 
             // textBoxTeaches
             // 
+            this.textBoxTeaches.ForeColor = System.Drawing.Color.Navy;
             this.textBoxTeaches.Location = new System.Drawing.Point(112, 59);
             this.textBoxTeaches.Name = "textBoxTeaches";
             this.textBoxTeaches.Size = new System.Drawing.Size(274, 27);
@@ -102,6 +104,7 @@
             // 
             // textBoxSalary
             // 
+            this.textBoxSalary.ForeColor = System.Drawing.Color.Navy;
             this.textBoxSalary.Location = new System.Drawing.Point(112, 104);
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(274, 27);
