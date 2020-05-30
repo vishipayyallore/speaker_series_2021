@@ -8,10 +8,32 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{7CEFAA9F-CD41-471A-ACC4-058648B7F05E}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\1Create_Professors.sql = SQLScripts\1Create_Professors.sql
+		SQLScripts\2Create_Students.sql = SQLScripts\2Create_Students.sql
+		SQLScripts\3Insert_Professors.sql = SQLScripts\3Insert_Professors.sql
+		SQLScripts\4Insert_Students.sql = SQLScripts\4Insert_Students.sql
+		SQLScripts\Create_Database.sql = SQLScripts\Create_Database.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebApi", "Source\College.WebApi\College.WebApi.csproj", "{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A01FF90D-01B7-4186-B1DF-409E507991EC}
