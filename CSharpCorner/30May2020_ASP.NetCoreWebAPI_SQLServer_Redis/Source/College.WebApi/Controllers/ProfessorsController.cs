@@ -1,6 +1,9 @@
 ﻿using College.WebApi.BAL;
+using College.WebApi.Common;
 using College.WebApi.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -11,16 +14,37 @@ namespace College.WebApi.Controllers
     public class ProfessorsController : ControllerBase
     {
         private readonly ProfessorsBal _professorsBusiness;
+        private readonly IDistributedCache _cache;
 
-        public ProfessorsController(ProfessorsBal professorsBusiness)
+        public ProfessorsController(ProfessorsBal professorsBusiness, IDistributedCache cache)
         {
             _professorsBusiness = professorsBusiness;
+
+            _cache = cache;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<Professor>> Get()
         {
-            var professors = _professorsBusiness.GetProfessors();
+
+            IEnumerable<Professor> professors;
+            // Try to get content from cache
+            var professorsFromCache = _cache.GetString(Constants.RedisCacheStore.AllProfessorsKey);
+
+            if (!string.IsNullOrEmpty(professorsFromCache))
+            {
+                //if they are there, deserialize them
+                professors = JsonConvert.DeserializeObject<IEnumerable<Professor>>(professorsFromCache);
+            }
+            else
+            {
+                // Going to Data Store SQL Server
+                professors = _professorsBusiness.GetProfessors();
+
+                //and then, put them in cache
+                _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
+                        GetDistributedCacheEntryOptions());
+            }
 
             return Ok(professors);
         }
@@ -28,7 +52,23 @@ namespace College.WebApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<Professor> GetProfessorById(Guid id)
         {
-            var professor = _professorsBusiness.GetProfessorById(id);
+            Professor professor;
+            string professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{id}";
+
+            var professorFromCache = _cache.GetString(professorId);
+            if (!string.IsNullOrEmpty(professorFromCache))
+            {
+                //if they are there, deserialize them
+                professor = JsonConvert.DeserializeObject<Professor>(professorFromCache);
+            }
+            else
+            {
+                // Going to Data Store SQL Server
+                professor = _professorsBusiness.GetProfessorById(id);
+
+                //and then, put them in cache
+                _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());
+            }
 
             if (professor == null)
             {
@@ -65,6 +105,14 @@ namespace College.WebApi.Controllers
             }
 
             return NoContent();
+        }
+
+        private DistributedCacheEntryOptions GetDistributedCacheEntryOptions()
+        {
+            return new DistributedCacheEntryOptions()
+            {
+                AbsoluteExpiration = new System.DateTimeOffset(DateTime.Now.ToUniversalTime().AddSeconds(60), new TimeSpan(0, 0, 0))
+            };
         }
 
     }
