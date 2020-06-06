@@ -181,7 +181,6 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource tubeDataBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

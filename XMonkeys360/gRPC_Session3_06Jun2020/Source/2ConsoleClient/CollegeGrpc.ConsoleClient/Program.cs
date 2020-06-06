@@ -43,7 +43,7 @@ namespace CollegeGrpc.ConsoleClient
             while(response == "Y")
             {
                 // Add New Professor
-                NewProfessorRequest professorNew = GenerateNewProfessor();
+                AddProfessorRequest professorNew = GenerateNewProfessor();
 
                 var newlyAddedProfessor = await Client.AddProfessorAsync(professorNew);
                 WriteLine($"\n\nNew Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
@@ -56,9 +56,9 @@ namespace CollegeGrpc.ConsoleClient
             Console.ReadKey();
         }
 
-        private static NewProfessorRequest GenerateNewProfessor()
+        private static AddProfessorRequest GenerateNewProfessor()
         {
-            return new NewProfessorRequest()
+            return new AddProfessorRequest()
             {
                 Name = NameGenerator.GenerateName(12),
                 Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-1 * RandomNumberGenerator.GetRandomValue(1, 10)).ToUniversalTime()),

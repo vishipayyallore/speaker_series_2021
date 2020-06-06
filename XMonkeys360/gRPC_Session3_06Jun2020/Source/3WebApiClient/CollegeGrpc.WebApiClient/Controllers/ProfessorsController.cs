@@ -27,7 +27,7 @@ namespace CollegeGrpc.WebApiClient.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<NewProfessorResponse>> AddProfessor([FromBody] NewProfessorRequest professor)
+        public async Task<ActionResult<AddProfessorResponse>> AddProfessor([FromBody] AddProfessorRequest professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
 

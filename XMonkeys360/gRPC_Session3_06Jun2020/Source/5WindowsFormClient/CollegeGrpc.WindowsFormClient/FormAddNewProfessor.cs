@@ -32,9 +32,9 @@ namespace CollegeGrpc.WindowsFormClient
             MessageBox.Show($"New Professor Added with Id: {results.ProfessorId}");
         }
 
-        private NewProfessorRequest GenerateNewProfessor()
+        private AddProfessorRequest GenerateNewProfessor()
         {
-            return new NewProfessorRequest()
+            return new AddProfessorRequest()
             {
                 Name = textBoxName.Text,
                 Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-1 * RandomNumberGenerator.GetRandomValue(1, 10)).ToUniversalTime()),

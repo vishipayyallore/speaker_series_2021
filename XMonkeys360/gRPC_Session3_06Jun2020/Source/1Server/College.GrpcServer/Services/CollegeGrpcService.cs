@@ -22,11 +22,11 @@ namespace College.GrpcServer.Services
             _logger = logger;
         }
 
-        public override Task<NewProfessorResponse> AddProfessor(NewProfessorRequest request, ServerCallContext context)
+        public override Task<AddProfessorResponse> AddProfessor(AddProfessorRequest request, ServerCallContext context)
         {
             _logger.Log(LogLevel.Debug, "Request Received for CollegeGrpcService::AddProfessor");
 
-            var newProfessor = new NewProfessorResponse
+            var newProfessor = new AddProfessorResponse
             {
                 Message = "success"
             };
