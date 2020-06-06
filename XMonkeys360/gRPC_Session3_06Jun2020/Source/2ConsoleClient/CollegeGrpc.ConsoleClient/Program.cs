@@ -18,6 +18,8 @@ namespace CollegeGrpc.ConsoleClient
 
         static private CollegeServiceClient _client;
         private static IConfiguration _config;
+        private static string _header = "======================================================================";
+        private static string _footer = "----------------------------------------------------------------------";
 
         static protected CollegeServiceClient Client
         {
@@ -40,7 +42,7 @@ namespace CollegeGrpc.ConsoleClient
                             .AddJsonFile("appsettings.json").Build();
 
             WriteLine("\n\nCreating New Professor ...");
-            while(response == "Y")
+            while (response == "Y")
             {
                 // Add New Professor
                 AddProfessorRequest professorNew = GenerateNewProfessor();
@@ -52,8 +54,32 @@ namespace CollegeGrpc.ConsoleClient
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
 
-            Console.WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
-            Console.ReadKey();
+            // Retrieve Single Row
+            var professorRequest = new GetProfessorRequest { ProfessorId = "7A414FC9-067A-45FC-D26B-08D80453FF3A" };
+            var professor = await Client.GetProfessorByIdAsync(professorRequest);
+            DisplayProfessorDetails(professor);
+
+            // Retrieve Multiple Rows
+            var professors = await Client.GetAllProfessorsAsync(new Empty());
+            foreach (var prof in professors.Professors)
+            {
+                DisplayProfessorDetails(prof);
+            }
+
+            WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
+            ReadKey();
+        }
+
+        private static void DisplayFooter()
+        {
+            WriteLine($"\n{_footer}\n");
+        }
+
+        private static void DisplayHeader()
+        {
+            WriteLine($"\n\n{_header}");
+            WriteLine("Professor Details".PadLeft(25));
+            WriteLine(_header);
         }
 
         private static AddProfessorRequest GenerateNewProfessor()
@@ -67,6 +93,16 @@ namespace CollegeGrpc.ConsoleClient
                 IsPhd = true
             };
         }
+
+        private static void DisplayProfessorDetails(GetProfessorResponse professor)
+        {
+            DisplayHeader();
+
+            WriteLine($"Name: {professor.Name} \nSalary: {professor.Salary} \nTeaches: {professor.Teaches} \nDOJ: {professor.Doj}");
+
+            DisplayFooter();
+        }
+
     }
 
 }
