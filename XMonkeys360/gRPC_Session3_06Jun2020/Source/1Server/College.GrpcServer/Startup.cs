@@ -32,7 +32,7 @@ namespace College.GrpcServer
             services.AddGrpc();
 
             // Adding EF Core
-            var connectionString = Configuration[Constants.SQLDataStore.ConnectionString];
+            var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
             // College Application Services
@@ -42,6 +42,13 @@ namespace College.GrpcServer
             // Address Book Application Services
             services.AddScoped<IAddressBLL, AddressBLL>();
             services.AddScoped<IAddressDAL, AddressDAL>();
+
+            // Adding Redis Cache 
+            services.AddStackExchangeRedisCache(option =>
+            {
+                option.Configuration = Configuration[Constants.DataStore.RedisConnectionString];
+                option.InstanceName = Constants.RedisCacheStore.InstanceName;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

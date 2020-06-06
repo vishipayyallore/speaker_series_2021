@@ -4,6 +4,7 @@ using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using static College.GrpcServer.Protos.CollegeService;
@@ -40,7 +41,7 @@ namespace CollegeGrpc.ConsoleClient
             _config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
-
+            /*
             WriteLine("\n\nCreating New Professor ...");
             while (response == "Y")
             {
@@ -53,17 +54,38 @@ namespace CollegeGrpc.ConsoleClient
                 WriteLine("\n\nDo you want to create New Professor: {Y/N}");
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
+            */
 
-            // Retrieve Single Row
-            var professorRequest = new GetProfessorRequest { ProfessorId = "7A414FC9-067A-45FC-D26B-08D80453FF3A" };
-            var professor = await Client.GetProfessorByIdAsync(professorRequest);
-            DisplayProfessorDetails(professor);
-
-            // Retrieve Multiple Rows
-            var professors = await Client.GetAllProfessorsAsync(new Empty());
-            foreach (var prof in professors.Professors)
+            response = "Y";
+            while (response == "Y")
             {
-                DisplayProfessorDetails(prof);
+                WriteLine("\n\nPlease enter a Professor Id: ");
+                var professorId = ReadLine();
+
+                // Retrieve Single Row
+                var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
+
+                var professor = await Client.GetProfessorByIdAsync(professorRequest);
+
+                DisplayProfessorDetails(professor);
+
+                WriteLine("\n\nDo you want to Lookup a Professor: {Y/N}");
+                response = ReadKey().KeyChar.ToString().ToUpper();
+            }
+
+            response = "Y";
+            while (response == "Y")
+            {
+                // Retrieve Multiple Rows
+                var professors = await Client.GetAllProfessorsAsync(new Empty());
+
+                foreach (var prof in professors.Professors)
+                {
+                    DisplayProfessorDetails(prof);
+                }
+
+                WriteLine("\n\nDo you want to retrieve all professors: {Y/N}");
+                response = ReadKey().KeyChar.ToString().ToUpper();
             }
 
             WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
