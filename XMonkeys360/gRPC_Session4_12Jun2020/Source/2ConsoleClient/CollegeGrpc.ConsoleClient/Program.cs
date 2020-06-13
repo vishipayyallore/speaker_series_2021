@@ -3,8 +3,9 @@ using College.GrpcServer.Protos;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using static College.GrpcServer.Protos.CollegeService;
@@ -22,13 +23,23 @@ namespace CollegeGrpc.ConsoleClient
         private static string _header = "======================================================================";
         private static string _footer = "----------------------------------------------------------------------";
 
+        
+
         static protected CollegeServiceClient Client
         {
             get
             {
+                var loggerFactory = LoggerFactory.Create(logging =>
+                {
+                    logging.AddConsole();
+                    logging.SetMinimumLevel(LogLevel.Debug);
+                });
+
+
                 if (_client == null)
                 {
-                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"]);
+                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"],
+                        new GrpcChannelOptions { LoggerFactory = loggerFactory });
                     _client = new CollegeServiceClient(channel);
                 }
                 return _client;
@@ -41,6 +52,9 @@ namespace CollegeGrpc.ConsoleClient
             _config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
+
+            
+
             /*
             WriteLine("\n\nCreating New Professor ...");
             while (response == "Y")
