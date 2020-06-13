@@ -55,6 +55,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7WebAppClient", "7WebAppClient", "{B988A60F-79D6-4D85-B69B-76910230C1FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WebAppClient", "7WebAppClient\CollegeGrpc.WebAppClient\CollegeGrpc.WebAppClient.csproj", "{28391540-96B3-411C-95EA-B9BF074A1F4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +101,10 @@ Global
 		{3CF2B8B3-C9EE-4FA3-B8AB-58F8C0FE18B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CF2B8B3-C9EE-4FA3-B8AB-58F8C0FE18B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CF2B8B3-C9EE-4FA3-B8AB-58F8C0FE18B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28391540-96B3-411C-95EA-B9BF074A1F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28391540-96B3-411C-95EA-B9BF074A1F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28391540-96B3-411C-95EA-B9BF074A1F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28391540-96B3-411C-95EA-B9BF074A1F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,8 @@ Global
 		{CDC56E18-429C-4935-A1E0-2378515169B2} = {251D7E99-9447-46AA-8629-224F0126C136}
 		{1CF69732-FFA0-4AB0-A815-A2A0438206CD} = {CDC56E18-429C-4935-A1E0-2378515169B2}
 		{3CF2B8B3-C9EE-4FA3-B8AB-58F8C0FE18B4} = {BCEB3A1D-6CCA-4468-AD37-7B0B45B197C8}
+		{B988A60F-79D6-4D85-B69B-76910230C1FB} = {251D7E99-9447-46AA-8629-224F0126C136}
+		{28391540-96B3-411C-95EA-B9BF074A1F4E} = {B988A60F-79D6-4D85-B69B-76910230C1FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14636856-96F6-4AFF-9CE6-13413B0A4588}
