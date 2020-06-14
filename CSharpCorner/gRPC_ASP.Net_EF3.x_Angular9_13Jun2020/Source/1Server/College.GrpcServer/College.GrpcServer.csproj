@@ -6,10 +6,19 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\CollegeApi.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\College.ApplicationCore\College.ApplicationCore.csproj" />
+    <ProjectReference Include="..\College.ServerBLL\College.ServerBLL.csproj" />
+    <ProjectReference Include="..\College.ServerDAL\College.ServerDAL.csproj" />
   </ItemGroup>
 
 </Project>

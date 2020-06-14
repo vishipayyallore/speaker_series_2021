@@ -8,4 +8,12 @@
     <Folder Include="Persistence\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\College.ApplicationCore\College.ApplicationCore.csproj" />
+  </ItemGroup>
+  
 </Project>
