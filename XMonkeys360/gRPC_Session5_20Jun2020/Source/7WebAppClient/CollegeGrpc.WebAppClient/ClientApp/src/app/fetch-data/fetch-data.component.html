@@ -1,27 +1,9 @@
-<h1 id="tableLabel" style="color:aquamarine">Professors</h1>
-
-<p *ngIf="!forecasts || !professors"><em>Loading...</em></p>
-
-<table class='table table-striped bg-warning' aria-labelledby="tableLabel" *ngIf="professors">
-  <thead>
-    <tr>
-      <th>Professor Id</th>
-      <th>Name</th>
-      <th>DOJ</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let professor of professors">
-      <td>{{ professor.professorId }}</td>
-      <td>{{ professor.name }}</td>
-      <td>{{ professor.doj | date}}</td>
-      <td>{{ professor.salary }}</td>
-    </tr>
-  </tbody>
-</table>
-
 <h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
@@ -40,6 +22,3 @@
     </tr>
   </tbody>
 </table>
-
-
-

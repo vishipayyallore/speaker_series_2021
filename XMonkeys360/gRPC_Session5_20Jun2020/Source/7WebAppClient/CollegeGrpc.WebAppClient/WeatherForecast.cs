@@ -1,6 +1,6 @@
 using System;
 
-namespace CollegeGrpc.WebAppClient.Models
+namespace CollegeGrpc.WebAppClient
 {
     public class WeatherForecast
     {
