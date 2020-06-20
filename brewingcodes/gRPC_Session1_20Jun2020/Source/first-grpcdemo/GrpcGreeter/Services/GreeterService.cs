@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
-using System.Threading.Tasks;
 
 namespace GrpcGreeter
 {
@@ -16,8 +19,9 @@ namespace GrpcGreeter
         {
             return Task.FromResult(new HelloReply
             {
-                Message = "Hello from Anbu and Satish " + request.Name
+                Message = "Hello " + request.Name
             });
         }
+
     }
 }
