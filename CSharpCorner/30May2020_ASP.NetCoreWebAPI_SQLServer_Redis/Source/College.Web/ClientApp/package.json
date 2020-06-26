@@ -47,7 +47,11 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "minimist": ">=1.2.3",
+    "acorn": ">=6.4.1",
+    "jquery": ">=3.5.0",
+    "websocket-extensions": ">=0.1.4"
   },
   "optionalDependencies": {
     "node-sass": "^4.12.0",
