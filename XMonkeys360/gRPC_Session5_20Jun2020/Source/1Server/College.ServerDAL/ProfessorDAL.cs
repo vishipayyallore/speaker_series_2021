@@ -28,7 +28,7 @@ namespace College.ServerDAL
 
             _collegeDbContext.Professors.Add(professor);
 
-            _collegeDbContext.SaveChangesAsync();
+            _collegeDbContext.SaveChanges();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
 
