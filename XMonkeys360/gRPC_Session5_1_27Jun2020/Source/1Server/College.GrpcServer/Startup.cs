@@ -1,10 +1,9 @@
 ﻿using College.ApplicationCore.Constants;
 using College.ApplicationCore.Interfaces;
 using College.GrpcServer.Services;
-using College.Microservice.BAL;
 using College.ServerBLL;
 using College.ServerDAL;
-using College.Services.Persistence;
+using College.ServerDAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -12,13 +11,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
-namespace College.Microservice
+namespace College.GrpcServer
 {
 
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,42 +26,22 @@ namespace College.Microservice
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc();
 
-            services.AddControllers();
-
-            // ***************** For REST End Points ***************** 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
-            //// Without Retries
-            //services.AddDbContext<Persistence.CollegeDbContext>(o => o.UseSqlServer(connectionString));
-
-            // Retry
-            services.AddDbContext<Persistence.CollegeDbContext>(options =>
-            {
-                options.UseSqlServer(connectionString,
-                sqlServerOptionsAction: sqlOptions =>
-                {
-                    sqlOptions.EnableRetryOnFailure(
-                    maxRetryCount: 3,
-                    maxRetryDelay: TimeSpan.FromSeconds(30),
-                    errorNumbersToAdd: null);
-                });
-            });
-
-            services.AddScoped<ProfessorsBal>();
-            services.AddScoped<ProfessorsDal>();
-            // ***************** For REST End Points ***************** 
-
-            // ***************** For gRPC End Points ***************** 
-            // Server DAL
-            services.AddDbContext<ServerDAL.Persistence.CollegeDbContext>(o => o.UseSqlServer(connectionString));
+            services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
             // College Application Services
             services.AddScoped<IProfessorBLL, ProfessorBLL>();
             services.AddScoped<IProfessorDAL, ProfessorDAL>();
+
+            // Address Book Application Services
+            services.AddScoped<IAddressBLL, AddressBLL>();
+            services.AddScoped<IAddressDAL, AddressDAL>();
 
             // Adding Redis Cache 
             services.AddStackExchangeRedisCache(option =>
@@ -70,7 +49,6 @@ namespace College.Microservice
                 option.Configuration = Configuration[Constants.DataStore.RedisConnectionString];
                 option.InstanceName = Constants.RedisCacheStore.InstanceName;
             });
-            // ***************** For gRPC End Points ***************** 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,24 +59,21 @@ namespace College.Microservice
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapGrpcService<CollegeGrpcService>();
-
-                endpoints.MapControllers();
+                endpoints.MapGrpcService<AddressBookService>(); 
 
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
                 });
-
             });
         }
+
     }
+
 }
