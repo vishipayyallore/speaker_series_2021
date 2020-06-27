@@ -3,7 +3,6 @@ using College.GrpcServer.Protos;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
@@ -54,7 +53,6 @@ namespace CollegeGrpc.ConsoleClient
                             .AddJsonFile("appsettings.json").Build();
 
             
-
             /*
             WriteLine("\n\nCreating New Professor ...");
             while (response == "Y")
@@ -70,6 +68,7 @@ namespace CollegeGrpc.ConsoleClient
             }
             */
 
+            
             response = "Y";
             while (response == "Y")
             {
@@ -87,6 +86,7 @@ namespace CollegeGrpc.ConsoleClient
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
 
+            /*
             response = "Y";
             while (response == "Y")
             {
@@ -101,6 +101,7 @@ namespace CollegeGrpc.ConsoleClient
                 WriteLine("\n\nDo you want to retrieve all professors: {Y/N}");
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
+            */
 
             WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
             ReadKey();
@@ -124,7 +125,7 @@ namespace CollegeGrpc.ConsoleClient
             {
                 Name = NameGenerator.GenerateName(12),
                 Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-1 * RandomNumberGenerator.GetRandomValue(1, 10)).ToUniversalTime()),
-                Teaches = "CSharp, Java",
+                Teaches = "CSharp, Java, GoLang",
                 Salary = 1234.56,
                 IsPhd = true
             };
