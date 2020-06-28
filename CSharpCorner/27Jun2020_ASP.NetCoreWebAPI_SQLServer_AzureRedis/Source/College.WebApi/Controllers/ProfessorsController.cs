@@ -1,6 +1,6 @@
-﻿using College.WebApi.BAL;
-using College.WebApi.Common;
-using College.WebApi.Entities;
+﻿using College.ApplicationCore.Constants;
+using College.ApplicationCore.Entities;
+using College.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
@@ -13,12 +13,12 @@ namespace College.WebApi.Controllers
     [ApiController]
     public class ProfessorsController : ControllerBase
     {
-        private readonly ProfessorsBal _professorsBusiness;
+        private readonly IProfessorBLL _professorBLL;
         private readonly IDistributedCache _cache;
 
-        public ProfessorsController(ProfessorsBal professorsBusiness, IDistributedCache cache)
+        public ProfessorsController(IProfessorBLL professorBusiness, IDistributedCache cache)
         {
-            _professorsBusiness = professorsBusiness;
+            _professorBLL = professorBusiness;
 
             _cache = cache;
         }
@@ -26,7 +26,6 @@ namespace College.WebApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Professor>> Get()
         {
-
             IEnumerable<Professor> professors;
             // Try to get content from cache
             var professorsFromCache = _cache.GetString(Constants.RedisCacheStore.AllProfessorsKey);
@@ -39,7 +38,7 @@ namespace College.WebApi.Controllers
             else
             {
                 // Going to Data Store SQL Server
-                professors = _professorsBusiness.GetProfessors();
+                professors = _professorBLL.GetAllProfessors();
 
                 //and then, put them in cache
                 _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
@@ -64,7 +63,7 @@ namespace College.WebApi.Controllers
             else
             {
                 // Going to Data Store SQL Server
-                professor = _professorsBusiness.GetProfessorById(id);
+                professor = _professorBLL.GetProfessorById(id);
 
                 //and then, put them in cache
                 _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());
@@ -76,35 +75,6 @@ namespace College.WebApi.Controllers
             }
 
             return Ok(professor);
-        }
-
-        [HttpPost]
-        public ActionResult<Professor> AddProfessor([FromBody] Professor professor)
-        {
-            var createdProfessor = _professorsBusiness.AddProfessor(professor);
-
-            return Created(string.Empty, createdProfessor);
-        }
-
-        [HttpPut]
-        public ActionResult UpdateProfessor([FromBody] Professor professor)
-        {
-            var _ = _professorsBusiness.UpdateProfessor(professor);
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public ActionResult DeleteProfessor(Guid id)
-        {
-            var professorDeleted = _professorsBusiness.DeleteProfessorById(id);
-
-            if (!professorDeleted)
-            {
-                return StatusCode(500, $"Unable to delete Professor with id {id}");
-            }
-
-            return NoContent();
         }
 
         private DistributedCacheEntryOptions GetDistributedCacheEntryOptions()

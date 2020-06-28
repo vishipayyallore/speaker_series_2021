@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace College.WebApi.Entities
+namespace College.ApplicationCore.Entities
 {
 
     public class Student

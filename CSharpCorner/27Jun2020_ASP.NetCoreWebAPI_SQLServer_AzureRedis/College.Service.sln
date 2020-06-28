@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{71A71068-CDCA-4A22-A8B2-82DEED9D601E}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\ASP.NetCoreWebAPI_SQLServer_Redis_Angular9UI.pptx = Documentation\ASP.NetCoreWebAPI_SQLServer_Redis_Angular9UI.pptx
+		Documentation\DemoScript.md = Documentation\DemoScript.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}"
 EndProject
@@ -18,6 +22,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebApi", "Source\College.WebApi\College.WebApi.csproj", "{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ApplicationCore", "Source\College.ApplicationCore\College.ApplicationCore.csproj", "{23E9F34D-832A-4AB6-8667-FD7663888E42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ServerBLL", "Source\College.ServerBLL\College.ServerBLL.csproj", "{A26BAD76-6816-4B44-86DE-B0B89028BF81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.ServerDAL", "Source\College.ServerDAL\College.ServerDAL.csproj", "{83026C14-0ED1-4994-A494-971764F5942F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,12 +38,27 @@ Global
 		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E9F34D-832A-4AB6-8667-FD7663888E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E9F34D-832A-4AB6-8667-FD7663888E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E9F34D-832A-4AB6-8667-FD7663888E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E9F34D-832A-4AB6-8667-FD7663888E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26BAD76-6816-4B44-86DE-B0B89028BF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26BAD76-6816-4B44-86DE-B0B89028BF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26BAD76-6816-4B44-86DE-B0B89028BF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26BAD76-6816-4B44-86DE-B0B89028BF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83026C14-0ED1-4994-A494-971764F5942F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83026C14-0ED1-4994-A494-971764F5942F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83026C14-0ED1-4994-A494-971764F5942F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83026C14-0ED1-4994-A494-971764F5942F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{75D19D5A-1503-4C5B-BABD-1CC7D3A3CA2A} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
+		{23E9F34D-832A-4AB6-8667-FD7663888E42} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
+		{A26BAD76-6816-4B44-86DE-B0B89028BF81} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
+		{83026C14-0ED1-4994-A494-971764F5942F} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A01FF90D-01B7-4186-B1DF-409E507991EC}

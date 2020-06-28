@@ -1,6 +1,8 @@
-using College.WebApi.BAL;
-using College.WebApi.Common;
-using College.WebApi.Persistence;
+using College.ApplicationCore.Constants;
+using College.ApplicationCore.Interfaces;
+using College.ServerBLL;
+using College.ServerDAL;
+using College.ServerDAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -40,8 +42,8 @@ namespace College.WebApi
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
 
             // Application Services
-            services.AddScoped<ProfessorsBal>();
-            services.AddScoped<ProfessorsDal>();
+            services.AddScoped<IProfessorBLL, ProfessorBLL>();
+            services.AddScoped<IProfessorDAL, ProfessorDAL>();
 
             // Adding Redis Cache 
             services.AddStackExchangeRedisCache(option =>

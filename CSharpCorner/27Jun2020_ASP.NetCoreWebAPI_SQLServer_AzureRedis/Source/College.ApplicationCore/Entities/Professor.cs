@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace College.WebApi.Entities
+namespace College.ApplicationCore.Entities
 {
+
     public class Professor
     {
         [Key]
@@ -20,7 +21,6 @@ namespace College.WebApi.Entities
         public bool IsPhd { get; set; }
 
         public ICollection<Student> Students { get; set; } = new List<Student>();
-
     }
 
 }

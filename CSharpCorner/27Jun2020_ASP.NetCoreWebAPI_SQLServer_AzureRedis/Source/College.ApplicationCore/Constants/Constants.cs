@@ -1,9 +1,9 @@
-﻿namespace College.WebApi.Common
+﻿namespace College.ApplicationCore.Constants
 {
 
     public static class Constants
     {
-        // For Data Store
+
         public static class DataStore
         {
             public static string SqlConnectionString { get; } = "ConnectionStrings:CollegeDBConnectionString";
@@ -19,7 +19,7 @@
 
             public static string SingleProfessorsKey { get; } = "professor_";
         }
-    }
 
+    }
 
 }
