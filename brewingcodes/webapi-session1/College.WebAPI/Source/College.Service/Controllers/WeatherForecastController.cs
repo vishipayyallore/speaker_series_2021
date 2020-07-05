@@ -1,4 +1,4 @@
-﻿using College.Service.Entities;
+﻿using College.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

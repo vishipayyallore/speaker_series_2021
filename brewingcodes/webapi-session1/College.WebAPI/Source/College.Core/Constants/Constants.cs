@@ -1,4 +1,4 @@
-﻿namespace College.ApplicationCore.Constants
+﻿namespace College.Core.Constants
 {
 
     public static class Constants

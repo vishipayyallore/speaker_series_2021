@@ -1,6 +1,6 @@
 using System;
 
-namespace College.ApplicationCore.Entities
+namespace College.Core.Entities
 {
     public class WeatherForecast
     {

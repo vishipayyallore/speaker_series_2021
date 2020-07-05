@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace College.ApplicationCore.Entities
+namespace College.Core.Entities
 {
 
     public class Professor
@@ -16,6 +17,7 @@ namespace College.ApplicationCore.Entities
 
         public string Teaches { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Salary { get; set; }
 
         public bool IsPhd { get; set; }

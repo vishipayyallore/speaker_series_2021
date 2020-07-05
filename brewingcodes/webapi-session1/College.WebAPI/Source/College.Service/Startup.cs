@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using College.BLL;
+using College.Core.Constants;
+using College.Core.Interfaces;
+using College.DAL;
+using College.DAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace College.Service
 {
@@ -26,6 +25,14 @@ namespace College.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Adding EF Core
+            var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
+            services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
+
+            // Application Services
+            services.AddScoped<IProfessorsBLL, ProfessorsBLL>();
+            services.AddScoped<IProfessorsDAL, ProfessorsDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

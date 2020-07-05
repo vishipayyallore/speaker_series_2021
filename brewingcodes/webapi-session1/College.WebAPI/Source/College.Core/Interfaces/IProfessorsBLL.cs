@@ -1,11 +1,11 @@
-﻿using College.ApplicationCore.Entities;
+﻿using College.Core.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace College.ApplicationCore.Interfaces
+namespace College.Core.Interfaces
 {
 
-    public interface IProfessorDAL
+    public interface IProfessorsBLL
     {
         IEnumerable<Professor> GetAllProfessors();
 

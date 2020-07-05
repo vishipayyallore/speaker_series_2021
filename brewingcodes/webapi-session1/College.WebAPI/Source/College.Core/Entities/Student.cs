@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace College.ApplicationCore.Entities
+namespace College.Core.Entities
 {
 
     public class Student
@@ -15,6 +16,7 @@ namespace College.ApplicationCore.Entities
 
         public Guid ProfessorId { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Fees { get; set; }
     }
 
