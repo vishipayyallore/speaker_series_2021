@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{8171D3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E044BE6B-B16F-4A6D-8AE8-C279EC3E7B6B}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Documentation\BackEndForFrontEnd_AzureAPIMgt.pptx = ..\..\Documentation\BackEndForFrontEnd_AzureAPIMgt.pptx
+		..\Documentation\BackEndForFrontEnd_AzureAPIMgt.pptx = ..\Documentation\BackEndForFrontEnd_AzureAPIMgt.pptx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{89256058-1823-4C67-9DBA-AF39DDE8E3DC}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Tests\ToBeDone.txt = ..\..\Tests\ToBeDone.txt
+		..\Tests\ToBeDone.txt = ..\Tests\ToBeDone.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{FD04C130-F3B1-4D62-BEB0-75C13B9778BE}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\SQLScripts\1Create_Professors.sql = ..\..\SQLScripts\1Create_Professors.sql
-		..\..\SQLScripts\2Create_Students.sql = ..\..\SQLScripts\2Create_Students.sql
-		..\..\SQLScripts\3Insert_Professors.sql = ..\..\SQLScripts\3Insert_Professors.sql
-		..\..\SQLScripts\4Insert_Students.sql = ..\..\SQLScripts\4Insert_Students.sql
-		..\..\SQLScripts\Create_Database.sql = ..\..\SQLScripts\Create_Database.sql
+		..\SQLScripts\1Create_Professors.sql = ..\SQLScripts\1Create_Professors.sql
+		..\SQLScripts\2Create_Students.sql = ..\SQLScripts\2Create_Students.sql
+		..\SQLScripts\3Insert_Professors.sql = ..\SQLScripts\3Insert_Professors.sql
+		..\SQLScripts\4Insert_Students.sql = ..\SQLScripts\4Insert_Students.sql
+		..\SQLScripts\Create_Database.sql = ..\SQLScripts\Create_Database.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61F1891A-5F6B-4D67-805D-BD193156D128}"
@@ -35,13 +35,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "WebAPI\College.WebAPI\College.WebAPI.csproj", "{488656AB-26DF-45D2-9F77-DA4DD10998E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Core", "WebAPI\College.Core\College.Core.csproj", "{E26B0302-830D-4FDF-A9DE-0620C5B44994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "WebAPI\College.Core\College.Core.csproj", "{E26B0302-830D-4FDF-A9DE-0620C5B44994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BLL", "WebAPI\College.BLL\College.BLL.csproj", "{AFF30251-3ED7-435C-BADC-A96015FD5C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "WebAPI\College.BLL\College.BLL.csproj", "{AFF30251-3ED7-435C-BADC-A96015FD5C76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "WebAPI\College.DAL\College.DAL.csproj", "{51A94E88-6B05-440F-A4CA-836FEA152E96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.WebApp", "WebApp\College.WebApp\College.WebApp.csproj", "{E3022714-5C4A-4E89-99CE-5178D9298205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebApp", "WebApp\College.WebApp\College.WebApp.csproj", "{E3022714-5C4A-4E89-99CE-5178D9298205}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
