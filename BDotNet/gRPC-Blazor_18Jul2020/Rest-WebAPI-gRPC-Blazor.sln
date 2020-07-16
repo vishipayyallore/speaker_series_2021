@@ -50,11 +50,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "Sourc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApps.Common", "Source\1Common\ClientApps.Common\ClientApps.Common.csproj", "{13077271-B480-4597-9554-0277CFD97148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{ECEAD7D2-185C-47AF-85D6-1854F57E4DFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{ECEAD7D2-185C-47AF-85D6-1854F57E4DFC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "Source\2RestWebAPI\College.WebAPI\College.WebAPI.csproj", "{4784DDDF-D814-431A-986D-0E94C7E799A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5gRPCClients", "5gRPCClients", "{F23A8D61-569E-41CE-82D4-DE8BEAA0C0BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.ConsoleClient", "Source\5gRPCClients\CollegeGrpc.ConsoleClient\CollegeGrpc.ConsoleClient.csproj", "{C57D6E37-1BA0-40A8-93BF-7E3000574E19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +92,10 @@ Global
 		{4784DDDF-D814-431A-986D-0E94C7E799A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4784DDDF-D814-431A-986D-0E94C7E799A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4784DDDF-D814-431A-986D-0E94C7E799A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57D6E37-1BA0-40A8-93BF-7E3000574E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57D6E37-1BA0-40A8-93BF-7E3000574E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57D6E37-1BA0-40A8-93BF-7E3000574E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57D6E37-1BA0-40A8-93BF-7E3000574E19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{ECEAD7D2-185C-47AF-85D6-1854F57E4DFC} = {7433630F-659B-4FE2-9BAE-A70BD28272A9}
 		{4784DDDF-D814-431A-986D-0E94C7E799A4} = {A4723E12-144E-49E9-AB59-A46C2B5BD4F0}
 		{F23A8D61-569E-41CE-82D4-DE8BEAA0C0BD} = {4BD0D6BC-C65B-4BC5-BFF9-5CAC458020E4}
+		{C57D6E37-1BA0-40A8-93BF-7E3000574E19} = {F23A8D61-569E-41CE-82D4-DE8BEAA0C0BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D66A8768-1DF2-4E73-BA30-E1AB624999AC}
