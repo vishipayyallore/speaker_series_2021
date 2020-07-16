@@ -9,21 +9,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{373AF119-78F6-4FA0-BC94-0D7122966A93}"
-	ProjectSection(SolutionItems) = preProject
-		Documentation\WebAPI_.Net_5_EF_SQL.pptx = Documentation\WebAPI_.Net_5_EF_SQL.pptx
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7E33B624-C975-4D89-B0ED-7631F66B56E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{FEE77194-892E-44F8-AC1B-94459AC3617D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Core", "Source\College.Core\College.Core.csproj", "{9ECCA047-C464-4D6E-B55E-350EECB4B898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\College.Core\College.Core.csproj", "{9ECCA047-C464-4D6E-B55E-350EECB4B898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BLL", "Source\College.BLL\College.BLL.csproj", "{3F05F823-2B82-429E-9BA4-68C3BB1DFDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "Source\College.BLL\College.BLL.csproj", "{3F05F823-2B82-429E-9BA4-68C3BB1DFDE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.DAL", "Source\College.DAL\College.DAL.csproj", "{C401BE41-68C7-4BD9-A1EF-F6589097BFCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "Source\College.DAL\College.DAL.csproj", "{C401BE41-68C7-4BD9-A1EF-F6589097BFCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Service", "Source\College.Service\College.Service.csproj", "{074D05F2-CB08-465D-B597-2B88F9693BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Service", "Source\College.Service\College.Service.csproj", "{074D05F2-CB08-465D-B597-2B88F9693BBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
