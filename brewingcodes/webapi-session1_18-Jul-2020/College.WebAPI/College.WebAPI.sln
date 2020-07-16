@@ -9,10 +9,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{373AF119-78F6-4FA0-BC94-0D7122966A93}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\WebAPI_.NetCore_3.x_EF_SQL.pptx = ..\Documentation\WebAPI_.NetCore_3.x_EF_SQL.pptx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7E33B624-C975-4D89-B0ED-7631F66B56E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{FEE77194-892E-44F8-AC1B-94459AC3617D}"
+	ProjectSection(SolutionItems) = preProject
+		..\SQLScripts\1Create_Professors.sql = ..\SQLScripts\1Create_Professors.sql
+		..\SQLScripts\2Create_Students.sql = ..\SQLScripts\2Create_Students.sql
+		..\SQLScripts\3Insert_Professors.sql = ..\SQLScripts\3Insert_Professors.sql
+		..\SQLScripts\4Insert_Students.sql = ..\SQLScripts\4Insert_Students.sql
+		..\SQLScripts\5Create_AddressBook.sql = ..\SQLScripts\5Create_AddressBook.sql
+		..\SQLScripts\Create_Database.sql = ..\SQLScripts\Create_Database.sql
+		..\SQLScripts\GeneralQueries.sql = ..\SQLScripts\GeneralQueries.sql
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\College.Core\College.Core.csproj", "{9ECCA047-C464-4D6E-B55E-350EECB4B898}"
 EndProject
