@@ -30,6 +30,14 @@ namespace College.GrpcServer
         {
             services.AddGrpc();
 
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding");
+            }));
+
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
@@ -53,10 +61,17 @@ namespace College.GrpcServer
 
             app.UseRouting();
 
+            app.UseGrpcWeb(); // Must be added between UseRouting and UseEndpoints
+
+            app.UseCors();
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                // endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb().RequireCors("AllowAll"); ;
+
                 endpoints.MapGrpcService<CollegeGrpcService>();
+                
                 endpoints.MapGrpcService<AddressBookService>();
 
                 endpoints.MapGet("/", async context =>

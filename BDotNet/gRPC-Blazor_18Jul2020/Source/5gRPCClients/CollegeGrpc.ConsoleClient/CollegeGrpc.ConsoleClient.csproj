@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1Common\ClientApps.Common\ClientApps.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="..\..\3gRPCWeb\College.GrpcServer\Protos\CollegeApi.proto" GrpcServices="Client">
       <Link>Protos\CollegeApi.proto</Link>
     </Protobuf>
