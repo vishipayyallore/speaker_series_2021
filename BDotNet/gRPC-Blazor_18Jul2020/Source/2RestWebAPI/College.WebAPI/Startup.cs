@@ -26,6 +26,13 @@ namespace College.Service
         {
             services.AddControllers();
 
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
@@ -46,6 +53,8 @@ namespace College.Service
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowAll");
 
             app.UseAuthorization();
 
