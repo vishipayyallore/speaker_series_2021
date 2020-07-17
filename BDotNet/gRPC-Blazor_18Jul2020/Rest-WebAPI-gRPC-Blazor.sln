@@ -46,7 +46,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "Source\1Comm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "Source\1Common\College.DAL\College.DAL.csproj", "{895E83E7-6EA5-424B-A4F4-C16611B2DD87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "Source\3gRPCWeb\College.GrpcServer\College.GrpcServer.csproj", "{1BCC35FA-71D3-4AE4-BB0B-DF8075187938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcWeb", "Source\3gRPCWeb\College.GrpcServer\College.GrpcWeb.csproj", "{1BCC35FA-71D3-4AE4-BB0B-DF8075187938}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApps.Common", "Source\1Common\ClientApps.Common\ClientApps.Common.csproj", "{13077271-B480-4597-9554-0277CFD97148}"
 EndProject
