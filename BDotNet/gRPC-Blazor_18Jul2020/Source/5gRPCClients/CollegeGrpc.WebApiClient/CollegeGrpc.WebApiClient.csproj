@@ -16,7 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\..\1Server\College.GrpcServer\Protos\CollegeApi.proto" GrpcServices="Client">
+    <ProjectReference Include="..\..\1Common\College.Core\College.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\3gRPCWeb\College.GrpcServer\Protos\CollegeApi.proto" GrpcServices="Client">
       <Link>Protos\CollegeApi.proto</Link>
     </Protobuf>
   </ItemGroup>
