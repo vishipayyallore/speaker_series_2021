@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "College.GrpcServer.Protos";
+
+package collegeapi;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service CollegeService {
+	rpc AddProfessor(AddProfessorRequest) returns (AddProfessorResponse);
+
+	rpc GetProfessorById(GetProfessorRequest) returns (GetProfessorResponse);
+
+	rpc GetAllProfessors(google.protobuf.Empty) returns (AllProfessorsResonse);
+}
+
+message AddProfessorRequest {
+	string name = 1;
+	google.protobuf.Timestamp doj = 2;
+	string teaches = 3;
+	double salary = 4;
+	bool isPhd = 5;
+}
+
+message AddProfessorResponse {
+	string professorId = 1;
+	string message = 2;
+}
+
+message GetProfessorRequest {
+	string professorId = 1;
+}
+
+message GetProfessorResponse {
+	string professorId = 1;
+	string name = 2;
+	google.protobuf.Timestamp doj = 3;
+	string teaches = 4;
+	double salary =5;
+	bool isPhd = 6;
+}
+
+message AllProfessorsResonse {
+	repeated GetProfessorResponse professors = 1;
+	string message = 2;
+	int32 count = 3;
+}

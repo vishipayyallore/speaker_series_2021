@@ -1,14 +1,11 @@
-using System;
-using System.Net.Http;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Text;
+using Grpc.Net.Client;
+using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Grpc.Net.Client.Web;
-using Grpc.Net.Client;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace College.BlazorWasm
 {

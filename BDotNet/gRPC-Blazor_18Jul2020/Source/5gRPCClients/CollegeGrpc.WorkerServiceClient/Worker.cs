@@ -1,5 +1,5 @@
-using ClientApps.Common.Utilities;
 using ClientApps.Common.Constants;
+using ClientApps.Common.Utilities;
 using College.GrpcServer.Protos;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;

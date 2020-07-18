@@ -1,15 +1,14 @@
-﻿using College.GrpcServer.Protos;
+﻿using College.Core.Entities;
+using College.GrpcServer.Protos;
 using CollegeGrpc.WebApiClient.Helpers;
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using static College.GrpcServer.Protos.CollegeService;
-using Google.Protobuf.WellKnownTypes;
-using System.Collections.Generic;
-using College.Core.Entities;
-using System.Linq;
-using System;
 
 namespace CollegeGrpc.WebApiClient.Controllers
 {
