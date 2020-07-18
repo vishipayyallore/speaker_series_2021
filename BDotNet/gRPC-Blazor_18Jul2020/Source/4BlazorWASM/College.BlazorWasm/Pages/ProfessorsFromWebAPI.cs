@@ -17,7 +17,7 @@ namespace College.BlazorWasm.Pages
         protected override async Task OnInitializedAsync()
         {
             Professors = await JsonSerializer.DeserializeAsync<IEnumerable<Professor>>
-                    (await Http.GetStreamAsync($"https://localhost:5002/api/professors"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    (await Http.GetStreamAsync($"https://localhost:5004/api/professors"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }
 }

@@ -49,6 +49,7 @@ namespace College.GrpcServer
             // Address Book Application Services
             services.AddScoped<IAddressBLL, AddressBLL>();
             services.AddScoped<IAddressDAL, AddressDAL>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,13 +63,12 @@ namespace College.GrpcServer
             app.UseRouting();
 
             // Must be added between UseRouting and UseEndpoints
-            app.UseGrpcWeb(); 
+            app.UseGrpcWeb();
 
             app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
-                // endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb().RequireCors("AllowAll");
 
                 endpoints.MapGrpcService<CollegeGrpcService>().EnableGrpcWeb().RequireCors("AllowAll");
