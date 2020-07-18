@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace College.ServerDAL
 {
@@ -22,40 +23,40 @@ namespace College.ServerDAL
             _logger = logger;
         }
 
-        public Professor AddProfessor(Professor professor)
+        public async Task<Professor> AddProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
 
             _collegeDbContext.Professors.Add(professor);
 
-            _collegeDbContext.SaveChanges();
+            await _collegeDbContext.SaveChangesAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
 
             return professor;
         }
 
-        public IEnumerable<Professor> GetAllProfessors()
+        public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetAllProfessors");
 
-            var professors = _collegeDbContext.Professors.ToList();
+            var professors = await _collegeDbContext.Professors.ToListAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetAllProfessors");
 
             return professors;
         }
 
-        public Professor GetProfessorById(Guid professorId)
+        public async Task<Professor> GetProfessorById(Guid professorId)
         {
             Professor professor = null;
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetProfessorById");
 
-            professor = _collegeDbContext.Professors
+            professor = await _collegeDbContext.Professors
                 .Where(record => record.ProfessorId == professorId)
                 .Include(student => student.Students)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetProfessorById");
 

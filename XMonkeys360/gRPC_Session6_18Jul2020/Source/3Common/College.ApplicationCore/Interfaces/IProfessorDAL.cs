@@ -1,18 +1,18 @@
 ﻿using College.ApplicationCore.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace College.ApplicationCore.Interfaces
 {
 
     public interface IProfessorDAL
     {
-        Professor AddProfessor(Professor professor);
+        Task<Professor> AddProfessor(Professor professor);
 
-        IEnumerable<Professor> GetAllProfessors();
+        Task<IEnumerable<Professor>> GetAllProfessors();
 
-        Professor GetProfessorById(Guid professorId);
+        Task<Professor> GetProfessorById(Guid professorId);
     }
 
 }

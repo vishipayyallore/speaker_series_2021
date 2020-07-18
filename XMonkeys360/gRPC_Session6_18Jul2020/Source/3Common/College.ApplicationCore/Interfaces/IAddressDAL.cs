@@ -1,11 +1,12 @@
 ﻿using College.ApplicationCore.Entities;
+using System.Threading.Tasks;
 
 namespace College.ApplicationCore.Interfaces
 {
 
     public interface IAddressDAL
     {
-        Address AddAddress(Address address);
+        Task<Address> AddAddress(Address address);
     }
 
 }

@@ -1,12 +1,13 @@
-﻿using ClientApps.Common.Utilities;
+﻿using ClientApps.Common.Constants;
+using ClientApps.Common.Utilities;
 using College.GrpcServer.Protos;
+using CollegeGrpc.ConsoleClient.gRPCHelpers;
 using Google.Protobuf.WellKnownTypes;
-using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using static College.GrpcServer.Protos.AddressBookServer;
 using static College.GrpcServer.Protos.CollegeService;
 
 using static System.Console;
@@ -17,33 +18,11 @@ namespace CollegeGrpc.ConsoleClient
     class Program
     {
 
-        static private CollegeServiceClient _client;
+        // static private CollegeServiceClient _client;
         private static IConfiguration _config;
         private static string _header = "======================================================================";
         private static string _footer = "----------------------------------------------------------------------";
 
-        
-
-        static protected CollegeServiceClient Client
-        {
-            get
-            {
-                var loggerFactory = LoggerFactory.Create(logging =>
-                {
-                    logging.AddConsole();
-                    logging.SetMinimumLevel(LogLevel.Debug);
-                });
-
-
-                if (_client == null)
-                {
-                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"],
-                        new GrpcChannelOptions { LoggerFactory = loggerFactory });
-                    _client = new CollegeServiceClient(channel);
-                }
-                return _client;
-            }
-        }
 
         static async Task Main(string[] args)
         {
@@ -52,7 +31,34 @@ namespace CollegeGrpc.ConsoleClient
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
 
-            
+            // gRPC Clients
+            CollegeServiceClient CollegeClient = CollegeServiceClientHelper.GetCollegeServiceClient(_config["RPCService:ServiceUrl"]);
+            AddressBookServerClient AddressClient = AddressServiceClientHelper.GetAddressBookServerClient(_config["RPCService:ServiceUrl"]);
+
+            // Address Enrollments Client Side Stream
+            var userAddress = new AddAddressRequest
+            {
+                StudentId = Guid.NewGuid().ToString(), /* To Be replaced with Students's Id*/
+                Name = NameGenerator.GenerateName(12),
+                FullAddress = AddressGenerator.GenerateAddress(),
+                Enrollment = Konstants.AddressConstants.EnrollmentTypes[RandomNumberGenerator.GetRandomValue(1, 4)]
+            };
+
+            using (var stream = AddressClient.AddAddressEnrollments())
+            {
+                foreach (string enrollmentType in Konstants.AddressConstants.EnrollmentTypes)
+                {
+                    userAddress.Enrollment = enrollmentType;
+                    await stream.RequestStream.WriteAsync(userAddress);
+                }
+
+                await stream.RequestStream.CompleteAsync();
+
+                await stream;
+                WriteLine($"Sent All");
+            }
+
+
             /*
             WriteLine("\n\nCreating New Professor ...");
             while (response == "Y")
@@ -68,7 +74,7 @@ namespace CollegeGrpc.ConsoleClient
             }
             */
 
-            
+
             response = "Y";
             while (response == "Y")
             {
@@ -78,13 +84,27 @@ namespace CollegeGrpc.ConsoleClient
                 // Retrieve Single Row
                 var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
 
-                var professor = await Client.GetProfessorByIdAsync(professorRequest);
+                var professor = await CollegeClient.GetProfessorByIdAsync(professorRequest);
 
                 DisplayProfessorDetails(professor);
 
                 WriteLine("\n\nDo you want to Lookup a Professor: {Y/N}");
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
+
+            // Address Service gRPC
+            var userAddress1 = new AddAddressRequest
+            {
+                StudentId = Guid.NewGuid().ToString(), /* To Be replaced with Students's Id*/
+                Name = NameGenerator.GenerateName(12),
+                FullAddress = AddressGenerator.GenerateAddress(),
+                Enrollment = Konstants.AddressConstants.EnrollmentTypes[RandomNumberGenerator.GetRandomValue(1, 4)]
+            };
+
+
+            var newAddress = await AddressClient.AddAddressAsync(userAddress1);
+
+            WriteLine($"Address Data with Id: {newAddress.Id}");
 
             /*
             response = "Y";
@@ -143,3 +163,25 @@ namespace CollegeGrpc.ConsoleClient
     }
 
 }
+
+
+//static protected CollegeServiceClient Client
+//{
+//    get
+//    {
+//        var loggerFactory = LoggerFactory.Create(logging =>
+//        {
+//            logging.AddConsole();
+//            logging.SetMinimumLevel(LogLevel.Debug);
+//        });
+
+
+//        if (_client == null)
+//        {
+//            var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"],
+//                new GrpcChannelOptions { LoggerFactory = loggerFactory });
+//            _client = new CollegeServiceClient(channel);
+//        }
+//        return _client;
+//    }
+//}

@@ -33,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="..\..\1Server\College.GrpcServer\Protos\AddressBook.proto" GrpcServices="Client">
+      <Link>Protos\AddressBook.proto</Link>
+    </Protobuf>
     <Protobuf Include="..\..\1Server\College.GrpcServer\Protos\CollegeApi.proto" GrpcServices="Client">
       <Link>Protos\CollegeApi.proto</Link>
     </Protobuf>

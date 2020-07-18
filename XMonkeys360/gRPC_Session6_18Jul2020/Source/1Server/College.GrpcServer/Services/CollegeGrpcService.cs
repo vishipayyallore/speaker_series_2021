@@ -32,7 +32,7 @@ namespace College.GrpcServer.Services
             _cache = cache;
         }
 
-        public override Task<AddProfessorResponse> AddProfessor(AddProfessorRequest request, ServerCallContext context)
+        public override async Task<AddProfessorResponse> AddProfessor(AddProfessorRequest request, ServerCallContext context)
         {
             _logger.Log(LogLevel.Debug, "Request Received for CollegeGrpcService::AddProfessor");
 
@@ -51,13 +51,13 @@ namespace College.GrpcServer.Services
                 IsPhd = request.IsPhd
             };
 
-            var results = _professorsBll.AddProfessor(professor);
+            var results = await _professorsBll.AddProfessor(professor);
 
-            newProfessor.ProfessorId = results.ProfessorId.ToString();
+            newProfessor.ProfessorId =  results.ProfessorId.ToString();
 
             _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::AddProfessor");
 
-            return Task.FromResult(newProfessor);
+            return newProfessor;
         }
 
         public override async Task<AllProfessorsResonse> GetAllProfessors(Empty request, ServerCallContext context)
@@ -78,7 +78,7 @@ namespace College.GrpcServer.Services
             else
             {
                 // Going to Data Store SQL Server
-                allProfessors = _professorsBll.GetAllProfessors();
+                allProfessors = await _professorsBll.GetAllProfessors();
 
                 //and then, put them in cache
                 _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, 
@@ -117,7 +117,7 @@ namespace College.GrpcServer.Services
             else
             {
                 // Going to Data Store SQL Server
-                professor = _professorsBll.GetProfessorById(Guid.Parse(request.ProfessorId));
+                professor = await _professorsBll.GetProfessorById(Guid.Parse(request.ProfessorId));
 
                 //and then, put them in cache
                 _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());

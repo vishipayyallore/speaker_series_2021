@@ -4,8 +4,13 @@ option csharp_namespace = "College.GrpcServer.Protos";
 
 package addressserver;
 
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
 service AddressBookServer {
   rpc AddAddress (AddAddressRequest) returns (AddAddressResponse);
+
+  rpc AddAddressEnrollments (stream AddAddressRequest) returns (google.protobuf.Empty);
 }
 
 message AddAddressRequest {

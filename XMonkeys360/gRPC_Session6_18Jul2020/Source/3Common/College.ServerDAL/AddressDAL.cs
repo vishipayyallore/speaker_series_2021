@@ -2,6 +2,7 @@
 using College.ApplicationCore.Interfaces;
 using College.ServerDAL.Persistence;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace College.ServerDAL
 {
@@ -18,19 +19,20 @@ namespace College.ServerDAL
             _logger = logger;
         }
 
-        public Address AddAddress(Address address)
+        public async Task<Address> AddAddress(Address address)
         {
             _logger.Log(LogLevel.Debug, "Request Received for AddressDAL::AddAddress");
 
             _collegeDbContext.AddressBook.Add(address);
 
-            _collegeDbContext.SaveChanges();
+            await _collegeDbContext.SaveChangesAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from AddressDAL::AddAddress");
 
             return address;
         }
 
+        
     }
 
 }

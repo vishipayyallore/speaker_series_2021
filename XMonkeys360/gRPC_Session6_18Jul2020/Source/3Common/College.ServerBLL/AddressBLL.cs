@@ -1,6 +1,7 @@
 ﻿using College.ApplicationCore.Entities;
 using College.ApplicationCore.Interfaces;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace College.ServerBLL
 {
@@ -17,11 +18,11 @@ namespace College.ServerBLL
             _logger = logger;
         }
 
-        public Address AddAddress(Address address)
+        public async Task<Address> AddAddress(Address address)
         {
             _logger.Log(LogLevel.Debug, "Request Received for AddressBLL::AddAddress");
 
-            return _addressDal.AddAddress(address);
+            return await _addressDal.AddAddress(address);
         }
     }
 

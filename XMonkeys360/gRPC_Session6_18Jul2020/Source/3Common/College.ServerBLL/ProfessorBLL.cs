@@ -3,6 +3,7 @@ using College.ApplicationCore.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace College.ServerBLL
 {
@@ -19,33 +20,33 @@ namespace College.ServerBLL
             _logger = logger;
         }
 
-        public Professor AddProfessor(Professor professor)
+        public async Task<Professor> AddProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::AddProfessor");
 
-            var newProfessor = _professorDal.AddProfessor(professor);
+            var newProfessor = await _professorDal.AddProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::AddProfessor");
 
             return newProfessor;
         }
 
-        public IEnumerable<Professor> GetAllProfessors()
+        public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::GetAllProfessors");
 
-            var allProfessors = _professorDal.GetAllProfessors();
+            var allProfessors = await _professorDal.GetAllProfessors();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::GetAllProfessors");
 
             return allProfessors;
         }
 
-        public Professor GetProfessorById(Guid professorId)
+        public async Task<Professor> GetProfessorById(Guid professorId)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::GetAllProfessors");
 
-            var professor = _professorDal.GetProfessorById(professorId);
+            var professor = await _professorDal.GetProfessorById(professorId);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::GetAllProfessors");
 

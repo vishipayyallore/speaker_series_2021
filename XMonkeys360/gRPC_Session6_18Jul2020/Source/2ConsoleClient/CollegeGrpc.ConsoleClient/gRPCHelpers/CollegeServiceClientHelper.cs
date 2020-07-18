@@ -1,7 +1,7 @@
 ﻿using Grpc.Net.Client;
 using static College.GrpcServer.Protos.CollegeService;
 
-namespace CollegeGrpc.WebAppClient.Helpers
+namespace CollegeGrpc.ConsoleClient.gRPCHelpers
 {
 
     public class CollegeServiceClientHelper
@@ -20,6 +20,5 @@ namespace CollegeGrpc.WebAppClient.Helpers
         }
 
     }
-
 
 }
