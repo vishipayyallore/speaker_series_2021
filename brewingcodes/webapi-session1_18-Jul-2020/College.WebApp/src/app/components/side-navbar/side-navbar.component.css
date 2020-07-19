@@ -1,0 +1,10 @@
+.sidenav {
+  height: inherit;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: blueviolet;
+  transition: 0.5s;
+  padding-top: 60px;
+}

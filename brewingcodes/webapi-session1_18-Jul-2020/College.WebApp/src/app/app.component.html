@@ -1,8 +1,14 @@
 <app-top-navbar></app-top-navbar>
-<app-side-navbar></app-side-navbar>
 
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class=" row content">
+    <div class="col-sm-2">
+      <app-side-navbar></app-side-navbar>
+    </div>
+    <div class="col-sm-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>
