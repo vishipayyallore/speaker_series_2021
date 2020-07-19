@@ -1,0 +1,5 @@
+/* Set black background color, white text and some padding */
+footer {
+  color: white;
+  padding: 1px;
+}
