@@ -1,11 +1,13 @@
 <app-top-navbar></app-top-navbar>
 
 <div class="container-fluid">
-  <div class=" row content">
-    <div class="col-sm-2">
-      <app-side-navbar></app-side-navbar>
+  <div class=" row">
+    <div class="col-md-2 d-none d-md-block bg-sidebar sidebar">
+      <div class="sidebar-sticky">
+        <app-side-navbar></app-side-navbar>
+      </div>
     </div>
-    <div class="col-sm-10">
+    <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <router-outlet></router-outlet>
     </div>
   </div>
