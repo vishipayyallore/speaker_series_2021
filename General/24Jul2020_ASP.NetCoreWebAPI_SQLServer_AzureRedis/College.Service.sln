@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{71A71068-CDCA-4A22-A8B2-82DEED9D601E}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\ASP.NetCoreWebAPI_SQLServer_Redis_Angular9UI.pptx = Documentation\ASP.NetCoreWebAPI_SQLServer_Redis_Angular9UI.pptx
+		Documentation\DemoScript.md = Documentation\DemoScript.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{7CEFAA9F-CD41-471A-ACC4-058648B7F05E}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\1Create_Professors.sql = SQLScripts\1Create_Professors.sql
+		SQLScripts\2Create_Students.sql = SQLScripts\2Create_Students.sql
+		SQLScripts\3Insert_Professors.sql = SQLScripts\3Insert_Professors.sql
+		SQLScripts\4Insert_Students.sql = SQLScripts\4Insert_Students.sql
+		SQLScripts\Create_Database.sql = SQLScripts\Create_Database.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{AF22FB52-4690-4522-8C6C-F3EA1A8CB40E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{4D52C407-9C0D-45F4-886B-A4DBD5FE1D5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\API\College.Core\College.Core.csproj", "{791C0311-1D5A-434E-9884-AF102C2A098B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "Source\API\College.BLL\College.BLL.csproj", "{21D71769-F108-4001-AA35-211DAE070BAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "Source\API\College.DAL\College.DAL.csproj", "{866A4735-9E30-4412-A542-837F94BC4575}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "Source\API\College.WebAPI\College.WebAPI.csproj", "{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Web", "Source\App\College.Web\College.Web.csproj", "{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{791C0311-1D5A-434E-9884-AF102C2A098B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791C0311-1D5A-434E-9884-AF102C2A098B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791C0311-1D5A-434E-9884-AF102C2A098B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791C0311-1D5A-434E-9884-AF102C2A098B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D71769-F108-4001-AA35-211DAE070BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D71769-F108-4001-AA35-211DAE070BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D71769-F108-4001-AA35-211DAE070BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D71769-F108-4001-AA35-211DAE070BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{866A4735-9E30-4412-A542-837F94BC4575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866A4735-9E30-4412-A542-837F94BC4575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866A4735-9E30-4412-A542-837F94BC4575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866A4735-9E30-4412-A542-837F94BC4575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF22FB52-4690-4522-8C6C-F3EA1A8CB40E} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
+		{4D52C407-9C0D-45F4-886B-A4DBD5FE1D5E} = {4C70134E-3FCE-4BDA-A5F9-FB85DFAE80D8}
+		{791C0311-1D5A-434E-9884-AF102C2A098B} = {AF22FB52-4690-4522-8C6C-F3EA1A8CB40E}
+		{21D71769-F108-4001-AA35-211DAE070BAB} = {AF22FB52-4690-4522-8C6C-F3EA1A8CB40E}
+		{866A4735-9E30-4412-A542-837F94BC4575} = {AF22FB52-4690-4522-8C6C-F3EA1A8CB40E}
+		{78BF9915-2E8C-4A21-895B-3F5A50EEAFCE} = {AF22FB52-4690-4522-8C6C-F3EA1A8CB40E}
+		{26BC1853-6EC9-47EF-BCBA-DCA2940D62A5} = {4D52C407-9C0D-45F4-886B-A4DBD5FE1D5E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A01FF90D-01B7-4186-B1DF-409E507991EC}
+	EndGlobalSection
+EndGlobal
