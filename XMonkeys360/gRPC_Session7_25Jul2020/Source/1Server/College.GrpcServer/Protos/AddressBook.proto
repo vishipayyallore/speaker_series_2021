@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "College.GrpcServer.Protos";
+
+package addressserver;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service AddressBookServer {
+  rpc AddAddress (AddAddressRequest) returns (AddAddressResponse);
+
+  rpc AddAddressEnrollments (stream AddAddressRequest) returns (google.protobuf.Empty);
+
+  rpc RetrieveAddressEnrollments (AddressEnrollmentRequest) returns (stream AddressEnrollmentResponse);
+
+  rpc GetWeatherStream (google.protobuf.Empty) returns (stream WeatherData);
+}
+
+message AddAddressRequest {
+  string name = 1;
+  string studentId = 2;
+  string fullAddress = 3;
+  string enrollment = 4;
+  string enrollmentStatus = 5;
+}
+
+message AddAddressResponse {
+  string id = 1;
+  string message = 2;
+}
+
+message AddressEnrollment {
+  string studentId = 1;
+  string name = 2;
+  string fullAddress = 3;
+  string enrollment = 4;
+  string enrollmentStatus = 5;
+}
+
+message WeatherData {
+  google.protobuf.Timestamp dateTimeStamp = 1;
+  int32 temperatureC = 2;
+  int32 temperatureF = 3;
+  string summary = 4;
+}
+
+message AddressEnrollmentRequest {
+	string studentId = 1;
+}
+
+message AddressEnrollmentResponse {
+  string studentId = 1;
+  string name = 2;
+  string fullAddress = 3;
+  string enrollment = 4;
+  string enrollmentStatus = 5;
+}
