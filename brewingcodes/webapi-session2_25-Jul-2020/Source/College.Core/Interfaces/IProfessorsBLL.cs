@@ -11,6 +11,12 @@ namespace College.Core.Interfaces
         Task<IEnumerable<Professor>> GetAllProfessors();
 
         Task<Professor> GetProfessorById(Guid professorId);
+
+        Professor AddProfessor(Professor professor);
+
+        Professor UpdateProfessor(Professor professor);
+
+        bool DeleteProfessorById(Guid id);
     }
 
 }

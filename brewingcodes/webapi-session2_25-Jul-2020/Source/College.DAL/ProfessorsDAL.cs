@@ -23,11 +23,26 @@ namespace College.DAL
             _logger = logger;
         }
 
+        public Professor AddProfessor(Professor professor)
+        {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
+
+            _collegeDbContext.Professors.Add(professor);
+
+            _collegeDbContext.SaveChanges();
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
+
+            return professor;
+        }
+
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetAllProfessors");
 
-            var professors = await _collegeDbContext.Professors.ToListAsync();
+            var professors = await _collegeDbContext.Professors
+                .Include(student => student.Students)
+                .ToListAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetAllProfessors");
 
@@ -49,7 +64,41 @@ namespace College.DAL
 
             return professor;
         }
-    }
 
+        public Professor UpdateProfessor(Professor professor)
+        {
+            if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
+            {
+                return null;
+            }
+
+            var retrievedProfessor = _collegeDbContext.Professors.Where(record => record.ProfessorId == professor.ProfessorId).FirstOrDefault();
+
+            // Modifying the data
+            retrievedProfessor.Salary = professor.Salary;
+            retrievedProfessor.IsPhd = professor.IsPhd;
+
+            _collegeDbContext.SaveChanges();
+
+            return professor;
+        }
+
+        public bool DeleteProfessorById(Guid id)
+        {
+            if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == id))
+            {
+                return false;
+            }
+
+            var retrievedProfessor = _collegeDbContext.Professors.Where(record => record.ProfessorId == id).FirstOrDefault();
+
+            _collegeDbContext.Professors.Remove(retrievedProfessor);
+
+            _collegeDbContext.SaveChanges();
+
+            return true;
+        }
+
+    }
 
 }
