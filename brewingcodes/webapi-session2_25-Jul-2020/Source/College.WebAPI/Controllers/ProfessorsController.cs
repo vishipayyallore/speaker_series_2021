@@ -49,23 +49,23 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            //// Verify the content exists in Redis cache
+            // Verify the content exists in Redis cache
             var professorsFromCache = _cache.GetString(Constants.RedisCacheStore.AllProfessorsKey);
 
-            //if (!string.IsNullOrEmpty(professorsFromCache))
-            //{
-            //    // content exists in Redis cache, deserilize
-            //    professors = JsonConvert.DeserializeObject<IEnumerable<Professor>>(professorsFromCache);
-            //}
-            //else
-            //{
-            // Retrieve it from SQL
-            professors = await _professorsBLL.GetAllProfessors();
+            if (!string.IsNullOrEmpty(professorsFromCache))
+            {
+                // content exists in Redis cache, deserilize
+                professors = JsonConvert.DeserializeObject<IEnumerable<Professor>>(professorsFromCache);
+            }
+            else
+            {
+                // Retrieve it from SQL
+                professors = await _professorsBLL.GetAllProfessors();
 
-            //    // Store a copy in Redis Server
-            //    _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
-            //            GetDistributedCacheEntryOptions());
-            //}
+                // Store a copy in Redis Server
+                _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
+                        GetDistributedCacheEntryOptions());
+            }
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
@@ -80,20 +80,20 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            //var professorFromCache = _cache.GetString(professorId);
-            //if (!string.IsNullOrEmpty(professorFromCache))
-            //{
-            //    //if they are there, deserialize them
-            //    professor = JsonConvert.DeserializeObject<Professor>(professorFromCache);
-            //}
-            //else
-            //{
-            // Going to Data Store SQL Server
-            professor = await _professorsBLL.GetProfessorById(id);
+            var professorFromCache = _cache.GetString(professorId);
+            if (!string.IsNullOrEmpty(professorFromCache))
+            {
+                //if they are there, deserialize them
+                professor = JsonConvert.DeserializeObject<Professor>(professorFromCache);
+            }
+            else
+            {
+                // Going to Data Store SQL Server
+                professor = await _professorsBLL.GetProfessorById(id);
 
-            //    //and then, put them in cache
-            //    _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());
-            //}
+                //and then, put them in cache
+                _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());
+            }
 
             if (professor == null)
             {

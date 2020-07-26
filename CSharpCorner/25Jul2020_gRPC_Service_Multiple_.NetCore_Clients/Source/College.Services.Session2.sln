@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WindowsFormClie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WorkerServiceClient", "4WorkerProcessClient\CollegeGrpc.WorkerServiceClient\CollegeGrpc.WorkerServiceClient.csproj", "{A78747D1-5665-4621-B455-EC0283FAD2BF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WebApiClient", "3WebApiClient\CollegeGrpc.WebApiClient\CollegeGrpc.WebApiClient.csproj", "{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{A78747D1-5665-4621-B455-EC0283FAD2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A78747D1-5665-4621-B455-EC0283FAD2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A78747D1-5665-4621-B455-EC0283FAD2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{F4D4E399-5755-4259-A430-EC3D28680BBE} = {FE2FC503-7949-4D78-976E-2C178B1BE4C8}
 		{562F1B27-B4D6-4827-A3A8-4C1AB8BE174F} = {BCEB3A1D-6CCA-4468-AD37-7B0B45B197C8}
 		{A78747D1-5665-4621-B455-EC0283FAD2BF} = {A935C6E8-9BA7-49FA-BEB9-794F2568673A}
+		{B57B8F3E-6EE3-4335-8D68-1695DD51DAB1} = {BFF7D9CA-CD27-4722-AA56-8D215DD19A48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14636856-96F6-4AFF-9CE6-13413B0A4588}
