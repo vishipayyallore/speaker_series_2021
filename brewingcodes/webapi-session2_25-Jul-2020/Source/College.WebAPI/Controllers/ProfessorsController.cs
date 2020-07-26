@@ -31,11 +31,11 @@ namespace College.WebAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Professor> AddProfessor([FromBody] Professor professor)
+        public async Task<ActionResult<Professor>> AddProfessor([FromBody] Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
 
-            var createdProfessor = _professorsBLL.AddProfessor(professor);
+            var createdProfessor = await _professorsBLL.AddProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::AddProfessor");
             return Created(string.Empty, createdProfessor);
@@ -105,18 +105,20 @@ namespace College.WebAPI.Controllers
             return Ok(professor);
         }
 
+        // PUT: HTTP 200 / HTTP 204 should imply "resource updated successfully". 
         [HttpPut]
-        public ActionResult UpdateProfessor([FromBody] Professor professor)
+        public async Task<ActionResult> UpdateProfessor([FromBody] Professor professor)
         {
-            var _ = _professorsBLL.UpdateProfessor(professor);
+            var _ = await _professorsBLL.UpdateProfessor(professor);
 
             return NoContent();
         }
 
+        // DELETE: HTTP 200 / HTTP 204 should imply "resource deleted successfully".
         [HttpDelete("{id}")]
-        public ActionResult DeleteProfessor(Guid id)
+        public async Task<ActionResult> DeleteProfessor(Guid id)
         {
-            var professorDeleted = _professorsBLL.DeleteProfessorById(id);
+            var professorDeleted = await _professorsBLL.DeleteProfessorById(id);
 
             if (!professorDeleted)
             {

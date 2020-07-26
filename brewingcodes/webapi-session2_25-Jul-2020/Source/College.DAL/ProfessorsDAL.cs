@@ -23,13 +23,13 @@ namespace College.DAL
             _logger = logger;
         }
 
-        public Professor AddProfessor(Professor professor)
+        public async Task<Professor> AddProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
 
             _collegeDbContext.Professors.Add(professor);
 
-            _collegeDbContext.SaveChanges();
+            await _collegeDbContext.SaveChangesAsync();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
 
@@ -65,36 +65,40 @@ namespace College.DAL
             return professor;
         }
 
-        public Professor UpdateProfessor(Professor professor)
+        public async Task<Professor> UpdateProfessor(Professor professor)
         {
             if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
             {
                 return null;
             }
 
-            var retrievedProfessor = _collegeDbContext.Professors.Where(record => record.ProfessorId == professor.ProfessorId).FirstOrDefault();
+            var retrievedProfessor = await _collegeDbContext.Professors
+                .Where(record => record.ProfessorId == professor.ProfessorId)
+                .FirstOrDefaultAsync();
 
             // Modifying the data
             retrievedProfessor.Salary = professor.Salary;
             retrievedProfessor.IsPhd = professor.IsPhd;
 
-            _collegeDbContext.SaveChanges();
+            await _collegeDbContext.SaveChangesAsync();
 
             return professor;
         }
 
-        public bool DeleteProfessorById(Guid id)
+        public async Task<bool> DeleteProfessorById(Guid id)
         {
             if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == id))
             {
                 return false;
             }
 
-            var retrievedProfessor = _collegeDbContext.Professors.Where(record => record.ProfessorId == id).FirstOrDefault();
+            var retrievedProfessor = await _collegeDbContext.Professors
+                .Where(record => record.ProfessorId == id)
+                .FirstOrDefaultAsync();
 
             _collegeDbContext.Professors.Remove(retrievedProfessor);
 
-            _collegeDbContext.SaveChanges();
+            await _collegeDbContext.SaveChangesAsync();
 
             return true;
         }

@@ -20,11 +20,11 @@ namespace College.BLL
             _logger = logger;
         }
 
-        public Professor AddProfessor(Professor professor)
+        public async Task<Professor> AddProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::AddProfessor");
 
-            var newProfessor = _professorDal.AddProfessor(professor);
+            var newProfessor = await _professorDal.AddProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::AddProfessor");
 
@@ -53,27 +53,28 @@ namespace College.BLL
             return professor;
         }
 
-        public Professor UpdateProfessor(Professor professor)
+        public async Task<Professor> UpdateProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::UpdateProfessor");
 
-            var updatedProfessor = _professorDal.UpdateProfessor(professor);
+            var updatedProfessor = await _professorDal.UpdateProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::UpdateProfessor");
 
             return updatedProfessor;
         }
 
-        public bool DeleteProfessorById(Guid id)
+        public async Task<bool> DeleteProfessorById(Guid id)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::DeleteProfessorById");
 
-            var professorDeleted = _professorDal.DeleteProfessorById(id);
+            var professorDeleted = await _professorDal.DeleteProfessorById(id);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::DeleteProfessorById");
 
             return professorDeleted;
         }
+
     }
 
 }

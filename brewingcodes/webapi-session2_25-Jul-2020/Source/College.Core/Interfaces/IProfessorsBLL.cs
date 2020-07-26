@@ -12,11 +12,11 @@ namespace College.Core.Interfaces
 
         Task<Professor> GetProfessorById(Guid professorId);
 
-        Professor AddProfessor(Professor professor);
+        Task<Professor> AddProfessor(Professor professor);
 
-        Professor UpdateProfessor(Professor professor);
+        Task<Professor> UpdateProfessor(Professor professor);
 
-        bool DeleteProfessorById(Guid id);
+        Task<bool> DeleteProfessorById(Guid id);
     }
 
 }
