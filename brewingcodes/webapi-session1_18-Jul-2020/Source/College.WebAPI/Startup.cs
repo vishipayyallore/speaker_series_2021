@@ -14,6 +14,9 @@ namespace College.WebAPI
 {
     public class Startup
     {
+
+        const string _corsPolicy = "AllowAll";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,6 +29,13 @@ namespace College.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(o => o.AddPolicy(_corsPolicy, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
@@ -47,6 +57,8 @@ namespace College.WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(_corsPolicy);
 
             app.UseAuthorization();
 
