@@ -1,0 +1,20 @@
+<h2>Professors List</h2>
+
+<table class='table table-striped table-warning' aria-labelledby="tableLabel" *ngIf="professorsList">
+  <thead class="thead-dark">
+    <tr>
+      <th>Professor Id</th>
+      <th>Name</th>
+      <th>DOJ</th>
+      <th>Teaches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let professor of professorsList">
+      <td>{{ professor.professorId }}</td>
+      <td>{{ professor.name }}</td>
+      <td>{{ professor.doj | date}}</td>
+      <td>{{ professor.teaches }}</td>
+    </tr>
+  </tbody>
+</table>
