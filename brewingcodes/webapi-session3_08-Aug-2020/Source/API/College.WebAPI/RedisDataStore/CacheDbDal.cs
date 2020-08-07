@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace College.WebAPI.RedisDataStore
 {
-    
-    public class CacheDbDal
+
+    public class CacheDbDal : ICacheDbDal
     {
         private readonly ICacheDbContext _cacheDbContext;
         private const string _returnNull = null;

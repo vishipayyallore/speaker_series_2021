@@ -1,6 +1,7 @@
 ﻿using College.Core.Constants;
 using College.Core.Entities;
 using College.Core.Interfaces;
+using College.WebAPI.RedisDataStore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
@@ -20,15 +21,18 @@ namespace College.WebAPI.Controllers
         private readonly ILogger<ProfessorsController> _logger;
         private readonly IProfessorsBLL _professorsBLL;
         private readonly IDistributedCache _cache;
+        private readonly ICacheDbDal _cacheDbDal;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL,
-            IDistributedCache cache)
+        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL, 
+            IDistributedCache cache, ICacheDbDal cacheDbDal)
         {
             _logger = logger;
 
             _professorsBLL = professorsBLL;
 
             _cache = cache;
+
+            _cacheDbDal = cacheDbDal;
         }
 
         [HttpGet]
@@ -40,7 +44,7 @@ namespace College.WebAPI.Controllers
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
             // Verify the content exists in Redis cache
-            var professorsFromCache = _cache.GetString(Constants.RedisCacheStore.AllProfessorsKey);
+            var professorsFromCache = await _cacheDbDal.RetrieveItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
 
             if (!string.IsNullOrEmpty(professorsFromCache))
             {

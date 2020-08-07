@@ -3,6 +3,7 @@ using College.Core.Constants;
 using College.Core.Interfaces;
 using College.DAL;
 using College.DAL.Persistence;
+using College.WebAPI.RedisDataStore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,10 @@ namespace College.WebAPI
                 option.Configuration = Configuration[Constants.DataStore.RedisConnectionString];
                 option.InstanceName = Constants.RedisCacheStore.InstanceName;
             });
+
+            // Cache Related
+            services.AddScoped<ICacheDbContext, CacheDbContext>();
+            services.AddScoped<ICacheDbDal, CacheDbDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
