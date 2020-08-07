@@ -4,6 +4,6 @@ namespace College.WebAPI.RedisDataStore
 {
     public interface ICacheDbContext
     {
-        IDatabase RedisCacheDb { get; }
+        IDatabase RedisDatabase { get; }
     }
 }

@@ -10,12 +10,12 @@ namespace College.WebAPI.RedisDataStore
     public class CacheDbContext : ICacheDbContext
     {
 
-        public CacheDbContext(ConnectionMultiplexer redisConnection)
+        public CacheDbContext(ConnectionMultiplexer connectionMultiplexer)
         {
-            RedisCacheDb = redisConnection.GetDatabase();
+            RedisDatabase = connectionMultiplexer.GetDatabase();
         }
 
-        public IDatabase RedisCacheDb { get; }
+        public IDatabase RedisDatabase { get; }
     }
 
 }
