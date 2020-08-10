@@ -23,7 +23,7 @@ namespace College.WebAPI.Controllers
         private readonly IDistributedCache _cache;
         private readonly ICacheDbDal _cacheDbDal;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL, 
+        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL,
             IDistributedCache cache, ICacheDbDal cacheDbDal)
         {
             _logger = logger;
@@ -57,9 +57,7 @@ namespace College.WebAPI.Controllers
                 professors = await _professorsBLL.GetAllProfessors();
 
                 // Store a copy in Redis Server
-                // _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
-                //     GetDistributedCacheEntryOptions());
-                await _cacheDbDal.SaveItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
+                await _cacheDbDal.SaveOrUpdateItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
             }
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
@@ -77,7 +75,8 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            var professorFromCache = _cache.GetString(professorId);
+            var professorFromCache = await _cacheDbDal.RetrieveItemFromCache(professorId);
+
             if (!string.IsNullOrEmpty(professorFromCache))
             {
                 //if they are there, deserialize them
@@ -89,7 +88,7 @@ namespace College.WebAPI.Controllers
                 professor = await _professorsBLL.GetProfessorById(id);
 
                 //and then, put them in cache
-                _cache.SetString(professorId, JsonConvert.SerializeObject(professor), GetDistributedCacheEntryOptions());
+                await _cacheDbDal.SaveOrUpdateItemToCache(professorId, JsonConvert.SerializeObject(professor));
             }
 
             if (professor == null)
@@ -141,14 +140,6 @@ namespace College.WebAPI.Controllers
             }
 
             return NoContent();
-        }
-
-        private DistributedCacheEntryOptions GetDistributedCacheEntryOptions()
-        {
-            return new DistributedCacheEntryOptions()
-            {
-                AbsoluteExpiration = new System.DateTimeOffset(DateTime.Now.ToUniversalTime().AddSeconds(60), new TimeSpan(0, 0, 0))
-            };
         }
 
     }

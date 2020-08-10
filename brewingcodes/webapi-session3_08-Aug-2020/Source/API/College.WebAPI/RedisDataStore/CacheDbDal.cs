@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace College.WebAPI.RedisDataStore
@@ -37,7 +35,7 @@ namespace College.WebAPI.RedisDataStore
             return _returnNull;
         }
 
-        public async Task<bool> SaveItemToCache(string itemKey, string itemValue)
+        public async Task<bool> SaveOrUpdateItemToCache(string itemKey, string itemValue)
         {
             bool itemSaved = false;
 
@@ -52,6 +50,23 @@ namespace College.WebAPI.RedisDataStore
             }
 
             return itemSaved;
+        }
+
+        public async Task<bool> DeleteItemFromCache(string itemKey)
+        {
+            bool itemDeleted = false;
+
+            try
+            {
+                itemDeleted = await _cacheDbContext.RedisDatabase.KeyDeleteAsync(itemKey);
+            }
+            catch (Exception error)
+            {
+                // ToDo: Log into File.
+                Console.WriteLine($"Error occurred at CacheDbDal::DeleteItemFromCache(). Message: {error.Message}");
+            }
+
+            return itemDeleted;
         }
 
     }
