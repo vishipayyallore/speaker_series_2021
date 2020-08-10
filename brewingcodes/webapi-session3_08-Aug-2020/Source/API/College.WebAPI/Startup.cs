@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StackExchange.Redis;
 
 namespace College.WebAPI
 {
@@ -42,6 +43,16 @@ namespace College.WebAPI
                 option.Configuration = Configuration[Constants.DataStore.RedisConnectionString];
                 option.InstanceName = Constants.RedisCacheStore.InstanceName;
             });
+
+            #region Redis Dependencies
+
+            services.AddSingleton<ConnectionMultiplexer>(sp =>
+            {
+                var configuration = ConfigurationOptions.Parse(Configuration[Constants.DataStore.RedisConnectionString], true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
+            #endregion
 
             // Cache Related
             services.AddScoped<ICacheDbContext, CacheDbContext>();

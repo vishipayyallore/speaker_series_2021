@@ -37,6 +37,23 @@ namespace College.WebAPI.RedisDataStore
             return _returnNull;
         }
 
+        public async Task<bool> SaveItemToCache(string itemKey, string itemValue)
+        {
+            bool itemSaved = false;
+
+            try
+            {
+                itemSaved = await _cacheDbContext.RedisDatabase.StringSetAsync(itemKey, itemValue);
+            }
+            catch (Exception error)
+            {
+                // ToDo: Log into File.
+                Console.WriteLine($"Error occurred at CacheDbDal::SaveItemToCache(). Message: {error.Message}");
+            }
+
+            return itemSaved;
+        }
+
     }
 
 }

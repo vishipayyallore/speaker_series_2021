@@ -57,8 +57,9 @@ namespace College.WebAPI.Controllers
                 professors = await _professorsBLL.GetAllProfessors();
 
                 // Store a copy in Redis Server
-                _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
-                        GetDistributedCacheEntryOptions());
+                // _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
+                //     GetDistributedCacheEntryOptions());
+                await _cacheDbDal.SaveItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
             }
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
