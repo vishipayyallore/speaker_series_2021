@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 
 namespace College.WebAPI
@@ -54,6 +55,13 @@ namespace College.WebAPI
 
             #endregion
 
+            // Swagger Open API
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "College API", Version = "v1" });
+            });
+
+
             // Cache Related
             services.AddScoped<ICacheDbContext, CacheDbContext>();
             services.AddScoped<ICacheDbDal, CacheDbDal>();
@@ -77,6 +85,13 @@ namespace College.WebAPI
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "College API V1");
+            });
+
         }
     }
 }
