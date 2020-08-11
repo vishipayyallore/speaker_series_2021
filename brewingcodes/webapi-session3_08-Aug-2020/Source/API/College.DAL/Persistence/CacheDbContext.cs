@@ -1,6 +1,7 @@
-﻿using StackExchange.Redis;
+﻿using College.Core.Interfaces;
+using StackExchange.Redis;
 
-namespace College.WebAPI.RedisDataStore
+namespace College.DAL.Persistence
 {
 
     public class CacheDbContext : ICacheDbContext

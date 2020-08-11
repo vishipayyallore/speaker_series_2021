@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace College.WebAPI.RedisDataStore
+namespace College.Core.Interfaces
 {
     public interface ICacheDbContext
     {

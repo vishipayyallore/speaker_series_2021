@@ -1,7 +1,8 @@
-﻿using System;
+﻿using College.Core.Interfaces;
+using System;
 using System.Threading.Tasks;
 
-namespace College.WebAPI.RedisDataStore
+namespace College.DAL.Persistence
 {
 
     public class CacheDbDal : ICacheDbDal

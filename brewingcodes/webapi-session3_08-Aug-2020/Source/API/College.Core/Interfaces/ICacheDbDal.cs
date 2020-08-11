@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace College.WebAPI.RedisDataStore
+namespace College.Core.Interfaces
 {
 
     public interface ICacheDbDal
