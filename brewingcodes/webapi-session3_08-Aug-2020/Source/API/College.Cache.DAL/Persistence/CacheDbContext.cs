@@ -1,7 +1,7 @@
 ﻿using College.Core.Interfaces;
 using StackExchange.Redis;
 
-namespace College.DAL.Persistence
+namespace College.Cache.DAL.Persistence
 {
 
     public class CacheDbContext : ICacheDbContext

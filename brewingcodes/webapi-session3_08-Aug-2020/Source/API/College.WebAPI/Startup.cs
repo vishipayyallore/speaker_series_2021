@@ -1,4 +1,6 @@
 using College.BLL;
+using College.Cache.DAL;
+using College.Cache.DAL.Persistence;
 using College.Core.Constants;
 using College.Core.Interfaces;
 using College.DAL;

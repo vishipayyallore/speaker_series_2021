@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace College.DAL.Persistence
+namespace College.Cache.DAL
 {
 
     public class CacheDbDal : ICacheDbDal
