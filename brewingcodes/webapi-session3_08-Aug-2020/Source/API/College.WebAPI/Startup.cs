@@ -3,7 +3,6 @@ using College.Core.Constants;
 using College.Core.Interfaces;
 using College.DAL;
 using College.DAL.Persistence;
-using College.WebAPI.RedisDataStore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -45,15 +44,16 @@ namespace College.WebAPI
                 option.InstanceName = Constants.RedisCacheStore.InstanceName;
             });
 
-            #region Redis Dependencies
-
+            // Redis Cache Dependencies
             services.AddSingleton<ConnectionMultiplexer>(sp =>
             {
                 var configuration = ConfigurationOptions.Parse(Configuration[Constants.DataStore.RedisConnectionString], true);
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
-            #endregion
+            // Cache Related
+            services.AddScoped<ICacheDbContext, CacheDbContext>();
+            services.AddScoped<ICacheDbDal, CacheDbDal>();
 
             // Swagger Open API
             services.AddSwaggerGen(c =>
@@ -61,10 +61,6 @@ namespace College.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "College API", Version = "v1" });
             });
 
-
-            // Cache Related
-            services.AddScoped<ICacheDbContext, CacheDbContext>();
-            services.AddScoped<ICacheDbDal, CacheDbDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

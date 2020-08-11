@@ -1,9 +1,7 @@
 ﻿using College.Core.Constants;
 using College.Core.Entities;
 using College.Core.Interfaces;
-using College.WebAPI.RedisDataStore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
@@ -17,20 +15,16 @@ namespace College.WebAPI.Controllers
     [ApiController]
     public class ProfessorsController : ControllerBase
     {
-
         private readonly ILogger<ProfessorsController> _logger;
         private readonly IProfessorsBLL _professorsBLL;
-        private readonly IDistributedCache _cache;
         private readonly ICacheDbDal _cacheDbDal;
 
         public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL,
-            IDistributedCache cache, ICacheDbDal cacheDbDal)
+            ICacheDbDal cacheDbDal)
         {
             _logger = logger;
 
             _professorsBLL = professorsBLL;
-
-            _cache = cache;
 
             _cacheDbDal = cacheDbDal;
         }
