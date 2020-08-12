@@ -1,9 +1,7 @@
-﻿using College.Core.Constants;
-using College.Core.Entities;
+﻿using College.Core.Entities;
 using College.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;

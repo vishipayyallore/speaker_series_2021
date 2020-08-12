@@ -5,7 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 import { ProfessorDto } from '../interfaces/professor.Dto';
 
-const baseUrl = 'https://localhost:44340/api';
+const baseUrl = 'https://localhost:5002/api';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
