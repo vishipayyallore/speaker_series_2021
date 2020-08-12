@@ -4,6 +4,7 @@ using College.Core.Interfaces;
 using College.DAL.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +38,7 @@ namespace College.DAL
 
             await _collegeDbContext.SaveChangesAsync();
 
-            // Clear the item from Redis Cache
-            await _cacheDbDal.DeleteItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
+            await RemoveAllProfessorsFromCache();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
 
@@ -47,11 +47,27 @@ namespace College.DAL
 
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
+            IEnumerable<Professor> professors;
+
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetAllProfessors");
 
-            var professors = await _collegeDbContext.Professors
-                .Include(student => student.Students)
-                .ToListAsync();
+            var professorsFromCache = await _cacheDbDal.RetrieveItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
+
+            if (!string.IsNullOrEmpty(professorsFromCache))
+            {
+                // content exists in Redis cache, deserilize
+                professors = JsonConvert.DeserializeObject<IEnumerable<Professor>>(professorsFromCache);
+            }
+            else
+            {
+                // Retrieve the data from SQL Server
+                professors = await _collegeDbContext.Professors
+                    .Include(student => student.Students)
+                    .ToListAsync();
+
+                // Store a copy in Redis Server
+                await _cacheDbDal.SaveOrUpdateItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
+            }
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetAllProfessors");
 
@@ -61,13 +77,30 @@ namespace College.DAL
         public async Task<Professor> GetProfessorById(Guid professorId)
         {
             Professor professor = null;
+            string _professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{professorId}";
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetProfessorById");
 
-            professor = await _collegeDbContext.Professors
-                .Where(record => record.ProfessorId == professorId)
-                .Include(student => student.Students)
-                .FirstOrDefaultAsync();
+            var professorFromCache = await _cacheDbDal.RetrieveItemFromCache(_professorId);
+
+            if (!string.IsNullOrEmpty(professorFromCache))
+            {
+                //if they are there, deserialize them
+                professor = JsonConvert.DeserializeObject<Professor>(professorFromCache);
+            }
+            else
+            {
+                professor = await _collegeDbContext.Professors
+                    .Where(record => record.ProfessorId == professorId)
+                    .Include(student => student.Students)
+                    .FirstOrDefaultAsync();
+
+                if (professor != null)
+                {
+                    //and then, put them in cache
+                    await _cacheDbDal.SaveOrUpdateItemToCache(_professorId, JsonConvert.SerializeObject(professor));
+                }
+            }
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetProfessorById");
 
@@ -91,6 +124,16 @@ namespace College.DAL
 
             await _collegeDbContext.SaveChangesAsync();
 
+            // Update the copy in Redis Server
+            string professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{professor.ProfessorId}";
+            await _cacheDbDal.SaveOrUpdateItemToCache(professorId, JsonConvert.SerializeObject(retrievedProfessor));
+
+            // Remove the Current Item from the Cache
+            await _cacheDbDal.DeleteItemFromCache(professorId);
+
+            // Also Remove all items from the Key
+            await RemoveAllProfessorsFromCache();
+
             return professor;
         }
 
@@ -109,7 +152,15 @@ namespace College.DAL
 
             await _collegeDbContext.SaveChangesAsync();
 
+            await RemoveAllProfessorsFromCache();
+
             return true;
+        }
+
+        private async Task RemoveAllProfessorsFromCache()
+        {
+            // Clear the item from Redis Cache
+            await _cacheDbDal.DeleteItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
         }
 
     }

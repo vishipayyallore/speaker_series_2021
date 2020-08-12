@@ -37,22 +37,7 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            // Verify the content exists in Redis cache
-            var professorsFromCache = await _cacheDbDal.RetrieveItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
-
-            if (!string.IsNullOrEmpty(professorsFromCache))
-            {
-                // content exists in Redis cache, deserilize
-                professors = JsonConvert.DeserializeObject<IEnumerable<Professor>>(professorsFromCache);
-            }
-            else
-            {
-                // Retrieve it from SQL
-                professors = await _professorsBLL.GetAllProfessors();
-
-                // Store a copy in Redis Server
-                await _cacheDbDal.SaveOrUpdateItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
-            }
+            professors = await _professorsBLL.GetAllProfessors();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
@@ -65,25 +50,9 @@ namespace College.WebAPI.Controllers
         public async Task<ActionResult<Professor>> GetProfessorById(Guid id)
         {
             Professor professor;
-            string professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{id}";
-
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            var professorFromCache = await _cacheDbDal.RetrieveItemFromCache(professorId);
-
-            if (!string.IsNullOrEmpty(professorFromCache))
-            {
-                //if they are there, deserialize them
-                professor = JsonConvert.DeserializeObject<Professor>(professorFromCache);
-            }
-            else
-            {
-                // Going to Data Store SQL Server
-                professor = await _professorsBLL.GetProfessorById(id);
-
-                //and then, put them in cache
-                await _cacheDbDal.SaveOrUpdateItemToCache(professorId, JsonConvert.SerializeObject(professor));
-            }
+            professor = await _professorsBLL.GetProfessorById(id);
 
             if (professor == null)
             {
