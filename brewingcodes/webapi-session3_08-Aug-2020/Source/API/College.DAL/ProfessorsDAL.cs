@@ -1,4 +1,5 @@
-﻿using College.Core.Entities;
+﻿using College.Core.Constants;
+using College.Core.Entities;
 using College.Core.Interfaces;
 using College.DAL.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -15,21 +16,29 @@ namespace College.DAL
     {
         private readonly CollegeDbContext _collegeDbContext;
         private readonly ILogger<ProfessorsDAL> _logger;
+        private readonly ICacheDbDal _cacheDbDal;
 
-        public ProfessorsDAL(CollegeDbContext collegeDbContext, ILogger<ProfessorsDAL> logger)
+        public ProfessorsDAL(CollegeDbContext collegeDbContext, ILogger<ProfessorsDAL> logger
+                                , ICacheDbDal cacheDbDal)
         {
             _collegeDbContext = collegeDbContext;
 
             _logger = logger;
+
+            _cacheDbDal = cacheDbDal;
         }
 
         public async Task<Professor> AddProfessor(Professor professor)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
 
+            // Saving into SQL Server
             _collegeDbContext.Professors.Add(professor);
 
             await _collegeDbContext.SaveChangesAsync();
+
+            // Clear the item from Redis Cache
+            await _cacheDbDal.DeleteItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
 
