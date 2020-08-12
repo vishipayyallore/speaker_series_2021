@@ -11,6 +11,8 @@ import { PageNotfoundComponent } from './components/page-notfound/page-notfound.
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfessorsListComponent } from './components/professors-list/professors-list.component';
+import { EditProfessorComponent } from './components/edit-professor/edit-professor.component';
+import { RemoveProfessorComponent } from './components/remove-professor/remove-professor.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ProfessorsListComponent } from './components/professors-list/professors
     PageNotfoundComponent,
     FooterComponent,
     DashboardComponent,
-    ProfessorsListComponent
+    ProfessorsListComponent,
+    EditProfessorComponent,
+    RemoveProfessorComponent
   ],
   imports: [
     BrowserModule,

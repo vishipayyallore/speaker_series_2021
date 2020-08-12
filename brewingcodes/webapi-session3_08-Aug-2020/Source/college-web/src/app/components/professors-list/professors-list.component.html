@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>DOJ</th>
       <th>Teaches</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,12 @@
       <td>{{ professor.name }}</td>
       <td>{{ professor.doj | date}}</td>
       <td>{{ professor.teaches }}</td>
+      <td>
+        <button type="button" class="btn btn-success btn-sm move-right"
+          [routerLink]="['/edit-professor', professor.professorId]">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm element"
+          [routerLink]="['/remove-professor', professor.professorId]">Remove</button>
+      </td>
     </tr>
   </tbody>
 </table>
