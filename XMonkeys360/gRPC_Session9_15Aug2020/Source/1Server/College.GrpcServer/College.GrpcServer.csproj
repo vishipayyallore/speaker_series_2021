@@ -18,7 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\6Common\ClientApps.Common\ClientApps.Common.csproj" />
     <ProjectReference Include="..\College.ApplicationCore\College.ApplicationCore.csproj" />
-    <ProjectReference Include="..\College.ServerBll\College.ServerBLL.csproj" />
+    <ProjectReference Include="..\College.ServerBLL\College.ServerBLL.csproj" />
     <ProjectReference Include="..\College.ServerDAL\College.ServerDAL.csproj" />
   </ItemGroup>
 
