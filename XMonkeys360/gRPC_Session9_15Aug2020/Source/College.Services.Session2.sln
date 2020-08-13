@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "1Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ApplicationCore", "1Server\College.ApplicationCore\College.ApplicationCore.csproj", "{0AAE040D-C54E-41DB-B807-4D106CD4E36D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServerBLL", "1Server\College.ServerBLL\College.ServerBLL.csproj", "{D4427A0E-9A57-4B2F-A433-F6807BC1055B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServerBLL", "1Server\College.ServerBll\College.ServerBLL.csproj", "{D4427A0E-9A57-4B2F-A433-F6807BC1055B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServerDAL", "1Server\College.ServerDAL\College.ServerDAL.csproj", "{40795BAD-31BE-4865-A3D8-8075582274CE}"
 EndProject

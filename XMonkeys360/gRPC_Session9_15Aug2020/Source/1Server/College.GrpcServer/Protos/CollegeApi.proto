@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "College.GrpcServer.Protos";
+
+package collegeapi;
+
+import "google/protobuf/timestamp.proto";
+
+service CollegeService {
+	rpc AddProfessor(NewProfessorRequest) returns (NewProfessorResponse);
+}
+
+message NewProfessorRequest {
+	string name = 1;
+	google.protobuf.Timestamp doj = 2;
+	string teaches = 3;
+	double salary = 4;
+	bool isPhd = 5;
+}
+
+message NewProfessorResponse {
+	string professorId = 1;
+	string message = 2;
+}
+
