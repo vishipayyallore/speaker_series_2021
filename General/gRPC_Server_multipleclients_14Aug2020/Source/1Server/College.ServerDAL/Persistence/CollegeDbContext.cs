@@ -9,7 +9,6 @@ namespace College.ServerDAL.Persistence
 
         public CollegeDbContext(DbContextOptions<CollegeDbContext> options) : base(options)
         {
-
         }
 
         public DbSet<Professor> Professors { get; set; }
