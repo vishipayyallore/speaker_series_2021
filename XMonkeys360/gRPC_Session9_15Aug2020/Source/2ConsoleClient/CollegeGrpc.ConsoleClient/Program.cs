@@ -26,11 +26,6 @@ namespace CollegeGrpc.ConsoleClient
             {
                 if (_client == null)
                 {
-                    //var httpHandler = new HttpClientHandler();
-                    //// Return `true` to allow certificates that are untrusted/invalid
-                    //httpHandler.ServerCertificateCustomValidationCallback =
-                    //    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
-
                     var httpHandler = new HttpClientHandler();
                     httpHandler.ServerCertificateCustomValidationCallback =
                         (message, cert, chain, errors) => true;
@@ -84,3 +79,9 @@ namespace CollegeGrpc.ConsoleClient
     }
 
 }
+
+//var httpHandler = new HttpClientHandler();
+//// Return `true` to allow certificates that are untrusted/invalid
+//httpHandler.ServerCertificateCustomValidationCallback =
+//    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+
