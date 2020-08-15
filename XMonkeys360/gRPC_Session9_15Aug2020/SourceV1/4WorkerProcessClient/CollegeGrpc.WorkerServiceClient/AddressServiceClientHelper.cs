@@ -1,4 +1,5 @@
 ﻿using Grpc.Net.Client;
+using System.Net.Http;
 using static College.GrpcServer.Protos.AddressBookServer;
 
 namespace CollegeGrpc.WorkerServiceClient
@@ -12,7 +13,11 @@ namespace CollegeGrpc.WorkerServiceClient
         {
             if (_client == null)
             {
-                var channel = GrpcChannel.ForAddress(serviceUrl);
+                var httpHandler = new HttpClientHandler();
+                httpHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;
+                var httpClient = new HttpClient(httpHandler);
+
+                var channel = GrpcChannel.ForAddress(serviceUrl, new GrpcChannelOptions { HttpClient = httpClient });
                 _client = new AddressBookServerClient(channel);
             }
 

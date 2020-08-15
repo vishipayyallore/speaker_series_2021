@@ -5,6 +5,7 @@ using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 using static College.GrpcServer.Protos.CollegeService;
 
@@ -25,7 +26,11 @@ namespace CollegeGrpc.ConsoleClient
             {
                 if (_client == null)
                 {
-                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"]);
+                    var httpHandler = new HttpClientHandler();
+                    httpHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;
+                    var httpClient = new HttpClient(httpHandler);
+
+                    var channel = GrpcChannel.ForAddress(_config["RPCService:ServiceUrl"], new GrpcChannelOptions { HttpClient = httpClient });
                     _client = new CollegeServiceClient(channel);
                 }
                 return _client;
@@ -38,6 +43,8 @@ namespace CollegeGrpc.ConsoleClient
             _config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
+            
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
             WriteLine("\n\nCreating New Professor ...");
             while(response == "Y")
