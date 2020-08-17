@@ -1,1 +1,38 @@
-<p>edit-professor works!</p>
+<div class="container wrapper wrapper2">
+  <div class="row">
+      <h2 class="Page Title">Edit Professor</h2>
+      <!-- Form -->
+      <div class="col-md-12 mb-4" *ngIf="professor">
+          <form [formGroup]="professorForm" (ngSubmit)="onModify(professor.professorId, professorForm.value)" novalidate>
+
+              <div class="form-group divflex">
+                  <label class="element">Id: </label>
+                  <input type="text" formControlName="professorId" class="form-control element" [(ngModel)]="professor.professorId"
+                      readonly>
+              </div>
+
+              <div class="form-group divflex">
+                  <label class="element">Name: </label>
+                  <input type="text" formControlName="name" class="form-control element" [(ngModel)]="professor.name"
+                      maxlength="50">
+              </div>
+
+              <div class="form-group divflex">
+                  <label class="element">DOJ: </label>
+                  <input type="text" formControlName="doj" class="form-control element" [(ngModel)]="professor.doj"
+                      maxlength="10">
+              </div>
+
+              <div class="form-group divflex">
+                  <label class="element">Teaches : </label>
+                  <input type="text" formControlName="teaches" class="form-control element"
+                      [(ngModel)]="professor.teaches" maxlength="50">
+              </div>
+
+              <button type="submit" class="btn btn-success element">Modify Professor</button>
+              <button type="button" class="btn btn-info element ml-2" [routerLink]="['/professors']">Professors List</button>
+
+          </form>
+      </div>
+  </div>
+</div>

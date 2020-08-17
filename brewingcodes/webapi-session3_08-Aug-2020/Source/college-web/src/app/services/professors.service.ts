@@ -7,35 +7,57 @@ import { ProfessorDto } from '../interfaces/professor.Dto';
 
 const baseUrl = 'https://localhost:5002/api';
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
+    headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+    }),
 };
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class ProfessorsService {
-  constructor(private httpClient: HttpClient) {}
+    constructor(private httpClient: HttpClient) { }
 
-  // GET All Products
-  GetAllProfessors(): Observable<ProfessorDto[]> {
-    return this.httpClient
-      .get<ProfessorDto[]>(`${baseUrl}/professors`)
-      .pipe(retry(1), catchError(this.errorHandler));
-  }
-
-  // Error handling
-  errorHandler(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    // GET All Professors
+    GetAllProfessors(): Observable<ProfessorDto[]> {
+        return this.httpClient
+            .get<ProfessorDto[]>(`${baseUrl}/professors`)
+            .pipe(retry(1), catchError(this.errorHandler));
     }
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  }
+
+    // GET
+    GetProfessorById(id: string): Observable<ProfessorDto> {
+        console.log(`Get Professor request received for ${id}`);
+        return this.httpClient
+            .get<ProfessorDto>(`${baseUrl}/professors/${id}`)
+            .pipe(retry(1), catchError(this.errorHandler));
+    }
+
+    // UPDATE
+    ModifyProfessorById(id: number, Professor: ProfessorDto) {
+        console.log(
+            `Update Professor request received for ${id} ${JSON.stringify(Professor)}`
+        );
+        return this.httpClient
+            .put<ProfessorDto>(
+                `${baseUrl}/professors/${id}`,
+                JSON.stringify(Professor),
+                httpOptions
+            )
+            .pipe(retry(1), catchError(this.errorHandler));
+    }
+
+    // Error handling
+    errorHandler(error) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            // Get client-side error
+            errorMessage = error.error.message;
+        } else {
+            // Get server-side error
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        }
+        console.log(errorMessage);
+        return throwError(errorMessage);
+    }
 }
