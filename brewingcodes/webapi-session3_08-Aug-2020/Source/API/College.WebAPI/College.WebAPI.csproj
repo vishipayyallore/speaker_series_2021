@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>92a8d448-b650-48ee-9e68-5958c08b92f4</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="3.1.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="StackExchange.Redis" Version="2.1.30" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\College.BLL\College.BLL.csproj" />
+    <ProjectReference Include="..\College.Cache.DAL\College.Cache.DAL.csproj" />
+    <ProjectReference Include="..\College.Core\College.Core.csproj" />
+    <ProjectReference Include="..\College.DAL\College.DAL.csproj" />
+  </ItemGroup>
+
+
+</Project>

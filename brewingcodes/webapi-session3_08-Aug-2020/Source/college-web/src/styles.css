@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+.sidenav {
+  height: inherit;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  transition: 0.5s;
+}
+
+.bg-sidebar {
+  background-color: #2a8cf5;
+}
+
+.PageTitle {
+  color: blueviolet;
+}
+
+footer {
+  color: white;
+  padding: 1px;
+  bottom: 0;
+  vertical-align: middle;
+}
