@@ -37,10 +37,10 @@ export class EditProfessorComponent implements OnInit {
     }
 
     /* For Modify */
-    onModify(id: number, professorData: ProfessorDto): void {
+    onProfessorEdit(id: number, professorData: ProfessorDto): void {
         console.warn(`Professor Edit Request for Id: ${id}`);
 
-        this.professorsService.ModifyProfessorById(id, professorData).subscribe(res => {
+        this.professorsService.EditProfessorById(id, professorData).subscribe(res => {
             console.log('Professor Modified!')
             this.ngZone.run(() => this.router.navigateByUrl('/professors'))
         });
