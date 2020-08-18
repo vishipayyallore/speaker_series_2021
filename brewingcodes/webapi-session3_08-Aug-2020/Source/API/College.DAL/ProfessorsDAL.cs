@@ -119,7 +119,9 @@ namespace College.DAL
                 .FirstOrDefaultAsync();
 
             // Modifying the data
+            retrievedProfessor.Name = professor.Name;
             retrievedProfessor.Salary = professor.Salary;
+            retrievedProfessor.Teaches = professor.Teaches;
             retrievedProfessor.IsPhd = professor.IsPhd;
 
             await _collegeDbContext.SaveChangesAsync();
@@ -127,9 +129,6 @@ namespace College.DAL
             // Update the copy in Redis Server
             string professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{professor.ProfessorId}";
             await _cacheDbDal.SaveOrUpdateItemToCache(professorId, JsonConvert.SerializeObject(retrievedProfessor));
-
-            // Remove the Current Item from the Cache
-            await _cacheDbDal.DeleteItemFromCache(professorId);
 
             // Also Remove all items from the Key
             await RemoveAllProfessorsFromCache();

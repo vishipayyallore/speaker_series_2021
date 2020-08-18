@@ -5,5 +5,7 @@ export interface ProfessorDto {
   name: string;
   doj: Date;
   teaches: string;
+  salary: number;
+  isPhd: boolean;
 }
 

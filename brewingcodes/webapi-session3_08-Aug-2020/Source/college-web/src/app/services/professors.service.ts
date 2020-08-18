@@ -42,7 +42,7 @@ export class ProfessorsService {
     );
     return this.httpClient
       .put<ProfessorDto>(
-        `${baseUrl}/${apiName}/${id}`,
+        `${baseUrl}/${apiName}`,
         JSON.stringify(Professor),
         httpOptions
       )

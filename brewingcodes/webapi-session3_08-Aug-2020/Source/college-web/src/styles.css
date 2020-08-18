@@ -40,3 +40,7 @@ footer {
 .float-margintop{
 	margin-top:22px;
 }
+
+.labelAndTextbox {
+  display: flex;
+}

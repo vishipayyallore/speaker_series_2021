@@ -16,7 +16,9 @@
           <th>Name</th>
           <th>DOJ</th>
           <th>Teaches</th>
-          <th scope="col">Action</th>
+          <th>Salary</th>
+          <th>Is Phd</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +27,8 @@
           <td>{{ professor.name }}</td>
           <td>{{ professor.doj | date}}</td>
           <td>{{ professor.teaches }}</td>
+          <td>{{ professor.salary | currency }}</td>
+          <td>{{ professor.isPhd }}</td>
           <td>
             <button type="button" class="btn btn-warning btn-sm move-right"
               [routerLink]="['/edit-professor', professor.professorId]">
