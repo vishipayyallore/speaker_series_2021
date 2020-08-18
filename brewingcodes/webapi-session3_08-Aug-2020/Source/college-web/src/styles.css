@@ -10,11 +10,11 @@
 }
 
 .bg-sidebar {
-  background-color: #2a8cf5;
+  background-color: #dee2e6;
 }
 
 .PageTitle {
-  color: blueviolet;
+  color: #007bff;
 }
 
 footer {
@@ -22,4 +22,21 @@ footer {
   padding: 1px;
   bottom: 0;
   vertical-align: middle;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+  right:40px;
+  top: 70Px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float-margintop{
+	margin-top:22px;
 }
