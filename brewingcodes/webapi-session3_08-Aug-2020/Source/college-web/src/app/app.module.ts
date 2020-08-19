@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfessorsListComponent } from './components/professors-list/professors-list.component';
 import { EditProfessorComponent } from './components/edit-professor/edit-professor.component';
 import { RemoveProfessorComponent } from './components/remove-professor/remove-professor.component';
+import { AddProfessorComponent } from './components/add-professor/add-professor.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RemoveProfessorComponent } from './components/remove-professor/remove-p
     DashboardComponent,
     ProfessorsListComponent,
     EditProfessorComponent,
-    RemoveProfessorComponent
+    RemoveProfessorComponent,
+    AddProfessorComponent
   ],
   imports: [
     BrowserModule,

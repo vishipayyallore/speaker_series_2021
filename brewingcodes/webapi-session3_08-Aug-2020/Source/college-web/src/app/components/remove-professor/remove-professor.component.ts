@@ -22,7 +22,9 @@ export class RemoveProfessorComponent implements OnInit {
       professorId: '',
       name: '',
       doj: '',
-      teaches: ''
+      teaches: '',
+      salary: 0.0,
+      isPhd: false
     });
   }
 

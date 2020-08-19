@@ -6,10 +6,12 @@ import { EditProfessorComponent } from './components/edit-professor/edit-profess
 import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 import { ProfessorsListComponent } from './components/professors-list/professors-list.component';
 import { RemoveProfessorComponent } from './components/remove-professor/remove-professor.component';
+import { AddProfessorComponent } from './components/add-professor/add-professor.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'professors', component: ProfessorsListComponent },
+  { path: 'add-professor', component: AddProfessorComponent },
   { path: 'edit-professor/:professorId', component: EditProfessorComponent },
   { path: 'remove-professor/:professorId', component: RemoveProfessorComponent },
   { path: 'pagenotfound', component: PageNotfoundComponent },
@@ -21,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
