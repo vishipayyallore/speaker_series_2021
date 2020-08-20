@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
-import { ProfessorDto } from '../interfaces/professor.Dto';
+import { AddProfessorDto, ProfessorDto } from '../interfaces/professor.Dto';
 
 const baseUrl = 'https://localhost:5002/api';
 const apiName = 'professors';
@@ -19,6 +19,15 @@ const httpOptions = {
 export class ProfessorsService {
 
   constructor(private httpClient: HttpClient) { }
+
+  // POST
+  AddProfessor(data: AddProfessorDto): Observable<AddProfessorDto> {
+    return this.httpClient.post<AddProfessorDto>(`${baseUrl}/${apiName}`, JSON.stringify(data), httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      )
+  }
 
   // GET All Professors
   GetAllProfessors(): Observable<ProfessorDto[]> {

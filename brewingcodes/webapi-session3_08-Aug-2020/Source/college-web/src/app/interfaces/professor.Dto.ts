@@ -9,3 +9,10 @@ export interface ProfessorDto {
   isPhd: boolean;
 }
 
+export interface AddProfessorDto {
+  name: string;
+  doj: Date;
+  teaches: string;
+  salary: number;
+  isPhd: boolean;
+}
