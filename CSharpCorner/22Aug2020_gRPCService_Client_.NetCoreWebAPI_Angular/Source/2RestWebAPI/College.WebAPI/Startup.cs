@@ -20,11 +20,19 @@ namespace College.WebAPI
         }
 
         public IConfiguration Configuration { get; }
+        private const string _policyName = "AllowAll";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(o => o.AddPolicy(_policyName, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
@@ -46,6 +54,8 @@ namespace College.WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(_policyName);
 
             app.UseAuthorization();
 

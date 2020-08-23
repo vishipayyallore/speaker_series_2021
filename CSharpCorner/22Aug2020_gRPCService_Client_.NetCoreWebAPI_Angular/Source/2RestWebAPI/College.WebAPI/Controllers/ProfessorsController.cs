@@ -54,6 +54,19 @@ namespace College.WebAPI.Controllers
             return Ok(professor);
         }
 
+        [HttpPost]
+        public ActionResult<Professor> AddProfessor([FromBody] Professor professor)
+        {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
+
+            var createdProfessor = _professorsBLL.AddProfessor(professor);
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::AddProfessor");
+
+            return CreatedAtRoute(routeName: nameof(GetProfessorById),
+                                  routeValues: new { id = createdProfessor.ProfessorId },
+                                  value: createdProfessor);
+        }
 
     }
 

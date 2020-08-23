@@ -9,13 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{4BD0D6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{9D99C7E2-0997-4F98-BBAC-F32BBD0B2338}"
 	ProjectSection(SolutionItems) = preProject
-		SQLScripts\1Create_Professors.sql = SQLScripts\1Create_Professors.sql
-		SQLScripts\2Create_Students.sql = SQLScripts\2Create_Students.sql
-		SQLScripts\3Insert_Professors.sql = SQLScripts\3Insert_Professors.sql
-		SQLScripts\4Insert_Students.sql = SQLScripts\4Insert_Students.sql
-		SQLScripts\5Create_AddressBook.sql = SQLScripts\5Create_AddressBook.sql
-		SQLScripts\Create_Database.sql = SQLScripts\Create_Database.sql
-		SQLScripts\GeneralQueries.sql = SQLScripts\GeneralQueries.sql
+		..\SQLScripts\1Create_Professors.sql = ..\SQLScripts\1Create_Professors.sql
+		..\SQLScripts\2Create_Students.sql = ..\SQLScripts\2Create_Students.sql
+		..\SQLScripts\3Insert_Professors.sql = ..\SQLScripts\3Insert_Professors.sql
+		..\SQLScripts\4Insert_Students.sql = ..\SQLScripts\4Insert_Students.sql
+		..\SQLScripts\5Create_AddressBook.sql = ..\SQLScripts\5Create_AddressBook.sql
+		..\SQLScripts\Create_Database.sql = ..\SQLScripts\Create_Database.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A4678A3-91BF-48BB-A53A-FCC2A464C050}"
@@ -47,7 +46,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "1Common\Coll
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "1Common\College.BLL\College.BLL.csproj", "{ED35D4BD-5152-4AB3-98E6-427D8EE947D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.WebAPI", "2RestWebAPI\College.WebAPI\College.WebAPI.csproj", "{456EAB99-58FE-4C44-9B84-00F674A213FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "2RestWebAPI\College.WebAPI\College.WebAPI.csproj", "{456EAB99-58FE-4C44-9B84-00F674A213FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
