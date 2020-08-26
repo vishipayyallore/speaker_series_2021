@@ -5,6 +5,7 @@ using College.Core.Constants;
 using College.Core.Interfaces;
 using College.DAL;
 using College.DAL.Persistence;
+using College.WebAPI.CosmosDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +43,12 @@ namespace College.WebAPI
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
+
+            services.AddDbContext<CollegeCosmosDbContext>(o => 
+            o.UseCosmos(Configuration["CosmosDbConnectionStrings:accountEndPoint"],
+                        Configuration["CosmosDbConnectionStrings:accountKey"],
+                        Configuration["CosmosDbConnectionStrings:databaseName"])
+            .EnableSensitiveDataLogging(true));
 
             // Application Services
             services.AddScoped<IProfessorsBLL, ProfessorsBLL>();

@@ -1,5 +1,6 @@
 ﻿using College.Core.Entities;
 using College.Core.Interfaces;
+using College.WebAPI.CosmosDb;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,15 +17,29 @@ namespace College.WebAPI.Controllers
         private readonly ILogger<ProfessorsController> _logger;
         private readonly IProfessorsBLL _professorsBLL;
         private readonly ICacheDbDal _cacheDbDal;
+        private readonly CollegeCosmosDbContext _collegeCosmosDbContext;
 
         public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsBLL professorsBLL,
-            ICacheDbDal cacheDbDal)
+            ICacheDbDal cacheDbDal, CollegeCosmosDbContext collegeCosmosDbContext)
         {
             _logger = logger;
 
             _professorsBLL = professorsBLL;
 
             _cacheDbDal = cacheDbDal;
+
+            _collegeCosmosDbContext = collegeCosmosDbContext;
+
+            _collegeCosmosDbContext.Professors.Add(new Professor { 
+                ProfessorId = Guid.NewGuid(),
+                Name = "Shiva",
+                Doj = DateTime.Now,
+                IsPhd = true,
+                Salary = 1234.56M,
+                Teaches = "Some Subjects",
+                Students = null
+            });
+            _collegeCosmosDbContext.SaveChanges();
         }
 
         [HttpGet]
