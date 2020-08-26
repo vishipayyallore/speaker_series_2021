@@ -1,7 +1,7 @@
 ﻿using College.Core.Constants;
 using College.Core.Entities;
 using College.Core.Interfaces;
-using College.DAL.Persistence;
+using College.SQLServer.DAL.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -10,17 +10,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace College.DAL
+namespace College.SQLServer.DAL
 {
 
-    public class ProfessorsDAL : IProfessorsDAL
+    public class ProfessorsSqlDal : IProfessorsSqlDal
     {
-        private readonly CollegeDbContext _collegeDbContext;
-        private readonly ILogger<ProfessorsDAL> _logger;
-        private readonly ICacheDbDal _cacheDbDal;
+        private readonly CollegeSqlDbContext _collegeDbContext;
+        private readonly ILogger<ProfessorsSqlDal> _logger;
+        private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsDAL(CollegeDbContext collegeDbContext, ILogger<ProfessorsDAL> logger
-                                , ICacheDbDal cacheDbDal)
+        public ProfessorsSqlDal(CollegeSqlDbContext collegeDbContext, ILogger<ProfessorsSqlDal> logger
+                                , IRedisCacheDbDal cacheDbDal)
         {
             _collegeDbContext = collegeDbContext;
 

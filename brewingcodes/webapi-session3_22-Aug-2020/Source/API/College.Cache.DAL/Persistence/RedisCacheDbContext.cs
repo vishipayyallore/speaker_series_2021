@@ -4,10 +4,10 @@ using StackExchange.Redis;
 namespace College.Cache.DAL.Persistence
 {
 
-    public class CacheDbContext : ICacheDbContext
+    public class RedisCacheDbContext : IRedisCacheDbContext
     {
 
-        public CacheDbContext(ConnectionMultiplexer connectionMultiplexer)
+        public RedisCacheDbContext(ConnectionMultiplexer connectionMultiplexer)
         {
             RedisDatabase = connectionMultiplexer.GetDatabase();
         }

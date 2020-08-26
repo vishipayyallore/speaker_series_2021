@@ -1,12 +1,12 @@
 ﻿using College.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace College.DAL.Persistence
+namespace College.SQLServer.DAL.Persistence
 {
 
-    public class CollegeDbContext : DbContext
+    public class CollegeSqlDbContext : DbContext
     {
-        public CollegeDbContext(DbContextOptions<CollegeDbContext> options) : base(options)
+        public CollegeSqlDbContext(DbContextOptions<CollegeSqlDbContext> options) : base(options)
         {
         }
 

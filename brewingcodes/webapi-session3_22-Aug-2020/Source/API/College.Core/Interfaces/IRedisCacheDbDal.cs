@@ -3,7 +3,7 @@
 namespace College.Core.Interfaces
 {
 
-    public interface ICacheDbDal
+    public interface IRedisCacheDbDal
     {
         Task<string> RetrieveItemFromCache(string itemKey);
 

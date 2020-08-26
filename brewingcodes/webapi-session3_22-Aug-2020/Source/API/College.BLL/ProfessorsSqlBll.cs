@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace College.BLL
 {
 
-    public class ProfessorsBLL : IProfessorsBLL
+    public class ProfessorsSqlBll : IProfessorsSqlBll
     {
-        private readonly IProfessorsDAL _professorDal;
-        private readonly ILogger<ProfessorsBLL> _logger;
+        private readonly IProfessorsSqlDal _professorDal;
+        private readonly ILogger<ProfessorsSqlBll> _logger;
 
-        public ProfessorsBLL(IProfessorsDAL professorDal, ILogger<ProfessorsBLL> logger)
+        public ProfessorsSqlBll(IProfessorsSqlDal professorDal, ILogger<ProfessorsSqlBll> logger)
         {
             _professorDal = professorDal;
 

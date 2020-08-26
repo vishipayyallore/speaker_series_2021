@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 namespace College.Cache.DAL
 {
 
-    public class CacheDbDal : ICacheDbDal
+    public class RedisCacheDbDal : IRedisCacheDbDal
     {
-        private readonly ICacheDbContext _cacheDbContext;
+        private readonly IRedisCacheDbContext _cacheDbContext;
         private const string _returnNull = null;
 
-        public CacheDbDal(ICacheDbContext cacheDbContext)
+        public RedisCacheDbDal(IRedisCacheDbContext cacheDbContext)
         {
             _cacheDbContext = cacheDbContext;
         }

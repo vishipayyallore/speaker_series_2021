@@ -1,7 +1,7 @@
 ﻿using College.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace College.WebAPI.CosmosDb
+namespace College.CosmosDb.DAL.Persistence
 {
     public class CollegeCosmosDbContext : DbContext
     {

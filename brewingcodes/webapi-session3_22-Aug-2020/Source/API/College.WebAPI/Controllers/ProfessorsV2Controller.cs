@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace College.WebAPI.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/v2/[controller]")]
     [ApiController]
-    public class ProfessorsController : ControllerBase
+    public class ProfessorsV2Controller : ControllerBase
     {
         private readonly ILogger<ProfessorsController> _logger;
         private readonly IProfessorsSqlBll _professorsBLL;
         private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsBLL,
+        public ProfessorsV2Controller(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsBLL,
             IRedisCacheDbDal cacheDbDal)
         {
             _logger = logger;

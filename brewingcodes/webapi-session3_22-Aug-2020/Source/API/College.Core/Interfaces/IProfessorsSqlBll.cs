@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace College.Core.Interfaces
 {
 
-    public interface IProfessorsDAL
+    public interface IProfessorsSqlBll
     {
         Task<IEnumerable<Professor>> GetAllProfessors();
 

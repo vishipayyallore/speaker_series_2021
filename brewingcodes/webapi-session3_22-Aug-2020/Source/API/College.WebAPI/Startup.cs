@@ -3,9 +3,8 @@ using College.Cache.DAL;
 using College.Cache.DAL.Persistence;
 using College.Core.Constants;
 using College.Core.Interfaces;
-using College.DAL;
-using College.DAL.Persistence;
-using College.WebAPI.CosmosDb;
+using College.SQLServer.DAL;
+using College.SQLServer.DAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -42,17 +41,17 @@ namespace College.WebAPI
 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
-            services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
+            services.AddDbContext<CollegeSqlDbContext>(o => o.UseSqlServer(connectionString));
 
-            services.AddDbContext<CollegeCosmosDbContext>(o => 
-            o.UseCosmos(Configuration["CosmosDbConnectionStrings:accountEndPoint"],
-                        Configuration["CosmosDbConnectionStrings:accountKey"],
-                        Configuration["CosmosDbConnectionStrings:databaseName"])
-            .EnableSensitiveDataLogging(true));
+            //services.AddDbContext<CollegeCosmosDbContext>(o => 
+            //o.UseCosmos(Configuration["CosmosDbConnectionStrings:accountEndPoint"],
+            //            Configuration["CosmosDbConnectionStrings:accountKey"],
+            //            Configuration["CosmosDbConnectionStrings:databaseName"])
+            //.EnableSensitiveDataLogging(true));
 
             // Application Services
-            services.AddScoped<IProfessorsBLL, ProfessorsBLL>();
-            services.AddScoped<IProfessorsDAL, ProfessorsDAL>();
+            services.AddScoped<IProfessorsSqlBll, ProfessorsSqlBll>();
+            services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
 
             // Adding Redis Cache 
             services.AddStackExchangeRedisCache(option =>
@@ -69,8 +68,8 @@ namespace College.WebAPI
             });
 
             // Cache Related
-            services.AddScoped<ICacheDbContext, CacheDbContext>();
-            services.AddScoped<ICacheDbDal, CacheDbDal>();
+            services.AddScoped<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IRedisCacheDbDal, RedisCacheDbDal>();
 
             // Swagger Open API
             services.AddSwaggerGen(c =>

@@ -2,7 +2,7 @@
 
 namespace College.Core.Interfaces
 {
-    public interface ICacheDbContext
+    public interface IRedisCacheDbContext
     {
         IDatabase RedisDatabase { get; }
     }
