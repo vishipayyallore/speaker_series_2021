@@ -15,14 +15,14 @@ namespace College.SQLServer.DAL
 
     public class ProfessorsSqlDal : IProfessorsSqlDal
     {
-        private readonly CollegeSqlDbContext _collegeDbContext;
+        private readonly CollegeSqlDbContext _collegeSqlDbContext;
         private readonly ILogger<ProfessorsSqlDal> _logger;
         private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsSqlDal(CollegeSqlDbContext collegeDbContext, ILogger<ProfessorsSqlDal> logger
+        public ProfessorsSqlDal(CollegeSqlDbContext collegeSqlDbContext, ILogger<ProfessorsSqlDal> logger
                                 , IRedisCacheDbDal cacheDbDal)
         {
-            _collegeDbContext = collegeDbContext;
+            _collegeSqlDbContext = collegeSqlDbContext;
 
             _logger = logger;
 
@@ -31,16 +31,16 @@ namespace College.SQLServer.DAL
 
         public async Task<Professor> AddProfessor(Professor professor)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlDal::AddProfessor");
 
             // Saving into SQL Server
-            _collegeDbContext.Professors.Add(professor);
+            _collegeSqlDbContext.Professors.Add(professor);
 
-            await _collegeDbContext.SaveChangesAsync();
+            await _collegeSqlDbContext.SaveChangesAsync();
 
             await RemoveAllProfessorsFromCache();
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlDal::AddProfessor");
 
             return professor;
         }
@@ -49,7 +49,7 @@ namespace College.SQLServer.DAL
         {
             IEnumerable<Professor> professors;
 
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlDal::GetAllProfessors");
 
             var professorsFromCache = await _cacheDbDal.RetrieveItemFromCache(Constants.RedisCacheStore.AllProfessorsKey);
 
@@ -61,7 +61,7 @@ namespace College.SQLServer.DAL
             else
             {
                 // Retrieve the data from SQL Server
-                professors = await _collegeDbContext.Professors
+                professors = await _collegeSqlDbContext.Professors
                     .Include(student => student.Students)
                     .ToListAsync();
 
@@ -69,7 +69,7 @@ namespace College.SQLServer.DAL
                 await _cacheDbDal.SaveOrUpdateItemToCache(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors));
             }
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlDal::GetAllProfessors");
 
             return professors;
         }
@@ -79,7 +79,7 @@ namespace College.SQLServer.DAL
             Professor professor = null;
             string _professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{professorId}";
 
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetProfessorById");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlDal::GetProfessorById");
 
             var professorFromCache = await _cacheDbDal.RetrieveItemFromCache(_professorId);
 
@@ -90,7 +90,7 @@ namespace College.SQLServer.DAL
             }
             else
             {
-                professor = await _collegeDbContext.Professors
+                professor = await _collegeSqlDbContext.Professors
                     .Where(record => record.ProfessorId == professorId)
                     .Include(student => student.Students)
                     .FirstOrDefaultAsync();
@@ -102,19 +102,19 @@ namespace College.SQLServer.DAL
                 }
             }
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetProfessorById");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlDal::GetProfessorById");
 
             return professor;
         }
 
         public async Task<Professor> UpdateProfessor(Professor professor)
         {
-            if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
+            if (!_collegeSqlDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
             {
                 return null;
             }
 
-            var retrievedProfessor = await _collegeDbContext.Professors
+            var retrievedProfessor = await _collegeSqlDbContext.Professors
                 .Where(record => record.ProfessorId == professor.ProfessorId)
                 .FirstOrDefaultAsync();
 
@@ -124,7 +124,7 @@ namespace College.SQLServer.DAL
             retrievedProfessor.Teaches = professor.Teaches;
             retrievedProfessor.IsPhd = professor.IsPhd;
 
-            await _collegeDbContext.SaveChangesAsync();
+            await _collegeSqlDbContext.SaveChangesAsync();
 
             // Update the copy in Redis Server
             string professorId = $"{Constants.RedisCacheStore.SingleProfessorsKey}{professor.ProfessorId}";
@@ -138,18 +138,18 @@ namespace College.SQLServer.DAL
 
         public async Task<bool> DeleteProfessorById(Guid id)
         {
-            if (!_collegeDbContext.Professors.Any(record => record.ProfessorId == id))
+            if (!_collegeSqlDbContext.Professors.Any(record => record.ProfessorId == id))
             {
                 return false;
             }
 
-            var retrievedProfessor = await _collegeDbContext.Professors
+            var retrievedProfessor = await _collegeSqlDbContext.Professors
                 .Where(record => record.ProfessorId == id)
                 .FirstOrDefaultAsync();
 
-            _collegeDbContext.Professors.Remove(retrievedProfessor);
+            _collegeSqlDbContext.Professors.Remove(retrievedProfessor);
 
-            await _collegeDbContext.SaveChangesAsync();
+            await _collegeSqlDbContext.SaveChangesAsync();
 
             await RemoveAllProfessorsFromCache();
 

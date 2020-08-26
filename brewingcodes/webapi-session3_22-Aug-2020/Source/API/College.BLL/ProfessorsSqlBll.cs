@@ -10,67 +10,67 @@ namespace College.BLL
 
     public class ProfessorsSqlBll : IProfessorsSqlBll
     {
-        private readonly IProfessorsSqlDal _professorDal;
+        private readonly IProfessorsSqlDal _professorsSqlDal;
         private readonly ILogger<ProfessorsSqlBll> _logger;
 
-        public ProfessorsSqlBll(IProfessorsSqlDal professorDal, ILogger<ProfessorsSqlBll> logger)
+        public ProfessorsSqlBll(ILogger<ProfessorsSqlBll> logger, IProfessorsSqlDal professorsSqlDal)
         {
-            _professorDal = professorDal;
+            _professorsSqlDal = professorsSqlDal;
 
             _logger = logger;
         }
 
         public async Task<Professor> AddProfessor(Professor professor)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::AddProfessor");
 
-            var newProfessor = await _professorDal.AddProfessor(professor);
+            var newProfessor = await _professorsSqlDal.AddProfessor(professor);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::AddProfessor");
 
             return newProfessor;
         }
 
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::GetAllProfessors");
 
-            var allProfessors = await _professorDal.GetAllProfessors();
+            var allProfessors = await _professorsSqlDal.GetAllProfessors();
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::GetAllProfessors");
 
             return allProfessors;
         }
 
         public async Task<Professor> GetProfessorById(Guid professorId)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::GetAllProfessors");
 
-            var professor = await _professorDal.GetProfessorById(professorId);
+            var professor = await _professorsSqlDal.GetProfessorById(professorId);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::GetAllProfessors");
 
             return professor;
         }
 
         public async Task<Professor> UpdateProfessor(Professor professor)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::UpdateProfessor");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::UpdateProfessor");
 
-            var updatedProfessor = await _professorDal.UpdateProfessor(professor);
+            var updatedProfessor = await _professorsSqlDal.UpdateProfessor(professor);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::UpdateProfessor");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::UpdateProfessor");
 
             return updatedProfessor;
         }
 
         public async Task<bool> DeleteProfessorById(Guid id)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorBLL::DeleteProfessorById");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::DeleteProfessorById");
 
-            var professorDeleted = await _professorDal.DeleteProfessorById(id);
+            var professorDeleted = await _professorsSqlDal.DeleteProfessorById(id);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorBLL::DeleteProfessorById");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::DeleteProfessorById");
 
             return professorDeleted;
         }

@@ -1,9 +1,11 @@
 ﻿using College.Core.Entities;
 using College.Core.Interfaces;
 using College.Cosmos.DAL.Persistence;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace College.Cosmos.DAL
@@ -14,48 +16,98 @@ namespace College.Cosmos.DAL
         private readonly ILogger<ProfessorsCosmosDal> _logger;
         private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsCosmosDal(CollegeCosmosDbContext collegeCosmosDbContext, 
+        public ProfessorsCosmosDal(CollegeCosmosDbContext collegeCosmosDbContext,
             ILogger<ProfessorsCosmosDal> logger, IRedisCacheDbDal cacheDbDal)
         {
             _collegeCosmosDbContext = collegeCosmosDbContext;
+
             _logger = logger;
+
             _cacheDbDal = cacheDbDal;
         }
 
         public async Task<Professor> AddProfessor(Professor professor)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsCosmosDal::AddProfessor");
 
-            // Saving into Cosmos Db
             _collegeCosmosDbContext.Professors.Add(professor);
 
             await _collegeCosmosDbContext.SaveChangesAsync();
 
-            // await RemoveAllProfessorsFromCache();
-
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsCosmosDal::AddProfessor");
 
             return professor;
         }
 
-        public Task<bool> DeleteProfessorById(Guid id)
+        public async Task<IEnumerable<Professor>> GetAllProfessors()
         {
-            throw new NotImplementedException();
+            IEnumerable<Professor> professors;
+
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsCosmosDal::GetAllProfessors");
+
+            professors = await _collegeCosmosDbContext.Professors.ToListAsync();
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsCosmosDal::GetAllProfessors");
+
+            return professors;
         }
 
-        public Task<IEnumerable<Professor>> GetAllProfessors()
+        public async Task<Professor> GetProfessorById(Guid professorId)
         {
-            throw new NotImplementedException();
+            Professor professor = null;
+
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsCosmosDal::GetProfessorById");
+
+
+            professor = await _collegeCosmosDbContext.Professors
+                                .Where(record => record.ProfessorId == professorId)
+                                .FirstOrDefaultAsync();
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsCosmosDal::GetProfessorById");
+
+            return professor;
         }
 
-        public Task<Professor> GetProfessorById(Guid professorId)
+        public async Task<Professor> UpdateProfessor(Professor professor)
         {
-            throw new NotImplementedException();
+            if (!_collegeCosmosDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
+            {
+                return null;
+            }
+
+            var retrievedProfessor = await _collegeCosmosDbContext.Professors
+                                                .Where(record => record.ProfessorId == professor.ProfessorId)
+                                                .FirstOrDefaultAsync();
+
+            // Modifying the data
+            retrievedProfessor.Name = professor.Name;
+            retrievedProfessor.Salary = professor.Salary;
+            retrievedProfessor.Teaches = professor.Teaches;
+            retrievedProfessor.IsPhd = professor.IsPhd;
+
+            await _collegeCosmosDbContext.SaveChangesAsync();
+
+            return professor;
         }
 
-        public Task<Professor> UpdateProfessor(Professor professor)
+        public async Task<bool> DeleteProfessorById(Guid id)
         {
-            throw new NotImplementedException();
+            if (!_collegeCosmosDbContext.Professors.Any(record => record.ProfessorId == id))
+            {
+                return false;
+            }
+
+            var retrievedProfessor = await _collegeCosmosDbContext.Professors
+                                                .Where(record => record.ProfessorId == id)
+                                                .FirstOrDefaultAsync();
+
+            _collegeCosmosDbContext.Professors.Remove(retrievedProfessor);
+
+            await _collegeCosmosDbContext.SaveChangesAsync();
+
+            return true;
         }
+
     }
+
 }

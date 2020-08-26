@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace College.WebAPI.Controllers
 {
-    [Route("api/v2/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class ProfessorsV2Controller : ControllerBase
     {
@@ -33,11 +33,11 @@ namespace College.WebAPI.Controllers
         {
             IEnumerable<Professor> professors;
 
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsV2Controller::Get");
 
             professors = await _professorsCosmosBll.GetAllProfessors();
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsV2Controller::Get");
 
             return Ok(professors);
         }
@@ -48,7 +48,7 @@ namespace College.WebAPI.Controllers
         public async Task<ActionResult<Professor>> GetProfessorByIdV2(Guid id)
         {
             Professor professor;
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsV2Controller::GetProfessorByIdV2");
 
             professor = await _professorsCosmosBll.GetProfessorById(id);
 
@@ -57,7 +57,7 @@ namespace College.WebAPI.Controllers
                 return NotFound();
             }
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsV2Controller::GetProfessorByIdV2");
 
             return Ok(professor);
         }
@@ -66,11 +66,11 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType(typeof(Professor), (int)HttpStatusCode.Created)]
         public async Task<ActionResult<Professor>> AddProfessor([FromBody] Professor professor)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsV2Controller::AddProfessor");
 
             var createdProfessor = await _professorsCosmosBll.AddProfessor(professor);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::AddProfessor");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsV2Controller::AddProfessor");
 
             return CreatedAtRoute(routeName: nameof(GetProfessorByIdV2),
                                   routeValues: new { id = createdProfessor.ProfessorId },

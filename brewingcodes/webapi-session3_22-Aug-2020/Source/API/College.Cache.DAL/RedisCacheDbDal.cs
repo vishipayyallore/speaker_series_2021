@@ -30,7 +30,7 @@ namespace College.Cache.DAL
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                Console.WriteLine($"Error occurred at CacheDbDal::RetrieveItemFromCache(). Message: {error.Message}");
+                Console.WriteLine($"Error occurred at RedisCacheDbDal::RetrieveItemFromCache(). Message: {error.Message}");
             }
 
             return _returnNull;
@@ -47,7 +47,7 @@ namespace College.Cache.DAL
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                Console.WriteLine($"Error occurred at CacheDbDal::SaveItemToCache(). Message: {error.Message}");
+                Console.WriteLine($"Error occurred at RedisCacheDbDal::SaveItemToCache(). Message: {error.Message}");
             }
 
             return itemSaved;
@@ -64,7 +64,7 @@ namespace College.Cache.DAL
             catch (Exception error)
             {
                 // ToDo: Log into File.
-                Console.WriteLine($"Error occurred at CacheDbDal::DeleteItemFromCache(). Message: {error.Message}");
+                Console.WriteLine($"Error occurred at RedisCacheDbDal::DeleteItemFromCache(). Message: {error.Message}");
             }
 
             return itemDeleted;

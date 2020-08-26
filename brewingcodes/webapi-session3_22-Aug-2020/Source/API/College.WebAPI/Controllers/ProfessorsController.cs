@@ -14,15 +14,15 @@ namespace College.WebAPI.Controllers
     public class ProfessorsController : ControllerBase
     {
         private readonly ILogger<ProfessorsController> _logger;
-        private readonly IProfessorsSqlBll _professorsBLL;
+        private readonly IProfessorsSqlBll _professorsSqlBll;
         private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsBLL,
+        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsSqlBll,
             IRedisCacheDbDal cacheDbDal)
         {
             _logger = logger;
 
-            _professorsBLL = professorsBLL;
+            _professorsSqlBll = professorsSqlBll;
 
             _cacheDbDal = cacheDbDal;
         }
@@ -35,7 +35,7 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            professors = await _professorsBLL.GetAllProfessors();
+            professors = await _professorsSqlBll.GetAllProfessors();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
@@ -48,16 +48,16 @@ namespace College.WebAPI.Controllers
         public async Task<ActionResult<Professor>> GetProfessorById(Guid id)
         {
             Professor professor;
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::GetProfessorById");
 
-            professor = await _professorsBLL.GetProfessorById(id);
+            professor = await _professorsSqlBll.GetProfessorById(id);
 
             if (professor == null)
             {
                 return NotFound();
             }
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::GetProfessorById");
 
             return Ok(professor);
         }
@@ -68,7 +68,7 @@ namespace College.WebAPI.Controllers
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
 
-            var createdProfessor = await _professorsBLL.AddProfessor(professor);
+            var createdProfessor = await _professorsSqlBll.AddProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::AddProfessor");
 
@@ -82,7 +82,7 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<ActionResult> UpdateProfessor([FromBody] Professor professor)
         {
-            var _ = await _professorsBLL.UpdateProfessor(professor);
+            var _ = await _professorsSqlBll.UpdateProfessor(professor);
 
             return NoContent();
         }
@@ -93,7 +93,7 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> DeleteProfessor(Guid id)
         {
-            var professorDeleted = await _professorsBLL.DeleteProfessorById(id);
+            var professorDeleted = await _professorsSqlBll.DeleteProfessorById(id);
 
             if (!professorDeleted)
             {
