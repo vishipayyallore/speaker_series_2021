@@ -13,16 +13,16 @@ namespace College.WebAPI.Controllers
     [ApiController]
     public class ProfessorsV2Controller : ControllerBase
     {
-        private readonly ILogger<ProfessorsController> _logger;
-        private readonly IProfessorsSqlBll _professorsBLL;
+        private readonly ILogger<ProfessorsV2Controller> _logger;
+        private readonly IProfessorsCosmosBll _professorsCosmosBll;
         private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsV2Controller(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsBLL,
+        public ProfessorsV2Controller(ILogger<ProfessorsV2Controller> logger, IProfessorsCosmosBll professorsCosmosBll,
             IRedisCacheDbDal cacheDbDal)
         {
             _logger = logger;
 
-            _professorsBLL = professorsBLL;
+            _professorsCosmosBll = professorsCosmosBll;
 
             _cacheDbDal = cacheDbDal;
         }
@@ -35,22 +35,22 @@ namespace College.WebAPI.Controllers
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            professors = await _professorsBLL.GetAllProfessors();
+            professors = await _professorsCosmosBll.GetAllProfessors();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
             return Ok(professors);
         }
 
-        [HttpGet("{id}", Name = nameof(GetProfessorById))]
+        [HttpGet("{id}", Name = nameof(GetProfessorByIdV2))]
         [ProducesResponseType(typeof(Professor), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<Professor>> GetProfessorById(Guid id)
+        public async Task<ActionResult<Professor>> GetProfessorByIdV2(Guid id)
         {
             Professor professor;
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            professor = await _professorsBLL.GetProfessorById(id);
+            professor = await _professorsCosmosBll.GetProfessorById(id);
 
             if (professor == null)
             {
@@ -68,11 +68,11 @@ namespace College.WebAPI.Controllers
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::AddProfessor");
 
-            var createdProfessor = await _professorsBLL.AddProfessor(professor);
+            var createdProfessor = await _professorsCosmosBll.AddProfessor(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::AddProfessor");
 
-            return CreatedAtRoute(routeName: nameof(GetProfessorById),
+            return CreatedAtRoute(routeName: nameof(GetProfessorByIdV2),
                                   routeValues: new { id = createdProfessor.ProfessorId },
                                   value: createdProfessor);
         }
@@ -82,7 +82,7 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<ActionResult> UpdateProfessor([FromBody] Professor professor)
         {
-            var _ = await _professorsBLL.UpdateProfessor(professor);
+            var _ = await _professorsCosmosBll.UpdateProfessor(professor);
 
             return NoContent();
         }
@@ -93,7 +93,7 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> DeleteProfessor(Guid id)
         {
-            var professorDeleted = await _professorsBLL.DeleteProfessorById(id);
+            var professorDeleted = await _professorsCosmosBll.DeleteProfessorById(id);
 
             if (!professorDeleted)
             {

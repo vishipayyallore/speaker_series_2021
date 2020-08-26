@@ -18,6 +18,7 @@
     <ProjectReference Include="..\College.BLL\College.BLL.csproj" />
     <ProjectReference Include="..\College.Cache.DAL\College.Cache.DAL.csproj" />
     <ProjectReference Include="..\College.Core\College.Core.csproj" />
+    <ProjectReference Include="..\College.Cosmos.DAL\College.Cosmos.DAL.csproj" />
     <ProjectReference Include="..\College.SQLServer.DAL\College.SQLServer.DAL.csproj" />
   </ItemGroup>
 

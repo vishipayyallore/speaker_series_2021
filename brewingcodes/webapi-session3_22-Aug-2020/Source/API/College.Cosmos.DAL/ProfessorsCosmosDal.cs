@@ -1,12 +1,12 @@
 ﻿using College.Core.Entities;
 using College.Core.Interfaces;
-using College.CosmosDb.DAL.Persistence;
+using College.Cosmos.DAL.Persistence;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace College.CosmosDb.DAL
+namespace College.Cosmos.DAL
 {
     public class ProfessorsCosmosDal : IProfessorsCosmosDal
     {

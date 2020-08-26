@@ -3,6 +3,8 @@ using College.Cache.DAL;
 using College.Cache.DAL.Persistence;
 using College.Core.Constants;
 using College.Core.Interfaces;
+using College.Cosmos.DAL;
+using College.Cosmos.DAL.Persistence;
 using College.SQLServer.DAL;
 using College.SQLServer.DAL.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -43,15 +45,18 @@ namespace College.WebAPI
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeSqlDbContext>(o => o.UseSqlServer(connectionString));
 
-            //services.AddDbContext<CollegeCosmosDbContext>(o => 
-            //o.UseCosmos(Configuration["CosmosDbConnectionStrings:accountEndPoint"],
-            //            Configuration["CosmosDbConnectionStrings:accountKey"],
-            //            Configuration["CosmosDbConnectionStrings:databaseName"])
-            //.EnableSensitiveDataLogging(true));
+            services.AddDbContext<CollegeCosmosDbContext>(o =>
+            o.UseCosmos(Configuration["CosmosDbConnectionStrings:accountEndPoint"],
+                        Configuration["CosmosDbConnectionStrings:accountKey"],
+                        Configuration["CosmosDbConnectionStrings:databaseName"])
+            .EnableSensitiveDataLogging(true));
 
             // Application Services
             services.AddScoped<IProfessorsSqlBll, ProfessorsSqlBll>();
             services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
+
+            services.AddScoped<IProfessorsCosmosBll, ProfessorsCosmosBll>();
+            services.AddScoped<IProfessorsCosmosDal, ProfessorsCosmosDal>();
 
             // Adding Redis Cache 
             services.AddStackExchangeRedisCache(option =>
