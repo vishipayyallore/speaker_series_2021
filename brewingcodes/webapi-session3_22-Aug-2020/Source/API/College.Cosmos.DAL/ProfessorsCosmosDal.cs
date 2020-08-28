@@ -70,14 +70,14 @@ namespace College.Cosmos.DAL
 
         public async Task<Professor> UpdateProfessor(Professor professor)
         {
-            if (!_collegeCosmosDbContext.Professors.Any(record => record.ProfessorId == professor.ProfessorId))
-            {
-                return null;
-            }
-
             var retrievedProfessor = await _collegeCosmosDbContext.Professors
                                                 .Where(record => record.ProfessorId == professor.ProfessorId)
                                                 .FirstOrDefaultAsync();
+
+            if (retrievedProfessor == null)
+            {
+                return null;
+            }
 
             // Modifying the data
             retrievedProfessor.Name = professor.Name;
@@ -85,21 +85,21 @@ namespace College.Cosmos.DAL
             retrievedProfessor.Teaches = professor.Teaches;
             retrievedProfessor.IsPhd = professor.IsPhd;
 
+
             await _collegeCosmosDbContext.SaveChangesAsync();
 
             return professor;
         }
 
-        public async Task<bool> DeleteProfessorById(Guid id)
+        public async Task<bool?> DeleteProfessorById(Guid id)
         {
-            if (!_collegeCosmosDbContext.Professors.Any(record => record.ProfessorId == id))
-            {
-                return false;
-            }
-
             var retrievedProfessor = await _collegeCosmosDbContext.Professors
                                                 .Where(record => record.ProfessorId == id)
                                                 .FirstOrDefaultAsync();
+            if (retrievedProfessor == null)
+            {
+                return null;
+            }
 
             _collegeCosmosDbContext.Professors.Remove(retrievedProfessor);
 

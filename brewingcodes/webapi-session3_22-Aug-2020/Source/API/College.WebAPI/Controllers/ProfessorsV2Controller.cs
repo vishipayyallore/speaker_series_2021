@@ -82,7 +82,12 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<ActionResult> UpdateProfessor([FromBody] Professor professor)
         {
-            var _ = await _professorsCosmosBll.UpdateProfessor(professor);
+            var professorModified = await _professorsCosmosBll.UpdateProfessor(professor);
+
+            if (professorModified == null)
+            {
+                return StatusCode(404, $"Unable to find Professor with id {professor.ProfessorId}");
+            }
 
             return NoContent();
         }
@@ -95,7 +100,11 @@ namespace College.WebAPI.Controllers
         {
             var professorDeleted = await _professorsCosmosBll.DeleteProfessorById(id);
 
-            if (!professorDeleted)
+            if (professorDeleted == null)
+            {
+                return StatusCode(404, $"Unable to find Professor with id {id}");
+            }
+            else if(!(bool)professorDeleted)
             {
                 return StatusCode(500, $"Unable to delete Professor with id {id}");
             }

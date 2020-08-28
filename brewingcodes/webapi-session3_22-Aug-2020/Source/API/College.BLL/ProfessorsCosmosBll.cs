@@ -64,7 +64,7 @@ namespace College.BLL
             return updatedProfessor;
         }
 
-        public async Task<bool> DeleteProfessorById(Guid id)
+        public async Task<bool?> DeleteProfessorById(Guid id)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsCosmosBll::DeleteProfessorById");
 

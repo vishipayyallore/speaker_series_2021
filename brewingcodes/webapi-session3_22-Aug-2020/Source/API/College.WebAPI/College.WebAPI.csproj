@@ -22,9 +22,5 @@
     <ProjectReference Include="..\College.SQLServer.DAL\College.SQLServer.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CosmosDb\" />
-  </ItemGroup>
-
 
 </Project>

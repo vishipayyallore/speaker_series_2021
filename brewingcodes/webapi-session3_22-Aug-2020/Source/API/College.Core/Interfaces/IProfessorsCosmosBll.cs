@@ -16,7 +16,7 @@ namespace College.Core.Interfaces
 
         Task<Professor> UpdateProfessor(Professor professor);
 
-        Task<bool> DeleteProfessorById(Guid id);
+        Task<bool?> DeleteProfessorById(Guid id);
     }
 
 }
