@@ -5,7 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 import { AddProfessorDto, ProfessorDto } from '../interfaces/professor.Dto';
 
-const baseUrl = 'https://localhost:5002/api';
+const baseUrl = 'https://localhost:5002/api/v1';
 const apiName = 'professors';
 const httpOptions = {
   headers: new HttpHeaders({
