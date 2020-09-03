@@ -1,5 +1,4 @@
 ﻿using RestSharp;
-using System;
 using System.IO;
 using static System.Console;
 
@@ -16,7 +15,7 @@ namespace SimpleRestSharpDemo
 
             var fileInBytes = restSharpClient.DownloadData(downloadRequest);
 
-            File.WriteAllBytes(@"D:\LordKrishna\GitHub\speaker_series_2020\General\SimpleRestSharpDemo\SimpleRestSharpDemo\Downloads\StockData.xlxs",
+            File.WriteAllBytes(@"D:\LordKrishna\GitHub\speaker_series_2020\General\SimpleRestSharpDemo\SimpleRestSharpDemo\Downloads\StockData.xlsx",
                 fileInBytes);
 
             WriteLine("\n\nPress any key ...");
