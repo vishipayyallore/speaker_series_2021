@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProfessorsListComponent } from './professors-list.component';
 
@@ -8,7 +11,14 @@ describe('ProfessorsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfessorsListComponent ]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule
+      ],
+      declarations: [
+        ProfessorsListComponent
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +29,7 @@ describe('ProfessorsListComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
