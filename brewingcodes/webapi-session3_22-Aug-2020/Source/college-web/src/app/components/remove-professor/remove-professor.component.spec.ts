@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { RemoveProfessorComponent } from './remove-professor.component';
 
@@ -8,7 +11,14 @@ describe('RemoveProfessorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RemoveProfessorComponent ]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule
+      ],
+      declarations: [
+        RemoveProfessorComponent
+      ]
     })
     .compileComponents();
   }));

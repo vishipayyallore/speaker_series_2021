@@ -1,16 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AddProfessorComponent } from './add-professor.component';
 
 describe('AddProfessorComponent', () => {
+
   let component: AddProfessorComponent;
   let fixture: ComponentFixture<AddProfessorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddProfessorComponent ]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule
+      ],
+      declarations: [AddProfessorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +31,5 @@ describe('AddProfessorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
