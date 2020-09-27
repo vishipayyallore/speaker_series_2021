@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 CSharpCorner/27Jun2020_ASP.NetCoreWebAPI_SQLServer_AzureRedis/Source/College.WebApi.zip
 brewingcodes/webapi-session1_18-Jul-2020/College.WebApp.zip
+talklify/books-store-mean-stack-26sep2020/bookstore-webapi/src/Config/.env
