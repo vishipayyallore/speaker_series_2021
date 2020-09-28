@@ -1,4 +1,4 @@
-﻿using ClientApps.Common.Constants;
+﻿using College.Core.Constants;
 
 namespace ClientApps.Common.Utilities
 {
@@ -8,7 +8,7 @@ namespace ClientApps.Common.Utilities
 
         static public string GenerateAddress()
         {
-            return string.Format(Konstants.GenerateAddress.FullAddress, 
+            return string.Format(Constants.GenerateAddress.FullAddress, 
                 RandomNumberGenerator.GetRandomValue(8, 999), 
                 NameGenerator.GenerateName(RandomNumberGenerator.GetRandomValue(1, 20)),
                 NameGenerator.GenerateName(RandomNumberGenerator.GetRandomValue(1, 20)));

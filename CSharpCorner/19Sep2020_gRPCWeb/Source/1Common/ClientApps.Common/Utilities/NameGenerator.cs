@@ -1,4 +1,4 @@
-﻿using ClientApps.Common.Constants;
+﻿using College.Core.Constants;
 using System.Text;
 
 namespace ClientApps.Common.Utilities
@@ -28,12 +28,12 @@ namespace ClientApps.Common.Utilities
 
         private static string GetAConstant()
         {
-            return Konstants.GenerateName.Consonants[RandomNumberGenerator.GetRandomValue(0, Konstants.GenerateName.Consonants.Length)];
+            return Constants.GenerateName.Consonants[RandomNumberGenerator.GetRandomValue(0, Constants.GenerateName.Consonants.Length)];
         }
 
         private static string GetAVowel()
         {
-            return Konstants.GenerateName.Vowels[RandomNumberGenerator.GetRandomValue(0, Konstants.GenerateName.Vowels.Length)];
+            return Constants.GenerateName.Vowels[RandomNumberGenerator.GetRandomValue(0, Constants.GenerateName.Vowels.Length)];
         }
     }
 

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Constants\" />
+    <ProjectReference Include="..\College.Core\College.Core.csproj" />
   </ItemGroup>
 
 </Project>
