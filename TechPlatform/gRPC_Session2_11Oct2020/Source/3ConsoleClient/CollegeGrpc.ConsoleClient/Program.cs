@@ -36,8 +36,8 @@ namespace CollegeGrpc.ConsoleClient
                 response = ReadKey().KeyChar.ToString().ToUpper();
             }
 
-            Console.WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
-            Console.ReadKey();
+            WriteLine("\n\nThank You for using the application. \n\nPress any key ...");
+            ReadKey();
         }
 
         private static NewProfessorRequest GenerateNewProfessor()
