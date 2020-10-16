@@ -1,0 +1,42 @@
+﻿@page "/ProfessorsFromWebAPI"
+
+@if (Professors == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="card shadow mt-2 mb-2">
+        <div class="card-header">
+            <h2 class="PageTitle">Professors List - Web API</h2>
+        </div>
+        <div class="card-body">
+            <table class='table table-striped' aria-labelledby="tableLabel">
+                <thead>
+                    <tr>
+                        <th>Professor Id</th>
+                        <th>Name</th>
+                        <th>DOJ</th>
+                        <th>Salary</th>
+                        <th>Phd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var _professor in Professors)
+                    {
+                        <tr>
+                            <td>@_professor.ProfessorId</td>
+                            <td>@_professor.Name</td>
+                            <td>@_professor.Doj.ToShortDateString()</td>
+                            <td>@_professor.Salary</td>
+                            <td>@_professor.IsPhd</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+}
+
