@@ -16,4 +16,15 @@ const morganLogger = morgan(function (tokens, req, res) {
 
 module.exports = morganLogger;
 
+/*
+const logger = (req, res, next) => {
+
+    console.log(
+      `${req.method} ${req.protocol}://${req.get('host')}${req.originalUrl}`
+    );
+
+    next();
+
+};
+*/
 

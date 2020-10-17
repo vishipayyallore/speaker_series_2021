@@ -1,20 +1,18 @@
 'use strict';
 
+const webApi = require('./app');
+const mongoDbConnection = require('./Persistence/mongoDb.Helper');
 const path = require('path');
 const dotenv = require('dotenv');
 
-const webApi = require('./app');
-const mongoDbConnection = require('./Persistence/mongoDb.Helper');
-
 // Load the Configuration from the given Path
-dotenv.config({ path: path.resolve(process.cwd(), 'src/config/.env')});
+const _config = dotenv.config({ path: path.resolve(process.cwd(), 'src/config/.env')});
 
+var port = process.env.PORT || 3000;
 
 mongoDbConnection
     .connectToMongoDb()
     .then(() => {
-
-        var port = process.env.PORT || 3000;
 
         // Listen to the server
         webApi.listen(port, () => {
