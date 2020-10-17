@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculations;
+
+service CalculationService {
+
+    //Unary API
+    rpc AddNumbers (AddRequest) returns (AddResponse) {};
+}
+
+message AddRequest {
+    int32 value1 = 1;
+
+    int32 value2 = 2;
+}
+
+message AddResponse {
+    int32 sum = 1;
+}

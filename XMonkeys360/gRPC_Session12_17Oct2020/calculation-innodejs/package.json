@@ -1,0 +1,17 @@
+{
+  "name": "calculation-innodejs",
+  "version": "1.0.1",
+  "description": "Simple gRPC in Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viswanatha Swamy",
+  "license": "ISC",
+  "dependencies": {
+    "google-protobuf": "^3.13.0",
+    "grpc": "^1.24.3",
+    "grpc-tools": "^1.9.1",
+    "protoc-gen-grpc": "^1.4.1"
+  }
+}
