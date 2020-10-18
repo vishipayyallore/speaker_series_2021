@@ -13,11 +13,11 @@ namespace College.BLL
         private readonly IProfessorsSqlDal _professorsSqlDal;
         private readonly ILogger<ProfessorsSqlBll> _logger;
 
-        public ProfessorsSqlBll(ILogger<ProfessorsSqlBll> logger, IProfessorsSqlDal professorsSqlDal)
+        public ProfessorsSqlBll(IProfessorsSqlDal professorsSqlDal, ILogger<ProfessorsSqlBll> logger)
         {
-            _professorsSqlDal = professorsSqlDal;
-
-            _logger = logger;
+            _professorsSqlDal = professorsSqlDal ?? throw new ArgumentNullException(nameof(professorsSqlDal));
+            
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<Professor> AddProfessor(Professor professor)
@@ -44,11 +44,11 @@ namespace College.BLL
 
         public async Task<Professor> GetProfessorById(Guid professorId)
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::GetProfessorById");
 
             var professor = await _professorsSqlDal.GetProfessorById(professorId);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::GetAllProfessors");
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::GetProfessorById");
 
             return professor;
         }
@@ -64,11 +64,11 @@ namespace College.BLL
             return updatedProfessor;
         }
 
-        public async Task<bool> DeleteProfessorById(Guid id)
+        public async Task<bool> DeleteProfessorById(Guid professorId)
         {
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::DeleteProfessorById");
 
-            var professorDeleted = await _professorsSqlDal.DeleteProfessorById(id);
+            var professorDeleted = await _professorsSqlDal.DeleteProfessorById(professorId);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::DeleteProfessorById");
 

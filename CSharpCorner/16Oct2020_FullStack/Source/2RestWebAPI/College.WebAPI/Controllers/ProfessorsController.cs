@@ -17,27 +17,21 @@ namespace College.WebAPI.Controllers
 
         private readonly ILogger<ProfessorsController> _logger;
         private readonly IProfessorsSqlBll _professorsSqlBll;
-        private readonly IRedisCacheDbDal _cacheDbDal;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, 
-            IProfessorsSqlBll professorsSqlBll, IRedisCacheDbDal cacheDbDal)
+        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsSqlBll)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
             _professorsSqlBll = professorsSqlBll ?? throw new ArgumentNullException(nameof(professorsSqlBll));
-
-            _cacheDbDal = cacheDbDal ?? throw new ArgumentNullException(nameof(cacheDbDal));
         }
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Professor>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Professor>>> Get()
         {
-            IEnumerable<Professor> professors;
-
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            professors = await _professorsSqlBll.GetAllProfessors();
+            IEnumerable<Professor> professors = await _professorsSqlBll.GetAllProfessors();
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
@@ -49,10 +43,9 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<Professor>> GetProfessorById(Guid id)
         {
-            Professor professor;
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::GetProfessorById");
 
-            professor = await _professorsSqlBll.GetProfessorById(id);
+            Professor professor = await _professorsSqlBll.GetProfessorById(id);
 
             if (professor == null)
             {
@@ -84,7 +77,11 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<ActionResult> UpdateProfessor([FromBody] Professor professor)
         {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::UpdateProfessor");
+
             var _ = await _professorsSqlBll.UpdateProfessor(professor);
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::UpdateProfessor");
 
             return NoContent();
         }
@@ -95,12 +92,16 @@ namespace College.WebAPI.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult> DeleteProfessor(Guid id)
         {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::DeleteProfessor");
+
             var professorDeleted = await _professorsSqlBll.DeleteProfessorById(id);
 
             if (!professorDeleted)
             {
                 return StatusCode(500, $"Unable to delete Professor with id {id}");
             }
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::DeleteProfessor");
 
             return NoContent();
         }

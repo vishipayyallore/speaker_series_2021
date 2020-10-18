@@ -48,13 +48,13 @@ namespace College.WebAPI
             services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
 
             // Redis Cache Dependencies
-            services.AddSingleton<ConnectionMultiplexer>(sp =>
+            services.AddSingleton(sp =>
             {
                 var configuration = ConfigurationOptions.Parse(Configuration[Constants.DataStore.RedisConnectionString], true);
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
-            // Cache Related
+            // Redis Cache Related
             services.AddScoped<IRedisCacheDbContext, RedisCacheDbContext>();
             services.AddScoped<IRedisCacheDbDal, RedisCacheDbDal>();
         }

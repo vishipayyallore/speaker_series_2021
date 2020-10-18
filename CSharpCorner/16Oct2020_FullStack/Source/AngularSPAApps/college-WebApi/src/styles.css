@@ -10,12 +10,12 @@
 }
 
 .top-navbar-color {
-  background: #3f51b5;
+  background: green;
   color: white;
 }
 
 .bg-sidebar {
-  background: #0428f173;
+  background:rgba(153, 205, 50, 0.712);
   color: white;
 }
 
@@ -24,7 +24,7 @@
 }
 
 footer {
-  background: #3f51b5;
+  background:  green;
   color: white;
   padding: 1px;
   bottom: 0;
@@ -37,11 +37,11 @@ footer {
 	height:60px;
   right:40px;
   top: 70Px;
-	background-color:#0C9;
+	background-color:green;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+	box-shadow: 2px 2px 3px yellowgreen;
 }
 
 .float-margintop{

@@ -20,13 +20,16 @@ namespace College.WebAPI.Controllers
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+            
+            _logger.Log(LogLevel.Debug, "Request Received for WeatherForecastController::Get");
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -35,5 +38,7 @@ namespace College.WebAPI.Controllers
             })
             .ToArray();
         }
+
     }
+
 }
