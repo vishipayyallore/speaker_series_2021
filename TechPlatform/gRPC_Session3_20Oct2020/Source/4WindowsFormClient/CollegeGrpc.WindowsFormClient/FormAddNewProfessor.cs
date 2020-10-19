@@ -72,7 +72,11 @@ namespace CollegeGrpc.WindowsFormClient
 
         private async void buttonDelete_Click(object sender, EventArgs e)
         {
+            var deleteProfessorRequest = new DeleteProfessorRequest { ProfessorId = textBoxProfessorId.Text };
 
+            var professorDeleted = await _client.DeleteProfessorByIdAsync(deleteProfessorRequest);
+
+            MessageBox.Show($"Professor Deleted: {professorDeleted}");
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

@@ -72,4 +72,5 @@ message DeleteProfessorRequest {
 message DeleteProfessorResponse {
 	string professorId = 1;
 	string message = 2;
+	bool success = 3;
 }
