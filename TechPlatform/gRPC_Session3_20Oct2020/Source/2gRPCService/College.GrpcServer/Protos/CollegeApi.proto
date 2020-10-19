@@ -14,9 +14,9 @@ service CollegeService {
 
 	rpc GetAllProfessors(google.protobuf.Empty) returns (AllProfessorsResonse);
 
-	rpc UpdateProfessorById(GetProfessorRequest) returns (UpdateProfessorResponse);
+	rpc UpdateProfessorById(UpdateProfessorRequest) returns (UpdateProfessorResponse);
 
-	rpc UpdateProfessorById(GetProfessorRequest) returns (DeleteProfessorResponse);
+	rpc DeleteProfessorById(DeleteProfessorRequest) returns (DeleteProfessorResponse);
 }
 
 message NewProfessorRequest {
@@ -51,9 +51,22 @@ message AllProfessorsResonse {
 	int32 count = 3;
 }
 
-message UpdateProfessorResponse {
+message UpdateProfessorRequest {
 	string professorId = 1;
+	string name = 2;
+	google.protobuf.Timestamp doj = 3;
+	string teaches = 4;
+	double salary =5;
+	bool isPhd = 6;
+}
+
+message UpdateProfessorResponse {
+	GetProfessorResponse professor = 1;
 	string message = 2;
+}
+
+message DeleteProfessorRequest {
+	string professorId = 1;
 }
 
 message DeleteProfessorResponse {

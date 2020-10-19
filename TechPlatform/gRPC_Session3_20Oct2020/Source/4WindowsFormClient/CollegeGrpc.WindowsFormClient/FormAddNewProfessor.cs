@@ -29,9 +29,9 @@ namespace CollegeGrpc.WindowsFormClient
 
         private async void buttonSave_Click(object sender, EventArgs e)
         {
-            var results = await _client.AddProfessorAsync(GenerateNewProfessor());
+            var newProfessor = await _client.AddProfessorAsync(GenerateNewProfessor());
 
-            MessageBox.Show($"New Professor Added with Id: {results.ProfessorId}");
+            MessageBox.Show($"New Professor Added with Id: {newProfessor.ProfessorId}");
         }
 
         
@@ -57,7 +57,17 @@ namespace CollegeGrpc.WindowsFormClient
 
         private async void buttonUpdate_Click(object sender, EventArgs e)
         {
+            var updatedProfessor = new UpdateProfessorRequest
+            {
+                ProfessorId = textBoxProfessorId.Text,
+                Name = textBoxName.Text,
+                Teaches = textBoxTeaches.Text,
+                Salary = double.Parse(textBoxSalary.Text),
+                IsPhd = checkBoxIsPhd.Checked
+            };
 
+            var _ = await _client.UpdateProfessorByIdAsync(updatedProfessor);
+            MessageBox.Show($"Professor Updated with Id: {updatedProfessor.ProfessorId}");
         }
 
         private async void buttonDelete_Click(object sender, EventArgs e)

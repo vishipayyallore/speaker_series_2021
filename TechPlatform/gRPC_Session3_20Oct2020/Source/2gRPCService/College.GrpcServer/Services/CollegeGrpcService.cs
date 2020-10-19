@@ -86,6 +86,37 @@ namespace College.GrpcServer.Services
             return getProfessorResponse;
         }
 
+        public override async Task<UpdateProfessorResponse> UpdateProfessorById(UpdateProfessorRequest request, ServerCallContext context)
+        {
+            _logger.Log(LogLevel.Debug, "Request Received for CollegeGrpcService::UpdateProfessorById");
+
+            var updatedProfessor = new UpdateProfessorResponse
+            {
+                Message = "success"
+            };
+
+            var professor = new Professor
+            {
+                ProfessorId = Guid.Parse( request.ProfessorId),
+                Name = request.Name,
+                Teaches = request.Teaches,
+                Salary = Convert.ToDecimal(request.Salary),
+                IsPhd = request.IsPhd
+            };
+
+            professor = await _professorsBll.UpdateProfessor(professor);
+            updatedProfessor.Professor = GetProfessorObject(professor);
+
+            _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::UpdateProfessorById");
+
+            return updatedProfessor;
+        }
+
+        public override Task<DeleteProfessorResponse> DeleteProfessorById(DeleteProfessorRequest request, ServerCallContext context)
+        {
+            return base.DeleteProfessorById(request, context);
+        }
+
         //====================== Private Methods ======================
         private static GetProfessorResponse GetProfessorObject(Professor professor)
         {
