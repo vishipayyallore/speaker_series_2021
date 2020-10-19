@@ -5,12 +5,14 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using static College.GrpcServer.Protos.CollegeService;
 
 namespace CollegeGrpc.WindowsFormClient
 {
     public partial class FormAddNewProfessor : Form
     {
         private static IConfiguration _config;
+        static private CollegeServiceClient _client;
 
         public FormAddNewProfessor()
         {
@@ -21,15 +23,52 @@ namespace CollegeGrpc.WindowsFormClient
                             .AddJsonFile("appsettings.json").Build();
 
             textBoxName.Text = NameGenerator.GenerateName(12);
+
+            _client = CollegeServiceClientHelper.GetCollegeServiceClient(_config["RPCService:ServiceUrl"]);
         }
 
         private async void buttonSave_Click(object sender, EventArgs e)
         {
-            var client = CollegeServiceClientHelper.GetCollegeServiceClient(_config["RPCService:ServiceUrl"]);
-
-            var results = await client.AddProfessorAsync(GenerateNewProfessor());
+            var results = await _client.AddProfessorAsync(GenerateNewProfessor());
 
             MessageBox.Show($"New Professor Added with Id: {results.ProfessorId}");
+        }
+
+        
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            textBoxName.Text = NameGenerator.GenerateName(12);
+            textBoxTeaches.Text = "CSharp, Java";
+            textBoxSalary.Text = "1234.56";
+            checkBoxIsPhd.Checked = false;
+        }
+
+        private async void buttonFind_Click(object sender, EventArgs e)
+        {
+            var professorRequest = new GetProfessorRequest { ProfessorId = textBoxProfessorId.Text };
+            var professor = await _client.GetProfessorByIdAsync(professorRequest);
+
+            textBoxName.Text = professor.Name;
+            textBoxTeaches.Text = professor.Teaches;
+            textBoxSalary.Text = professor.Salary.ToString();
+            checkBoxIsPhd.Checked = professor.IsPhd;
+        }
+
+        private async void buttonUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+            Dispose();
         }
 
         private NewProfessorRequest GenerateNewProfessor()
@@ -44,18 +83,6 @@ namespace CollegeGrpc.WindowsFormClient
             };
         }
 
-        private void buttonNew_Click(object sender, EventArgs e)
-        {
-            textBoxName.Text = NameGenerator.GenerateName(12);
-            textBoxTeaches.Text = "CSharp, Java";
-            textBoxSalary.Text = "1234.56";
-            checkBoxIsPhd.Checked = false;
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-            Dispose();
-        }
     }
+
 }

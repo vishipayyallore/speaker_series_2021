@@ -13,6 +13,10 @@ service CollegeService {
 	rpc GetProfessorById(GetProfessorRequest) returns (GetProfessorResponse);
 
 	rpc GetAllProfessors(google.protobuf.Empty) returns (AllProfessorsResonse);
+
+	rpc UpdateProfessorById(GetProfessorRequest) returns (UpdateProfessorResponse);
+
+	rpc UpdateProfessorById(GetProfessorRequest) returns (DeleteProfessorResponse);
 }
 
 message NewProfessorRequest {
@@ -45,4 +49,14 @@ message AllProfessorsResonse {
 	repeated GetProfessorResponse professors = 1;
 	string message = 2;
 	int32 count = 3;
+}
+
+message UpdateProfessorResponse {
+	string professorId = 1;
+	string message = 2;
+}
+
+message DeleteProfessorResponse {
+	string professorId = 1;
+	string message = 2;
 }

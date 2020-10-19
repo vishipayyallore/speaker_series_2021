@@ -18,37 +18,31 @@ namespace CollegeGrpc.ConsoleClient
 
         static async Task Main(string[] args)
         {
-            string response = "Y";
             _config = new ConfigurationBuilder()
                             .SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json").Build();
 
             var _client = CollegeServiceClientHelper.GetCollegeServiceClient(_config["RPCService:ServiceUrl"]);
 
-            WriteLine("\n\nCreating New Professor ...");
-            while (response == "Y")
-            {
-                // Add New Professor
-                NewProfessorRequest professorNew = GenerateNewProfessor();
+            /*
+            DisplayHeader("Creating New Professor ...");
+            NewProfessorRequest professorNew = GenerateNewProfessor();
+            var newlyAddedProfessor = await _client.AddProfessorAsync(professorNew);
+            WriteLine($"\n\nNew Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
+            DisplayFooter();
+            */
 
-                var newlyAddedProfessor = await _client.AddProfessorAsync(professorNew);
-                WriteLine($"\n\nNew Professor Added with Professor Id: {newlyAddedProfessor.ProfessorId}");
-
-                WriteLine("\n\nDo you want to create New Professor: {Y/N}");
-                response = ReadKey().KeyChar.ToString().ToUpper();
-            }
-
-            // Retrieve Single Row
+            DisplayHeader("Retrieve Single Row ...");
             WriteLine("\n\nPlease enter a Professor Id: ");
             var professorId = ReadLine();
 
             var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
-
             var professor = await _client.GetProfessorByIdAsync(professorRequest);
 
             DisplayProfessorDetails(professor);
+            DisplayFooter();
 
-            // Retrieve Multiple Rows
+            DisplayHeader("Retrieve All Rows ...");
             var professors = await _client.GetAllProfessorsAsync(new Empty());
 
             foreach (var prof in professors.Professors)
@@ -78,16 +72,16 @@ namespace CollegeGrpc.ConsoleClient
             WriteLine($"\n{_footer}\n");
         }
 
-        private static void DisplayHeader()
+        private static void DisplayHeader(string headerTitle)
         {
             WriteLine($"\n\n{_header}");
-            WriteLine("Professor Details".PadLeft(25));
+            WriteLine(headerTitle.PadLeft(25));
             WriteLine(_header);
         }
 
         private static void DisplayProfessorDetails(GetProfessorResponse professor)
         {
-            DisplayHeader();
+            DisplayHeader("Professor Details");
 
             WriteLine($"Name: {professor.Name} \nSalary: {professor.Salary} \nTeaches: {professor.Teaches} \nDOJ: {professor.Doj}");
 
