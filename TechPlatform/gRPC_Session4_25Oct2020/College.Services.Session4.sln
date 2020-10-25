@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{AA92475A-8A41-4DAB-A046-0D9382E6EB7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{337D7930-3DE7-46D8-94FA-74FC65E61E2A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1Common", "1Common", "{7A764374-8027-4277-B29E-4DDFD0DBD287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2gRPCService", "2gRPCService", "{EDD88E98-AD5A-420D-999B-5EC7F16DFA2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{5643C1E7-A4C0-469C-B3FD-BE66CD03B4DF}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\gRPC_Service_SQL_CRUD_Client.pptx = Documentation\gRPC_Service_SQL_CRUD_Client.pptx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{E673207A-0EC3-4496-BED8-77D330D29D24}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\1Create_Professors.sql = SQLScripts\1Create_Professors.sql
+		SQLScripts\2Create_Students.sql = SQLScripts\2Create_Students.sql
+		SQLScripts\3Insert_Professors.sql = SQLScripts\3Insert_Professors.sql
+		SQLScripts\4Insert_Students.sql = SQLScripts\4Insert_Students.sql
+		SQLScripts\Create_Database.sql = SQLScripts\Create_Database.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\1Common\College.Core\College.Core.csproj", "{B8FABECC-1526-45F5-BE7E-258872FAE831}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.SQLServer.DAL", "Source\1Common\College.SQLServer.DAL\College.SQLServer.DAL.csproj", "{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Cache.DAL", "Source\1Common\College.Cache.DAL\College.Cache.DAL.csproj", "{C64F81AC-EFC7-4207-9DC4-03163ABDD62E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "Source\1Common\College.BLL\College.BLL.csproj", "{557D18A4-5219-4399-AAD3-AB89699F6F2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApps.Common", "Source\1Common\ClientApps.Common\ClientApps.Common.csproj", "{2B5114C8-93FD-4055-99DC-9FBA4E6E817B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "Source\2gRPCService\College.GrpcServer\College.GrpcServer.csproj", "{6075D452-5507-4AD2-87C6-1738CCFDB150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3gRPCClients", "3gRPCClients", "{7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.ConsoleClient", "Source\3gRPCClients\1ConsoleClient\CollegeGrpc.ConsoleClient\CollegeGrpc.ConsoleClient.csproj", "{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WindowsFormClient", "Source\3gRPCClients\2WindowsFormClient\CollegeGrpc.WindowsFormClient\CollegeGrpc.WindowsFormClient.csproj", "{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8FABECC-1526-45F5-BE7E-258872FAE831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8FABECC-1526-45F5-BE7E-258872FAE831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8FABECC-1526-45F5-BE7E-258872FAE831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8FABECC-1526-45F5-BE7E-258872FAE831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64F81AC-EFC7-4207-9DC4-03163ABDD62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64F81AC-EFC7-4207-9DC4-03163ABDD62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64F81AC-EFC7-4207-9DC4-03163ABDD62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64F81AC-EFC7-4207-9DC4-03163ABDD62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557D18A4-5219-4399-AAD3-AB89699F6F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557D18A4-5219-4399-AAD3-AB89699F6F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557D18A4-5219-4399-AAD3-AB89699F6F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557D18A4-5219-4399-AAD3-AB89699F6F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5114C8-93FD-4055-99DC-9FBA4E6E817B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5114C8-93FD-4055-99DC-9FBA4E6E817B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5114C8-93FD-4055-99DC-9FBA4E6E817B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5114C8-93FD-4055-99DC-9FBA4E6E817B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6075D452-5507-4AD2-87C6-1738CCFDB150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6075D452-5507-4AD2-87C6-1738CCFDB150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6075D452-5507-4AD2-87C6-1738CCFDB150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6075D452-5507-4AD2-87C6-1738CCFDB150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A764374-8027-4277-B29E-4DDFD0DBD287} = {AA92475A-8A41-4DAB-A046-0D9382E6EB7C}
+		{EDD88E98-AD5A-420D-999B-5EC7F16DFA2A} = {AA92475A-8A41-4DAB-A046-0D9382E6EB7C}
+		{B8FABECC-1526-45F5-BE7E-258872FAE831} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{2BA0BEF6-3220-4DFB-A3AB-E3BD55C9295A} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{C64F81AC-EFC7-4207-9DC4-03163ABDD62E} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{557D18A4-5219-4399-AAD3-AB89699F6F2B} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{2B5114C8-93FD-4055-99DC-9FBA4E6E817B} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{6075D452-5507-4AD2-87C6-1738CCFDB150} = {EDD88E98-AD5A-420D-999B-5EC7F16DFA2A}
+		{7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A} = {AA92475A-8A41-4DAB-A046-0D9382E6EB7C}
+		{0554DAD2-2955-4D5C-902E-65A0F9FAAAD8} = {7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}
+		{0DB05FDC-A4AE-4984-BC6D-26A90E8420E1} = {7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51603D40-4A3F-4CA5-A93D-689EE361CD1C}
+	EndGlobalSection
+EndGlobal
