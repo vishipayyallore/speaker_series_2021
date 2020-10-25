@@ -1,4 +1,5 @@
-﻿using College.Core.Entities;
+﻿using College.ApplicationCore.Entities;
+using College.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace College.SQLServer.DAL.Persistence
@@ -13,6 +14,8 @@ namespace College.SQLServer.DAL.Persistence
         public DbSet<Professor> Professors { get; set; }
 
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<Address> AddressBook { get; set; }
     }
 
 }

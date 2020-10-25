@@ -1,4 +1,5 @@
-﻿using College.BLL;
+﻿using College.ApplicationCore.Interfaces;
+using College.BLL;
 using College.Cache.DAL;
 using College.Cache.DAL.Persistence;
 using College.Core.Constants;
@@ -49,6 +50,10 @@ namespace College.GrpcServer
             services.AddScoped<IProfessorsSqlBll, ProfessorsSqlBll>();
             services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
 
+            // Address Book Application Services
+            services.AddScoped<IAddressBLL, AddressBLL>();
+            services.AddScoped<IAddressDAL, AddressDAL>();
+
             // Redis Cache Dependencies
             services.AddSingleton<ConnectionMultiplexer>(sp =>
             {
@@ -83,6 +88,7 @@ namespace College.GrpcServer
 
                 endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb().RequireCors("AllowAll");
                 endpoints.MapGrpcService<CollegeGrpcService>().EnableGrpcWeb().RequireCors("AllowAll");
+                endpoints.MapGrpcService<AddressBookService>().EnableGrpcWeb().RequireCors("AllowAll");
 
                 endpoints.MapGet("/", async context =>
                 {

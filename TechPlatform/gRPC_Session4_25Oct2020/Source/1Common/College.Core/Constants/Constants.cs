@@ -35,6 +35,8 @@
         public static class AddressConstants
         {
             public static string[] EnrollmentTypes = { "Internal Exams", "Lab Session", "Library Usage", "External Exams" };
+
+            public static string[] EnrollmentStatus = { "Pending", "In Progress", "Rejected", "Enrolled" };
         }
     }
 
