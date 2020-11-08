@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "CollegeGrpc.WorkerServiceClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
