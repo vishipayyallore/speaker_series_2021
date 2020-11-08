@@ -1,4 +1,5 @@
-﻿using College.Core.Entities;
+﻿using AutoMapper;
+using College.Core.Entities;
 using College.Core.Interfaces;
 using College.GrpcServer.Protos;
 using Google.Protobuf.WellKnownTypes;
@@ -17,12 +18,15 @@ namespace College.GrpcServer.Services
     {
         private readonly IProfessorsSqlBll _professorsBll;
         private readonly ILogger<CollegeGrpcService> _logger;
+        private readonly IMapper _mapper;
 
-        public CollegeGrpcService(IProfessorsSqlBll professorsBll, ILogger<CollegeGrpcService> logger)
+        public CollegeGrpcService(IProfessorsSqlBll professorsBll, ILogger<CollegeGrpcService> logger, IMapper mapper)
         {
             _professorsBll = professorsBll ?? throw new ArgumentNullException(nameof(professorsBll));
 
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public override async Task<NewProfessorResponse> AddProfessor(NewProfessorRequest request, ServerCallContext context)
@@ -34,14 +38,7 @@ namespace College.GrpcServer.Services
                 Message = "success"
             };
 
-            var professor = new Professor
-            {
-                Name = request.Name,
-                Doj = request.Doj.ToDateTime(),
-                Teaches = request.Teaches,
-                Salary = Convert.ToDecimal(request.Salary),
-                IsPhd = request.IsPhd
-            };
+            var professor = _mapper.Map<Professor>(request);
 
             var results = await _professorsBll.AddProfessor(professor);
 
@@ -95,6 +92,7 @@ namespace College.GrpcServer.Services
                 Message = "success"
             };
 
+            // TODO: Technical Debt
             var professor = new Professor
             {
                 ProfessorId = Guid.Parse( request.ProfessorId),
@@ -129,22 +127,14 @@ namespace College.GrpcServer.Services
         }
 
         //====================== Private Methods ======================
-        private static GetProfessorResponse GetProfessorObject(Professor professor)
+        private GetProfessorResponse GetProfessorObject(Professor professor)
         {
             if(professor == null)
             {
                 return new GetProfessorResponse();
             }
 
-            return new GetProfessorResponse()
-            {
-                ProfessorId = professor.ProfessorId.ToString(),
-                Name = professor.Name,
-                Teaches = professor.Teaches,
-                IsPhd = professor.IsPhd,
-                Salary = decimal.ToDouble(professor.Salary),
-                Doj = Timestamp.FromDateTime(professor.Doj.ToUniversalTime())
-            };
+            return _mapper.Map<GetProfessorResponse>(professor);
         }
         //====================== Private Methods ======================
 

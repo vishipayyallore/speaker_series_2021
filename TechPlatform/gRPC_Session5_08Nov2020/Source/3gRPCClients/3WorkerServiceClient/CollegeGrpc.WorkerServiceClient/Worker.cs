@@ -17,13 +17,14 @@ namespace CollegeGrpc.WorkerServiceClient
         private readonly IConfiguration _config;
         private readonly AddressBookServerClient _client;
 
-        public Worker(ILogger<Worker> logger, IConfiguration config)
+        public Worker(ILogger<Worker> logger, IConfiguration config
+            , ILoggerFactory loggerFactory)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
             _config = config ?? throw new ArgumentNullException(nameof(config));
 
-            _client = AddressServiceClientHelper.GetAddressBookServerClient(_config["RPCService:ServiceUrl"]);
+            _client = AddressServiceClientHelper.GetAddressBookServerClient(_config["RPCService:ServiceUrl"], loggerFactory);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

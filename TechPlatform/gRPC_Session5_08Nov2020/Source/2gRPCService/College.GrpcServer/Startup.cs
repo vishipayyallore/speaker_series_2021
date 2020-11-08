@@ -1,4 +1,5 @@
-﻿using College.ApplicationCore.Interfaces;
+﻿using AutoMapper;
+using College.ApplicationCore.Interfaces;
 using College.BLL;
 using College.Cache.DAL;
 using College.Cache.DAL.Persistence;
@@ -41,6 +42,8 @@ namespace College.GrpcServer
                        .AllowAnyHeader()
                        .WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding");
             }));
+
+            services.AddAutoMapper(typeof(Startup));
 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];

@@ -1,4 +1,5 @@
 ﻿using Grpc.Net.Client;
+using Microsoft.Extensions.Logging;
 using static College.GrpcServer.Protos.AddressBookServer;
 
 namespace CollegeGrpc.WorkerServiceClient
@@ -8,11 +9,12 @@ namespace CollegeGrpc.WorkerServiceClient
     {
         static private AddressBookServerClient _client;
 
-        static public AddressBookServerClient GetAddressBookServerClient(string serviceUrl)
+        static public AddressBookServerClient GetAddressBookServerClient(string serviceUrl, ILoggerFactory loggerFactory)
         {
             if (_client == null)
             {
-                var channel = GrpcChannel.ForAddress(serviceUrl);
+                var channel = GrpcChannel.ForAddress(serviceUrl,
+                    new GrpcChannelOptions { LoggerFactory = loggerFactory });
                 _client = new AddressBookServerClient(channel);
             }
 
