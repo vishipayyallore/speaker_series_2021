@@ -33,6 +33,17 @@ namespace College.GrpcServer.Services
                 Message = "success"
             };
 
+            if (request.Enrollment == "Library Usage")
+            {
+                var trailers = new Metadata()
+                    {
+                        { "Field", "Enrollment" },
+                        { "Message", "Bank enrollment is stopped temporarily" }
+                    };
+
+                throw new RpcException(new Status(StatusCode.PermissionDenied, "Library Usage enrollment is stopped temporarily"), trailers);
+            }
+
             // TODO: Technical Debt
             var address = new Address
             {

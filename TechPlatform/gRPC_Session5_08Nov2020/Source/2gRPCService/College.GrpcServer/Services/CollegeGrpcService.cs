@@ -76,7 +76,8 @@ namespace College.GrpcServer.Services
 
             Professor professor = await _professorsBll.GetProfessorById(Guid.Parse(request.ProfessorId));
 
-            GetProfessorResponse getProfessorResponse = GetProfessorObject(professor);
+            GetProfessorResponse getProfessorResponse = _mapper.Map<GetProfessorResponse>(professor); 
+            // GetProfessorObject(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::GetProfessorById");
 
@@ -92,6 +93,8 @@ namespace College.GrpcServer.Services
                 Message = "success"
             };
 
+            var professor = _mapper.Map<Professor>(request);
+            /*
             // TODO: Technical Debt
             var professor = new Professor
             {
@@ -101,6 +104,7 @@ namespace College.GrpcServer.Services
                 Salary = Convert.ToDecimal(request.Salary),
                 IsPhd = request.IsPhd
             };
+            */
 
             professor = await _professorsBll.UpdateProfessor(professor);
             updatedProfessor.Professor = GetProfessorObject(professor);

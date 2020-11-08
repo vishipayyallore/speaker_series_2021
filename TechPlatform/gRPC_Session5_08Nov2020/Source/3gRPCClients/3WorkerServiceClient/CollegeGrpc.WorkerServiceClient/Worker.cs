@@ -1,6 +1,7 @@
 using ClientApps.Common.Utilities;
 using College.Core.Constants;
 using College.GrpcServer.Protos;
+using Grpc.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -42,9 +43,15 @@ namespace CollegeGrpc.WorkerServiceClient
                     Enrollment = Constants.AddressConstants.EnrollmentTypes[RandomNumberGenerator.GetRandomValue(1, 4)]
                 };
 
-                var newAddress = await _client.AddAddressAsync(userAddress);
-
-                Console.WriteLine($"Address Data with Id: {newAddress.Id}");
+                try
+                {
+                    var newAddress = await _client.AddAddressAsync(userAddress);
+                    Console.WriteLine($"Address Data with Id: {newAddress.Id}");
+                }
+                catch(RpcException rpcError)
+                {
+                    _logger.LogError($"Error received from Server. {rpcError.Message} {rpcError.Trailers}");
+                }
 
                 await Task.Delay(_config.GetValue<int>("RPCService:DelayInterval"), stoppingToken);
             }
