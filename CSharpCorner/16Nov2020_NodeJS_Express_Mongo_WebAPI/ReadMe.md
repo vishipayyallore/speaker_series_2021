@@ -7,12 +7,12 @@
 
 ## Today's Topics
 
-1. MongoDb Atlas
-2. Creating Web API from scratch
-3. Configuration using DotEnv .env file.
-4. Connecting to MongoDB
-5. Middleware and adding middleware for logging
-6. Adding End Points for Add, GetAll, GetById, EditById, DeleteById
-7. Organizing files into folders (Routes, Controllers, Models, Config, etc)
-8. Testing all the five endpoints using Postman.
+1. MongoDb Atlas. [Done]
+2. Creating Web API from scratch. [Done]
+3. Configuration using DotEnv .env file. [Done]
+4. Connecting to MongoDB. [Done]
+5. Middleware and adding middleware for logging. [Done]
+6. Adding End Points for Add, GetAll, GetById, EditById, DeleteById. [Done]
+7. Organizing files into folders (Routes, Controllers, Models, Config, etc). [Done]
+8. Testing all the five endpoints using Postman. [Done]
 

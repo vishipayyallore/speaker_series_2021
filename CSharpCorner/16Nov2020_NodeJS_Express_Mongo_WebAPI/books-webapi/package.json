@@ -1,0 +1,34 @@
+{
+  "name": "books-webapi",
+  "version": "1.0.1",
+  "description": "Simple Web API using Node JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "debug": "nodemon --inspect ./src/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "Viswanatha swamy",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "chalk": "^4.1.0",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^26.1.0",
+    "jest-html-reporter": "^3.1.3",
+    "mongodb-memory-server": "^6.6.1",
+    "node-mocks-http": "^1.8.1",
+    "nodemon": "^2.0.4",
+    "proxyquire": "^2.1.3",
+    "sinon": "^9.0.2",
+    "supertest": "^4.0.2"
+  }
+}

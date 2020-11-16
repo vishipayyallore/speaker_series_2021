@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+coverage/
+.stryker*
+reports/
+
+# Result html
+*.html
+*.log
+
+*.png
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+.vs/VSWorkspaceState.json
+.vs/booksstore-sample/v16/.suo
+
+# DotEnv Config files
+src/config/.env
+.env
