@@ -77,7 +77,6 @@ namespace College.GrpcServer.Services
             Professor professor = await _professorsBll.GetProfessorById(Guid.Parse(request.ProfessorId));
 
             GetProfessorResponse getProfessorResponse = _mapper.Map<GetProfessorResponse>(professor); 
-            // GetProfessorObject(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::GetProfessorById");
 
@@ -94,17 +93,6 @@ namespace College.GrpcServer.Services
             };
 
             var professor = _mapper.Map<Professor>(request);
-            /*
-            // TODO: Technical Debt
-            var professor = new Professor
-            {
-                ProfessorId = Guid.Parse( request.ProfessorId),
-                Name = request.Name,
-                Teaches = request.Teaches,
-                Salary = Convert.ToDecimal(request.Salary),
-                IsPhd = request.IsPhd
-            };
-            */
 
             professor = await _professorsBll.UpdateProfessor(professor);
             updatedProfessor.Professor = GetProfessorObject(professor);
@@ -123,6 +111,7 @@ namespace College.GrpcServer.Services
                 ProfessorId = request.ProfessorId.ToString(),
                 Message = "Professor Deleted"
             };
+
             professorDeleted.Success = await _professorsBll.DeleteProfessorById(Guid.Parse(request.ProfessorId));
 
             _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::DeleteProfessorById");

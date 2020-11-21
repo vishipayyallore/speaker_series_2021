@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\1Common\ClientApps.Common\ClientApps.Common.csproj" />
     <ProjectReference Include="..\..\1Common\College.BLL\College.BLL.csproj" />
+    <ProjectReference Include="..\..\1Common\College.Cache.DAL\College.Cache.DAL.csproj" />
     <ProjectReference Include="..\..\1Common\College.Core\College.Core.csproj" />
     <ProjectReference Include="..\..\1Common\College.SQLServer.DAL\College.SQLServer.DAL.csproj" />
   </ItemGroup>

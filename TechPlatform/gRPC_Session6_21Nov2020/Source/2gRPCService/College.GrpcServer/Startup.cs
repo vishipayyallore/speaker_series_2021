@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using College.ApplicationCore.Interfaces;
 using College.BLL;
+using College.Cache.DAL;
+using College.Cache.DAL.Persistence;
 using College.Core.Constants;
 using College.Core.Interfaces;
 using College.GrpcServer.Services;
@@ -13,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StackExchange.Redis;
 
 namespace College.GrpcServer
 {
@@ -46,6 +49,13 @@ namespace College.GrpcServer
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeSqlDbContext>(o => o.UseSqlServer(connectionString));
 
+            // Redis Cache Dependencies
+            services.AddSingleton<ConnectionMultiplexer>(sp =>
+            {
+                var configuration = ConfigurationOptions.Parse(Configuration[Constants.DataStore.RedisConnectionString], true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
             // Application Services
             services.AddScoped<IProfessorsSqlBll, ProfessorsSqlBll>();
             services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
@@ -53,6 +63,10 @@ namespace College.GrpcServer
             // Address Book Application Services
             services.AddScoped<IAddressBLL, AddressBLL>();
             services.AddScoped<IAddressDAL, AddressDAL>();
+
+            // Cache Related
+            services.AddScoped<IRedisCacheDbContext, RedisCacheDbContext>();
+            services.AddScoped<IRedisCacheDbDal, RedisCacheDbDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

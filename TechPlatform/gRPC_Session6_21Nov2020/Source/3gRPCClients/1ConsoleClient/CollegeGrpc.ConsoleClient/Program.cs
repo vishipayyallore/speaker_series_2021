@@ -32,15 +32,15 @@ namespace CollegeGrpc.ConsoleClient
             DisplayFooter();
             */
 
-            DisplayHeader("Retrieve Single Row ...");
-            WriteLine("\n\nPlease enter a Professor Id: ");
-            var professorId = ReadLine();
+            //DisplayHeader("Retrieve Single Row ...");
+            //WriteLine("\n\nPlease enter a Professor Id: ");
+            //var professorId = ReadLine();
 
-            var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
-            var professor = await _client.GetProfessorByIdAsync(professorRequest);
+            //var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
+            //var professor = await _client.GetProfessorByIdAsync(professorRequest);
 
-            DisplayProfessorDetails(professor);
-            DisplayFooter();
+            //DisplayProfessorDetails(professor);
+            //DisplayFooter();
 
             DisplayHeader("Retrieve All Rows ...");
             var professors = await _client.GetAllProfessorsAsync(new Empty());
