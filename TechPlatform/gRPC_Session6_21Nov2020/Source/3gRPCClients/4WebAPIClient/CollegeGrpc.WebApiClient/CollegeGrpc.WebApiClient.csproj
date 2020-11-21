@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\1Common\College.Core\College.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\..\2gRPCService\College.GrpcServer\Protos\CollegeApi.proto" GrpcServices="Client">
+      <Link>Protos\CollegeApi.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+
+</Project>
