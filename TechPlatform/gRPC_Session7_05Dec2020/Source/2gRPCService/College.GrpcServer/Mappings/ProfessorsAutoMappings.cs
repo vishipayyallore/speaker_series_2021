@@ -1,15 +1,14 @@
 ﻿using AutoMapper;
 using College.Core.Entities;
 using College.GrpcServer.Protos;
-using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
-using System.Collections.Generic;
 
 namespace College.GrpcServer.Mappings
 {
 
     public class ProfessorsAutoMappings : Profile
     {
+
         public ProfessorsAutoMappings()
         {
             CreateMap<NewProfessorRequest, Professor>()
@@ -24,12 +23,8 @@ namespace College.GrpcServer.Mappings
                 .ForMember(destination => destination.Doj,
                             options => 
                             options.MapFrom(source => Timestamp.FromDateTime(source.Doj.ToUniversalTime())));
-            
-            //CreateMap<IEnumerable<Professor>, RepeatedField<GetProfessorResponse>>()
-            //    .ForMember(destination => destination.Doj,
-            //                options =>
-            //                options.MapFrom(source => Timestamp.FromDateTime(source.Doj.ToUniversalTime())));
         }
+
     }
 
 }
