@@ -360,3 +360,10 @@ AzConf/Source/3webapp-angular/src/environments/environment.ts
 AzConf/Source/5webapp-blazorwasm/College.BlazorWASM/Properties/ServiceDependencies/app-college-bwasm-azconf-dev - Web Deploy/profile.arm.json
 CSharpCorner/16Oct2020_FullStack/Documentation/WebAPI_gRPCWeb_Blazor_WASM_.NetCore_3.1_EFCore_SQL_Redis_Angular.pptx
 CSharpCorner/16Oct2020_FullStack/Documentation/WebAPI_gRPCWeb_Blazor_WASM_.NetCore_3.1_EFCore_SQL_Redis_Angular.pptx
+HPA-PA/deployangularapp/Source/conferences/database.rules.json
+HPA-PA/deployangularapp/Source/conferences/firebase.json
+HPA-PA/deployangularapp/Source/conferences/storage.rules
+HPA-PA/deployangularapp/Source/conferences/firestore.rules
+HPA-PA/deployangularapp/Source/conferences/.firebaserc
+HPA-PA/deployangularapp/Source/conferences/firestore.indexes.json
+HPA-PA/deployangularapp/Source/conferences/remoteconfig.template.json

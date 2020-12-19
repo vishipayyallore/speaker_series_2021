@@ -21,10 +21,11 @@ ng new conferences
 
 ### Creating New Components
 ```
-ng g c components/side-navbar
-ng g c components/top-navbar
-ng g c components/footer
-ng g c components/page-notfound
+ng g c components/shared/top-navbar
+ng g c components/shared/side-navbar
+ng g c components/shared/footer
+ng g c components/shared/page-notfound
+
 ng g c components/dashboard
 ```
 
