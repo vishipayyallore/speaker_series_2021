@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "firstangular11app": {
+      "hosting": {
+        "conferences": [
+          "firstangular11app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "firstangular11app"
+  }
+}
