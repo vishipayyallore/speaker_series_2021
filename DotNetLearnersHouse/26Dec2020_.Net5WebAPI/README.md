@@ -82,6 +82,7 @@
 
 ### Verify the controllers using Swagger and Chrome Browser
 > 1. Demo / Discussion
+![Get Using Swagger | 100x100](./Documentation/Images/SwaggerUI.PNG)
 
 ## Look and Feel
-To be done
+![Get Using Postman | 100x100](./Documentation/Images/GetUsingPostman.PNG)

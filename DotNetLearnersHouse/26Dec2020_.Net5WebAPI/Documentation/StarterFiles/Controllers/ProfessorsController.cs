@@ -1,4 +1,4 @@
-﻿using College.WebAPI.BLL;
+using College.WebAPI.BLL;
 using College.WebAPI.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace College.WebAPI.Controllers
 {
     
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProfessorsController : ControllerBase
     {
