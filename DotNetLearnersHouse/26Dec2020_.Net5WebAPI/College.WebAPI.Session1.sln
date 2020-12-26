@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{72148B83-214D-4412-98CA-91DCA29E39D1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7B3A5604-C5DB-4AF0-9021-E69152E4D1A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6431AFE0-4AE9-4A09-89C4-BC2A69A662C3}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\ToBeDone.txt.txt = Tests\ToBeDone.txt.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8875539-1811-4E9F-AFDD-FEFC28B049C7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{BB6B8919-F869-4BE1-ACFD-78C790E1B1CC}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Images\ViswanathaSwamy.JPG = Documentation\Images\ViswanathaSwamy.JPG
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{3ECBA79E-5C6C-4E4D-AF3F-5065E5A99951}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\1Create_Database.sql = SQLScripts\1Create_Database.sql
+		SQLScripts\2Create_Professors.sql = SQLScripts\2Create_Professors.sql
+		SQLScripts\3Create_Students.sql = SQLScripts\3Create_Students.sql
+		SQLScripts\4Insert_Professors.sql = SQLScripts\4Insert_Professors.sql
+		SQLScripts\5Insert_Students.sql = SQLScripts\5Insert_Students.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.WebAPI", "Source\College.WebAPI\College.WebAPI.csproj", "{809A8235-7940-4937-944A-1184F52C5093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{809A8235-7940-4937-944A-1184F52C5093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809A8235-7940-4937-944A-1184F52C5093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809A8235-7940-4937-944A-1184F52C5093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809A8235-7940-4937-944A-1184F52C5093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB6B8919-F869-4BE1-ACFD-78C790E1B1CC} = {72148B83-214D-4412-98CA-91DCA29E39D1}
+		{809A8235-7940-4937-944A-1184F52C5093} = {7B3A5604-C5DB-4AF0-9021-E69152E4D1A3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E07EA27-174F-4445-876C-BFECE15831A1}
+	EndGlobalSection
+EndGlobal
