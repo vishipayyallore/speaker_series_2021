@@ -70,8 +70,8 @@
 
 ### Implement GetAll() method
 > 1. Create two entities for Professor and Student. (Started Folder)
-> 1. Add "Microsoft.EntityFrameworkCore.SqlServer" package reference.
 > 1. Create Constants file inside **Core/Common** folder. (Started Folder)
+> 1. Add "Microsoft.EntityFrameworkCore.SqlServer" package reference.
 > 1. Create CollegeSqlDbContext.cs inside Folder **DAL/Persistence**
 > 1. Create ProfessorsSqlDal.cs . Create a Folder **DAL**
 > 1. Create ProfessorsSqlBll.cs inside folder **BLL**.
