@@ -28,6 +28,7 @@ namespace College.DAL
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetAllProfessors");
 
             var professors = await _collegeDbContext.Professors
+                                                        .Include(student => student.Students)
                                                         .ToListAsync()
                                                         .ConfigureAwait(false);
 
@@ -36,21 +37,23 @@ namespace College.DAL
             return professors;
         }
 
-        public Professor GetProfessorById(Guid professorId)
+        public async Task<Professor> GetProfessorById(Guid professorId)
         {
             Professor professor = null;
 
             _logger.Log(LogLevel.Debug, "Request Received for ProfessorDAL::GetProfessorById");
 
-            professor = _collegeDbContext.Professors
-                .Where(record => record.ProfessorId == professorId)
-                .Include(student => student.Students)
-                .FirstOrDefault();
+            professor = await _collegeDbContext.Professors
+                                                .Where(record => record.ProfessorId == professorId)
+                                                .Include(student => student.Students)
+                                                .FirstOrDefaultAsync()
+                                                .ConfigureAwait(false);
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorDAL::GetProfessorById");
 
             return professor;
         }
+
     }
 
 }
