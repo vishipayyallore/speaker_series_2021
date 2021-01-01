@@ -1,15 +1,16 @@
 ﻿using College.Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace College.Core.Interfaces
 {
 
     public interface IProfessorsBLL
     {
-        IEnumerable<Professor> GetAllProfessors();
+        Task<IEnumerable<Professor>> GetAllProfessors();
 
-        Professor GetProfessorById(Guid professorId);
+        Task<Professor> GetProfessorById(Guid professorId);
     }
 
 }
