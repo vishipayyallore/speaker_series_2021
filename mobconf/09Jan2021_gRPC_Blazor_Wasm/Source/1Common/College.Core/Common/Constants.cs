@@ -11,10 +11,10 @@
 
         public static class Weather
         {
-            
+
             public static string[] Summaries = new[]
             {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", 
+                "Freezing", "Bracing", "Chilly", "Cool", "Mild",
                 "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
             };
 

@@ -1,6 +1,6 @@
 ﻿using College.Core.Entities;
 using College.Core.Interfaces;
-using College.DAL.Persistence;
+using College.Dal.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,15 +8,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace College.DAL
+namespace College.Dal
 {
 
-    public class ProfessorsDAL : IProfessorsDAL
+    public class ProfessorsDal : IProfessorsDal
     {
         private readonly CollegeDbContext _collegeDbContext;
-        private readonly ILogger<ProfessorsDAL> _logger;
+        private readonly ILogger<ProfessorsDal> _logger;
 
-        public ProfessorsDAL(CollegeDbContext collegeDbContext, ILogger<ProfessorsDAL> logger)
+        public ProfessorsDal(CollegeDbContext collegeDbContext, ILogger<ProfessorsDal> logger)
         {
             _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
 

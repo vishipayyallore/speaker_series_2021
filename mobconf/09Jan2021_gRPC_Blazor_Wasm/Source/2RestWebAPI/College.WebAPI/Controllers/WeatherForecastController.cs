@@ -11,7 +11,7 @@ namespace College.WebAPI.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private readonly ILogger<WeatherForecastController> _logger;
@@ -35,5 +35,7 @@ namespace College.WebAPI.Controllers
             })
             .ToArray();
         }
+
     }
+
 }

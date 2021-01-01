@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\1Common\College.Bll\College.Bll.csproj" />
     <ProjectReference Include="..\..\1Common\College.Core\College.Core.csproj" />
+    <ProjectReference Include="..\..\1Common\College.Dal\College.Dal.csproj" />
   </ItemGroup>
 
 </Project>

@@ -48,17 +48,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StarterFiles", "StarterFile
 		Documentation\StarterFiles\A.txt = Documentation\StarterFiles\A.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.WebAPI", "Source\2RestWebAPI\College.WebAPI\College.WebAPI.csproj", "{89662FE8-6018-4D35-B867-313C952BD64E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "Source\2RestWebAPI\College.WebAPI\College.WebAPI.csproj", "{89662FE8-6018-4D35-B867-313C952BD64E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.GrpcServer", "Source\3gRPCWeb\College.GrpcServer\College.GrpcServer.csproj", "{FFD3BAA9-6B38-4536-B65F-B0F7232BED0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "Source\3gRPCWeb\College.GrpcServer\College.GrpcServer.csproj", "{FFD3BAA9-6B38-4536-B65F-B0F7232BED0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{19640A3A-09D8-410E-BE76-D744EAC9AD7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{19640A3A-09D8-410E-BE76-D744EAC9AD7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Core", "Source\1Common\College.Core\College.Core.csproj", "{681A7D1E-6EA7-41E7-A821-7963D0DDF868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\1Common\College.Core\College.Core.csproj", "{681A7D1E-6EA7-41E7-A821-7963D0DDF868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.DAL", "Source\1Common\College.DAL\College.DAL.csproj", "{D9C4F485-B1D6-448D-8F8A-C0911F8D4418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Dal", "Source\1Common\College.Dal\College.Dal.csproj", "{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BLL", "Source\1Common\College.BLL\College.BLL.csproj", "{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Bll", "Source\1Common\College.Bll\College.Bll.csproj", "{1E3123C9-E596-4295-A921-BF23A0C021F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,14 +82,14 @@ Global
 		{681A7D1E-6EA7-41E7-A821-7963D0DDF868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681A7D1E-6EA7-41E7-A821-7963D0DDF868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681A7D1E-6EA7-41E7-A821-7963D0DDF868}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9C4F485-B1D6-448D-8F8A-C0911F8D4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9C4F485-B1D6-448D-8F8A-C0911F8D4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9C4F485-B1D6-448D-8F8A-C0911F8D4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9C4F485-B1D6-448D-8F8A-C0911F8D4418}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3123C9-E596-4295-A921-BF23A0C021F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3123C9-E596-4295-A921-BF23A0C021F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3123C9-E596-4295-A921-BF23A0C021F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3123C9-E596-4295-A921-BF23A0C021F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,8 +106,8 @@ Global
 		{FFD3BAA9-6B38-4536-B65F-B0F7232BED0A} = {9E12F320-8ADB-46AA-B0B1-67D527FB0F10}
 		{19640A3A-09D8-410E-BE76-D744EAC9AD7C} = {7433630F-659B-4FE2-9BAE-A70BD28272A9}
 		{681A7D1E-6EA7-41E7-A821-7963D0DDF868} = {6EBEB61F-E009-4BF1-B5D4-6223ACB6F88C}
-		{D9C4F485-B1D6-448D-8F8A-C0911F8D4418} = {6EBEB61F-E009-4BF1-B5D4-6223ACB6F88C}
-		{0D8B07B6-5D10-4A8C-80A9-8F18EE3DF8D4} = {6EBEB61F-E009-4BF1-B5D4-6223ACB6F88C}
+		{8EA4DF9F-CACD-407C-8768-2C2D59F0CE98} = {6EBEB61F-E009-4BF1-B5D4-6223ACB6F88C}
+		{1E3123C9-E596-4295-A921-BF23A0C021F8} = {6EBEB61F-E009-4BF1-B5D4-6223ACB6F88C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D66A8768-1DF2-4E73-BA30-E1AB624999AC}

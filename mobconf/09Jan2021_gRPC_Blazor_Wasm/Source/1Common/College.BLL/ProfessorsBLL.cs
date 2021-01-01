@@ -5,15 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace College.BLL
+namespace College.Bll
 {
 
-    public class ProfessorsBLL : IProfessorsBLL
+    public class ProfessorsBll : IProfessorsBll
     {
-        private readonly IProfessorsDAL _professorDal;
-        private readonly ILogger<ProfessorsBLL> _logger;
+        private readonly IProfessorsDal _professorDal;
+        private readonly ILogger<ProfessorsBll> _logger;
 
-        public ProfessorsBLL(IProfessorsDAL professorDal, ILogger<ProfessorsBLL> logger)
+        public ProfessorsBll(IProfessorsDal professorDal, ILogger<ProfessorsBll> logger)
         {
             _professorDal = professorDal ?? throw new ArgumentNullException(nameof(professorDal));
 

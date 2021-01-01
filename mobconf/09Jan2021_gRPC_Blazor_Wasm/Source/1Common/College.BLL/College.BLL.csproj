@@ -1,12 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>College.Bll</AssemblyName>
+    <RootNamespace>College.Bll</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\College.Core\College.Core.csproj" />
-    <ProjectReference Include="..\College.DAL\College.DAL.csproj" />
+    <ProjectReference Include="..\College.Dal\College.Dal.csproj" />
   </ItemGroup>
 
 </Project>
