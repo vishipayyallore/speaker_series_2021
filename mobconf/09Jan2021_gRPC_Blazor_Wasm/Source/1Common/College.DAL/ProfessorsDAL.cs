@@ -19,7 +19,7 @@ namespace College.DAL
         public ProfessorsDAL(CollegeDbContext collegeDbContext, ILogger<ProfessorsDAL> logger)
         {
             _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
-            
+
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 

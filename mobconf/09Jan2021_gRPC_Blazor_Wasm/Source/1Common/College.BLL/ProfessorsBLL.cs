@@ -16,7 +16,7 @@ namespace College.BLL
         public ProfessorsBLL(IProfessorsDAL professorDal, ILogger<ProfessorsBLL> logger)
         {
             _professorDal = professorDal ?? throw new ArgumentNullException(nameof(professorDal));
-            
+
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
