@@ -15,12 +15,13 @@ namespace College.WebAPI
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        private const string _policyName = "AllowAll";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -31,6 +32,13 @@ namespace College.WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "College.WebAPI", Version = "v1" });
             });
+
+            services.AddCors(o => o.AddPolicy(_policyName, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
@@ -54,6 +62,8 @@ namespace College.WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(_policyName);
 
             app.UseAuthorization();
 
