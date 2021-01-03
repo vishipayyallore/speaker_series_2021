@@ -1,5 +1,6 @@
-# Session 1 OF 15 (REST Web API using .Net 5, SQL Server)
+# Speaking Event - Dot Net Learners House - 26-Dec-2020 - (REST Web API using .Net 5, SQL Server)
 
+## Session 1 OF 15 (https://www.meetup.com/dot-net-learners-house/)
 ![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.PNG)
 
 ## Pre-Requisites
