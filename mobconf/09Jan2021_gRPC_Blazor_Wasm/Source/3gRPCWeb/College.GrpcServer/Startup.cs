@@ -59,12 +59,15 @@ namespace College.GrpcServer
 
             app.UseRouting();
 
+            // Must be added between UseRouting and UseEndpoints
+            app.UseGrpcWeb();
+
             app.UseCors(_policyName);
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>();
-                endpoints.MapGrpcService<CollegeService>();
+                endpoints.MapGrpcService<CollegeService>().EnableGrpcWeb().RequireCors(_policyName);
 
                 endpoints.MapGet("/", async context =>
                 {
