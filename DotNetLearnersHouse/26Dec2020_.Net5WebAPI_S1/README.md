@@ -2,7 +2,7 @@
 
 ## Session 1 OF 15 
 ## URL: https://www.meetup.com/dot-net-learners-house/
-![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.PNG)
+![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.png)
 
 ## Pre-Requisites
 
