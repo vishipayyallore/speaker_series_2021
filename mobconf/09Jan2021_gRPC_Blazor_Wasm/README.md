@@ -1,10 +1,11 @@
-# Speaking Event - mobconf - 09-Jan-2021 - (gRPC Web, Blazor WASM using .NET 5)
+# Speaking Event - mobconf - 09-Jan-2021 - gRPC Web, Blazor WASM using .NET 5
 
 ![gRPC Web + Blazor Wasm using .Net 5 |100x100](./Documentation/Images/Jan2021.PNG)
 
 ## Pre-Requisites
 
 ### Software/Tools
+> 1. OS: win32 x64
 > 1. .NET 5
 > 1. VS 2019 Community Edition
 > 1. Visual Studio Code

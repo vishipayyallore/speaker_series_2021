@@ -1,18 +1,20 @@
-# Speaking Event - Dot Net Learners House - 26-Dec-2020 - (REST Web API using .Net 5, SQL Server)
+# Speaking Event - Dot Net Learners House - 26-Dec-2020 - REST Web API using .Net 5, SQL Server
 
-## Session 1 OF 15 (https://www.meetup.com/dot-net-learners-house/)
+## Session 1 OF 15 
+## URL: https://www.meetup.com/dot-net-learners-house/
 ![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.PNG)
 
 ## Pre-Requisites
 
 ### Software/Tools
+> 1. OS: win32 x64
 > 1. .NET 5
 > 1. VS 2019 Community Edition
 > 1. Visual Studio Code
 > 1. Postman
 > 1. SQL Server 2016 and above 
 
-### Knowledge
+### Prior Knowledge
 > 1. Basic C#
 > 1. Basic EF Core
 > 1. Basic knowledge of async/await

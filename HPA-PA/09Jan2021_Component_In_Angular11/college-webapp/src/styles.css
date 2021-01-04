@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
+.top-navbar-bg-primary {
+  background-color: #2f5c8e;
+}
+
+h1 {
+  color: navy;
+}
+
+.first-div {
+  background-color: aliceblue;
+}
+
+p {
+  color: navy;
+}
+
+span{
+  color: blue;
+}
