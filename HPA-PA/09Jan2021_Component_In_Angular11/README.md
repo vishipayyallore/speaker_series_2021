@@ -12,17 +12,16 @@
 > 1. To be done
 
 ### Prior Knowledge
+> 1. Html, CSS
 > 1. Type Script
 > 1. Java Script
 > 1. Basic Angular
 
 ### Assumptions
-> 1. To be done
+> 1. NIL
 
 ## Technology Stack
-
-> 1. To be done
-> 1. To be done
+> 1. Angular 11
 
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
