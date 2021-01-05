@@ -9,17 +9,23 @@ html {
 }
 
 h1 {
-  color: navy;
+  color: #2f5c8e;
 }
 
 .first-div {
-  background-color: aliceblue;
+  background-color: #e0e4e6;
 }
 
 p {
-  color: navy;
+  color: #0a60b1;
 }
 
-span{
-  color: blue;
+span {
+  color: #0a60b1;
+  font-weight: bolder;
+}
+
+hr {
+  height: 1px;
+  background-color: navy;
 }

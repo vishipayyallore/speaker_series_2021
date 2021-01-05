@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IProfessor } from '../../interfaces/IProfessor';
+import { IProfessor } from '../interfaces/IProfessor';
 
 @Component({
   selector: 'app-professorv1',

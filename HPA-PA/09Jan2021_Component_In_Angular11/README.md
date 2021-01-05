@@ -27,6 +27,9 @@
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
+## UI Look and Feel
+![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel.PNG)
+
 ## How to Build and Execute the solution
 
 ### 1. What is a Component? 
