@@ -87,7 +87,7 @@ Discussion
 > 1. Interpolation (One-way binding) Bind 
 > 1. Modify the professorv1.component.ts file. Please refer to **StarterFiles** folder.
 > 1. Add **Professorv1Component** inside declarations in app.module.ts file.
-> 1. Using Component as a directive inside App.Component.html 
+> 1. Update app.component.html to include **professorv1** (Component as a directive).
 > 1. Run **npm start** to view the **Version 1** of Professors component.
 > ```
 > declarations: [
@@ -98,19 +98,46 @@ Discussion
 
 ### Creating Component with Linked Template [Manual] 
 > 1. Create **professorv2** folder insde **src/app** folder.
+> 1. Selector, TemplateUrl, StyleUrls
 > 1. Create three files (professorv2.component.ts, professorv2.component.html, professorv2.component.css) inside **proferssorv2** folder.
 > 1. Modify the three files. Please refer **professorv2** folder inside **StarterFiles** folder.
 > 1. Add **Professorv2Component** inside declarations in app.module.ts file.
-> 1. Using Component as a directive inside App.Component.html
+> 1. Update app.component.html to include **professorv2**.
 > 1. Modify app.component.html to display both divs side-by-side.
+> 1. Please refer **StarterFiles** folder.
 > 1. Run **npm start** to view the **Version 1** and **Version 2** of Professors component.
 > ```
 > declarations: [
 >   AppComponent,
 >   Professorv1Component,
+>   Professorv2Component,
 > ],
 > ```
 
-### 9. Selector, TemplateUrl, StyleUrls 
+### Creating Top Navigation Bar
+> 1. Create a Compoent using **ng g c** CLI Command
+> 1. Modify **top-navbar.component.html** file. Please refer **StarterFiles** folder.
+> 1. Modify **styles.css** file. Please refer **StarterFiles** folder.
+> 1. Update app.component.html to include **top-navbar**.
+> 1. Run **npm start** to view the **top-navbar** of Professors component.
+> ```
+>  ng g c components/top-navbar
+> ```
 
-### 10. ng generate component demo 
+### Creating Version 3 using ng g c CLI
+> 1. Create a Compoent using **ng g c** CLI Command
+> 1. Modify the files (professorv3.component.ts, professorv3.component.html) inside **src/app/components/proferssorv3** folder.
+> 1. Please refer **StarterFiles** folder.
+> 1. Update app.component.html to include **professorv3**.
+> 1. Run **npm start** to view the **All Three versions** of Professors component.
+> ```
+>  ng g c components/professorv3
+> ```
+> ```
+> declarations: [
+>   AppComponent,
+>   Professorv1Component,
+>   Professorv2Component,
+>   Professorv3Component,
+> ],
+> ```
