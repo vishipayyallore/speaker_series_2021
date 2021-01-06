@@ -86,9 +86,9 @@ Discussion
 > 1. Selector, Template, Styles
 > 1. Interpolation (One-way binding) Bind 
 > 1. Modify the professorv1.component.ts file. Please refer to **StarterFiles** folder.
-> 1. Using Component as a directive inside AppComponent 
 > 1. Add **Professorv1Component** inside declarations in app.module.ts file.
-> 1. Run npm start to view the Version 1 of Professors component.
+> 1. Using Component as a directive inside App.Component.html 
+> 1. Run **npm start** to view the **Version 1** of Professors component.
 > ```
 > declarations: [
 >   AppComponent,
@@ -98,7 +98,18 @@ Discussion
 
 ### Creating Component with Linked Template [Manual] 
 > 1. Create **professorv2** folder insde **src/app** folder.
-> 1. Create three files (professorv1.component.ts, professorv1.component.html, professorv1.component.css) inside **proferssorv2** folder.
+> 1. Create three files (professorv2.component.ts, professorv2.component.html, professorv2.component.css) inside **proferssorv2** folder.
+> 1. Modify the three files. Please refer **professorv2** folder inside **StarterFiles** folder.
+> 1. Add **Professorv2Component** inside declarations in app.module.ts file.
+> 1. Using Component as a directive inside App.Component.html
+> 1. Modify app.component.html to display both divs side-by-side.
+> 1. Run **npm start** to view the **Version 1** and **Version 2** of Professors component.
+> ```
+> declarations: [
+>   AppComponent,
+>   Professorv1Component,
+> ],
+> ```
 
 ### 9. Selector, TemplateUrl, StyleUrls 
 

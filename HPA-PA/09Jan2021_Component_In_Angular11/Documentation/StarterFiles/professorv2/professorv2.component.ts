@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { IProfessor } from '../interfaces/IProfessor';
 
 @Component({
-  selector: 'app-professorv1',
-  templateUrl: './professorv1.component.html',
-  styleUrls: ['./professorv1.component.css']
+  selector: 'app-professorv2',
+  templateUrl: './professorv2.component.html',
+  styleUrls: ['./professorv2.component.css']
 })
-export class Professorv1Component implements OnInit {
+export class Professorv2Component implements OnInit {
 
   professor: IProfessor;
 
