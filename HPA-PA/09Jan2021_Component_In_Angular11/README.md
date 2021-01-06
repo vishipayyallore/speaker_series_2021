@@ -21,7 +21,7 @@
 > 1. NIL
 
 ## Technology Stack
-> 1. Angular 11
+> 1. Single Page Application using Angular 11
 
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
@@ -31,21 +31,74 @@
 
 ## How to Build and Execute the solution
 
-### 1. What is a Component? 
+### Create new Project and Execute
+```
+ng new college-webapp
+npm start
+```
 
-### 2. Module, Decorator, Metadata. 
+### Few changes to the Project
+> Modify package.json to open the browser during execution
+> ```
+> "start": "ng serve -o",
+> ```
+> Install **bootstrap** and **font-awesome**
+> ```
+> npm i bootstrap
+> npm i font-awesome
+> ```
+> Modify angular.json to import CSS
+> ```
+> "styles": [
+>     "src/styles.css",
+>     "./node_modules/font-awesome/css/font-awesome.css",
+>     "./node_modules/bootstrap/dist/css/bootstrap.css"
+> ],
+> ```
+> Modify angular.json to change the default port **4200** to your choice of port **xxxx**
+> ```
+> "serve": {
+>     "builder": "@angular-devkit/build-angular:dev-server",
+>     "options": {
+>         "browserTarget": "college-webapp:build",
+>         "port": 4004
+>     },
+> }
+> ```
+> Clean up the **src/app/app.component.html** and add a **h1** Tag
+> ```
+> <h1>Hello World !!!</h1>
+> ```
+> Execute the **npm start** to view **Hello World !!!**
 
-### 3. Bootstrapping AppComponent. 
+### What is a Component? 
+Discussion
 
-### 4. Creating Component with Inline Template [Manual] 
+### Module, Decorator, Metadata. 
+Discussion
 
-### 5. Selector, Template, Styles, 
+### Bootstrapping AppComponent. 
+Discussion
 
-### 6. Interpolation (One-way binding) Bind 
+### Creating Component with Inline Template [Manual] 
+> 1. Copy **interfaces** folder from **StarterFiles** folder into **src/app** folder.
+> 1. Create **professorv1/professorv1.component.ts** folder insde **src/app** folder.
+> 1. Selector, Template, Styles
+> 1. Interpolation (One-way binding) Bind 
+> 1. Modify the professorv1.component.ts file. Please refer to **StarterFiles** folder.
+> 1. Using Component as a directive inside AppComponent 
+> 1. Add **Professorv1Component** inside declarations in app.module.ts file.
+> 1. Run npm start to view the Version 1 of Professors component.
+> ```
+> declarations: [
+>   AppComponent,
+>   Professorv1Component,
+> ],
+> ```
 
-### 7. Using Component as a directive inside AppComponent 
-
-### 8. Creating Component with Linked Template [Manual] 
+### Creating Component with Linked Template [Manual] 
+> 1. Create **professorv2** folder insde **src/app** folder.
+> 1. Create three files (professorv1.component.ts, professorv1.component.html, professorv1.component.css) inside **proferssorv2** folder.
 
 ### 9. Selector, TemplateUrl, StyleUrls 
 

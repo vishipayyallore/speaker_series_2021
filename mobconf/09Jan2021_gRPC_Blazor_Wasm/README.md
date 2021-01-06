@@ -34,3 +34,7 @@
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
+## How to Build and Execute the solution
+
+
+
