@@ -1,5 +1,5 @@
 # Repository for Speaker Series 2021
-This Repository to hold the Demos for my Speaker Series event from different **User Group** / **Meetup Groups**.
+This Repository to hold the Demos for my Speaker Series events from different **User Group** / **Meetup Groups**.
 
 ## 1. [BDotNet](https://github.com/vishipayyallore/speaker_series_2021/tree/master/BDotNet)
 This repository contains the speaker events which I have done from **BDotNet** meetup group.
