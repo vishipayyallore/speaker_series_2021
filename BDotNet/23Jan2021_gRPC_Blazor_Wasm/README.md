@@ -1,4 +1,4 @@
-# Speaking Event - mobconf - 09-Jan-2021 - gRPC Web, Blazor WASM using .NET 5
+# Speaking Event - BDotNet - 23-Jan-2021 - gRPC Web, Blazor WASM using .NET 5
 
 ![gRPC Web + Blazor Wasm using .Net 5 |100x100](./Documentation/Images/Jan2021.PNG)
 

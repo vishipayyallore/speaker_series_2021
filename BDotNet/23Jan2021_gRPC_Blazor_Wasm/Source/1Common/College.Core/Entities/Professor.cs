@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace College.WebAPI.Core.Entities
+namespace College.Core.Entities
 {
 
     public class Professor

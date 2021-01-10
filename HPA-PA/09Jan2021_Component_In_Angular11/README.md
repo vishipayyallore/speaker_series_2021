@@ -9,7 +9,6 @@
 > 1. Angular CLI: 11.0.5
 > 1. Node: 14.15.1
 > 1. Visual Studio Code
-> 1. To be done
 
 ### Prior Knowledge
 > 1. Html, CSS
