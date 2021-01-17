@@ -1,4 +1,6 @@
-﻿using College.Core.Entities;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Engines;
+using College.Core.Entities;
 using College.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +14,8 @@ namespace College.WebAPI.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
+    // [MemoryDiagnoser]
+    [SimpleJob(RunStrategy.ColdStart, launchCount: 10)]
     public class ProfessorsController : ControllerBase
     {
 
@@ -39,6 +43,7 @@ namespace College.WebAPI.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Professor>), (int)HttpStatusCode.OK)]
+        [Benchmark]
         public async Task<ActionResult<IEnumerable<Professor>>> Get()
         {
             IEnumerable<Professor> professors;
