@@ -60,13 +60,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2WindowsFormClient", "2Wind
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1ConsoleClient", "1ConsoleClient", "{22EA7E8F-5D68-469E-9F6E-821766D67171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.GrpcServer", "Source\3gRPCWeb\College.GrpcServer\College.GrpcServer.csproj", "{5FB974F8-9D76-4B66-AD72-169D55881585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.GrpcServer", "Source\3gRPCWeb\College.GrpcServer\College.GrpcServer.csproj", "{5FB974F8-9D76-4B66-AD72-169D55881585}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.ConsoleClient", "Source\5gRPCClients\1ConsoleClient\CollegeGrpc.ConsoleClient\CollegeGrpc.ConsoleClient.csproj", "{C234DB2A-917A-4EFA-8E0B-92B3B83E1EBE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WindowsFormClient", "Source\5gRPCClients\2WindowsFormClient\CollegeGrpc.WindowsFormClient\CollegeGrpc.WindowsFormClient.csproj", "{0C2F3834-9DA7-440E-BF0C-A4B325CE4152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{2CE8D4D6-E9EF-4450-9729-C18A9590C095}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BlazorWasm", "Source\4BlazorWASM\College.BlazorWasm\College.BlazorWasm.csproj", "{2CE8D4D6-E9EF-4450-9729-C18A9590C095}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6BenchmarkClient", "6BenchmarkClient", "{1CA3DB04-479A-4A95-BB9E-B259835F781A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIgRPC.BenchmarkDemo", "Source\6BenchmarkClient\WebAPIgRPC.BenchmarkDemo\WebAPIgRPC.BenchmarkDemo.csproj", "{B938302F-3721-41D9-87F4-CE3BF61C5859}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +110,10 @@ Global
 		{2CE8D4D6-E9EF-4450-9729-C18A9590C095}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CE8D4D6-E9EF-4450-9729-C18A9590C095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CE8D4D6-E9EF-4450-9729-C18A9590C095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B938302F-3721-41D9-87F4-CE3BF61C5859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B938302F-3721-41D9-87F4-CE3BF61C5859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B938302F-3721-41D9-87F4-CE3BF61C5859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B938302F-3721-41D9-87F4-CE3BF61C5859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +136,8 @@ Global
 		{C234DB2A-917A-4EFA-8E0B-92B3B83E1EBE} = {22EA7E8F-5D68-469E-9F6E-821766D67171}
 		{0C2F3834-9DA7-440E-BF0C-A4B325CE4152} = {E2EF1D77-0434-4636-91F8-058384CB8BEF}
 		{2CE8D4D6-E9EF-4450-9729-C18A9590C095} = {7433630F-659B-4FE2-9BAE-A70BD28272A9}
+		{1CA3DB04-479A-4A95-BB9E-B259835F781A} = {4BD0D6BC-C65B-4BC5-BFF9-5CAC458020E4}
+		{B938302F-3721-41D9-87F4-CE3BF61C5859} = {1CA3DB04-479A-4A95-BB9E-B259835F781A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D66A8768-1DF2-4E73-BA30-E1AB624999AC}

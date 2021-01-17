@@ -19,25 +19,25 @@ namespace College.Dal
         /*
             TODO: UNCOMMENT this method when executing https://benchmarkdotnet.org
         */
-        public ProfessorsDal()
-        {
-            var options = new DbContextOptionsBuilder<CollegeDbContext>()
-                    .UseSqlServer("Server=localhost;Database=webapidemodb;User Id=sa;Password=Sample123$;")
-                    .Options;
-            _collegeDbContext = new CollegeDbContext(options);
+        //public ProfessorsDal()
+        //{
+        //    var options = new DbContextOptionsBuilder<CollegeDbContext>()
+        //            .UseSqlServer("Server=localhost;Database=YourDatabaseName;User Id=sa;Password=YourPassword;")
+        //            .Options;
+        //    _collegeDbContext = new CollegeDbContext(options);
 
-            _logger = new Logger<ProfessorsDal>(new LoggerFactory());
-        }
+        //    _logger = new Logger<ProfessorsDal>(new LoggerFactory());
+        //}
 
         /*
             TODO: COMMENT this method when executing https://benchmarkdotnet.org
         */
-        //public ProfessorsDal(CollegeDbContext collegeDbContext, ILogger<ProfessorsDal> logger)
-        //{
-        //    _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
+        public ProfessorsDal(CollegeDbContext collegeDbContext, ILogger<ProfessorsDal> logger)
+        {
+            _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
 
-        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        //}
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
 
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {

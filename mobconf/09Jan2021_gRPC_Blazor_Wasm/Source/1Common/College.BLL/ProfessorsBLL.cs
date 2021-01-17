@@ -16,22 +16,22 @@ namespace College.Bll
         /*
             TODO: UNCOMMENT this method when executing https://benchmarkdotnet.org
         */
-        public ProfessorsBll()
-        {
-            _professorDal = new Dal.ProfessorsDal();
+        //public ProfessorsBll()
+        //{
+        //    _professorDal = new Dal.ProfessorsDal();
 
-            _logger = new Logger<ProfessorsBll>(new LoggerFactory());
-        }
+        //    _logger = new Logger<ProfessorsBll>(new LoggerFactory());
+        //}
 
         /*
             TODO: COMMENT this method when executing https://benchmarkdotnet.org
         */
-        //public ProfessorsBll(IProfessorsDal professorDal, ILogger<ProfessorsBll> logger)
-        //{
-        //    _professorDal = professorDal ?? throw new ArgumentNullException(nameof(professorDal));
+        public ProfessorsBll(IProfessorsDal professorDal, ILogger<ProfessorsBll> logger)
+        {
+            _professorDal = professorDal ?? throw new ArgumentNullException(nameof(professorDal));
 
-        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        //}
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
 
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {

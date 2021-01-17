@@ -1,4 +1,3 @@
-using BenchmarkDotNet.Running;
 using College.Bll;
 using College.Core.Common;
 using College.Core.Interfaces;
@@ -48,8 +47,6 @@ namespace College.WebAPI
             // Application Services
             services.AddScoped<IProfessorsBll, ProfessorsBll>();
             services.AddScoped<IProfessorsDal, ProfessorsDal>();
-
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

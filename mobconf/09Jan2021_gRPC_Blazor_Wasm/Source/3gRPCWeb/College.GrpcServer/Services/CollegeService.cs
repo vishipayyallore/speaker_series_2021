@@ -62,26 +62,6 @@ namespace College.GrpcServer.Services
             return getProfessorResponse;
         }
 
-        ////====================== Private Methods ======================
-        //private static GetProfessorResponse GetProfessorObject(Professor professor)
-        //{
-        //    if (professor == null)
-        //    {
-        //        return new GetProfessorResponse();
-        //    }
-
-        //    return new GetProfessorResponse()
-        //    {
-        //        ProfessorId = professor.ProfessorId.ToString(),
-        //        Name = professor.Name,
-        //        Teaches = professor.Teaches,
-        //        IsPhd = professor.IsPhd,
-        //        Salary = decimal.ToDouble(professor.Salary),
-        //        Doj = Timestamp.FromDateTime(professor.Doj.ToUniversalTime())
-        //    };
-        //}
-        ////====================== Private Methods ======================
-
     }
 
 }

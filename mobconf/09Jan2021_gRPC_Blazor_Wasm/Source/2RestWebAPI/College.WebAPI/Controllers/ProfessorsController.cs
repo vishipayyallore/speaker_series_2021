@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Engines;
 using College.Core.Entities;
 using College.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +13,6 @@ namespace College.WebAPI.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
-    // [MemoryDiagnoser]
-    [SimpleJob(RunStrategy.ColdStart, launchCount: 10)]
     public class ProfessorsController : ControllerBase
     {
 
@@ -25,21 +22,21 @@ namespace College.WebAPI.Controllers
         /*
             TODO: UNCOMMENT this method when executing https://benchmarkdotnet.org
         */
-        public ProfessorsController()
-        {
-            _professorsBll = new Bll.ProfessorsBll();
-            _logger = new Logger<ProfessorsController>(new LoggerFactory());
-        }
+        //public ProfessorsController()
+        //{
+        //    _professorsBll = new Bll.ProfessorsBll();
+        //    _logger = new Logger<ProfessorsController>(new LoggerFactory());
+        //}
 
         /*
             TODO: COMMENT this method when executing https://benchmarkdotnet.org
         */
-        //public ProfessorsController(IProfessorsBll professorsBll, ILogger<ProfessorsController> logger)
-        //{
-        //    _professorsBll = professorsBll ?? throw new ArgumentNullException(nameof(professorsBll));
+        public ProfessorsController(IProfessorsBll professorsBll, ILogger<ProfessorsController> logger)
+        {
+            _professorsBll = professorsBll ?? throw new ArgumentNullException(nameof(professorsBll));
 
-        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        //}
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Professor>), (int)HttpStatusCode.OK)]
