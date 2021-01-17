@@ -4,15 +4,21 @@ using System.Threading.Tasks;
 
 namespace WebAPIgRPC.BenchmarkDemo
 {
-    [SimpleJob(RunStrategy.ColdStart, launchCount: 10)]
+    [SimpleJob(RunStrategy.ColdStart, launchCount: 2)]
     public class BenchmarkWebAPIAndgRPC
     {
 
-        [Params(10, 20)]
+        [Params(1, 2)]
         public int IterationCount;
 
         readonly WebAPIClient restClient = new WebAPIClient();
-        // readonly GRPCClient grpcClient = new GRPCClient();
+        readonly GrpcClient grpcClient = new GrpcClient();
+
+        [Benchmark]
+        public async Task GrpcGetAllProfessorsAsync()
+        {
+            await grpcClient.GetAllProfessorsAsync().ConfigureAwait(false);
+        }
 
         [Benchmark]
         public async Task ApiGetAllProfessorsAsync()
@@ -20,6 +26,6 @@ namespace WebAPIgRPC.BenchmarkDemo
             await restClient.GetAllProfessorsAsync().ConfigureAwait(false);
         }
 
-
     }
+
 }

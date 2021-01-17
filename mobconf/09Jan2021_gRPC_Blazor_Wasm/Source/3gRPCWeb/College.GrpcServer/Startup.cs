@@ -31,7 +31,12 @@ namespace College.GrpcServer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGrpc();
+            services.AddGrpc(options =>
+            {
+                options.EnableDetailedErrors = true;
+                options.MaxReceiveMessageSize = 20 * 1024 * 1024; // 2 MB
+                options.MaxSendMessageSize = 20 * 1024 * 1024; // 5 MB
+            });
 
             services.AddCors(o => o.AddPolicy(_policyName, builder =>
             {
