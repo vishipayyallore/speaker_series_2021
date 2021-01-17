@@ -129,6 +129,11 @@ Demo
 ![Blazor with gRPC Web | 100x100](./Documentation/Images/gRPCWeb_Blazor.PNG)
 
 ## Benchmark Web API VS gRPC
+
+### Round 1
 ![Web API Verses gRPC Benchmark | 100x100](./Documentation/Images/WebAPI_gRPC_Benchmark.PNG)
+
+### Round 2
+![Web API Verses gRPC Benchmark | 100x100](./Documentation/Images/WebAPI_gRPC_Benchmark_Round2.PNG)
 
 
