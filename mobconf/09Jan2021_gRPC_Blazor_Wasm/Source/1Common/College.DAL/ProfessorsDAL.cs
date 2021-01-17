@@ -16,12 +16,28 @@ namespace College.Dal
         private readonly CollegeDbContext _collegeDbContext;
         private readonly ILogger<ProfessorsDal> _logger;
 
-        public ProfessorsDal(CollegeDbContext collegeDbContext, ILogger<ProfessorsDal> logger)
+        /*
+            TODO: UNCOMMENT this method when executing https://benchmarkdotnet.org
+        */
+        public ProfessorsDal()
         {
-            _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
+            var options = new DbContextOptionsBuilder<CollegeDbContext>()
+                    .UseSqlServer("Server=localhost;Database=webapidemodb;User Id=sa;Password=Sample123$;")
+                    .Options;
+            _collegeDbContext = new CollegeDbContext(options);
 
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _logger = new Logger<ProfessorsDal>(new LoggerFactory());
         }
+
+        /*
+            TODO: COMMENT this method when executing https://benchmarkdotnet.org
+        */
+        //public ProfessorsDal(CollegeDbContext collegeDbContext, ILogger<ProfessorsDal> logger)
+        //{
+        //    _collegeDbContext = collegeDbContext ?? throw new ArgumentNullException(nameof(collegeDbContext));
+
+        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        //}
 
         public async Task<IEnumerable<Professor>> GetAllProfessors()
         {

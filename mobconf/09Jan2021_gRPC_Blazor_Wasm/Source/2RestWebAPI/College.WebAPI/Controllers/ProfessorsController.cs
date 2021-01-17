@@ -18,12 +18,24 @@ namespace College.WebAPI.Controllers
         private readonly IProfessorsBll _professorsBll;
         private readonly ILogger<ProfessorsController> _logger;
 
-        public ProfessorsController(IProfessorsBll professorsBll, ILogger<ProfessorsController> logger)
+        /*
+            TODO: UNCOMMENT this method when executing https://benchmarkdotnet.org
+        */
+        public ProfessorsController()
         {
-            _professorsBll = professorsBll ?? throw new ArgumentNullException(nameof(professorsBll));
-
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _professorsBll = new Bll.ProfessorsBll();
+            _logger = new Logger<ProfessorsController>(new LoggerFactory());
         }
+
+        /*
+            TODO: COMMENT this method when executing https://benchmarkdotnet.org
+        */
+        //public ProfessorsController(IProfessorsBll professorsBll, ILogger<ProfessorsController> logger)
+        //{
+        //    _professorsBll = professorsBll ?? throw new ArgumentNullException(nameof(professorsBll));
+
+        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        //}
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Professor>), (int)HttpStatusCode.OK)]
