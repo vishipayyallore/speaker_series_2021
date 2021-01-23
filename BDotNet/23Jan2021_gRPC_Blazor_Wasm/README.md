@@ -1,4 +1,4 @@
-# Speaking Event - BDotNet - 23-Jan-2021 - gRPC Web, Blazor WASM using .NET 5
+# Speaking Event - gRPC Web, Blazor WASM using .NET 5
 
 ![gRPC Web + Blazor Wasm using .Net 5 |100x100](./Documentation/Images/Jan2021.PNG)
 
@@ -35,6 +35,16 @@
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
+## What are we doing today?
+> 1. Building gRPC using the reusable components, testing gRPC Service
+> 1. Adding gRPC Web capability into an existing gRPC Service
+> 1. Creating Blazor WASM Application
+> 1. Retrieving content from Web API, and gRPC Web 
+> 1. Showcasing the Content Length and Time between API and gRPC Web.
+
+
+![Seat Belt | 100x100](./Documentation/Images/SeatBelt.PNG)
+
 ## How to Build and Execute the solution
 
 ## What we already have
@@ -48,6 +58,7 @@ Demo
 ![Postman Output | 100x100](./Documentation/Images/Postman_Output.PNG)
 
 ## Create New gRPC Web Project
+> 1. Create New gRPC Project (College.GrpcServer.csproj)
 > 1. Reference Auto Mapper and gRPC Web Nuget packages.
 > 1. Use **User Secrets** instead on appsettings.json.
 > 1. Add college.Proto file. Please refer **StarterFiles** folder.
