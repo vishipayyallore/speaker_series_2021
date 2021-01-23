@@ -58,16 +58,17 @@ Demo
 ![Postman Output | 100x100](./Documentation/Images/Postman_Output.PNG)
 
 ## Create New gRPC Web Project
-> 1. Create New gRPC Project (College.GrpcServer.csproj)
+> 1. Create New gRPC Project (**College.GrpcServer.csproj**)
 > 1. Reference Auto Mapper and gRPC Web Nuget packages.
 > 1. Use **User Secrets** instead on appsettings.json.
 > 1. Add college.Proto file. Please refer **StarterFiles** folder.
 > 1. Create CollegeService.cs and implement the RPC methods. Please refer **StarterFiles** folder.
 > 1. Modify Startup.cs to allow CORS.
 > 1. Also modify Startup.cs ConfigureServices(), and Configure() methods.
+> 1. Look into the Dependency Injection
 ```
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.34.0" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.32.0" />
 ```
 
 ```
@@ -101,10 +102,11 @@ Demo
 ## Verify the gRPC using Console, and Windows Form Client.
 > 1. CollegeGrpc.ConsoleClient.csproj
 > 1. CollegeGrpc.WindowsFormClient.csproj
+
 ![Windows Fomrs Client | 100x100](./Documentation/Images/WindowsFormsClient.PNG)
 
 ## Create a New Blazor WASM
-> 1. Demo
+> 1. Create a new Blazor WASM project (**College.BlazorWasm.csproj**)
 
 ## Modify Blazor UI
 > 1. MainLayout.razor.css
@@ -113,6 +115,7 @@ Demo
 
 ## Modify to add two more menu items
 > 1. NavMenu.razor
+> 1. NavMenu.razor.css
 
 ## REST API Integration
 > 1. Create ProfessorsFromWebAPI.razor, and ProfessorsFromWebAPI.cs.
@@ -130,14 +133,23 @@ Demo
 > 1. Execute and verify the UI receiving the data from gRPC Web.
 ```
     <PackageReference Include="Google.Protobuf" Version="3.14.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.34.0" />
-    <PackageReference Include="Grpc.Net.Client.Web" Version="2.34.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.34.0">
+    <PackageReference Include="Grpc.Net.Client" Version="2.32.0" />
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.32.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.32.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
 ```
 ![Blazor with gRPC Web | 100x100](./Documentation/Images/gRPCWeb_Blazor.PNG)
+
+## Benchmark Web API VS gRPC
+
+### Round 1
+![Web API Verses gRPC Benchmark | 100x100](./Documentation/Images/WebAPI_gRPC_Benchmark.PNG)
+
+### Round 2
+![Web API Verses gRPC Benchmark | 100x100](./Documentation/Images/WebAPI_gRPC_Benchmark_Round2.PNG)
+
 
 
 
