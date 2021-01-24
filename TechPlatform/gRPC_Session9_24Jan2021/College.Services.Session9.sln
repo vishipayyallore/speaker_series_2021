@@ -50,6 +50,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeGrpc.WebApiClient", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Cache.DAL", "Source\1Common\College.Cache.DAL\College.Cache.DAL.csproj", "{745F11ED-A231-4812-A8BD-F4164FDF2AEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeGrpc.WebAppClient", "Source\3gRPCClients\CollegeGrpc.WebAppClient\CollegeGrpc.WebAppClient.csproj", "{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,6 +98,10 @@ Global
 		{745F11ED-A231-4812-A8BD-F4164FDF2AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{745F11ED-A231-4812-A8BD-F4164FDF2AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{745F11ED-A231-4812-A8BD-F4164FDF2AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{41406B98-1770-4369-93B1-229CBBAC1CD3} = {7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}
 		{2780EB03-FFE7-4DF8-8F95-896D39FB3A83} = {7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}
 		{745F11ED-A231-4812-A8BD-F4164FDF2AEF} = {7A764374-8027-4277-B29E-4DDFD0DBD287}
+		{7445C286-3FD1-4AF1-9BBC-2235BB7B91D4} = {7DA5455E-9C9B-46CE-8D91-6EDA469FCC8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51603D40-4A3F-4CA5-A93D-689EE361CD1C}
