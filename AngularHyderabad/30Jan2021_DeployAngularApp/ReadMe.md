@@ -1,7 +1,5 @@
 # Session on Deploying Angular 11 to Azure and Firebase
 
-# Session on Deploying Angular 11 to Azure and Firebase
-
 ## Tech Stack
 > 1. Angular CLI (version **11.1.2**).
 
