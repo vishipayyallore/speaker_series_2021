@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  min-height: 85vh;
+}
+
+.sidenav {
+  height: inherit;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  transition: 0.5s;
+}
+
+.top-navbar-color {
+  background: #251B24;
+  color: white;
+}
+
+.bg-sidebar {
+  background: #943346;
+  color: white;
+}
+
+.PageTitle {
+  color: #251B24;
+}
+
+footer {
+  background: #251B24;
+  color: white;
+  padding: 1px;
+  bottom: 0;
+  vertical-align: middle;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 40px;
+  top: 70px;
+  background-color: #251B24;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.float-margintop {
+  margin-top: 22px;
+}
+
+.labelAndTextbox {
+  display: flex;
+}
+
+.btn-maincolor {
+	background-color: #251B24!important;
+	color: white!important;
+}
+
+.table-header-dark{
+	background-color: #251B24!important;
+	color: white!important;
+}
+
+.spinner {
+  font-size:44px;
+  color:#251B24;
+}
+
+a:hover{
+  color: yellow!important;
+}

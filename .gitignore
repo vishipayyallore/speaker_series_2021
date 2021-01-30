@@ -367,3 +367,10 @@ HPA-PA/deployangularapp/Source/conferences/firestore.rules
 HPA-PA/deployangularapp/Source/conferences/.firebaserc
 HPA-PA/deployangularapp/Source/conferences/firestore.indexes.json
 HPA-PA/deployangularapp/Source/conferences/remoteconfig.template.json
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/.firebaserc
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/database.rules.json
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/firebase.json
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/firestore.indexes.json
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/firestore.rules
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/remoteconfig.template.json
+AngularHyderabad/30Jan2021_DeployAngularApp/Source/conferences/storage.rules

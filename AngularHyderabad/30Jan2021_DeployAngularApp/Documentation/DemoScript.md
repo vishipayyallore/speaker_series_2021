@@ -1,7 +1,7 @@
 # Session on Deploying Angular 11 to Azure and Firebase
 
 ## Tech Stack
-> 1. Angular (version **11.0.3**).
+> 1. Angular CLI (version **11.1.2**).
 
 ## Upgrade the Angular Cli/Core
 ```
@@ -33,8 +33,8 @@ ng g c components/dashboard
 
 **Resource In Azure**
 > 1. rsg_conferences-ngui-dev
-> 2. asp-conferences-ngui-dev
-> 3. app-conferences-ngui-dev
+> 1. asp-conferences-ngui-dev
+> 1. app-conferences-ngui-dev
 
 https://YourApp.scm.azurewebsites.net:443/YourApp.git
 UserName
@@ -43,22 +43,18 @@ Password
 Commands
 ```
 az login
-az webapp deployment user set --user-name UserName --password Passowrd
+az webapp deployment user set --user-name UserName --password Password
 ```
 
 ```
 git clone https://YourApp.scm.azurewebsites.net:443/YourApp.git
 ```
 
+Generate the production version of build
 ```
-git add .
-git commit -m "ase deploy with localgit"
-git push
+ng build --prod
 ```
 
-```
-ng build — prod
-```
 **Copy from build output folder into the YourApp**
 
 ```
@@ -68,7 +64,11 @@ git push
 ```
 
 ## Deploying Angular 11 application to Firebase
+> 1. Create a new project in FireBase.
+> 1. Create a Hosting 
+> 1. Create Cloud Firestore
 
+**Ensure that you are specifying "dist/conferences" as public folder**
 ```
 install -g firebase-tools
 firebase login
