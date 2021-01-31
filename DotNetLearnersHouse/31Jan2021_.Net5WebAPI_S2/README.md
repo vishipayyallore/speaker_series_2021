@@ -1,6 +1,6 @@
-# Session 1 OF 15 (REST Web API using .Net 5, SQL Server)
+# Session 2 OF 15 (REST Web API using .Net 5, SQL Server)
 
-![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.PNG)
+![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.jpg)
 
 ## Pre-Requisites
 
@@ -32,10 +32,21 @@
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
+## What we will be doing today
+1. Resource Naming Guidelines
+1. Action Return Types.
+1. Status Codes
+1. Application Core Layer | Business Logic Layer | SQL Data Access Layer
+1. User Secrets instead of appSettings.json
+1. Dependency Injection
+1. Adding CORS (Cross-Origin Resource Sharing) to web API
+1. Testing using Chrome Browser, Swagger, and Postman
+1. Integrating Web API with Blazor WASM.
+
 ## How to Build and Execute the solution
 
 ### Create new Web API
-> 1. Demo
+> 1. Move the code into different libraries
 
 ### Project Structure
 > 1. Demo / Discussion
@@ -60,25 +71,16 @@
 > 1. Demo / Discussion
 
 ### Building Professor’s Controller (Using Folders for seperation)
-> 1. Add Empty Web API Controllers (ProfessorsController.cs)
-> 1. Modify the Route for WeatherForecastController.cs
-> 1. Create **Core/Entities** Folder and Move the WeatherForecast.cs
+> 1. Modify ProfessorsController.cs to use the code from libraries.
 > 1. Modify WeatherForecastController.cs to refer the WeatherForecast model.
 
 ### Introduction Action Return Types
 > 1. Demo / Discussion
 
 ### Implement GetAll() method
-> 1. Create two entities for Professor and Student. (Started Folder)
-> 1. Create Constants file inside **Core/Common** folder. (Started Folder)
-> 1. Add "Microsoft.EntityFrameworkCore.SqlServer" package reference.
-> 1. Create CollegeSqlDbContext.cs inside Folder **DAL/Persistence**
-> 1. Create ProfessorsSqlDal.cs . Create a Folder **DAL**
-> 1. Create ProfessorsSqlBll.cs inside folder **BLL**.
-> 1. Update the ProfessorsController.cs to have **Get()** method.
-> 1. Update the appsettings.json to have connection string to your database. 
-> 1. Ensure that SQL Credentials are correct.
 > 1. Adding Dependencies inside **ConfigureServices()** method of Startup.cs.
+> 1. Consume the Professors BLL from the library.
+> 1. User Secrets instead of appSettings.json. 
 
 ### Verify the controllers using Swagger and Chrome Browser
 > 1. Demo / Discussion
@@ -86,3 +88,21 @@
 
 ## Look and Feel
 ![Get Using Postman | 100x100](./Documentation/Images/GetUsingPostman.PNG)
+
+## Create a New Blazor WASM
+> 1. Create a new Blazor WASM project (**College.BlazorWasm.csproj**)
+
+## Modify Blazor UI
+> 1. MainLayout.razor.css
+> 1. MainLayout.razor
+> 1. app.css
+
+## Modify to add two more menu items
+> 1. NavMenu.razor
+> 1. NavMenu.razor.css
+
+## REST API Integration
+> 1. Also reference College.Core.
+> 1. Create ProfessorsFromWebAPI.razor, and ProfessorsFromWebAPI.cs.
+
+![Blazor with Web API | 100x100](./Documentation/Images/WebAPI_Blazor.PNG)

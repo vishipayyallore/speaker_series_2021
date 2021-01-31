@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>92a8d448-b650-48ee-9e68-5958c08b92f4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DAL\Persistence\" />
+    <ProjectReference Include="..\College.BLL\College.BLL.csproj" />
+    <ProjectReference Include="..\College.Core\College.Core.csproj" />
   </ItemGroup>
 
 </Project>

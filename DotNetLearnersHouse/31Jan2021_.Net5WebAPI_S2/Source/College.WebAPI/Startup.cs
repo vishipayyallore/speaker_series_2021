@@ -1,7 +1,8 @@
-using College.Core.Constants;
-using College.WebAPI.BLL;
-using College.WebAPI.DAL;
-using College.WebAPI.DAL.Persistence;
+using College.BLL;
+using College.Core.Common;
+using College.Core.Interfaces;
+using College.DAL;
+using College.DAL.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,12 +15,14 @@ namespace College.WebAPI
 {
     public class Startup
     {
+
+        public IConfiguration Configuration { get; }
+        private const string _policyName = "AllowAll";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -30,13 +33,20 @@ namespace College.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "College.WebAPI", Version = "v1" });
             });
 
+            services.AddCors(o => o.AddPolicy(_policyName, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             // Adding EF Core
             var connectionString = Configuration[Constants.DataStore.SqlConnectionString];
             services.AddDbContext<CollegeSqlDbContext>(o => o.UseSqlServer(connectionString));
 
             // Application Services
-            services.AddScoped<ProfessorsSqlBll>();
-            services.AddScoped<ProfessorsSqlDal>();
+            services.AddScoped<IProfessorsSqlBll, ProfessorsSqlBll>();
+            services.AddScoped<IProfessorsSqlDal, ProfessorsSqlDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +63,8 @@ namespace College.WebAPI
 
             // For Routing
             app.UseRouting();
+
+            app.UseCors(_policyName);
 
             app.UseAuthorization();
 

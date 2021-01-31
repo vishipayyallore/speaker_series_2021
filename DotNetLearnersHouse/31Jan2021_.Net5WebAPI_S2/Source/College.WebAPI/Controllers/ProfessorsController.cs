@@ -1,5 +1,5 @@
-﻿using College.WebAPI.BLL;
-using College.WebAPI.Core.Entities;
+﻿using College.Core.Entities;
+using College.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace College.WebAPI.Controllers
 {
-    
+
     [Route("api/v1/[controller]")]
     [ApiController]
     public class ProfessorsController : ControllerBase
     {
         private readonly ILogger<ProfessorsController> _logger;
-        private readonly ProfessorsSqlBll _professorsSqlBll;
+        private readonly IProfessorsSqlBll _professorsSqlBll;
 
-        public ProfessorsController(ILogger<ProfessorsController> logger, ProfessorsSqlBll professorsSqlBll)
+        public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsSqlBll)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
