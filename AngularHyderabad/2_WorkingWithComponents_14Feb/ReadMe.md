@@ -30,10 +30,10 @@
 ng update @angular/cli @angular/core
 ```
 
-## Information [TODO - Update this image]
+## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
-## UI Look and Feel [TODO - Update this image]
+## UI Look and Feel
 ![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel.PNG)
 
 ----------------------------------------------------------------------------------------------------------------
@@ -44,8 +44,8 @@ ng update @angular/cli @angular/core
 > 1. Creating Top Navigation Bar and Body Backgroud
 > 1. Creating Component with Linked Template [**Manual**]
 > 1. Creating Component using **ng g c** CLI
-> 1. Proerty Binding, Event Binding, Template Variable, Two way Binding
-> 1. Importing CSS inside styles.css, and Skins Concept
+> 1. Importing CSS inside styles.css
+> 1. Adding Icon to Top Nav Bar, and Body Background style
 > 1. Deploying the Angular application to Firebase
 
 ----------------------------------------------------------------------------------------------------------------
@@ -193,9 +193,34 @@ declarations: [
 ],
 ```
 
+### **6. Importing CSS inside styles.css**
+> 1. Remove the CSS definition from **angular.json**
+
+> 1. Importing the CSS files inside **styles.css**
+```
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+```
+
+### **7. Adding Icon to Top Nav Bar, and Body Background style**
+
+> 1. Adding Icon to Top Nav Bar
+```
+<i class="fa fa-university"></i>
+```
+
+> 1. Att
+```
+body {
+  background-color: #b9cdf1;
+  background-image: url("ThePattern");  
+}
+
+```
+
 ----------------------------------------------------------------------------------------------------------------
 
-## Deploying Angular 11 application to Firebase
+### **8. Deploying Angular 11 application to Firebase**
 > 1. Create a new project in FireBase.
 > 1. Create a Hosting 
 > 1. Create Cloud Firestore
@@ -210,19 +235,3 @@ ng build --prod
 firebase deploy --only hosting:YourProjectName
 ```
 
-----------------------------------------------------------------------------------------------------------------
-
-1. Import inside styles.css
-1. SVG backgroud
-
-1. 4th
-1. [] -> Property Binding [Model to View]
-1. () -> Event Binding [View to Model]
-1. Template Variables
-1. Two Binding (Employee)
-
-1. 5th
-1. Life Cycle Hooks
-1. Button to toggle (ngIf)
-1. Init()
-1. Destroy()

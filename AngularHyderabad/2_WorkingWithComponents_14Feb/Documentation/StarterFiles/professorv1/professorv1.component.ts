@@ -5,7 +5,7 @@ import { IProfessor } from "../interfaces/IProfessor";
 @Component({
   selector: 'app-professorv1',
   template: `
-                <div class="container rounded shadow first-div px-4 py-2">
+                <div class="container rounded shadow first-div py-2">
                 <h1>Professor {{professor.name}} (V1)</h1>
                 <hr>
                 <div>
