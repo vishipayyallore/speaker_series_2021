@@ -17,9 +17,8 @@
 > 4. User Secrets instead of appSettings.json
 > 5. Dependency Injection
 > 6. Layered Solution [Application Core, BLL, SQL DAL]
-> 7. Add Application Insights
-> 8. Deploy to Azure using Visual Studio.
-> 9. Verify /WeatherForecast and /Professors from Chrome Browser.
+> 7. Deploy to Azure using Visual Studio.
+> 8. Verify /WeatherForecast and /Professors from Chrome Browser.
 
 ## Swagger UI (**5 Minutes**)
 > 1. Adding Swagger UI to Web API
@@ -32,14 +31,13 @@
 > 2. Postman Collection and its advantages.
 
 ## Angular 11 (**30 Minutes**)
-> 1. Creating the Angular 10 UI from Scratch
+> 1. Creating the Angular 11 UI from Scratch
 > 2. Creating Top Nav, Side Nav, Footer, and Dashboard.
 > 3. Creating Screens for List, Add, Edit, Delete.
 > 4. Adding Service to retrieve content from Web API
 > 5. Routing to navigate between the pages.
-> 6. Add Application Insights
-> 7. Changing Skin colors and Production Build
-> 8. Deploying Angular 10 UI to App Service in Azure
+> 6. Changing Skin colors and Production Build
+> 7. Deploying Angular 11 UI to App Service in Azure
 
 ![Web APP Dashboard|150x150](./Documentation/Images/Angular_UI_Dashboard.PNG)
 ![Web APP List|150x150](./Documentation/Images/Angular_UI_List.PNG)

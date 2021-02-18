@@ -18,7 +18,7 @@ namespace College.DAL
         public ProfessorsSqlDal(CollegeSqlDbContext collegeSqlDbContext, ILogger<ProfessorsSqlDal> logger)
         {
             _collegeSqlDbContext = collegeSqlDbContext ?? throw new ArgumentNullException(nameof(collegeSqlDbContext));
-            
+
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
