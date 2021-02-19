@@ -101,49 +101,18 @@ https://localhost:5001/> get api/v1/weatherforecast
 ### Retrieving Single Resource
 > 1. Demo / Discussion
 
+![Get Using Postman | 100x100](./Documentation/Images/GetUsingPostman.PNG)
+
 ### Creating SQL Azure
 > 1. Demo / Discussion
 
 ### Integrating Local Web API with Azure SQL.
 > 1. Demo / Discussion
 
-> 1. Integrating Web API with Blazor WASM for GetById().
-> 1. Integrating with Angular 11 App (already developed).
-
-
-### Building Professor’s Controller (Using Folders for seperation)
-> 1. Modify ProfessorsController.cs to use the code from libraries.
-> 1. Modify WeatherForecastController.cs to refer the WeatherForecast model.
-
-### Introduction Action Return Types
+### Updating Blazor WASM for GetById() Web API Method
 > 1. Demo / Discussion
 
-### Implement GetAll() method
-> 1. Adding Dependencies inside **ConfigureServices()** method of Startup.cs.
-> 1. Consume the Professors BLL from the library.
-> 1. User Secrets instead of appSettings.json. 
-
-### Verify the controllers using Swagger and Chrome Browser
+### Integrating with Angular 11 App (already developed)
 > 1. Demo / Discussion
-![Get Using Swagger | 100x100](./Documentation/Images/SwaggerUI.PNG)
-
-## Look and Feel
-![Get Using Postman | 100x100](./Documentation/Images/GetUsingPostman.PNG)
-
-## Create a New Blazor WASM
-> 1. Create a new Blazor WASM project (**College.BlazorWasm.csproj**)
-
-## Modify Blazor UI
-> 1. MainLayout.razor.css
-> 1. MainLayout.razor
-> 1. app.css
-
-## Modify to add two more menu items
-> 1. NavMenu.razor
-> 1. NavMenu.razor.css
-
-## REST API Integration
-> 1. Also reference College.Core.
-> 1. Create ProfessorsFromWebAPI.razor, and ProfessorsFromWebAPI.cs.
 
 ![Blazor with Web API | 100x100](./Documentation/Images/WebAPI_Blazor.PNG)
