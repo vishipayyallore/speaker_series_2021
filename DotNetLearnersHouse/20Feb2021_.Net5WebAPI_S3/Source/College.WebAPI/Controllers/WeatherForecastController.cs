@@ -35,5 +35,19 @@ namespace College.WebAPI.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("About")]
+        public ContentResult About()
+        {
+            return Content("An API for getting Weather Forecast.");
+        }
+
+        [HttpGet("student")]
+        public ActionResult Student()
+        {
+            var student = new { Id = 1, FirstName = "James", LastName = "Bond" };
+            return Ok(student);
+        }
+
     }
 }

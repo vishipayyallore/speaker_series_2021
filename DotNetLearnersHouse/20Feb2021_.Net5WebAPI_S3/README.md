@@ -33,12 +33,12 @@
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
 ## What we will be doing today
-> 1. Action Return Types | Status Codes [200, 404, 406, 500]
+> 1. Action Return Types | Status Codes [200, 400, 404, 406, 500]
 > 1. Format Response data and content negotiation
 > 1. Test web APIs with the HttpRepl
 > 1. Retrieving Single Resource
 > 1. Creating SQL Azure
-> 1. Integrating Local Web API with Azure SQL.
+> 1. Integrating Local Web API with Azure SQL. [**Session 4**]
 > 1. Integrating Web API with Blazor WASM for GetById().
 > 1. Integrating with Angular 11 App (already developed).
 
@@ -53,6 +53,10 @@ services.AddControllers(options =>
                 options.ReturnHttpNotAcceptable = true;
             })
 ```
+
+### 500 Status Code
+> Exception Scenario in Data Access Layer.
+
 ### Format response data
 > Actions can return results that are formatted in a particular format, regardless of client preferences
 
@@ -103,12 +107,6 @@ https://localhost:5001/> get api/v1/weatherforecast
 
 ![Get Using Postman | 100x100](./Documentation/Images/GetUsingPostman.PNG)
 
-### Creating SQL Azure
-> 1. Demo / Discussion
-
-### Integrating Local Web API with Azure SQL.
-> 1. Demo / Discussion
-
 ### Updating Blazor WASM for GetById() Web API Method
 > 1. Demo / Discussion
 
@@ -122,3 +120,10 @@ https://localhost:5001/> get api/v1/weatherforecast
 ![Angular with Web API | 100x100](./Documentation/Images/WebAPI_Angular.PNG)
 
 ![Angular with Web API | 100x100](./Documentation/Images/WebAPI_Angular_1.PNG)
+
+
+### Creating SQL Azure [Session 4]
+> 1. Demo / Discussion
+
+### Integrating Local Web API with Azure SQL [Session 4]
+> 1. Demo / Discussion

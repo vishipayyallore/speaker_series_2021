@@ -36,13 +36,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.WebAPI", "Source\College.WebAPI\College.WebAPI.csproj", "{809A8235-7940-4937-944A-1184F52C5093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Core", "Source\College.Core\College.Core.csproj", "{B0B0E321-F3FE-429A-9023-7CCD570D7CA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Core", "Source\College.Core\College.Core.csproj", "{B0B0E321-F3FE-429A-9023-7CCD570D7CA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BLL", "Source\College.BLL\College.BLL.csproj", "{DB199801-735F-45A5-9F8B-7153587D402B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BLL", "Source\College.BLL\College.BLL.csproj", "{DB199801-735F-45A5-9F8B-7153587D402B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.DAL", "Source\College.DAL\College.DAL.csproj", "{BF2981D4-2C72-4688-B107-51BE5D922CCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.DAL", "Source\College.DAL\College.DAL.csproj", "{BF2981D4-2C72-4688-B107-51BE5D922CCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.BlazorWasm", "Source\College.BlazorWasm\College.BlazorWasm.csproj", "{8B939DDC-E2D1-4E8E-8A44-C588EB88376D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.BlazorWasm", "Source\College.BlazorWasm\College.BlazorWasm.csproj", "{8B939DDC-E2D1-4E8E-8A44-C588EB88376D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

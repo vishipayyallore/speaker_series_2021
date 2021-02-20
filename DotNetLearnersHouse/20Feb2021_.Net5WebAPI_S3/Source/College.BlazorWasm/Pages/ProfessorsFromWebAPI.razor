@@ -21,19 +21,25 @@ else
                             <th>Teaches</th>
                             <th>Salary</th>
                             <th>Phd</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var _professor in Professors)
                         {
-                            <tr>
-                                <td>@_professor.ProfessorId</td>
-                                <td>@_professor.Name</td>
-                                <td>@_professor.Doj.ToString("d")</td>
-                                <td>@_professor.Teaches</td>
-                                <td>@_professor.Salary</td>
-                                <td>@_professor.IsPhd</td>
-                            </tr>
+                        <tr>
+                            <td>@_professor.ProfessorId</td>
+                            <td>@_professor.Name</td>
+                            <td>@_professor.Doj.ToString("d")</td>
+                            <td>@_professor.Teaches</td>
+                            <td>@_professor.Salary</td>
+                            <td>@_professor.IsPhd</td>
+                            <td>
+                                <a href="@($"ProfessorDetails/{_professor.ProfessorId}")" class="btn btn-primary table-btn">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>

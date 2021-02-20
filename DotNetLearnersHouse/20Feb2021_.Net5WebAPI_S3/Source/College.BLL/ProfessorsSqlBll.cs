@@ -32,6 +32,18 @@ namespace College.BLL
             return allProfessors;
         }
 
+        public async Task<Professor> GetProfessorById(Guid professorId)
+        {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlBll::GetProfessorById");
+
+            var professor = await _professorsSqlDal.GetProfessorById(professorId)
+                                    .ConfigureAwait(false);
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlBll::GetProfessorById");
+
+            return professor;
+        }
+
     }
 
 }

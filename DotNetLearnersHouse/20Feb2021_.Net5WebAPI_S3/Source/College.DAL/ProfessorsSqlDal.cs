@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace College.DAL
@@ -35,7 +36,28 @@ namespace College.DAL
 
             _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlDal::GetAllProfessors");
 
+            // To Simulate Exception
+            // throw new Exception("Hurray!!!");
+
             return professors;
+        }
+
+        public async Task<Professor> GetProfessorById(Guid professorId)
+        {
+            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsSqlDal::GetProfessorById");
+
+            Professor professor = await _collegeSqlDbContext.Professors
+                .Where(record => record.ProfessorId == professorId)
+                .Include(student => student.Students)
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsSqlDal::GetProfessorById");
+
+            // To Simulate Exception
+            // throw new Exception("Hurray!!!");
+
+            return professor;
         }
 
     }

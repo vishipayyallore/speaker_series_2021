@@ -26,14 +26,48 @@ namespace College.WebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Professor>>> Get()
         {
-            _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
+            try
+            {
+                _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::Get");
 
-            IEnumerable<Professor> professors = await _professorsSqlBll.GetAllProfessors()
-                                                        .ConfigureAwait(false);
+                IEnumerable<Professor> professors = await _professorsSqlBll.GetAllProfessors()
+                                                            .ConfigureAwait(false);
 
-            _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
+                _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::Get");
 
-            return Ok(professors);
+                return Ok(professors);
+            }
+            catch (Exception)
+            {
+                // Log the Error to APM
+                return StatusCode(500, $"Please contact administrator with following Id: {Guid.NewGuid()}.");
+            }
+        }
+
+        [HttpGet("{id}", Name = nameof(GetProfessorById))]
+        public async Task<ActionResult<Professor>> GetProfessorById(Guid id)
+        {
+            try
+            {
+                _logger.Log(LogLevel.Debug, "Request Received for ProfessorsController::GetProfessorById");
+
+                Professor professor = await _professorsSqlBll.GetProfessorById(id)
+                                                .ConfigureAwait(false);
+
+                if (professor == null)
+                {
+                    return NotFound();
+                }
+
+                _logger.Log(LogLevel.Debug, "Returning the results from ProfessorsController::GetProfessorById");
+
+                return Ok(professor);
+            }
+            catch (Exception)
+            {
+                // Log the Error to APM
+                return StatusCode(500, $"Please contact administrator with following Id: {Guid.NewGuid()}.");
+            }
         }
 
     }

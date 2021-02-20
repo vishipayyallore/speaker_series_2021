@@ -1,0 +1,60 @@
+<div class="card shadow mt-2 mb-2">
+  <div class="card-header">
+    <h2 class="PageTitle">Remove Professor</h2>
+  </div>
+  <div class="card-body">
+    <!-- Form -->
+    <div class="col-md-8 mb-4 shadow px-2 py-2" *ngIf="professor">
+      <form [formGroup]="professorForm" (ngSubmit)="onProfessorRemove(professor.professorId, professorForm.value)"
+        novalidate>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">Id: </label>
+          <input type="text" formControlName="professorId" class="form-control element ml-4"
+            [(ngModel)]="professor.professorId" readonly>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">Name: </label>
+          <input type="text" formControlName="name" class="form-control element ml-4" [(ngModel)]="professor.name"
+            maxlength="50" readonly>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">DOJ: </label>
+          <input type="text" formControlName="doj" class="form-control element ml-4" [(ngModel)]="professor.doj"
+            maxlength="10" readonly>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">Teaches : </label>
+          <input type="text" formControlName="teaches" class="form-control element ml-4" [(ngModel)]="professor.teaches"
+            maxlength="50" readonly>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">Salary : </label>
+          <input type="number" formControlName="salary" class="form-control element ml-4" [(ngModel)]="professor.salary"
+            maxlength="50" readonly>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox">
+          <label class="element col-md-2">Is Phd : </label>
+          <div class="col-sm-1">
+            <input type="checkbox" formControlName="isPhd" class="form-control element ml-2"
+              [(ngModel)]="professor.isPhd" disabled>
+          </div>
+        </div>
+
+        <div class="form-group divflex labelAndTextbox ml-3">
+          <button type="submit" class="btn btn-danger shadow">
+            <i class="fa fa-trash-o fa-lg"></i> Remove</button>
+          <button type="button" class="btn btn-maincolor ml-2 shadow" [routerLink]="['/professors']">
+            <i class="fa fa-table" aria-hidden="true"></i> List</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

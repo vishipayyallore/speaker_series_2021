@@ -1,0 +1,62 @@
+﻿@page "/ProfessorDetails/{professorId}"
+
+<div class="card shadow mt-2 mb-2">
+    <div class="card-header">
+        <h2 class="PageTitle">Professor Details</h2>
+    </div>
+    <div class="card-body">
+        <!-- Form -->
+        <div class="col-md-8 mb-4 shadow px-2 py-2 details-page" style="background-color: #d3e4f7">
+            <form novalidate>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">Id: </label>
+                    <label type="text" class="form-control-plaintext">@ProfessorDetail.ProfessorId</label>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">Name: </label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@ProfessorDetail.Name</label>
+                    </div>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">DOJ: </label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@ProfessorDetail.Doj</label>
+                    </div>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">Teaches : </label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@ProfessorDetail.Teaches</label>
+                    </div>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">Salary : </label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@ProfessorDetail.Salary</label>
+                    </div>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox">
+                    <label class="element col-md-2">Is Phd : </label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@ProfessorDetail.IsPhd</label>
+                    </div>
+                </div>
+
+                <div class="form-group divflex labelAndTextbox ml-3">
+                    <a href="@($"ProfessorsFromWebAPI")" class="btn btn-primary table-btn">
+                        <i class="fa fa-table" aria-hidden="true"></i> List
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

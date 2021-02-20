@@ -5,6 +5,10 @@ html, body {
     background-color: #FAFAF8;
 }
 
+.labelAndTextbox {
+    display: flex;
+}
+
 a, .btn-link {
     color: #e7eaed;
 }
