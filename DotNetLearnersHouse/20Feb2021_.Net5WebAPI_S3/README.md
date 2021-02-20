@@ -112,7 +112,13 @@ https://localhost:5001/> get api/v1/weatherforecast
 ### Updating Blazor WASM for GetById() Web API Method
 > 1. Demo / Discussion
 
+![Blazor with Web API | 100x100](./Documentation/Images/WebAPI_Blazor.PNG)
+
+![Blazor with Web API | 100x100](./Documentation/Images/WebAPI_Blazor_1.PNG)
+
 ### Integrating with Angular 11 App (already developed)
 > 1. Demo / Discussion
 
-![Blazor with Web API | 100x100](./Documentation/Images/WebAPI_Blazor.PNG)
+![Angular with Web API | 100x100](./Documentation/Images/WebAPI_Angular.PNG)
+
+![Angular with Web API | 100x100](./Documentation/Images/WebAPI_Angular_1.PNG)
