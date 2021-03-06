@@ -1,5 +1,10 @@
 # Tech Platform Speaker Event
 
+> 1. Event Date: **06-Mar-2021**
+> 1. Event URL: [Tech Platform](https://www.linkedin.com/feed/update/urn:li:activity:6773578000232542208/)
+
+![Web API using .NET 5 |100x100](./Documentation/Images/ViswanathaSwamy.PNG)
+
 ## This Repository to holds the Demos for gRPC with .Net Core Session 10
 
 ### Service to Service Communication

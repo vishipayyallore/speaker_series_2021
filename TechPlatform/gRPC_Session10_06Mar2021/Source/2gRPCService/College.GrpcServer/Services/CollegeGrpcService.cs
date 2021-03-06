@@ -4,6 +4,8 @@ using College.Core.Interfaces;
 using College.GrpcServer.Protos;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
@@ -14,6 +16,7 @@ using static College.GrpcServer.Protos.CollegeService;
 namespace College.GrpcServer.Services
 {
 
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CollegeGrpcService : CollegeServiceBase
     {
         private readonly IProfessorsSqlBll _professorsBll;

@@ -8,6 +8,7 @@ using College.Core.Interfaces;
 using College.GrpcServer.Services;
 using College.SQLServer.DAL;
 using College.SQLServer.DAL.Persistence;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +34,19 @@ namespace College.GrpcServer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Added
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = $"https://{Configuration["Auth0Credentials:Domain"]}/";
+                options.Audience = Configuration["Auth0Credentials:Audience"];
+            });
+
+            services.AddAuthorization();
+
             services.AddGrpc();
 
             services.AddCors(o => o.AddPolicy("AllowAll", builder =>
@@ -78,6 +92,11 @@ namespace College.GrpcServer
             }
 
             app.UseRouting();
+
+            // Added two lines
+            // Must be added between UseRouting and UseEndpoints
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             // Must be added between UseRouting and UseEndpoints
             app.UseGrpcWeb();
