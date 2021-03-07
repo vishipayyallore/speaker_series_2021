@@ -40,13 +40,41 @@ ng update @angular/cli @angular/core
 
 ## What are we doing today?
 > 1. We will be working on the Project we developed in Session 2.
-> 1. Creating Component with Inline Template [**Manual**]
-> 1. Creating Top Navigation Bar and Body Backgroud
-> 1. Creating Component with Linked Template [**Manual**]
-> 1. Creating Component using **ng g c** CLI
-> 1. Importing CSS inside styles.css
-> 1. Adding Icon to Top Nav Bar, and Body Background style
+> 1. Data Types and Type Inference
+> 1. Component selector as directive
+> 1. Introduction to pipes
+> 1. Property Binding 
+> 1. Event Binding 
+> 1. Two-way Binding 
+> 1. Template Varaible
+> 1. Structural Directives - *ngIf 
+> 1. Structural Directives - *ngFor
 > 1. Deploying the Angular application to Firebase
+
+----------------------------------------------------------------------------------------------------------------
+
+Property Binding
+<img scr='{{Intropolation}}'>
+<img scr='http://www.website.com/{{Intropolation}}'>
+<img [scr]='object.Property'>
+
+**Component to View**
+> 1. {{Intropolation}}
+> 1. <img [scr]='object.Property'>
+
+**View to Component**
+> 1. <button type='submit' (click)='methodName()'>
+
+**Two Way**
+> 1. <input type='text' [(ngModel)]='object.Property'>
+
+Pipes
+
+> 1. lowercase
+> 1. uppercase
+> 1. date
+> 1. currency
+> 1. {{ product.price | currency | lowercase }}
 
 ----------------------------------------------------------------------------------------------------------------
 
