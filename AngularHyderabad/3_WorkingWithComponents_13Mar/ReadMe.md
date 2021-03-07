@@ -1,7 +1,7 @@
-# Session **2 of 12** - Working with Components in Angular 11 for Beginners
+# Session **3 of 12** - Revisiting Components in Angular 11 for Beginners
 
-> 1. Event Date: **14-Feb-2021**
-> 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/276265504)
+> 1. Event Date: **13-Mar-2021**
+> 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/ToBeDone)
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ ng update @angular/cli @angular/core
 ----------------------------------------------------------------------------------------------------------------
 
 ## What are we doing today?
-> 1. Creating and executing the Angular 11.2.0 project.
+> 1. We will be working on the Project we developed in Session 2.
 > 1. Creating Component with Inline Template [**Manual**]
 > 1. Creating Top Navigation Bar and Body Backgroud
 > 1. Creating Component with Linked Template [**Manual**]
