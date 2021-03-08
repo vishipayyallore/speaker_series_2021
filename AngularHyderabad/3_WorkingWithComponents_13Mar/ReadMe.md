@@ -41,6 +41,7 @@ ng update @angular/cli @angular/core
 ## What are we doing today?
 > 1. We will be working on the Project we developed in Session 2.
 > 1. Data Types and Type Inference
+> 1. Strong Type errors any[] VS IProfessor[]
 > 1. Component selector as directive
 > 1. Introduction to pipes
 > 1. Property Binding 
