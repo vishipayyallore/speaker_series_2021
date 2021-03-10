@@ -1,5 +1,5 @@
-// const baseUrl = 'https://localhost:5002/api/v1/professors';
-const baseUrl = 'https://api.azurewebsites.net/api/v1/professors';
+const baseUrl = 'https://localhost:5002/api/v1/professors';
+// const baseUrl = 'https://api.azurewebsites.net/api/v1/professors';
 
 export async function getAllProfessors() {
 
