@@ -11,5 +11,4 @@ export interface IProfessor {
 
     isPhd: boolean;
 
-    teaches: string;
 }

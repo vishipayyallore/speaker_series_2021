@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng11-webapp": {
+      "hosting": {
+        "collegewebapp": [
+          "ng11-webapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng11-webapp"
+  }
+}

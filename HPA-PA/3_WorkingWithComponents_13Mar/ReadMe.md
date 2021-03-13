@@ -1,8 +1,9 @@
 # Session **3 of 12** - Revisiting Components in Angular 11 for Beginners
 
 > 1. Event Date: **13-Mar-2021**
-> 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/276845393/)
+> 1. Event URL: [Hyderabad Power Apps and Power Automate User Group](https://www.linkedin.com/feed/update/urn:li:activity:6775114654092984320/)
 
+![Revisiting Components in Angular 11 for Beginners |100x100](./Documentation/Images/ViswanathaSwamyPK.PNG)
 ----------------------------------------------------------------------------------------------------------------
 
 ## Pre-Requisites
@@ -48,8 +49,8 @@ ng update @angular/cli @angular/core
 > 2. Clean up the previous session's code
 > 3. Component selector as directive
 > 4. Structural Directives ```*ngIf```
-> 6. Strong Type
 > 5. Introduction to pipes
+> 6. Strong Type
 > 7. ```<ScriptTag>``` Demo
 > 8. Data Types, Type Inference, Property Binding and Event Binding
 > 9. Two-way Binding, and Template Varaible
@@ -94,7 +95,25 @@ constructor() {
     <div class="container rounded shadow first-div py-2" *ngIf="professor">
 ```
 
-### **5. Strong Type**
+### **5. Introduction to pipes**
+> 1. lowercase
+> 1. uppercase
+> 1. date
+> 1. currency
+```
+    <div class="container rounded shadow first-div py-2" *ngIf="professor">
+        <h1>Professor {{professor.name}} (V3)</h1>
+        <hr>
+        <div>
+            <p>Id: <span>{{professor.professorId}}</span></p>
+            <p>Date Of Join: <span>{{professor.dateOfJoin | date | lowercase}}</span></p>
+            <p>Salary: <span>{{professor.salary | currency:'INR':'symbol':'4.2-3'}}</span></p>
+            <p>Is Phd: <span>{{professor.isPhd}}</span></p>
+        </div>
+    </div>
+```
+
+### **6. Strong Type**
 > 1. Change the type of professor to any. ```professor: any;```
 > 1. Change the property **salary** to **salaree**.
 > 1. Component will be show any errors, also it will not display the salary
@@ -111,24 +130,6 @@ constructor() {
       isPhd: true
     };
   }
-```
-
-### **6. Introduction to pipes**
-> 1. lowercase
-> 1. uppercase
-> 1. date
-> 1. currency
-```
-    <div class="container rounded shadow first-div py-2" *ngIf="professor">
-        <h1>Professor {{professor.name}} (V3)</h1>
-        <hr>
-        <div>
-            <p>Id: <span>{{professor.professorId}}</span></p>
-            <p>Date Of Join: <span>{{professor.dateOfJoin | date | lowercase}}</span></p>
-            <p>Salary: <span>{{professor.salary | currency:'INR':'symbol':'4.2-3'}}</span></p>
-            <p>Is Phd: <span>{{professor.isPhd}}</span></p>
-        </div>
-    </div>
 ```
 
 ### **7. ```<ScriptTag>``` Demo**

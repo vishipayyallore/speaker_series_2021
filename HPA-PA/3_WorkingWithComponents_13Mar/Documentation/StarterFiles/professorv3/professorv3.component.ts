@@ -11,19 +11,14 @@ export class ProfessorV3Component implements OnInit {
 
   professor: IProfessor;
 
-  /* name: '<script>alert("Hello");</script>Shiva', */
-
   constructor() {
-
     this.professor = {
       professorId: 3,
-      name: 'Shiva',
+      name: 'Hafeez',
       dateOfJoin: new Date(),
-      salary: 1234.5678,
-      isPhd: true,
-      teaches: 'C Sharp'
+      salary: 1234.56,
+      isPhd: true
     };
-
   }
 
   ngOnInit(): void {
