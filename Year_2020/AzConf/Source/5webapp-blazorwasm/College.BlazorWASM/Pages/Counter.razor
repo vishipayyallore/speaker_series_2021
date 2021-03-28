@@ -1,6 +1,8 @@
 ﻿@page "/counter"
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 
-<h1>Counter</h1>
+<h1>Counter - @configuration[""]</h1>
 
 <p>Current count: @currentCount</p>
 
