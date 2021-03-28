@@ -4,6 +4,8 @@ using CollegeGrpc.ConsoleClient.Helpers;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -81,12 +83,23 @@ namespace CollegeGrpc.ConsoleClient
             DisplayFooter();
             */
 
+            var jwtToken = new JwtAccessToken();
+            if (jwtToken.Expiration < DateTime.Now)
+            {
+                jwtToken = GetTokenFromAuth0();
+            }
+
+            var headers = new Metadata
+            {
+                { "Authorization", $"Bearer {jwtToken.Access_Token}" }
+            };
+
             //DisplayHeader("Retrieve Single Row ...");
             WriteLine("\n\nPlease enter a Professor Id: ");
             var professorId = ReadLine();
 
             var professorRequest = new GetProfessorRequest { ProfessorId = professorId };
-            var professor = await _collegeClient.GetProfessorByIdAsync(professorRequest);
+            var professor = await _collegeClient.GetProfessorByIdAsync(professorRequest, headers: headers);
 
             DisplayProfessorDetails(professor);
             DisplayFooter();
@@ -135,6 +148,24 @@ namespace CollegeGrpc.ConsoleClient
             WriteLine($"Name: {professor.Name} \nSalary: {professor.Salary} \nTeaches: {professor.Teaches} \nDOJ: {professor.Doj}");
 
             DisplayFooter();
+        }
+
+        private static JwtAccessToken GetTokenFromAuth0()
+        {
+            var client = new RestClient("https://vishipayyallore.us.auth0.com");
+            var request = new RestRequest("/oauth/token", RestSharp.Method.POST);
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+
+            request.AddParameter("client_id", _config["Auth0Credentials:client_id"], ParameterType.GetOrPost);
+            request.AddParameter("client_secret", _config["Auth0Credentials:client_secret"], ParameterType.GetOrPost);
+            request.AddParameter("grant_type", _config["Auth0Credentials:grant_type"], ParameterType.GetOrPost);
+            request.AddParameter("audience", _config["Auth0Credentials:Audience"], ParameterType.GetOrPost);
+
+            var response = client.Execute(request);
+            var jsonToken = JsonConvert.DeserializeObject<JwtAccessToken>(response.Content);
+            jsonToken.Expiration = DateTime.Now.AddSeconds(jsonToken.Expires_In);
+
+            return jsonToken;
         }
         // ******************** Private Methods ********************
 

@@ -1,6 +1,18 @@
 # Repository for Speaker Series 2021
 This Repository to hold the Demos for my Speaker Series events from different **User Group** / **Meetup Groups**.
 
+## Few Docker Commands
+```
+docker pull postgres
+docker run --name postgres-in-docker -e POSTGRES_PASSWORD=YourPassword -p 5432:5432 -d postgres
+
+docker pull mysql
+docker run --name mysql-in-docker -e MYSQL_ROOT_PASSWORD=YourPassword -p 3306:3306 -d mysql
+
+docker pull redis
+docker run --name redis-in-docker -p 6379:6379 -d redis
+```
+
 ## 1. [BDotNet](https://github.com/vishipayyallore/speaker_series_2021/tree/master/BDotNet)
 This repository contains the speaker events which I have done from **BDotNet** meetup group.
 
