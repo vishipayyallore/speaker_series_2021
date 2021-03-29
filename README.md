@@ -11,6 +11,17 @@ docker run --name mysql-in-docker -e MYSQL_ROOT_PASSWORD=YourPassword -p 3306:33
 
 docker pull redis
 docker run --name redis-in-docker -p 6379:6379 -d redis
+
+docker pull mongo
+docker run --name mongo-in-docker -d -p 27017:27017 mongo
+docker logs -f mongo-in-docker
+docker exec -it mongo-in-docker /bin/bash
+
+> show dbs
+> use ProjectDb
+> db.createCollection('Products')
+> show databases
+> show collections
 ```
 
 ## 1. [BDotNet](https://github.com/vishipayyallore/speaker_series_2021/tree/master/BDotNet)
