@@ -3,6 +3,8 @@ export interface IProfessor {
 
     professorId: number;
 
+    pictureUrl: string;
+
     name: string;
 
     dateOfJoin: Date;
@@ -12,5 +14,4 @@ export interface IProfessor {
     isPhd: boolean;
 
     teaches: string;
-
 }

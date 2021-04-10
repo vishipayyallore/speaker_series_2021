@@ -1,0 +1,5 @@
+<div class="ratingBandStyle" [style.width.px]="ratingBandWidth" [title]="currentRating" (click)="whenRatingClicked()">
+    <div style="width: 150px;">
+        <span class="fa fa-star fa-2x" *ngFor="let star of stars"></span>
+    </div>
+</div>
