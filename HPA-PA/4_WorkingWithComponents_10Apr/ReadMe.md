@@ -36,26 +36,32 @@ ng update @angular/cli @angular/core
 
 ## UI Look and Feel
 
-### Previous Session's UI **(Session 2)**
+### Previous Session's UI **(Session 3)**
 ![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel.PNG)
 
-### Current Session's UI **(Session 3)**
+### Current Session's UI **(Session 4)**
 ![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current.PNG)
 
 ----------------------------------------------------------------------------------------------------------------
 
 ## What are we doing today?
-> 1. View the Session 2's deployed Web App in Firebase
-> 2. Clean up the previous session's code
-> 3. Component selector as directive
-> 4. Structural Directives ```*ngIf```
-> 5. Introduction to pipes
-> 6. Strong Type
-> 7. ```<ScriptTag>``` Demo
-> 8. Data Types, Type Inference, Property Binding and Event Binding
-> 9. Two-way Binding, and Template Varaible
-> 10. Structural Directives - ```*ngFor```
-> 11. Deploying Angular 11 application to Firebase
+> 1. View the Session 3rd's deployed Web App in Firebase
+> 1. Clean up the previous session's code
+> 1. Creating footer component
+>    - ([Property]='Method1()'] & with String Intropolation {{method1()}}
+> 1. Creating Star Rating Component
+>    - overflow: hidden | scroll
+> 1. Property Binding Re-Visited  
+>    - ([src]='object.property' VS [src]="'StringValue'") 
+> 1. Sharing data between child and parent directives and components 
+>    - @Input 
+>    - @Output 
+> 1. Life cycle Hooks 
+>    - NgOnInit 
+>    - NgOnChange 
+> 1. Card Representation and Parent Child Components
+> 1. Table Representation
+> 1. Deploying Angular 11 application to Firebase
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -66,114 +72,63 @@ Demo
 
 ### **2. Clean up the previous session's code**
 
-> 1. Remove professorv1 & professorv2 Components. Also update the app.module.ts
-> 1. Remove ```<i class="fa fa-car" aria-hidden="true"></i>``` from top-navbar.component.html
-> 1. Remove the **Div** tag with camera icons from app.component.html.
+> 1. Move Employee, Login, Professorv3 into **ToBeDeleted** folder.
+> 1. Create a folder called **shared** and move the top-navbar into it.
+> 1. Clean up the app.module.ts and app.component.html.
 
 
-### **3. Component selector as directive**
-Discussion
+### **3. Creating footer component**
 
-### **4. Structural Directives ```*ngIf```**
-
-> 1. Comment the code inside the constructor of professorv3.component.ts
-> 1. We will see error in the Console windows of Dev Tools.
-> 1. Add ```*ngIf``` to the **div** tag.
-```
-constructor() {
-    /*
-    this.professor = {
-      professorId: 3,
-      name: 'Hafeez',
-      dateOfJoin: new Date(),
-      salary: 1234.5678,
-      isPhd: true
-    };
-    */
-  }
-
-    <div class="container rounded shadow first-div py-2" *ngIf="professor">
-```
-
-### **5. Introduction to pipes**
-> 1. lowercase
-> 1. uppercase
-> 1. date
-> 1. currency
-```
-    <div class="container rounded shadow first-div py-2" *ngIf="professor">
-        <h1>Professor {{professor.name}} (V3)</h1>
-        <hr>
-        <div>
-            <p>Id: <span>{{professor.professorId}}</span></p>
-            <p>Date Of Join: <span>{{professor.dateOfJoin | date | lowercase}}</span></p>
-            <p>Salary: <span>{{professor.salary | currency:'INR':'symbol':'4.2-3'}}</span></p>
-            <p>Is Phd: <span>{{professor.isPhd}}</span></p>
-        </div>
-    </div>
-```
-
-### **6. Strong Type**
-> 1. Change the type of professor to any. ```professor: any;```
-> 1. Change the property **salary** to **salaree**.
-> 1. Component will be show any errors, also it will not display the salary
-> 1. Change the type of professor to IProfessor. ```professor: IProfessor;```
-> 1. Now the it will show the error message. ```Object literal may only specify known properties, and 'salaree' does not exist in type 'IProfessor'.```
+> 1. Execute the "ng generate" command to create the **footer** component.
+> 1. Discussion on invoking method with String Intropolation.
+> 1. Discussion on invoking method from Property binding ([Property]='Method1()'].
+> 1. Please refer the "shared/footer" folder under **StarterFiles**.
 
 ```
-  constructor() {
-    this.professor = {
-      professorId: 3,
-      name: 'Hafeez',
-      dateOfJoin: new Date(),
-      **salaree**: 1234.5678,
-      isPhd: true
-    };
-  }
+ng g c components/shared/footer
 ```
 
-### **7. ```<ScriptTag>``` Demo**
+### **4. Creating Star Rating Component**
 
-> 1. Modify the name property to inject the ```<script>``` tag.
+> 1. Execute the "ng generate" command to create the **rating** component.
+> 1. overflow: hidden | scroll.
 
 ```
-  constructor() {
-    this.professor = {
-      professorId: 3,
-      **name: '<script>alert("Hello");</script>Hafeez',**
-      dateOfJoin: new Date(),
-      salary: 1234.5678,
-      isPhd: true
-    };
-  }
+ng g c components/shared/rating
 ```
 
-### **8. Data Types, Type Inference, Property Binding and Event Binding**
+### **5. Property Binding Re-Visited**
+> 1. Discussion on Property Binding
 
-> 1. Create a new component called **employee**. ```ng g c components/employee```
-
-**Component to View**
 ```
-<img scr='{{Intropolation}}'>
-<img scr='http://www.website.com/{{Intropolation}}'>
-<img [scr]='object.Property'>
+([src]='object.property' VS [src]="'StringValue'")
 ```
 
-**View to Component**
+### **6. Sharing data between child and parent components**
+> 1. @Input
+> 1. @Output
+
+
+### **7. Life cycle Hooks**
+> 1. NgOnInit.
+> 1. NgOnChange.
+
+
+### **8. Card Representation and Parent Child Components**
+
+> 1. Execute the "ng generate" command to create the **employees-list** component.
+
 ```
-<button type='submit' (click)='methodName()'>
+ng g c components/employees/employees-list
 ```
 
-### **9. Two-way Binding, and Template Varaible**
+### **9. Table Representation**
 
-> 1. Create a new component called **login**. ```ng g c components/login```
+> 1. Execute the "ng generate" command to create the **professors-list** component.
 
-**Two Way**
-> 1. <input type='text' [(ngModel)]='object.Property' #templateVariable>
-
-### **10. Structural Directives - ```*ngFor```**
-> 1. Create a new component called **professors-list**. ```ng g c components/professors-list```
-
+```
+ng g c components/professors/professors-list
+```
 
 ### **11. Deploying Angular 11 application to Firebase**
 > 1. Create a new project in FireBase.
