@@ -39,40 +39,53 @@
 
 ## What are we doing today?
 > 1. Introduction to Azure Functions
-> 1. Creating Azure Functions using A. Portal, B. Visual Studio, and C. Visual Studio Code
 > 1. Creating Azure Functions in C#, and Node JS
+> 1. Creating Azure Functions using multiple methods
 > 1. Execute Azure Functions with triggers [Http, Timer, and Blob]
 > 1. Execute Azure Functions with input/output bindings
 > 1. Working with Durable Azure Functions
 > 1. Monitoring Azure Functions with Application Insights
+> 1. Deploying Azure Functions using Azure CLI
+----------------------------------------------------------------------------------------------------------------
+
+![Information | 100x100](./Documentation/Images/SeatBelt.PNG)
 
 ----------------------------------------------------------------------------------------------------------------
 
 ## How to Build and Execute the solution
 
 ### **1. Introduction to Azure Functions**
-Demo
+Discussion
+
+### **1. Creating Azure Functions in C#, and Node JS**
+Discussion
 
 ### **1. Creating Azure Functions using multiple methods**
-We will be creating Azure Functions using A. Portal, B. Azure Functions CLI, C. Visual Studio, and D. Visual Studio Code
+We will be creating Azure Functions using A. Portal, B. Azure Functions Core Tools, C. Visual Studio Code, and D. Visual Studio
 
 #### **A. Portal**
 Demo
 
-#### **B. Visual Studio**
+#### **B. Azure Functions Core Tools**
 Demo
 
 #### **C. Visual Studio Code**
 Demo
 
-### **1. Introduction to Azure Functions**
+#### **D. Visual Studio**
 Demo
 
-### **1. Introduction to Azure Functions**
+#### **Testing Azure Functions using Postman**
 Demo
 
-### **1. Introduction to Azure Functions**
+### **1. Execute Azure Functions with triggers [Http, Timer, and Blob]**
 Demo
 
-### **1. Introduction to Azure Functions**
+### **1. Execute Azure Functions with input/output bindings**
+Demo
+
+### **1. Monitoring Azure Functions with Application Insights**
+Demo
+
+### **1. Deploying Azure Functions using Azure CLI**
 Demo
