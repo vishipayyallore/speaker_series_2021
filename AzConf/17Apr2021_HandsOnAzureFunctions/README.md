@@ -57,6 +57,10 @@ rg-globalaz2021-india-dev-001
 rg-globalaz2021-india-prod-001
 ```
 
+Storage Account
+Application Insights
+App Service Plan
+
 ## How to Build and Execute the solution
 
 ### **1. Introduction to Azure Functions**
@@ -70,6 +74,10 @@ We will be creating Azure Functions using A. Portal, B. Azure Functions Core Too
 
 #### **2.1. Portal using Node JS**
 Demo
+1. Code and Test
+1. Integration
+1. Monitor
+1. Storage Account Explorer
 
 #### **B. Azure Functions Core Tools using Node JS**
 Demo
