@@ -52,27 +52,32 @@
 
 ----------------------------------------------------------------------------------------------------------------
 
+```
+rg-globalaz2021-india-dev-001
+rg-globalaz2021-india-prod-001
+```
+
 ## How to Build and Execute the solution
 
 ### **1. Introduction to Azure Functions**
 Discussion
 
-### **1. Creating Azure Functions in C#, and Node JS**
+### **2. Creating Azure Functions in C#, and Node JS**
 Discussion
 
-### **1. Creating Azure Functions using multiple methods**
+### **2. Creating Azure Functions using multiple methods**
 We will be creating Azure Functions using A. Portal, B. Azure Functions Core Tools, C. Visual Studio Code, and D. Visual Studio
 
-#### **A. Portal**
+#### **2.1. Portal using Node JS**
 Demo
 
-#### **B. Azure Functions Core Tools**
+#### **B. Azure Functions Core Tools using Node JS**
 Demo
 
-#### **C. Visual Studio Code**
+#### **C. Visual Studio Code using Node JS**
 Demo
 
-#### **D. Visual Studio**
+#### **D. Visual Studio using C#**
 Demo
 
 #### **Testing Azure Functions using Postman**
