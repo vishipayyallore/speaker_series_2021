@@ -74,10 +74,13 @@ We will be creating Azure Functions using A. Portal, B. Azure Functions Core Too
 
 #### **2.1. Portal using Node JS**
 Demo
+
 1. Code and Test
 1. Integration
 1. Monitor
 1. Storage Account Explorer
+1. Kudu Console
+
 
 #### **B. Azure Functions Core Tools using Node JS**
 Demo
