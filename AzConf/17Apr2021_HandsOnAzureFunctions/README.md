@@ -80,6 +80,8 @@ Demo
 1. Monitor
 1. Storage Account Explorer
 1. Kudu Console
+1. Testing using Browser (GET)
+1. Testing using Postman (POST)
 
 
 #### **B. Azure Functions Core Tools using Node JS**
