@@ -8,12 +8,17 @@
 ----------------------------------------------------------------------------------------------------------------
 
 ## Pre-Requisites
+> 1. .NET SDK
+> 1. Azure Function Core Tools
+> 1. Azure CLI
+> 1. Azure Functions VS Code Extension
 
 ### Software/Tools
 > 1. OS: win32 x64
 > 1. Angular CLI: **11.2.7**
 > 1. Node: **14.16.0**
 > 1. Visual Studio Code
+> 1. Visual Studio 2019
 
 ### Prior Knowledge
 > 1. To be Done
@@ -54,6 +59,17 @@
 
 ```
 rg-globalaz2021-india-dev-001
+
+stglobalaz2021india001
+
+func-azcoretools-demo-dev-001
+
+stazcoretoolsdemo001
+
+stvscodedemo001
+
+stvs2019demo001
+
 rg-globalaz2021-india-prod-001
 ```
 
@@ -86,6 +102,11 @@ Demo
 
 #### **B. Azure Functions Core Tools using Node JS**
 Demo
+
+```
+func version
+func
+```
 
 #### **C. Visual Studio Code using Node JS**
 Demo
