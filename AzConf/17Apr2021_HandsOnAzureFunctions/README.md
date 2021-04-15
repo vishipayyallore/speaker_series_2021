@@ -21,10 +21,10 @@
 > 1. Visual Studio 2019
 
 ### Prior Knowledge
-> 1. To be Done
-> 1. To be Done
-> 1. To be Done
-> 1. To be Done
+> 1. C#, Node JS
+> 1. gRPC
+> 1. Azure
+> 1. Blazor WASM, Angular 11
 
 ### Assumptions
 > 1. NIL
@@ -34,11 +34,6 @@
 
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
-
-## UI Look and Feel
-
-### Few Pictures UI 
-![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel.PNG)
 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -59,23 +54,16 @@
 
 ```
 rg-globalaz2021-india-dev-001
-
 stglobalaz2021india001
-
 func-azcoretools-demo-dev-001
-
 stazcoretoolsdemo001
-
 stvscodedemo001
-
 stvs2019demo001
-
 rg-globalaz2021-india-prod-001
 ```
-
-Storage Account
-Application Insights
-App Service Plan
+- Storage Account
+- Application Insights
+- App Service Plan
 
 ## How to Build and Execute the solution
 
@@ -89,8 +77,8 @@ Discussion
 We will be creating Azure Functions using A. Portal, B. Azure Functions Core Tools, C. Visual Studio Code, and D. Visual Studio
 
 #### **2.1. Portal using Node JS**
-Demo
-
+1. Create a Function App called "func-azportal-demo-dev-001"
+1. Add a Function and code
 1. Code and Test
 1. Integration
 1. Monitor
@@ -99,9 +87,13 @@ Demo
 1. Testing using Browser (GET)
 1. Testing using Postman (POST)
 
+##### **Images for Reference**
+![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status400.PNG)
+![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status200.PNG)
 
 #### **B. Azure Functions Core Tools using Node JS**
-Demo
+
+1. Verify the Azure Functions Core Tools on local Laptop.
 
 ```
 func version

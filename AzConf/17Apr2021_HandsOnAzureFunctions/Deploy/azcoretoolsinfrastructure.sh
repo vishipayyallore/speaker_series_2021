@@ -1,6 +1,6 @@
 SUBSCRIPTIONNAME="SwamyPKV VSPS"
 RESOURCEGROUP="rg-globalaz2021-india-dev-001"
-LocationName="EastUS"
+LOCATIONNAME="EastUS"
 STORAGEACCT="stglobalaz2021india001"
 APPINSIGHTS="appi-globalaz2021-india-001"
 
@@ -19,7 +19,7 @@ az deployment group create --resource-group "rg-globalaz2021-india-dev-001" --te
 az functionapp create \
   --resource-group "$RESOURCEGROUP" --name "$FUNCTIONAPP" \
   --storage-account "$STORAGEACCT" --runtime node \
-  --consumption-plan-location "$LocationName" --functions-version 3 \
-  --app-insights "$APPINSIGHTS" --plan "asp-azcoretools-demo-dev-001" \
+  --consumption-plan-location "$LOCATIONNAME" --functions-version 3 \
+  --app-insights "$APPINSIGHTS" --plan "$APPSERVICEPLAN" \
   --runtime node --os-type Windows
 
