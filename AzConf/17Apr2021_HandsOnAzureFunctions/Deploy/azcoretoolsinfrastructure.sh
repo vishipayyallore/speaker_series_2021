@@ -21,5 +21,5 @@ az functionapp create \
   --storage-account "$STORAGEACCT" --runtime node \
   --consumption-plan-location "$LOCATIONNAME" --functions-version 3 \
   --app-insights "$APPINSIGHTS" --plan "$APPSERVICEPLAN" \
-  --runtime node --os-type Windows
+  --os-type Windows
 

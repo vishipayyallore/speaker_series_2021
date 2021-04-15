@@ -41,7 +41,7 @@
 > 1. Introduction to Azure Functions
 > 1. Creating Azure Functions in C#, and Node JS
 > 1. Creating Azure Functions using multiple methods
-> 1. Execute Azure Functions with triggers [Http, Timer, and Blob]
+> 1. Execute Azure Functions with triggers [Http, and Blob]
 > 1. Execute Azure Functions with input/output bindings
 > 1. Working with Durable Azure Functions
 > 1. Monitoring Azure Functions with Application Insights
@@ -54,8 +54,12 @@
 
 ```
 rg-globalaz2021-india-dev-001
+cosmos-globalaz2021-india-dev-001
 stglobalaz2021india001
 func-azcoretools-demo-dev-001
+
+func-vscode-demo-dev-001
+
 stazcoretoolsdemo001
 stvscodedemo001
 stvs2019demo001
@@ -88,28 +92,46 @@ We will be creating Azure Functions using A. Portal, B. Azure Functions Core Too
 1. Testing using Postman (POST)
 
 ##### **Images for Reference**
+##### **Image 1**
 ![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status400.PNG)
+
+##### **Image 2**
 ![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status200.PNG)
 
 #### **B. Azure Functions Core Tools using Node JS**
 
 1. Verify the Azure Functions Core Tools on local Laptop.
+1. Create the Azure Function project using **func init**
+1. Create a new function with **func new**
+1. Verify functions locally **func start**
+1. Function App is already create using **az functionapp create** command
+1. Publish the Function app to Azure using **func azure functionapp publish func-azcoretools-demo-dev-001**
+1. Ensure to update the Function App with Table Storage Connection String
 
 ```
 func version
 func
+func init
+func new
+func start
+func azure functionapp publish func-azcoretools-demo-dev-001
 ```
+
+##### **Images for Reference**
+
+##### **Image 1**
+![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img1.PNG)
+
+##### **Image 2**
+![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img2.PNG)
+
+##### **Image 3**
+![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img3.PNG)
 
 #### **C. Visual Studio Code using Node JS**
 Demo
 
 #### **D. Visual Studio using C#**
-Demo
-
-#### **Testing Azure Functions using Postman**
-Demo
-
-### **1. Execute Azure Functions with triggers [Http, Timer, and Blob]**
 Demo
 
 ### **1. Execute Azure Functions with input/output bindings**
