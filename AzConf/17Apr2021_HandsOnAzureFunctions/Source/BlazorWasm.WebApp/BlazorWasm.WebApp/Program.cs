@@ -1,11 +1,8 @@
+using BlazorWasm.WebApp.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BlazorWasm.WebApp
@@ -18,6 +15,9 @@ namespace BlazorWasm.WebApp
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddHttpClient<ICodeChangesService, CodeChangesService>(
+                client => client.BaseAddress = new Uri(builder.Configuration["AzFunctionsUrls:GitHubCodeChangesUrl"]));
 
             await builder.Build().RunAsync();
         }

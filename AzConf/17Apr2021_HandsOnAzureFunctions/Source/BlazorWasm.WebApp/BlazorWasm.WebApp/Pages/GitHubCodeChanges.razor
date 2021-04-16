@@ -1,6 +1,6 @@
-﻿@page "/fetchdata"
+﻿@page "/codeChangesFromGitHub"
 
-@if (forecasts == null)
+@if (codeChangesEntities == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -8,27 +8,27 @@ else
 {
     <div class="card shadow mt-2 mb-2">
         <div class="card-header">
-            <h1 class="PageTitle">Weather forecast</h1>
+            <h1 class="PageTitle">GitHub Code Changes</h1>
         </div>
         <div class="card-body">
             <div>
                 <table class="table table-striped table-bordered table-hover shadow" aria-labelledby="tableLabel">
                     <thead class="table-header-dark">
                         <tr>
-                            <th>Date</th>
-                            <th>Temp. (C)</th>
-                            <th>Temp. (F)</th>
-                            <th>Summary</th>
+                            <th>Owner</th>
+                            <th>Author</th>
+                            <th>Repo URL</th>
+                            <th>Modified</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var forecast in forecasts)
+                        @foreach (var codeChange in codeChangesEntities)
                         {
                             <tr>
-                                <td>@forecast.Date.ToShortDateString()</td>
-                                <td>@forecast.TemperatureC</td>
-                                <td>@forecast.TemperatureF</td>
-                                <td>@forecast.Summary</td>
+                                <td>@codeChange.OwnerName</td>
+                                <td>@codeChange.AuthorName</td>
+                                <td>@codeChange.RepoUrl</td>
+                                <td>@codeChange.Modified</td>
                             </tr>
                         }
                     </tbody>

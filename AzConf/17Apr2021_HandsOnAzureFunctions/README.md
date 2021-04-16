@@ -93,7 +93,7 @@ We will create a simple Azure Function App with node runtime. It will have a Htt
 
 **Description:**
 
-We will create a Azure function App using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger. We will also have a GitHub Webhook, which will post on any code changes to the repository. 
+We will create a Azure function App using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post on any code changes to the repository. 
 
 **A. GitCodeChangeTracker - Http Trigger**
 
@@ -145,28 +145,39 @@ func azure functionapp publish func-azcoretools-demo-dev-001
 
 **Description:**
 
-We will create a Azure function App using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger. We will also have a GitHub Webhook, which will post on any code changes to the repository. 
+We will create a Azure function App using **Visual Studio Code** with dotnet runtime. It will have a A. Http Trigger auzre function. We will retrieve the GitHub Code Changes from Azure Table Storage. We have a Blazor WASM SAP application, which will invoke the Azure Function and display the content.
+
+**A. RetrieveGitHubCodeChanges - Http Trigger**
+
+It will retrieve the GitHub Code Changes from Azure Table Storage. 
+
+**B. Blazor WASM Web App**
+We have a Blazor WASM SAP application, which will invoke the Azure Function and display the content.
+
+
+**Steps:**
+1. Create the Azure Function project using **VS Code**
+1. Create *RetrieveGitHubCodeChanges* new function
+1. Modify the code of *RetrieveGitHubCodeChanges* azure function. Please refer **StarterFiles** folder.
+1. Verify functions locally **func start**. We use **Postman** for testing it locally.
+1. **Debug** using Visual Studio Code.
+1. Function App is already create using **az functionapp create** command
+1. Publish the Function app to Azure using **VS Code**
+1. Ensure to update the Function App with Table Storage Connection String
+1. Ensure to update the CORS in the deployed Function App.
+
+##### **Images for Reference**
+
+##### **Publishing Azure Functions using *VS Code* .**
+![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Publish.PNG)
+
+##### **Retrieving Content using Postman**
+![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Img1.PNG)
+
+##### **Integrating the Blazor WASM and Http Triggered Azure Function**
+![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Img2.PNG)
 
 -----
-
-----------------------------------------------------------------------------------------------------------------
-
-### **2. Creating Azure Functions using multiple methods**
-We will be creating Azure Functions using A. Portal, B. Azure Functions Core Tools, C. Visual Studio Code, and D. Visual Studio
-
-#### **D. Visual Studio using C#**
-Demo
-
-### **1. Execute Azure Functions with input/output bindings**
-Demo
-
-### **1. Monitoring Azure Functions with Application Insights**
-Demo
-
-### **1. Deploying Azure Functions using Azure CLI**
-Demo
-
-----------------------------------------------------------------------------------------------------------------
 
 ```
 rg-globalaz2021-india-dev-001
