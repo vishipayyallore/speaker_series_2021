@@ -1,6 +1,6 @@
-SUBSCRIPTIONNAME="SwamyPKV VSPS"
-RESOURCEGROUP="rg-globalaz2021-india-dev-001"
-LOCATIONNAME="EastUS"
+SUBSCRIPTIONNAME="Microsoft Azure Sponsorship"
+RESOURCEGROUP="Gab_Viswa"
+LOCATIONNAME="EastAsia"
 STORAGEACCT="stglobalaz2021india001"
 APPINSIGHTS="appi-globalaz2021-india-001"
 
@@ -17,9 +17,7 @@ az deployment group create --resource-group "rg-globalaz2021-india-dev-001" --te
 
 ##### Azure Function App
 az functionapp create \
-  --resource-group "$RESOURCEGROUP" --name "$FUNCTIONAPP" \
-  --storage-account "$STORAGEACCT" --runtime node \
-  --consumption-plan-location "$LOCATIONNAME" --functions-version 3 \
-  --app-insights "$APPINSIGHTS" --plan "$APPSERVICEPLAN" \
-  --os-type Windows
+  --resource-group "$RESOURCEGROUP" --name "$FUNCTIONAPP" --storage-account "$STORAGEACCT" --runtime node \
+  --consumption-plan-location "$LOCATIONNAME" --functions-version 3 --app-insights "$APPINSIGHTS" \
+  --plan "$APPSERVICEPLAN"  --os-type Windows
 

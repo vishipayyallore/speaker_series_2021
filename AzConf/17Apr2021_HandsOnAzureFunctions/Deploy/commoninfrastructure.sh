@@ -1,6 +1,6 @@
-SUBSCRIPTIONNAME="SwamyPKV VSPS"
-RESOURCEGROUP="rg-globalaz2021-india-dev-001"
-LOCATIONNAME="EastUS"
+SUBSCRIPTIONNAME="Microsoft Azure Sponsorship"
+RESOURCEGROUP="Gab_Viswa"
+LOCATIONNAME="EastAsia"
 STORAGEACCT="stglobalaz2021india001"
 APPINSIGHTS="appi-globalaz2021-india-001"
 
@@ -21,6 +21,6 @@ az storage account create --resource-group "$RESOURCEGROUP" \
 az monitor app-insights component create --app "$APPINSIGHTS" --location "$LOCATIONNAME" --resource-group "$RESOURCEGROUP"
 
 ##### App Service Plan (From Command Line)
-az deployment group create --resource-group "rg-globalaz2021-india-dev-001" --template-file asp.template.json --parameters asp.parameters.json
+az deployment group create --resource-group "$RESOURCEGROUP" --template-file asp.template.json --parameters asp.parameters.json
 
 ##### Copy the files to WSL2 so that I can execute the commands from Ubuntu

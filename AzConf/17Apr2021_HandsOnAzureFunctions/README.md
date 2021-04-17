@@ -15,16 +15,15 @@
 
 ### Software/Tools
 > 1. OS: win32 x64
-> 1. Angular CLI: **11.2.7**
 > 1. Node: **14.16.0**
 > 1. Visual Studio Code
 > 1. Visual Studio 2019
 
 ### Prior Knowledge
 > 1. C#, Node JS
-> 1. gRPC
-> 1. Azure
-> 1. Blazor WASM, Angular 11
+> 1. Azure Storage
+> 1. Azure Functions
+> 1. Blazor WASM
 
 ### Assumptions
 > 1. NIL
@@ -67,17 +66,17 @@ Discussion
 #### **2. Azure Functions in Portal using Node JS**
 **Description:**
 
-We will create a simple Azure Function App with node runtime. It will have a Http Trigger Azure Function which will accept "name, and data" as part of POST call. We will also add "lodash" package using Kudu Console.
+We will create a Azure Function App named **func-azportal-demo-dev-001** with node runtime. It will have a Http Trigger Azure Function which will accept "name, and data" as part of POST call. We will also add "lodash" package using Kudu Console.
 
 **Steps:**
 1. Create a Function App called "func-azportal-demo-dev-001"
-1. Add a Function and code
-1. Code and Test
-1. Integration
-1. Monitor
+1. Add a Function called **ArrayOperations**
+1. Code and Test Tab
+1. Testing using Browser (GET)
+1. Integration Tab
+1. Monitor Tab
 1. Storage Account Explorer
 1. Kudu Console
-1. Testing using Browser (GET)
 1. Testing using Postman (POST)
 
 ##### **Images for Reference**
@@ -93,7 +92,7 @@ We will create a simple Azure Function App with node runtime. It will have a Htt
 
 **Description:**
 
-We will create a Azure function App using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post on any code changes to the repository. 
+We will create a Azure function App **func-azcoretools-demo-dev-001** using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post on any code changes to the repository. 
 
 **A. GitCodeChangeTracker - Http Trigger**
 
@@ -145,7 +144,7 @@ func azure functionapp publish func-azcoretools-demo-dev-001
 
 **Description:**
 
-We will create a Azure function App using **Visual Studio Code** with dotnet runtime. It will have a A. Http Trigger auzre function. We will retrieve the GitHub Code Changes from Azure Table Storage. We have a Blazor WASM SAP application, which will invoke the Azure Function and display the content.
+We will create a Azure function App **func-vscode-demo-dev-001** using **Visual Studio Code** with dotnet runtime. It will have a A. Http Trigger auzre function. We will retrieve the GitHub Code Changes from Azure Table Storage. We have a Blazor WASM SPA application, which will invoke the Azure Function and display the content.
 
 **A. RetrieveGitHubCodeChanges - Http Trigger**
 

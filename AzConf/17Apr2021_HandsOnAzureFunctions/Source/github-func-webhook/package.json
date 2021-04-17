@@ -1,0 +1,9 @@
+{
+  "name": "github-func-webhook",
+  "version": "",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "Viswanatha Swamy"
+}
