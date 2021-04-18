@@ -32,7 +32,8 @@ body {
   }
 
   .card-header {
-    background-color: rgb(198, 221, 255);
+    background-color: rgb(233, 236, 240);
+    color: navy;
   }
 
   p {
