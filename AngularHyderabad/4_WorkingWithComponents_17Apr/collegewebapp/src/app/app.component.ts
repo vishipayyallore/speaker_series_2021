@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'College Web App';
+
+  // We need this method if we are using <app-rating></app-rating> component
+  onRatingClicked(currentRating: number): void {
+    console.log(`From Parent :: Current Selected Rating: ${currentRating}`);
+  }
+
 }

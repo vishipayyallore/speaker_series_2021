@@ -2,6 +2,8 @@ import { IAddress } from './iaddress';
 
 export interface IEmployee {
 
+  id: string;
+  
   fullName: string;
 
   pictureUrl: string;
@@ -11,4 +13,6 @@ export interface IEmployee {
   age: number;
 
   address: IAddress;
+
+  rating?: number;
 }

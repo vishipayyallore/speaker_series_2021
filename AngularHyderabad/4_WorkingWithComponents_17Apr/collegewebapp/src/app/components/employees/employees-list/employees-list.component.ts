@@ -9,7 +9,8 @@ import { IEmployee } from 'src/app/interfaces/iemployee';
 export class EmployeesListComponent implements OnInit {
 
   employeesList: IEmployee[];
-  
+  ratingStars = 5;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class EmployeesListComponent implements OnInit {
           city: 'Hyderabad',
           state: 'Telangana'
         },
-        rating: 4.8
+        rating: 4.2
       },
       {
         id: 'A102',
@@ -38,7 +39,7 @@ export class EmployeesListComponent implements OnInit {
           city: 'Hyderabad',
           state: 'Telangana'
         },
-        rating: 4.8
+        rating: 4.6
       },
       {
         id: 'A103',
@@ -56,4 +57,8 @@ export class EmployeesListComponent implements OnInit {
     ];
   }
 
+  onRatingClicked(currentRating: number): void {
+    console.log(`From Parent :: Current Selected Rating: ${currentRating}`);
+  }
+  
 }

@@ -1,4 +1,4 @@
-# Session **4 of 12** - Revisiting Components in Angular 11 for Beginners
+# Session **4 of 12** - Components Communication in Angular 11 for Beginners
 
 > 1. Event Date: **17-Apr-2021**
 > 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/277581695/)
@@ -136,7 +136,7 @@ ng g c components/professors/professors-list
 
 **Ensure that you are specifying "dist/collegewebapp" as public folder**
 ```
-install -g firebase-tools
+npm install -g firebase-tools
 ng build --prod
 firebase login
 ng add @angular/fire

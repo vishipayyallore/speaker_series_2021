@@ -9,12 +9,15 @@ import { IProfessor } from 'src/app/interfaces/IProfessor';
 export class ProfessorsListComponent implements OnInit {
 
   professorsList: IProfessor[];
-
+  imageWidth = 50;
+  imageMargin = 1;
+  
   constructor() {
     this.professorsList = [
       {
         professorId: 1,
         name: 'Shiva',
+        pictureUrl: 'assets/images/Emp1.png',
         dateOfJoin: new Date(),
         salary: 4567.5678,
         isPhd: true,
@@ -23,6 +26,7 @@ export class ProfessorsListComponent implements OnInit {
       {
         professorId: 2,
         name: 'Mathews',
+        pictureUrl: 'assets/images/Emp2.png',
         dateOfJoin: new Date(),
         salary: 1111.5678,
         isPhd: true,
@@ -31,6 +35,7 @@ export class ProfessorsListComponent implements OnInit {
       {
         professorId: 3,
         name: 'Hafeez',
+        pictureUrl: 'assets/images/Emp3.png',
         dateOfJoin: new Date(),
         salary: 2222.5678,
         isPhd: true,
