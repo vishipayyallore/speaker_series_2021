@@ -1,9 +1,8 @@
 # Session **4 of 12** - Revisiting Components in Angular 11 for Beginners
 
-> 1. Event Date: **10-Apr-2021**
-> 1. Event URL: [Hyderabad Power Apps and Power Automate User Group](https://www.linkedin.com/feed/update/urn:li:activity:6784779225405669376/)
+> 1. Event Date: **17-Apr-2021**
+> 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/277581695/)
 
-![Revisiting Components in Angular 11 for Beginners |100x100](./Documentation/Images/ViswanathaSwamyPK.PNG)
 ----------------------------------------------------------------------------------------------------------------
 
 ## Pre-Requisites
@@ -67,7 +66,7 @@ ng update @angular/cli @angular/core
 
 ## How to Build and Execute the solution
 
-### **1. View the Session 2's deployed Web App in Firebase**
+### **1. View the Session 3's deployed Web App in Firebase**
 Demo
 
 ### **2. Clean up the previous session's code**
