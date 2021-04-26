@@ -1,0 +1,19 @@
+﻿@page "/deletebook/{id:int}"
+
+@inject NavigationManager NavigationManager
+
+<h3>DeleteBook</h3>
+
+<button class="btn btn-info mt-2" @onclick="Cancel" title="Cancel">
+    <span class="oi oi-home" aria-hidden="true"></span>
+</button>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/bookslist");
+    }
+}
