@@ -2,25 +2,35 @@
 
 @if (Professors == null)
 {
-    <p><em>Loading...</em></p>
+    <p style="text-align:center">
+        <img src="../images/loader.gif" />
+    </p>
 }
 else
 {
     <div class="card shadow mt-2 mb-2">
         <div class="card-header">
-            <h1 class="PageTitle">Professors List - (Web API)</h1>
+            <h1 class="PageTitle">Professors - (API)</h1>
         </div>
         <div class="card-body">
+            <div>
+                <a href="/addbook" class="float">
+                    <span class="oi oi-plus float-margintop" aria-hidden="true"></span>
+                </a>
+            </div>
             <div>
                 <table class='table table-striped table-bordered table-hover shadow' aria-labelledby="tableLabel">
                     <thead class="table-header-dark">
                         <tr>
                             <th>Professor Id</th>
+                            <th>Picture</th>
                             <th>Name</th>
+                            <th>Phd</th>
                             <th>DOJ</th>
                             <th>Teaches</th>
                             <th>Salary</th>
-                            <th>Phd</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,11 +38,33 @@ else
                         {
                             <tr>
                                 <td>@_professor.ProfessorId</td>
+                                <td>
+                                    <img class="rounded-circle image-styles" src="/images/Prof1.PNG" title="book.title" width="50px" height="50px" />
+                                </td>
                                 <td>@_professor.Name</td>
+                                <td>
+                                    @if (@_professor.IsPhd)
+                                    {
+                                        <span class="oi oi-thumb-up span-styles-green"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="oi oi-thumb-down span-styles"></span>
+                                    }
+                                </td>
                                 <td>@_professor.Doj.ToString("d")</td>
                                 <td>@_professor.Teaches</td>
                                 <td>@_professor.Salary</td>
-                                <td>@_professor.IsPhd</td>
+                                <td>
+                                    <a href="editbook/@_professor.ProfessorId" class="td-a-edit">
+                                        <span class="oi oi-pencil icon span-styles" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="deletebook/@_professor.ProfessorId" class="td-a-delete">
+                                        <span class="oi oi-trash icon span-styles" aria-hidden="true"></span>
+                                    </a>
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -40,7 +72,5 @@ else
             </div>
         </div>
     </div>
-
-
 }
 

@@ -48,3 +48,47 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+img {
+    top: 0;
+    left: 0;
+    width: 50px !important;
+    height: 50Px !important;
+    box-shadow: 3px 3px 3px rgb(5, 43, 126) !important;
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 40px;
+    top: 38px;
+    background-color: #376a9c;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.float-margintop {
+    margin-top: 22px;
+}
+
+.table-header-dark {
+    background-color: #376a9c;
+    color: white !important;
+}
+
+.span-styles {
+    font-size: 30px;
+}
+
+
+.span-styles-green {
+    font-size: 30px;
+    color: green;
+}
+
+.PageTitle {
+    color: #251B24;
+}

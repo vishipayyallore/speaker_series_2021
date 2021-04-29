@@ -14,7 +14,7 @@ namespace College.GrpcServer.Mappings
             CreateMap<Professor, GetProfessorResponse>()
                     .ForMember(destination => destination.Doj,
                                 options =>
-                                options.MapFrom(source => Timestamp.FromDateTime(source.Doj.ToUniversalTime())));
+                                options.MapFrom(source => Timestamp.FromDateTime(source.Doj)));
         }
 
     }

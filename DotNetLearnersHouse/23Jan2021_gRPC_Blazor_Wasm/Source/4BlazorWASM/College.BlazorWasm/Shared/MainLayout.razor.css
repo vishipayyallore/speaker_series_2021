@@ -8,11 +8,10 @@
     flex: 1;
 }
 
-/*
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    /*background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
+    background-color: #288FEE;
 }
-    */
 
 .top-row {
     background-color: #f7f7f7;
@@ -65,10 +64,8 @@
         z-index: 1;
     }
 
-    /*
     .main > div {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
-        */
 }

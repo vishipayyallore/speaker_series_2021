@@ -41,6 +41,7 @@ namespace College.GrpcServer.Services
             foreach (var professor in allProfessors)
             {
                 // TODO: Remove Technical Debt
+                professor.Doj = DateTime.SpecifyKind(professor.Doj, DateTimeKind.Utc);
                 allProfessorsResonse.Professors.Add(_mapper.Map<GetProfessorResponse>(professor));
             }
 
