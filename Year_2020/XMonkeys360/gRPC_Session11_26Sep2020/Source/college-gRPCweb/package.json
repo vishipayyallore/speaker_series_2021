@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compile": "protoc --plugin=protoc-gen-ts=D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb/node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb --ts_out=service=grpc-web:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb src/app/proto/CollegeApi.proto"
+    "compile": "protoc --plugin=protoc-gen-ts=D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb/node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb --ts_out=service=grpc-web:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb src/app/proto/CollegeApi.proto",
+    "compilev1": "protoc --plugin=protoc-gen-ts=D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb/node_modules/.bin/protoc-gen-ts.cmd --js_out=import_style=commonjs,binary:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb --ts_out=service=grpc-web:D:/gRPC_Session11_26Sep2020/Source/college-gRPCweb src/app/proto/college.proto"
   },
   "private": true,
   "dependencies": {
