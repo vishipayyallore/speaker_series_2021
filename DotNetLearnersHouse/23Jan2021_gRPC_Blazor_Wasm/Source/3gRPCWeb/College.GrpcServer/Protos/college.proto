@@ -27,6 +27,8 @@ message GetProfessorResponse {
 	double salary =5;
 	
 	bool isPhd = 6;
+
+	string pictureUrl = 7;
 }
 
 message AllProfessorsResonse {

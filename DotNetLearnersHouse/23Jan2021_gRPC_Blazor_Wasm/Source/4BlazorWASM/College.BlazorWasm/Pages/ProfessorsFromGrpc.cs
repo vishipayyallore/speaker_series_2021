@@ -39,7 +39,8 @@ namespace College.BlazorWasm.Pages
                 Doj = prof.Doj.ToDateTime(),
                 Teaches = prof.Teaches,
                 Salary = Convert.ToDecimal(prof.Salary),
-                IsPhd = prof.IsPhd
+                IsPhd = prof.IsPhd,
+                PictureUrl = prof.PictureUrl
             };
         }
 

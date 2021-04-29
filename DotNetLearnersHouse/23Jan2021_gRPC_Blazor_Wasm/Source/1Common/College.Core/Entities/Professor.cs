@@ -11,6 +11,8 @@ namespace College.Core.Entities
         [Key]
         public Guid ProfessorId { get; set; }
 
+        public string PictureUrl { get; set; }
+
         public string Name { get; set; }
 
         public DateTime Doj { get; set; }
