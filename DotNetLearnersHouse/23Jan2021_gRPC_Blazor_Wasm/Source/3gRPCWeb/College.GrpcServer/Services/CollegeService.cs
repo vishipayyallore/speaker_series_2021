@@ -56,6 +56,7 @@ namespace College.GrpcServer.Services
 
             Professor professor = await _professorsBll.GetProfessorById(Guid.Parse(request.ProfessorId));
 
+            professor.Doj = DateTime.SpecifyKind(professor.Doj, DateTimeKind.Utc);
             GetProfessorResponse getProfessorResponse = _mapper.Map<GetProfessorResponse>(professor);
 
             _logger.Log(LogLevel.Debug, "Returning the results from CollegeGrpcService::GetProfessorById");
