@@ -1,19 +1,13 @@
 ﻿using Microsoft.Data.Tools.Schema.Sql.UnitTesting;
-using Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Text;
 
 namespace BooksStoreData.Tests
 {
     [TestClass()]
-    public class SqlServerUnitTest1 : SqlDatabaseTestClass
+    public class UspAddBookTests : SqlDatabaseTestClass
     {
 
-        public SqlServerUnitTest1()
+        public UspAddBookTests()
         {
             InitializeComponent();
         }
@@ -23,6 +17,7 @@ namespace BooksStoreData.Tests
         {
             base.InitializeTest();
         }
+
         [TestCleanup()]
         public void TestCleanup()
         {
@@ -38,7 +33,7 @@ namespace BooksStoreData.Tests
         private void InitializeComponent()
         {
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_usp_add_bookTest_TestAction;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlServerUnitTest1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UspAddBookTests));
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition1;
             this.dbo_usp_add_bookTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             dbo_usp_add_bookTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
