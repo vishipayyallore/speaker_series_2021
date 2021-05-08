@@ -1,0 +1,23 @@
+<div class="row justify-content-between">
+
+    <div class="div-container row col-sm-4 py-2 px-0 ml-0" *ngFor="let employee of employeesList">
+      <div class="col-sm-12">
+        <h3>{{employee.fullName}}</h3> 
+      </div>
+      <div class="col-sm-4">
+        <img [src]="employee.pictureUrl" width="150px" height="150px">
+      </div>
+      <div class="col-sm-8 py-0">
+        <p>Id: <span>{{ employee.id }}</span></p>
+        <p>Age: <span>{{ employee.age }}</span></p>
+        <p>Department: <span>{{ employee.department }}</span></p>
+        <p>Address: <span>{{ employee.address.street }} {{ employee.address.city }}</span>
+        </p>
+      </div>
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-8">
+        <app-rating [numberOfStars]="5" [currentRating]="employee.rating" (ratingClicked)="onRatingClicked($event)"></app-rating>
+      </div>
+    </div>
+  </div>
