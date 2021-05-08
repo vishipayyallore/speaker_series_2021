@@ -46,6 +46,8 @@ ng update @angular/cli @angular/core
 
 ![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current_2.PNG)
 
+![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current_3.PNG)
+
 ----------------------------------------------------------------------------------------------------------------
 
 ## What are we doing today?
