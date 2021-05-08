@@ -1,11 +1,13 @@
 <app-top-navbar></app-top-navbar>
 
-<div class="container row col-sm-12">
-    <!-- <app-rating [numberOfStars]="5" [currentRating]="3.2" (ratingClicked)="onRatingClicked($event)"></app-rating> -->
-    
-    <app-employees-list class="col-sm-12 ml-1 mb-2"></app-employees-list>
+<div class="container col-sm-12">
+    <router-outlet></router-outlet>
 
-    <app-professors-list class="col-sm-8"></app-professors-list>
+    <!-- <app-employees-list class="col-sm-12 ml-1 mb-2"></app-employees-list>
+    
+    <app-professors-list class="col-sm-8"></app-professors-list> -->
 </div>
 
 <app-footer></app-footer>
+
+<!-- <app-rating [numberOfStars]="5" [currentRating]="3.2" (ratingClicked)="onRatingClicked($event)"></app-rating> -->

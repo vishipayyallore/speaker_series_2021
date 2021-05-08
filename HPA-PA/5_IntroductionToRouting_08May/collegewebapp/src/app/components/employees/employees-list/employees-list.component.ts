@@ -13,7 +13,15 @@ export class EmployeesListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.employeesList = [
+
+    setTimeout(() => {
+      this.employeesList = this.getEmployeesList();
+    }, 500);
+
+  }
+
+  getEmployeesList(): IEmployee[] {
+    return [
       {
         id: 'A101',
         fullName: 'Mithun Nair',
@@ -25,7 +33,7 @@ export class EmployeesListComponent implements OnInit {
           city: 'Hyderabad',
           state: 'Telangana'
         },
-        rating: 4.8
+        rating: 4.2
       },
       {
         id: 'A102',
@@ -38,7 +46,7 @@ export class EmployeesListComponent implements OnInit {
           city: 'Hyderabad',
           state: 'Telangana'
         },
-        rating: 4.8
+        rating: 4.6
       },
       {
         id: 'A103',
@@ -56,4 +64,8 @@ export class EmployeesListComponent implements OnInit {
     ];
   }
 
+  onRatingClicked(currentRating: number): void{
+    console.log(`From Parent :: Current Selected Rating: ${currentRating}`);
+  }
+  
 }

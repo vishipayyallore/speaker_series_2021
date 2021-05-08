@@ -10,15 +10,24 @@ import { IProfessor } from 'src/app/interfaces/iprofessor';
 export class ProfessorsListComponent implements OnInit {
 
   professorsList: IProfessor[];
-  imageWidth = 40;
+  imageWidth = 50;
   imageMargin = 1;
 
   constructor() {
-    this.professorsList = [
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.professorsList = this.getProfessorsList();
+    }, 500);
+  }
+
+  getProfessorsList(): IProfessor[] {
+    return [
       {
         professorId: 1,
-        pictureUrl: 'assets/images/Emp1.png',
         name: 'Shiva',
+        pictureUrl: 'assets/images/Emp1.png',
         dateOfJoin: new Date(),
         salary: 4567.5678,
         isPhd: true,
@@ -26,8 +35,8 @@ export class ProfessorsListComponent implements OnInit {
       },
       {
         professorId: 2,
-        pictureUrl: 'assets/images/Emp2.png',
         name: 'Mathews',
+        pictureUrl: 'assets/images/Emp2.png',
         dateOfJoin: new Date(),
         salary: 1111.5678,
         isPhd: true,
@@ -35,17 +44,14 @@ export class ProfessorsListComponent implements OnInit {
       },
       {
         professorId: 3,
-        pictureUrl: 'assets/images/Emp3.png',
         name: 'Hafeez',
+        pictureUrl: 'assets/images/Emp3.png',
         dateOfJoin: new Date(),
         salary: 2222.5678,
-        isPhd: false,
+        isPhd: true,
         teaches: 'Node JS'
       }
     ];
-  }
-
-  ngOnInit(): void {
   }
 
 }
