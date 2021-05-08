@@ -10,7 +10,7 @@
 
 ### Software/Tools
 > 1. OS: win32 x64
-> 1. Angular CLI: **11.2.7**
+> 1. Angular CLI: **11.2.11**
 > 1. Node: **14.16.0**
 > 1. Visual Studio Code
 
@@ -42,95 +42,105 @@ ng update @angular/cli @angular/core
 ### Current Session's UI **(Session 5)**
 ![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current.PNG)
 
+![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current_1.PNG)
+
+![UI Look and Feel | 100x100](./Documentation/Images/UILook_N_Feel_Current_2.PNG)
+
 ----------------------------------------------------------------------------------------------------------------
 
 ## What are we doing today?
-> 1. View the Session 3rd's deployed Web App in Firebase
+> 1. View the Session 4th's deployed Web App in Firebase
 > 1. Clean up the previous session's code
-> 1. Creating footer component
->    - ([Property]='Method1()'] & with String Intropolation {{method1()}}
-> 1. Creating Star Rating Component
->    - overflow: hidden | scroll
-> 1. Property Binding Re-Visited  
->    - ([src]='object.property' VS [src]="'StringValue'") 
-> 1. Sharing data between child and parent directives and components 
->    - @Input 
->    - @Output 
-> 1. Life cycle Hooks 
->    - NgOnInit 
->    - NgOnChange 
-> 1. Card Representation and Parent Child Components
-> 1. Table Representation
+> 1. Introduction to Routing
+> 1. Creating the Routing 
+> 1. Creating the Dashboard 
+> 1. Navigate to Employee, and professors page
+> 1. Adding Spinner to Employee, and professors page
+> 1. Creating PageNotFound Component
 > 1. Deploying Angular 11 application to Firebase
 
 ----------------------------------------------------------------------------------------------------------------
 
 ## How to Build and Execute the solution
 
-### **1. View the Session 2's deployed Web App in Firebase**
+### **1. View the Session 4th's deployed Web App in Firebase**
 Demo
 
 ### **2. Clean up the previous session's code**
 
-> 1. Move Employee, Login, Professorv3 into **ToBeDeleted** folder.
-> 1. Create a folder called **shared** and move the top-navbar into it.
-> 1. Clean up the app.module.ts and app.component.html.
+> 1. Modify styles.css.
+> 1. Modify the Header. Add new Menu Items.
+> 1. Modify the Footer component.
 
 
-### **3. Creating footer component**
+### **3. Introduction to Routing**
 
-> 1. Execute the "ng generate" command to create the **footer** component.
-> 1. Discussion on invoking method with String Intropolation.
-> 1. Discussion on invoking method from Property binding ([Property]='Method1()'].
-> 1. Please refer the "shared/footer" folder under **StarterFiles**.
+> 1. Route Segment, Router-Outlet discussiont.
+> 1. https://angular.io/tutorial/toh-pt5 [Reference]
 
-```
-ng g c components/shared/footer
-```
+### **4. Creating the Routing**
 
-### **4. Creating Star Rating Component**
-
-> 1. Execute the "ng generate" command to create the **rating** component.
-> 1. overflow: hidden | scroll.
+> 1. Create a new Routing Module.
 
 ```
-ng g c components/shared/rating
+ng generate module app-routing --flat --module=app --dry-run
 ```
 
-### **5. Property Binding Re-Visited**
-> 1. Discussion on Property Binding
+### **5. Creating the Dashboard**
+
+> 1. Create the Dashboard Component.
+> 1. Add the route to the Dashboard Component.
+> 1. Add the "router-outlet" to the AppComponent.
+> 1. Comment the Employees and Professors elements inside the AppComponent.
+> 1. Update the Dashboard Component.
 
 ```
-([src]='object.property' VS [src]="'StringValue'")
+ng g c components/home/dashboard 
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 ```
 
-### **6. Sharing data between child and parent components**
-> 1. @Input
-> 1. @Output
 
+### **6. Navigate to Employee, and professors page**
 
-### **7. Life cycle Hooks**
-> 1. NgOnInit.
-> 1. NgOnChange.
-
-
-### **8. Card Representation and Parent Child Components**
-
-> 1. Execute the "ng generate" command to create the **employees-list** component.
+> 1. Create the Route for Employees.
+> 1. Create the Route for Professors.
 
 ```
-ng g c components/employees/employees-list
+const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'employees', component: EmployeesListComponent },
+  { path: 'professors', component: ProfessorsListComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+];
 ```
 
-### **9. Table Representation**
+### **7. Adding Spinner to Employee, and professors page**
+> 1. Modify Employees, and Professors HTML page and TypeScript Component.
+> 1. Modify the styles.css.
 
-> 1. Execute the "ng generate" command to create the **professors-list** component.
+
+### **8. Creating PageNotFound Component**
+> 1. Create a new PageNotfound Component.
+> 1. Update the routing to accomodate the PageNotFound component.
+> 1. Update the PageNotFound HTML.
 
 ```
-ng g c components/professors/professors-list
+ng g c components/shared/page-notfound
+
+const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'employees', component: EmployeesListComponent },
+  { path: 'professors', component: ProfessorsListComponent },
+  { path: 'pagenotfound', component: PageNotfoundComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' }
+];
 ```
 
-### **11. Deploying Angular 11 application to Firebase**
+### **9. Deploying Angular 11 application to Firebase**
 > 1. Create a new project in FireBase.
 > 1. Create a Hosting 
 > 1. Create Cloud Firestore
