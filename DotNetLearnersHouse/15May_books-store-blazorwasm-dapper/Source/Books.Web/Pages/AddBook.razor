@@ -1,0 +1,50 @@
+﻿@page "/addbook"
+
+<div class="card shadow mt-2 mb-2">
+    <div class="card-header">
+        <h1 class="PageTitle">Add Book</h1>
+    </div>
+    <div class="card-body">
+
+        <EditForm Model="@book">
+
+            <table class="editform">
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" @bind="book.Title" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td>Author:</td>
+                    <td><input type="text" @bind="book.Author" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td>Is Active:</td>
+                    <td><input type="checkbox" @bind="book.IsActive" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>ISBN:</td>
+                    <td><input type="text" @bind="book.ISBN" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td>Pages:</td>
+                    <td><input type="number" @bind="book.Pages" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:left">
+                        <button class="btn btn-success mt-2" @onclick="SaveBook" title="Save">
+                            <span class="oi oi-medical-cross" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn btn-info mt-2" @onclick="Home" title="Home">
+                            <span class="oi oi-home" aria-hidden="true"></span>
+                        </button>
+                        @*<a href="/bookslist" class="btn btn-info">
+                            <span class="oi oi-home" aria-hidden="true"></span>
+                        </a>*@
+                    </td>
+                </tr>
+            </table>
+
+        </EditForm>
+
+    </div>
+</div>

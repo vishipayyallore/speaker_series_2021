@@ -1,0 +1,78 @@
+﻿@page "/bookslist"
+
+@if (Books == null)
+{
+    <p style="text-align:center">
+        <img src="../images/loader.gif" />
+    </p>
+}
+else
+{
+    <div class="card shadow mt-2 mb-2">
+        <div class="card-header">
+            <h1 class="PageTitle">Book List</h1>
+        </div>
+        <div class="card-body">
+            <div>
+                <a href="/addbook" class="float">
+                    <span class="oi oi-plus float-margintop" aria-hidden="true"></span>
+                </a>
+            </div>
+            <table class="table table-striped table-bordered table-hover shadow" aria-labelledby="tableLabel">
+                <thead class="table-header-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Picture</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Is Active</th>
+                        <th>ISBN</th>
+                        <th>Pages</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Books)
+                    {
+                        <tr>
+                            <td>@book.Id</td>
+                            <td>
+                                <img class="rounded-circle image-styles" src="@book.PictureUrl" title="book.title" width="50px" height="50px" />
+                            </td>
+                            <td>
+                                @book.Title
+                            </td>
+                            <td>
+                                @book.Author
+                            </td>
+                            <td>
+                                @if(@book.IsActive)
+                                {
+                                    <span class="oi oi-thumb-up span-styles"></span>
+                                }
+                                else
+                                {
+                                    <span class="oi oi-thumb-down span-styles"></span>
+                                }
+                                
+                            </td>
+                            <td>@book.ISBN</td>
+                            <td>@book.Pages</td>
+                            <td>
+                                <a href="editbook/@book.Id" class="td-a-edit">
+                                    <span class="oi oi-pencil icon span-styles" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="deletebook/@book.Id" class="td-a-delete">
+                                    <span class="oi oi-trash icon span-styles" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
