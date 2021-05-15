@@ -11,9 +11,18 @@ export class ProfessorsListComponent implements OnInit {
   professorsList: IProfessor[];
   imageWidth = 50;
   imageMargin = 1;
-  
+
   constructor() {
-    this.professorsList = [
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.professorsList = this.getProfessorsList();
+    }, 1000);
+  }
+
+  getProfessorsList(): IProfessor[] {
+    return [
       {
         professorId: 1,
         name: 'Shiva',
@@ -42,9 +51,6 @@ export class ProfessorsListComponent implements OnInit {
         teaches: 'Node JS'
       }
     ];
-  }
-
-  ngOnInit(): void {
   }
 
 }

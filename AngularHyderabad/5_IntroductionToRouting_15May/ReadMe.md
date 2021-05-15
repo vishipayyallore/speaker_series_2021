@@ -1,4 +1,4 @@
-# Session **5 of 12** - Components Communication in Angular 11 for Beginners
+# Session **5 of 12** - Components Communication in Angular 12 for Beginners
 
 > 1. Event Date: **15-May-2021**
 > 1. Event URL: [Angular Hyderabad](https://www.meetup.com/nghyderabad/events/278089432/)
@@ -9,7 +9,7 @@
 
 ### Software/Tools
 > 1. OS: win32 x64
-> 1. Angular CLI: **11.2.11**
+> 1. Angular CLI: **12.0.0**
 > 1. Node: **14.16.0**
 > 1. Visual Studio Code
 
@@ -146,15 +146,10 @@ const routes: Routes = [
 > 1. Create a Hosting 
 > 1. Create Cloud Firestore
 
-### **11. Deploying Angular 11 application to Firebase**
-> 1. Create a new project in FireBase.
-> 1. Create a Hosting 
-> 1. Create Cloud Firestore
-
 **Ensure that you are specifying "dist/collegewebapp" as public folder**
 ```
 npm install -g firebase-tools
-ng build --prod
+ng build --configuration production **(ng 12)** ng build --prod **(ng 11)**
 firebase login
 ng add @angular/fire
 firebase init

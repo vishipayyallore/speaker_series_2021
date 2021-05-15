@@ -1,3 +1,9 @@
+<div class="container py-2" *ngIf="!professorsList">
+  <h1 class="spinner">Loading Professors List ...</h1>
+  <span class="spinner">
+    <i class="fa fa-spinner fa-spin fa-4x"></i>
+  </span>
+</div>
 <div class="card shadow mt-2 mb-2" *ngIf="professorsList">
   <div class="card-header py-1">
     <h4 class="PageTitle">Professors List</h4>
@@ -20,17 +26,18 @@
         <tr *ngFor="let professor of professorsList">
           <td>{{ professor.professorId }}</td>
           <td><img class="rounded-circle" [src]='professor.pictureUrl' [title]='professor.name'
-            [style.width.px]='imageWidth' [style.margin.px]='imageMargin' /></td>
+              [style.width.px]='imageWidth' [style.margin.px]='imageMargin' /></td>
           <td>{{ professor.name }}</td>
           <td>{{ professor.dateOfJoin | date}}</td>
           <td>{{ professor.teaches }}</td>
           <td>{{ professor.salary | currency:'INR' }}</td>
           <td><i class="fa {{ professor.isPhd ? 'fa-thumbs-up' : 'fa-thumbs-down'}} fa-2x"></i></td>
           <td>
-            <button type="button" class="btn btn-warning btn-sm move-right shadow text-white">
+            <button type="button" class="btn btn-warning btn-sm move-right shadow text-white"
+              [routerLink]="['/edit-professor', professor.professorId]">
               <i class="fa fa-pencil fa-fw fa-2x" aria-hidden="true"></i></button>
             <button type="button" class="btn btn-danger btn-sm ml-2 shadow"><i class="fa fa-trash-o fa-2x"></i>
-              </button>
+            </button>
           </td>
         </tr>
       </tbody>
