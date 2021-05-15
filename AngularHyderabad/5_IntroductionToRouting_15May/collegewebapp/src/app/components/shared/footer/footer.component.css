@@ -1,0 +1,13 @@
+footer {
+    position: fixed;
+    background: #2f5c8e;
+    color: white;
+    padding: 1px;
+    bottom: 0;
+    vertical-align: middle;
+    color: white!important;
+  }
+
+  p {
+    color: white;
+  }
