@@ -43,7 +43,8 @@ namespace Books.API.Controllers
                             .GetAllBooks()
                             .ConfigureAwait(false);
 
-            return (books.Any()) ? Ok(books) : NotFound();
+            // return (books.Any()) ? Ok(books) : NotFound();
+            return Ok(books);
         }
 
         [HttpGet("{id}")]
