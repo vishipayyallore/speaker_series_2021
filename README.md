@@ -22,6 +22,7 @@ docker exec -it mongo-in-docker /bin/bash
 > db.createCollection('Products')
 > show databases
 > show collections
+> db.getCollection("posts").find()
 ```
 
 ## 1. [BDotNet](https://github.com/vishipayyallore/speaker_series_2021/tree/master/BDotNet)
