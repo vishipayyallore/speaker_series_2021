@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -43,7 +42,7 @@ namespace Books.API.Controllers
                             .GetAllBooks()
                             .ConfigureAwait(false);
 
-            return (books.Any()) ? Ok(books) : NotFound();
+            return Ok(books);
         }
 
         [HttpGet("{id}")]

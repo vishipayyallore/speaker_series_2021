@@ -20,7 +20,7 @@ namespace Books.API.Data
 
         public async Task<bool> AddBook(Book book)
         {
-            using (var conn = new SqlConnection(_configuration.SqlServerConnection))
+            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("PictureUrl", book.PictureUrl, DbType.String);
@@ -43,7 +43,7 @@ namespace Books.API.Data
         {
             IEnumerable<Book> books;
 
-            using (var conn = new SqlConnection(_configuration.SqlServerConnection))
+            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
             {
                 books = await conn.QueryAsync<Book>("[dbo].[usp_get_all_books]",
                                 commandType: CommandType.StoredProcedure)
@@ -60,7 +60,7 @@ namespace Books.API.Data
             var parameters = new DynamicParameters();
             parameters.Add("Id", id, DbType.Int32);
 
-            using (var conn = new SqlConnection(_configuration.SqlServerConnection))
+            using (var conn = new SqlConnection(_configuration.SqlServerConnectionString))
             {
                 video = await conn.QueryFirstOrDefaultAsync<Book>("[dbo].[usp_get_book_by_id]", parameters,
                                     commandType: CommandType.StoredProcedure)

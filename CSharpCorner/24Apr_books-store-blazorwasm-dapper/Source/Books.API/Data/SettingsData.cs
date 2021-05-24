@@ -3,9 +3,9 @@
 
     public class SettingsData
     {
-        public SettingsData(string sqlServerConnection) => SqlServerConnection = sqlServerConnection;
+        public SettingsData(string sqlServerConnection) => SqlServerConnectionString = sqlServerConnection;
 
-        public string SqlServerConnection { get; }
+        public string SqlServerConnectionString { get; }
     }
 
 }
