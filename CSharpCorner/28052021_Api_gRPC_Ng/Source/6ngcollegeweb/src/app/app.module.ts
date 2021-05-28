@@ -10,6 +10,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 import { EmployeesCardsComponent } from './components/employees/employees-cards/employees-cards.component';
 import { EmployeesTableComponent } from './components/employees/employees-table/employees-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { EmployeesTableComponent } from './components/employees/employees-table/
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
