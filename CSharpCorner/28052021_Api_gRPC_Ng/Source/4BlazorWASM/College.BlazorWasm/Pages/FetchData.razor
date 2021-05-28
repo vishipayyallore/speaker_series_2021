@@ -1,0 +1,39 @@
+﻿@page "/fetchdata"
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="card shadow mt-2 mb-2">
+        <div class="card-header">
+            <h1 class="PageTitle">Weather forecast</h1>
+        </div>
+        <div class="card-body">
+            <div>
+                <table class="table table-striped table-bordered table-hover shadow" aria-labelledby="tableLabel">
+                    <thead class="table-header-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th>Temp. (C)</th>
+                            <th>Temp. (F)</th>
+                            <th>Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var forecast in forecasts)
+                        {
+                            <tr>
+                                <td>@forecast.Date.ToShortDateString()</td>
+                                <td>@forecast.TemperatureC</td>
+                                <td>@forecast.TemperatureF</td>
+                                <td>@forecast.Summary</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
