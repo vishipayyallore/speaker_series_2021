@@ -1,0 +1,12 @@
+.top-nav-bar-overrides {
+	background-color: #3f51b5!important;
+}
+
+a{
+    color: white!important;
+    cursor: pointer;
+}
+
+a:hover{
+    color: cyan!important;
+  }
