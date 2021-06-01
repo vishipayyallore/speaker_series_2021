@@ -22,6 +22,7 @@ docker exec -it mongo-in-docker /bin/bash
 > db.createCollection('Products')
 > show databases
 > show collections
+> db.Products.find({}).pretty();
 > db.getCollection("posts").find()
 ```
 
