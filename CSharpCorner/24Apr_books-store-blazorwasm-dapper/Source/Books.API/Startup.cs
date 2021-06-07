@@ -36,6 +36,8 @@ namespace Books.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Books.API", Version = "v1" });
             });
 
+
+            // Configuration["ConnectionStrings:SqlServerConnection"]
             // SQL database connection (name defined in appsettings.json).
             var SettingsData = new SettingsData(Configuration.GetConnectionString("SqlServerConnection"));
             services.AddSingleton(SettingsData);
