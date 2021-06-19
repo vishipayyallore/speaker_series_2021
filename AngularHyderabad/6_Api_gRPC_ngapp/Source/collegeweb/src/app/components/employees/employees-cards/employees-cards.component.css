@@ -1,0 +1,21 @@
+div {
+    color: navy;
+  }
+  
+  img {
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 3px rgb(5, 43, 126);
+  }
+  
+  .div-backgroudcolor {
+    background-color: white;
+  }
+  
+  .div-container {
+      background-color: aliceblue;
+      box-shadow: 4px 4px 5px rgba(3, 50, 97, 0.87);
+      border-radius: 10px;
+  }
+
+ 

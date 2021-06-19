@@ -1,0 +1,35 @@
+table{
+    color: navy;
+  }
+  
+  img {
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 3px rgb(5, 43, 126);
+  }
+  
+  thead{
+    background-color: rgb(233, 236, 240);
+    color: navy;
+  }
+
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 40px;
+    top: 66px;
+    background-color: #376a9c;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.float-margintop {
+    margin-top: 22px;
+}
+
+a:hover{
+    color:aqua;
+  }
