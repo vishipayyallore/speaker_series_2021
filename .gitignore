@@ -399,3 +399,5 @@ CSharpCorner/24Apr_books-store-blazorwasm-dapper/Source/Books.WebMvc/wwwroot/ima
 AngularHyderabad/6_Api_gRPC_ngapp/Source/collegeweb/src/assets/images/Prof1.PNG
 AngularHyderabad/6_Api_gRPC_ngapp/Source/collegeweb/src/assets/images/Prof2.PNG
 AngularHyderabad/6_Api_gRPC_ngapp/Source/collegeweb/src/assets/images/Prof3.PNG
+CSharpCorner/24Apr_books-store-blazorwasm-dapper/Source/Books.API/Properties/ServiceDependencies/app-booksstoreapi - Web Deploy/profile.arm.json
+CSharpCorner/24Apr_books-store-blazorwasm-dapper/Source/Books.Web/Properties/ServiceDependencies/app-booksstoreweb - Web Deploy1/profile.arm.json
