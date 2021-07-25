@@ -10,6 +10,7 @@ export class TopNavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('TopNavbarComponent::ngOnInit()');
   }
 
 }
