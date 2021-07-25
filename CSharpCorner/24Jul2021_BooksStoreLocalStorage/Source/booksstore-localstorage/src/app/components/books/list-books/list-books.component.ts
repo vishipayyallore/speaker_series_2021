@@ -27,7 +27,7 @@ export class ListBooksComponent implements OnInit, OnDestroy {
 
     this.booksServiceSubscription = this.booksService.getAllBooks()
       .subscribe((data: IBookDto[]) => {
-        
+
         this.booksList = data;
         console.log(this.booksList);
       });
