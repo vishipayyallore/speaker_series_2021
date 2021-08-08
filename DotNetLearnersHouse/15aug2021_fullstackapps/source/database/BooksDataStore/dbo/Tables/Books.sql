@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Books]
+(
+	[Id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+	[PictureUrl] VARCHAR(100) NULL, 
+    [Title] VARCHAR(100) NOT NULL, 
+    [Author] VARCHAR(100) NOT NULL, 
+	[IsActive] BIT NOT NULL DEFAULT 1,
+	[ISBN] VARCHAR(50) NOT NULL, 
+    [Pages] NUMERIC(6) NOT NULL
+)
