@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Books.API.Controllers
+namespace BooksStore.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
