@@ -1,0 +1,380 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"location": {
+			"type": "string",
+			"defaultValue": "[resourceGroup().location]"
+		},
+		"apiWebappName": {
+			"type": "string",
+			"metadata": {
+				"description": "Api Web app name."
+			},
+			"minLength": 2
+		},
+		"uiWebappName": {
+			"type": "string",
+			"metadata": {
+				"description": "UI Web app name."
+			},
+			"minLength": 2
+		},
+		"blazorWasmWebappName": {
+			"type": "string",
+			"metadata": {
+				"description": "Books Web Blazor WASM Web app name."
+			},
+			"minLength": 2
+		},
+		"appServiceHostingPlan": {
+			"type": "string",
+			"metadata": {
+				"description": "App service hosting plan."
+			},
+			"minLength": 2
+		},
+		"appServicePlanTier": {
+			"type": "string",
+			"defaultValue": "F1",
+			"allowedValues": [
+				"F1",
+				"D1",
+				"B1",
+				"B2",
+				"B3",
+				"S1",
+				"S2",
+				"S3",
+				"P1",
+				"P2",
+				"P3",
+				"P4"
+			]
+		},
+		"appServicePlanInstances": {
+			"type": "int",
+			"defaultValue": 1,
+			"minValue": 1
+		},
+		"appInsightsName": {
+			"type": "string",
+			"metadata": {
+				"description": "Appinsights instance name."
+			},
+			"minLength": 2
+		},
+		"sqlServerName": {
+			"type": "string",
+			"defaultValue": "[uniqueString('sql', resourceGroup().id)]",
+			"metadata": {
+				"description": "The name of the SQL logical server."
+			}
+		},
+		"sqlDBName": {
+			"type": "string",
+			"defaultValue": "SampleDB",
+			"metadata": {
+				"description": "The name of the SQL Database."
+			}
+		},
+		"administratorLogin": {
+			"type": "string",
+			"metadata": {
+				"description": "The administrator username of the SQL logical server."
+			}
+		},
+		"administratorLoginPassword": {
+			"type": "securestring",
+			"metadata": {
+				"description": "The administrator password of the SQL logical server."
+			}
+		},
+		"keyVaultName": {
+			"type": "string",
+			"metadata": {
+				"description": "Specifies the name of the key vault."
+			}
+		},
+		"tenantId": {
+			"type": "string",
+			"defaultValue": "[subscription().tenantId]",
+			"metadata": {
+				"description": "Specifies the Azure Active Directory tenant ID that should be used for authenticating requests to the key vault. Get it by using Get-AzSubscription cmdlet."
+			}
+		},
+		"objectId": {
+			"type": "string",
+			"metadata": {
+				"description": "Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets."
+			}
+		},
+		"keysPermissions": {
+			"type": "array",
+			"defaultValue": [
+				"list"
+			],
+			"metadata": {
+				"description": "Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge."
+			}
+		},
+		"secretsPermissions": {
+			"type": "array",
+			"defaultValue": [
+				"list"
+			],
+			"metadata": {
+				"description": "Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge."
+			}
+		},
+		"skuName": {
+			"type": "string",
+			"defaultValue": "Standard",
+			"allowedValues": [
+				"Standard",
+				"Premium"
+			],
+			"metadata": {
+				"description": "Specifies whether the key vault is a standard vault or a premium vault."
+			}
+		}
+	},
+	"variables": {
+		"hostingPlanName": "[parameters('appServiceHostingPlan')]",
+		"webSiteApiName": "[parameters('apiWebappName')]",
+		"appInsightseName": "[parameters('appInsightsName')]"
+	},
+	"resources": [
+		{
+			"type": "Microsoft.Insights/components",
+			"apiVersion": "2018-05-01-preview",
+			"name": "[variables('appInsightseName')]",
+			"location": "[parameters('location')]",
+			"tags": {
+				"displayName": "AppInsightsComponent"
+			},
+			"kind": "web",
+			"properties": {
+				"Application_Type": "web"
+			}
+		},
+		{
+			"type": "Microsoft.Web/serverfarms",
+			"apiVersion": "2020-06-01",
+			"name": "[variables('hostingPlanName')]",
+			"location": "[parameters('location')]",
+			"sku": {
+				"name": "[parameters('appServicePlanTier')]",
+				"capacity": "[parameters('appServicePlanInstances')]"
+			}
+		},
+		{
+			"type": "Microsoft.Web/sites",
+			"apiVersion": "2020-06-01",
+			"name": "[variables('webSiteApiName')]",
+			"location": "[parameters('location')]",
+			"tags": {
+				"[format('hidden-related:{0}', resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName')))]": "empty",
+				"displayName": "webSiteApi"
+			},
+			"properties": {
+				"serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+				"siteConfig": {
+					"netFrameworkVersion": "v5.0",
+					"appSettings": [
+						{
+							"name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).InstrumentationKey]"
+						},
+						{
+							"name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).ConnectionString]"
+						},
+						{
+							"name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+							"value": "~2"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_Mode",
+							"value": "recommended"
+						},
+						{
+							"name": "InstrumentationEngine_EXTENSION_VERSION",
+							"value": "~1"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_BaseExtensions",
+							"value": "~1"
+						}
+					]
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Insights/components', variables('appInsightseName'))]",
+				"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
+			]
+		},
+		{
+			"type": "Microsoft.Web/sites",
+			"apiVersion": "2020-06-01",
+			"name": "[parameters('uiWebappName')]",
+			"location": "[parameters('location')]",
+			"tags": {
+				"[format('hidden-related:{0}', resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName')))]": "empty",
+				"displayName": "webSiteApi"
+			},
+			"properties": {
+				"serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+				"siteConfig": {
+					"netFrameworkVersion": "v5.0",
+					"appSettings": [
+						{
+							"name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).InstrumentationKey]"
+						},
+						{
+							"name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).ConnectionString]"
+						},
+						{
+							"name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+							"value": "~2"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_Mode",
+							"value": "recommended"
+						},
+						{
+							"name": "InstrumentationEngine_EXTENSION_VERSION",
+							"value": "~1"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_BaseExtensions",
+							"value": "~1"
+						}
+					]
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Insights/components', variables('appInsightseName'))]",
+				"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
+			]
+		},
+		{
+			"type": "Microsoft.Web/sites",
+			"apiVersion": "2020-06-01",
+			"name": "[parameters('blazorWasmWebappName')]",
+			"location": "[parameters('location')]",
+			"tags": {
+				"[format('hidden-related:{0}', resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName')))]": "empty",
+				"displayName": "webSiteApi"
+			},
+			"properties": {
+				"serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+				"siteConfig": {
+					"netFrameworkVersion": "v5.0",
+					"appSettings": [
+						{
+							"name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).InstrumentationKey]"
+						},
+						{
+							"name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+							"value": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightseName'))).ConnectionString]"
+						},
+						{
+							"name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+							"value": "~2"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_Mode",
+							"value": "recommended"
+						},
+						{
+							"name": "InstrumentationEngine_EXTENSION_VERSION",
+							"value": "~1"
+						},
+						{
+							"name": "XDT_MicrosoftApplicationInsights_BaseExtensions",
+							"value": "~1"
+						}
+					]
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Insights/components', variables('appInsightseName'))]",
+				"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
+			]
+		},
+		{
+			"type": "Microsoft.Sql/servers",
+			"apiVersion": "2020-02-02-preview",
+			"name": "[parameters('sqlServerName')]",
+			"location": "[parameters('location')]",
+			"properties": {
+				"administratorLogin": "[parameters('administratorLogin')]",
+				"administratorLoginPassword": "[parameters('administratorLoginPassword')]"
+			},
+			"resources": [
+				{
+					"type": "databases",
+					"apiVersion": "2020-08-01-preview",
+					"name": "[parameters('sqlDBName')]",
+					"location": "[parameters('location')]",
+					"sku": {
+						"name": "Standard",
+						"tier": "Standard"
+					},
+					"dependsOn": [
+						"[resourceId('Microsoft.Sql/servers', concat(parameters('sqlServerName')))]"
+					]
+				}
+			]
+		},
+		{
+			"type": "Microsoft.KeyVault/vaults",
+			"apiVersion": "2019-09-01",
+			"name": "[parameters('keyVaultName')]",
+			"location": "[parameters('location')]",
+			"properties": {
+				"tenantId": "[parameters('tenantId')]",
+				"accessPolicies": [
+					{
+						"objectId": "[parameters('objectId')]",
+						"tenantId": "[parameters('tenantId')]",
+						"permissions": {
+							"keys": "[parameters('keysPermissions')]",
+							"secrets": "[parameters('secretsPermissions')]"
+						}
+					}
+				],
+				"sku": {
+					"name": "[parameters('skuName')]",
+					"family": "A"
+				},
+				"networkAcls": {
+					"defaultAction": "Allow",
+					"bypass": "AzureServices"
+				}
+			}
+		},
+    {
+      "type": "Microsoft.KeyVault/vaults/secrets",
+      "apiVersion": "2019-09-01",
+      "name": "[concat(parameters('keyVaultName'), '/SQLConnection')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
+      ],
+      "properties": {
+        "value": "[concat('Server=tcp:',reference(parameters('sqlServerName')).fullyQualifiedDomainName,',1433;Initial Catalog=',parameters('sqlDBName'),';Persist Security Info=False;User ID=',reference(parameters('sqlServerName')).administratorLogin,';Password=',parameters('administratorLoginPassword'),';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
+      }
+    }
+	],
+	"outputs": {
+		"webAppName": {
+			"type": "string",
+			"value": "[variables('webSiteApiName')]"
+		}
+	}
+}
