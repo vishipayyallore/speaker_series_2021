@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "apiWebappName": {
+      "value": "bookstoreapi15"
+    },
+	"uiWebappName": {
+      "value": "bookstoreui15"
+    },
+	"blazorWasmWebappName": {
+      "value": "bookstoreblazor15"
+    },	
+    "appServiceHostingPlan": {
+      "value": "bookstoreplan15"
+    },
+    "appServicePlanTier": {
+      "value": "F1"
+    },
+    "appServicePlanInstances": {
+      "value": 1
+    },
+    "appInsightsName": {
+      "value": "bookstoreappinsights15"
+    },
+    "sqlServerName": {
+      "value": "bookstoresrv"
+    },
+    "sqlDBName": {
+      "value": "BookStore"
+    },
+    "administratorLogin": {
+      "value": "bookstoreadmin"
+    },
+    "administratorLoginPassword": {
+      "value": "BookPassword@123"
+    },
+    "keyVaultName": {
+      "value": "bookstrvlt15"
+    },
+    "tenantId": {
+      "value": "f32b97f0-efb8-4bc3-91ee-18a6e5f635c9"
+    },
+    "objectId": {
+      "value": "515f0615-5d92-4d26-9251-91d355d5b6f6"
+    },
+    "keysPermissions": {
+      "value": [
+        "list",
+		"get"
+      ]
+    },
+    "secretsPermissions": {
+      "value": [
+        "list",
+		"get"
+      ]
+    },
+    "skuName": {
+      "value": "Standard"
+    }
+  }
+}
