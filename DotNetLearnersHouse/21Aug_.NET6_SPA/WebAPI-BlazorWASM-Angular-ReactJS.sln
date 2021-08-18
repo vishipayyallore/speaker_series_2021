@@ -29,11 +29,55 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.API", "source\2rest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3blazorwasm", "3blazorwasm", "{B53E7DD6-CEC4-4B40-854C-4B1FE77361B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4angular", "4angular", "{FA31D274-FAB2-4695-A223-CB493E94E16A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4college-ngweb", "4college-ngweb", "{FA31D274-FAB2-4695-A223-CB493E94E16A}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\.browserslistrc = source\4college-ngweb\.browserslistrc
+		source\4college-ngweb\.editorconfig = source\4college-ngweb\.editorconfig
+		source\4college-ngweb\.gitignore = source\4college-ngweb\.gitignore
+		source\4college-ngweb\angular.json = source\4college-ngweb\angular.json
+		source\4college-ngweb\karma.conf.js = source\4college-ngweb\karma.conf.js
+		source\4college-ngweb\package-lock.json = source\4college-ngweb\package-lock.json
+		source\4college-ngweb\package.json = source\4college-ngweb\package.json
+		source\4college-ngweb\README.md = source\4college-ngweb\README.md
+		source\4college-ngweb\tsconfig.app.json = source\4college-ngweb\tsconfig.app.json
+		source\4college-ngweb\tsconfig.json = source\4college-ngweb\tsconfig.json
+		source\4college-ngweb\tsconfig.spec.json = source\4college-ngweb\tsconfig.spec.json
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5reactjs", "5reactjs", "{399218F7-74A8-4799-A359-31AEB26DBED5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5college-rjsweb", "5college-rjsweb", "{399218F7-74A8-4799-A359-31AEB26DBED5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Web", "source\3blazorwasm\College.Web\College.Web.csproj", "{CBFF36B5-75CE-4DFC-A5A9-2F7ADBDDBECC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4CF288E5-8064-4D73-8118-D36D69AE9B11}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\favicon.ico = source\4college-ngweb\src\favicon.ico
+		source\4college-ngweb\src\index.html = source\4college-ngweb\src\index.html
+		source\4college-ngweb\src\main.ts = source\4college-ngweb\src\main.ts
+		source\4college-ngweb\src\polyfills.ts = source\4college-ngweb\src\polyfills.ts
+		source\4college-ngweb\src\styles.scss = source\4college-ngweb\src\styles.scss
+		source\4college-ngweb\src\test.ts = source\4college-ngweb\src\test.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{903944BE-9B76-46C4-B8EA-4E89EAB00ED3}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\app-routing.module.ts = source\4college-ngweb\src\app\app-routing.module.ts
+		source\4college-ngweb\src\app\app.component.html = source\4college-ngweb\src\app\app.component.html
+		source\4college-ngweb\src\app\app.component.scss = source\4college-ngweb\src\app\app.component.scss
+		source\4college-ngweb\src\app\app.component.spec.ts = source\4college-ngweb\src\app\app.component.spec.ts
+		source\4college-ngweb\src\app\app.component.ts = source\4college-ngweb\src\app\app.component.ts
+		source\4college-ngweb\src\app\app.module.ts = source\4college-ngweb\src\app\app.module.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{931C1F84-E65B-4B74-8023-EE5DC4AE7A20}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\assets\.gitkeep = source\4college-ngweb\src\assets\.gitkeep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "environments", "environments", "{D83F29AA-506B-4611-BA34-EA6188B2BEE9}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\environments\environment.prod.ts = source\4college-ngweb\src\environments\environment.prod.ts
+		source\4college-ngweb\src\environments\environment.ts = source\4college-ngweb\src\environments\environment.ts
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +121,10 @@ Global
 		{FA31D274-FAB2-4695-A223-CB493E94E16A} = {A58FE1A8-B666-45C6-9714-F2FAB38A055C}
 		{399218F7-74A8-4799-A359-31AEB26DBED5} = {A58FE1A8-B666-45C6-9714-F2FAB38A055C}
 		{CBFF36B5-75CE-4DFC-A5A9-2F7ADBDDBECC} = {B53E7DD6-CEC4-4B40-854C-4B1FE77361B0}
+		{4CF288E5-8064-4D73-8118-D36D69AE9B11} = {FA31D274-FAB2-4695-A223-CB493E94E16A}
+		{903944BE-9B76-46C4-B8EA-4E89EAB00ED3} = {4CF288E5-8064-4D73-8118-D36D69AE9B11}
+		{931C1F84-E65B-4B74-8023-EE5DC4AE7A20} = {4CF288E5-8064-4D73-8118-D36D69AE9B11}
+		{D83F29AA-506B-4611-BA34-EA6188B2BEE9} = {4CF288E5-8064-4D73-8118-D36D69AE9B11}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {155C508A-F03D-47C4-B63E-92EF39550DE2}
