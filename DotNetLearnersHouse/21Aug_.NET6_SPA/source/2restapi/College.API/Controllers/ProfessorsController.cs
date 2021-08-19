@@ -20,7 +20,7 @@ namespace College.API.Controllers
         public ProfessorsController(ILogger<ProfessorsController> logger, IProfessorsSqlBll professorsSqlBll)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            
+
             _professorsSqlBll = professorsSqlBll ?? throw new ArgumentNullException(nameof(professorsSqlBll));
         }
 
