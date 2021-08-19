@@ -58,3 +58,34 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 40px;
+    top: 38px;
+    background-color: #376a9c;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.float-margintop {
+    margin-top: 22px;
+}
+
+.table-header-dark {
+    background-color: #376a9c;
+    color: white !important;
+}
+
+.span-styles {
+    font-size: 30px;
+}
+
+.PageTitle {
+    color: #376a9c;
+    font-weight: bolder;
+}
