@@ -25,8 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4college-ngweb", "4college-
 	ProjectSection(SolutionItems) = preProject
 		source\4college-ngweb\.browserslistrc = source\4college-ngweb\.browserslistrc
 		source\4college-ngweb\.editorconfig = source\4college-ngweb\.editorconfig
+		source\4college-ngweb\.eslintrc.json = source\4college-ngweb\.eslintrc.json
 		source\4college-ngweb\.gitignore = source\4college-ngweb\.gitignore
 		source\4college-ngweb\angular.json = source\4college-ngweb\angular.json
+		source\4college-ngweb\cypress.json = source\4college-ngweb\cypress.json
 		source\4college-ngweb\karma.conf.js = source\4college-ngweb\karma.conf.js
 		source\4college-ngweb\package-lock.json = source\4college-ngweb\package-lock.json
 		source\4college-ngweb\package.json = source\4college-ngweb\package.json
@@ -37,6 +39,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4college-ngweb", "4college-
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5college-rjsweb", "5college-rjsweb", "{399218F7-74A8-4799-A359-31AEB26DBED5}"
+	ProjectSection(SolutionItems) = preProject
+		source\5college-rjsweb\.gitignore = source\5college-rjsweb\.gitignore
+		source\5college-rjsweb\package-lock.json = source\5college-rjsweb\package-lock.json
+		source\5college-rjsweb\package.json = source\5college-rjsweb\package.json
+		source\5college-rjsweb\README.md = source\5college-rjsweb\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4CF288E5-8064-4D73-8118-D36D69AE9B11}"
 	ProjectSection(SolutionItems) = preProject
@@ -44,6 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4CF288E5-806
 		source\4college-ngweb\src\index.html = source\4college-ngweb\src\index.html
 		source\4college-ngweb\src\main.ts = source\4college-ngweb\src\main.ts
 		source\4college-ngweb\src\polyfills.ts = source\4college-ngweb\src\polyfills.ts
+		source\4college-ngweb\src\styles.css = source\4college-ngweb\src\styles.css
 		source\4college-ngweb\src\styles.scss = source\4college-ngweb\src\styles.scss
 		source\4college-ngweb\src\test.ts = source\4college-ngweb\src\test.ts
 	EndProjectSection
@@ -51,6 +60,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{903944BE-9B76-46C4-B8EA-4E89EAB00ED3}"
 	ProjectSection(SolutionItems) = preProject
 		source\4college-ngweb\src\app\app-routing.module.ts = source\4college-ngweb\src\app\app-routing.module.ts
+		source\4college-ngweb\src\app\app.component.css = source\4college-ngweb\src\app\app.component.css
 		source\4college-ngweb\src\app\app.component.html = source\4college-ngweb\src\app\app.component.html
 		source\4college-ngweb\src\app\app.component.scss = source\4college-ngweb\src\app\app.component.scss
 		source\4college-ngweb\src\app\app.component.spec.ts = source\4college-ngweb\src\app\app.component.spec.ts
@@ -78,6 +88,124 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.API", "source\2restapi\College.API\College.API.csproj", "{16CBC281-168E-44C1-90A0-14403BDF46EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Web", "source\3blazorwasm\College.Web\College.Web.csproj", "{9C3C4C13-EB06-40BC-8BD3-630154D5D0ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{D99A4B77-D9D7-428D-AA43-84C36EEF705E}"
+	ProjectSection(SolutionItems) = preProject
+		source\5college-rjsweb\public\favicon.ico = source\5college-rjsweb\public\favicon.ico
+		source\5college-rjsweb\public\index.html = source\5college-rjsweb\public\index.html
+		source\5college-rjsweb\public\logo192.png = source\5college-rjsweb\public\logo192.png
+		source\5college-rjsweb\public\logo512.png = source\5college-rjsweb\public\logo512.png
+		source\5college-rjsweb\public\manifest.json = source\5college-rjsweb\public\manifest.json
+		source\5college-rjsweb\public\robots.txt = source\5college-rjsweb\public\robots.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0FAD982C-36B0-4B4C-8492-F34ACD1DE03F}"
+	ProjectSection(SolutionItems) = preProject
+		source\5college-rjsweb\src\App.css = source\5college-rjsweb\src\App.css
+		source\5college-rjsweb\src\App.js = source\5college-rjsweb\src\App.js
+		source\5college-rjsweb\src\App.test.js = source\5college-rjsweb\src\App.test.js
+		source\5college-rjsweb\src\index.css = source\5college-rjsweb\src\index.css
+		source\5college-rjsweb\src\index.js = source\5college-rjsweb\src\index.js
+		source\5college-rjsweb\src\logo.svg = source\5college-rjsweb\src\logo.svg
+		source\5college-rjsweb\src\reportWebVitals.js = source\5college-rjsweb\src\reportWebVitals.js
+		source\5college-rjsweb\src\setupTests.js = source\5college-rjsweb\src\setupTests.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cypress", "cypress", "{397D9334-1394-409E-B586-66FAF6B5AC9F}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\cypress\tsconfig.json = source\4college-ngweb\cypress\tsconfig.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fixtures", "fixtures", "{1C89DB4B-73E9-492C-BFBC-26014BDF8917}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\cypress\fixtures\example.json = source\4college-ngweb\cypress\fixtures\example.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{2A509775-CC07-4016-887F-93A2A2D44168}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\cypress\integration\spec.ts = source\4college-ngweb\cypress\integration\spec.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{29CEF7F5-0F7C-4D64-9FBC-2EBE589D4624}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\cypress\plugins\index.ts = source\4college-ngweb\cypress\plugins\index.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "support", "support", "{B30708A9-AF43-4DCB-ADE9-4A0B8808044A}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\cypress\support\commands.ts = source\4college-ngweb\cypress\support\commands.ts
+		source\4college-ngweb\cypress\support\index.ts = source\4college-ngweb\cypress\support\index.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{99DBF8D7-2A6D-441B-92DF-75E3F12A8DC7}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\assets\images\404PageNotFound.png = source\4college-ngweb\src\assets\images\404PageNotFound.png
+		source\4college-ngweb\src\assets\images\Emp1.png = source\4college-ngweb\src\assets\images\Emp1.png
+		source\4college-ngweb\src\assets\images\Emp2.png = source\4college-ngweb\src\assets\images\Emp2.png
+		source\4college-ngweb\src\assets\images\Emp3.png = source\4college-ngweb\src\assets\images\Emp3.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{0DD2DFCA-E9D8-4026-B07B-315F52A88E34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{8C7FABD6-68A9-419A-884A-B379AD9208A5}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\home\home-routing.module.ts = source\4college-ngweb\src\app\components\home\home-routing.module.ts
+		source\4college-ngweb\src\app\components\home\home.module.ts = source\4college-ngweb\src\app\components\home\home.module.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{036E0E38-395A-4598-A8E5-768DCC251A06}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\shared\shared-routing.module.ts = source\4college-ngweb\src\app\components\shared\shared-routing.module.ts
+		source\4college-ngweb\src\app\components\shared\shared.module.ts = source\4college-ngweb\src\app\components\shared\shared.module.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "footer", "footer", "{2CDF48A5-BCFA-4741-96BA-C2DFCEFBBBB7}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\shared\footer\footer.component.css = source\4college-ngweb\src\app\components\shared\footer\footer.component.css
+		source\4college-ngweb\src\app\components\shared\footer\footer.component.html = source\4college-ngweb\src\app\components\shared\footer\footer.component.html
+		source\4college-ngweb\src\app\components\shared\footer\footer.component.spec.ts = source\4college-ngweb\src\app\components\shared\footer\footer.component.spec.ts
+		source\4college-ngweb\src\app\components\shared\footer\footer.component.ts = source\4college-ngweb\src\app\components\shared\footer\footer.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "page-notfound", "page-notfound", "{F43D747B-38A5-4F27-953F-F5E70DE34F9B}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.css = source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.css
+		source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.html = source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.html
+		source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.spec.ts = source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.spec.ts
+		source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.ts = source\4college-ngweb\src\app\components\shared\page-notfound\page-notfound.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "top-navbar", "top-navbar", "{E07A2A45-4CE8-4E84-B248-66F24F1EC1F5}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.css = source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.css
+		source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.html = source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.html
+		source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.spec.ts = source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.spec.ts
+		source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.ts = source\4college-ngweb\src\app\components\shared\top-navbar\top-navbar.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aboutus", "aboutus", "{EFDC3F91-2171-4887-9667-86A95B9D9B87}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.css = source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.css
+		source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.html = source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.html
+		source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.spec.ts = source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.spec.ts
+		source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.ts = source\4college-ngweb\src\app\components\home\aboutus\aboutus.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contactus", "contactus", "{6FED4D6E-BCA8-4E6C-A68B-33499762FBC5}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\home\contactus\contactus.component.css = source\4college-ngweb\src\app\components\home\contactus\contactus.component.css
+		source\4college-ngweb\src\app\components\home\contactus\contactus.component.html = source\4college-ngweb\src\app\components\home\contactus\contactus.component.html
+		source\4college-ngweb\src\app\components\home\contactus\contactus.component.spec.ts = source\4college-ngweb\src\app\components\home\contactus\contactus.component.spec.ts
+		source\4college-ngweb\src\app\components\home\contactus\contactus.component.ts = source\4college-ngweb\src\app\components\home\contactus\contactus.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboard", "dashboard", "{395B07C3-573C-498E-8879-33504505F30A}"
+	ProjectSection(SolutionItems) = preProject
+		source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.css = source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.css
+		source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.html = source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.html
+		source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.spec.ts = source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.spec.ts
+		source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.ts = source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.ts
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +253,23 @@ Global
 		{9A1AF5D4-857D-45DE-B6C9-754CCB2F1823} = {537EE227-C3DA-4D25-8336-5C9A678FEF7A}
 		{16CBC281-168E-44C1-90A0-14403BDF46EE} = {4AC89724-FD32-4C34-A5BA-F51E25ABD1A4}
 		{9C3C4C13-EB06-40BC-8BD3-630154D5D0ED} = {B53E7DD6-CEC4-4B40-854C-4B1FE77361B0}
+		{D99A4B77-D9D7-428D-AA43-84C36EEF705E} = {399218F7-74A8-4799-A359-31AEB26DBED5}
+		{0FAD982C-36B0-4B4C-8492-F34ACD1DE03F} = {399218F7-74A8-4799-A359-31AEB26DBED5}
+		{397D9334-1394-409E-B586-66FAF6B5AC9F} = {FA31D274-FAB2-4695-A223-CB493E94E16A}
+		{1C89DB4B-73E9-492C-BFBC-26014BDF8917} = {397D9334-1394-409E-B586-66FAF6B5AC9F}
+		{2A509775-CC07-4016-887F-93A2A2D44168} = {397D9334-1394-409E-B586-66FAF6B5AC9F}
+		{29CEF7F5-0F7C-4D64-9FBC-2EBE589D4624} = {397D9334-1394-409E-B586-66FAF6B5AC9F}
+		{B30708A9-AF43-4DCB-ADE9-4A0B8808044A} = {397D9334-1394-409E-B586-66FAF6B5AC9F}
+		{99DBF8D7-2A6D-441B-92DF-75E3F12A8DC7} = {931C1F84-E65B-4B74-8023-EE5DC4AE7A20}
+		{0DD2DFCA-E9D8-4026-B07B-315F52A88E34} = {903944BE-9B76-46C4-B8EA-4E89EAB00ED3}
+		{8C7FABD6-68A9-419A-884A-B379AD9208A5} = {0DD2DFCA-E9D8-4026-B07B-315F52A88E34}
+		{036E0E38-395A-4598-A8E5-768DCC251A06} = {0DD2DFCA-E9D8-4026-B07B-315F52A88E34}
+		{2CDF48A5-BCFA-4741-96BA-C2DFCEFBBBB7} = {036E0E38-395A-4598-A8E5-768DCC251A06}
+		{F43D747B-38A5-4F27-953F-F5E70DE34F9B} = {036E0E38-395A-4598-A8E5-768DCC251A06}
+		{E07A2A45-4CE8-4E84-B248-66F24F1EC1F5} = {036E0E38-395A-4598-A8E5-768DCC251A06}
+		{EFDC3F91-2171-4887-9667-86A95B9D9B87} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
+		{6FED4D6E-BCA8-4E6C-A68B-33499762FBC5} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
+		{395B07C3-573C-498E-8879-33504505F30A} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {155C508A-F03D-47C4-B63E-92EF39550DE2}
