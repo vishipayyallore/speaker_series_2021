@@ -16,7 +16,7 @@ namespace College.Web.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("https://localhost:5004/sample-data/weather.json");
+            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
         }
     }
 
