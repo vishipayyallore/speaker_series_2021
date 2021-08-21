@@ -207,6 +207,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboard", "dashboard", "{
 		source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.ts = source\4college-ngweb\src\app\components\home\dashboard\dashboard.component.ts
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlscripts", "sqlscripts", "{EE34D661-6585-4B47-808A-0DF643419F8A}"
+	ProjectSection(SolutionItems) = preProject
+		sqlscripts\1Create_Database.sql = sqlscripts\1Create_Database.sql
+		sqlscripts\2Create_Professors.sql = sqlscripts\2Create_Professors.sql
+		sqlscripts\3Create_Students.sql = sqlscripts\3Create_Students.sql
+		sqlscripts\4Insert_Professors.sql = sqlscripts\4Insert_Professors.sql
+		sqlscripts\5Insert_Students.sql = sqlscripts\5Insert_Students.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
