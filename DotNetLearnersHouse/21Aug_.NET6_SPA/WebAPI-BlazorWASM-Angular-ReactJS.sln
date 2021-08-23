@@ -216,6 +216,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlscripts", "sqlscripts", 
 		sqlscripts\5Insert_Students.sql = sqlscripts\5Insert_Students.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{145C9F17-661C-4AC0-BDDD-A410D78CAA14}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "college-datastore", "source\database\college-datastore\college-datastore.sqlproj", "{1610285F-A83E-48E1-B084-CC5F28D3BA3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -242,6 +246,12 @@ Global
 		{9C3C4C13-EB06-40BC-8BD3-630154D5D0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C3C4C13-EB06-40BC-8BD3-630154D5D0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C3C4C13-EB06-40BC-8BD3-630154D5D0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -279,6 +289,8 @@ Global
 		{EFDC3F91-2171-4887-9667-86A95B9D9B87} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
 		{6FED4D6E-BCA8-4E6C-A68B-33499762FBC5} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
 		{395B07C3-573C-498E-8879-33504505F30A} = {8C7FABD6-68A9-419A-884A-B379AD9208A5}
+		{145C9F17-661C-4AC0-BDDD-A410D78CAA14} = {A58FE1A8-B666-45C6-9714-F2FAB38A055C}
+		{1610285F-A83E-48E1-B084-CC5F28D3BA3D} = {145C9F17-661C-4AC0-BDDD-A410D78CAA14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {155C508A-F03D-47C4-B63E-92EF39550DE2}
