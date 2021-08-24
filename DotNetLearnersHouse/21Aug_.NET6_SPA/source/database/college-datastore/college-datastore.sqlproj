@@ -61,5 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Professors.sql" />
+    <Build Include="dbo\Tables\Students.sql" />
   </ItemGroup>
 </Project>
