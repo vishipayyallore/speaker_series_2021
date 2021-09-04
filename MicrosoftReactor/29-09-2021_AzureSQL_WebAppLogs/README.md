@@ -2,8 +2,6 @@
 
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/280462794/](https://www.meetup.com/microsoft-reactor-bengaluru/events/280462794/) 
 
-![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamy_15thSept.PNG)
-
 ---
 
 
@@ -21,12 +19,6 @@
 ![Information | 100x100](./documentation/images/Information.PNG)
 
 ## What are we doing today?
-> 1. App Service Plans
-> 1. Creating Web App (Linux) in Portal, and deploying it from VS Code
-> 1. Checking the code into GitHub.
-> 1. Creating Web App (Windows) using Azure CLI, and deploying using Azure CLI.
-> 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019.
-
 > 1. Creating SQL tables in Azure SQL.
 > 1. Storing the SQL Credentials inside the Key Vault.
 > 1. Deploying Web API to App Server.
@@ -34,36 +26,17 @@
 > 1. Verifying Web API using Postman.
 > 1. Deploying Blazor WASM, and integrating with Web API.
 
-
 ![Seat Belt | 100x100](./documentation/images/SeatBelt.PNG)
 
 *****
 
-## 1. Introduction to Azure App Service
-> 1. App Service Overview
-> 1. App Service Plans
-> 1. Pricing Tiers
-> 1. Ways to Deploy code to App Service
+## 1. Azure SQL Server
+> 1. Using Azure Data Studio
+> 1. Making Firewall changes to access SQL Server.
+> 1. Using SQL Scripts we will create tables, and data population in SQL Azure.
+> 1. SQL Scripts included for creating database, tables, and data population.
 
-## 2. Creating Web App (Linux) in Portal, and deploying it from VS Code
-> 1. Creating Web App (Linux) in Portal
-> 1. Deploying it from VS Code
-> 1. Checking the code into GitHub
-> 1. Redeploy the code
-
-## 3. Creating Web App (Linux) in Portal, and deploying it from VS Code
-
-## 4. Creating Web App, and deploying it using PowerShell
-
-## 5. Creating Web App, and deploying it using Azure CLI
-
-## 6. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019
-
-## 
-
-> 1. Creating Web App (Windows) using Azure CLI, and deploying using Azure CLI.
-> 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019.
-
+## 2. Azure Key Vault
 > 1. Storing the SQL Database credentials inside the Azure Key Vault
 
 ## 3. .Net Core Web API
