@@ -1,0 +1,104 @@
+html {
+	position: relative;
+	min-height: 100vh;
+}
+
+body {
+	padding-top: 5rem;
+	margin-bottom: 60px;
+}
+
+.top-nav-bar-overrides {
+	background-color: #3f51b5 !important;
+}
+
+span {
+	color: blue;
+}
+
+.span-styles {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: rgb(9, 53, 250);
+}
+
+/* Header styles
+-------------------------------------------------- */
+h1 {
+	color: rgb(9, 53, 250);
+}
+
+#header-styles {
+	color: rgb(121, 51, 5);
+}
+
+/* Div styles
+-------------------------------------------------- */
+.div-styles {
+	background-color: rgba(189, 243, 158, 0.596);
+	border: none;
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 5px 5px #8a898954;
+	margin-bottom: 10px;
+}
+
+/* Paragraph styles
+-------------------------------------------------- */
+p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: rgb(107, 36, 3);
+}
+
+.para-styles {
+	background-color: rgb(119, 187, 247);
+	box-shadow: 3px 3px rgb(73, 74, 77, 0.2);
+	border: none;
+	border-radius: 10px;
+	padding: 0px 5px 20px 20px;
+}
+
+/* Buttons styles
+-------------------------------------------------- */
+
+button {
+	cursor: pointer;
+	font-size: 1.2rem;
+	height: 2.5rem;
+	border: none;
+	border-radius: 10px;
+	color: #ffffff;
+	background-color: rgb(8, 101, 241);
+	outline: none;
+	padding: 0.3rem 1.8rem;
+	box-shadow: 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+	filter: brightness(120%);
+	color: greenyellow;
+}
+
+button:active {
+	transform: translate(3px, 5px);
+	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 40px;
+	line-height: 40px; /* Vertically center the text there */
+	color: rgb(8, 44, 245);
+	font-weight: bolder;
+	background-color: #0b29e962;
+}
+
+.footer > .container {
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-left: 15px;
+}
