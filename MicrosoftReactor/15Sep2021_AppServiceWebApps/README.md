@@ -59,38 +59,7 @@
 
 ## 6. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019
 
-## 
-
-> 1. Creating Web App (Windows) using Azure CLI, and deploying using Azure CLI.
-> 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019.
-
-> 1. Storing the SQL Database credentials inside the Azure Key Vault
-
-## 3. .Net Core Web API
-> 1. Building Professor’s Controller
-> 1. Executing in IIS Express & Kestrel. launchSettings.json
-> 1. Implement GetAll() method.
-> 1. User Secrets instead of appSettings.json
-> 1. Verify /Professors from Chrome Browser.
-
-## 4. Swagger UI
-> 1. Testing API using Swagger on Chrome Browser
-> 1. Deploy Web API Changes to Azure using Visual Studio.
-
-## 5. Azure Key Vault
-> 1. Configuring the Web API to use the credentials from Key Vault
-
-## 6. Postman Collection
-> 1. Using Postman to verify the API
-> 2. Postman Collection and its advantages.
-
-*****
-> BIO BREAK ONE (**10 Minutes**)
-*****
-
-## 7. Blazor WASM UI
-> 1. Integrating with Web API
-> 2. Deploying Blazor WASM to Azure
+## 7. Create a static HTML web app using az webapp up
 
 ## 8. SUMMARY / RECAP / Q&A 
 
