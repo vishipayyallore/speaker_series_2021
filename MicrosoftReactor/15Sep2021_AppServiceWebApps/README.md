@@ -65,7 +65,7 @@ dotnet publish -c release -o ./publish
 dotnet publish -c release -o ./publish
 ```
 
-![VS Code Deploy 1 | 100x100](./documentation/images/DeployUsingVSCode_Lnx.PNG)
+![VS Code Deploy 2 | 100x100](./documentation/images/DeployUsingVSCode_Lnx.PNG)
 
 ## 4. Create a static HTML web app using `az webapp up`
 > 1. Walk through of the Html App
@@ -82,14 +82,23 @@ az webapp up --location EastUs --name hellohtml04092021 --resource-group rg-az20
  --html
 ```
 
-![VS Code Deploy 1 | 100x100](./documentation/images/WebAppUp_Html.PNG)
+![az webapp up | 100x100](./documentation/images/WebAppUp_Html.PNG)
 
 
 ## 5. Creating Web App, and deploying it using Azure CLI (Laptop) 
 > 1. Walk through of the **Angular 12** App
 > 1. Login using `az login`
 > 1. Verify the account `az account show`
-> 1. Execute the `az webapp up`
+> 1. Set `Local Git` inside the `Deployment Center` in `Azure Portal`
+> 1. Execute `npm run build`
+> 1. Create new folder called **publish** inside **dist** folder
+> 1. Execute `git clone https://app-azsxdcfv.scm.azurewebsites.net:443/app-azsxdcfv.git`
+
+git add .
+> git commit -m "ase deploy with localgit"
+> git push
+
+![Azure CLI 2 | 100x100](./documentation/images/DeployUsing_AzureCLI.PNG)
 
 ## 6. SUMMARY / RECAP / Q&A 
 
