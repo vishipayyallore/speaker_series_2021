@@ -22,10 +22,10 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'ng-projecttemplate'`, () => {
+    it(`should have as title 'college-ngweb'`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
-        expect(app.title).toEqual('ng-projecttemplate');
+        expect(app.title).toEqual('college-ngweb');
     });
 
 });

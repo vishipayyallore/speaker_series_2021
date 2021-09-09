@@ -21,12 +21,12 @@ To be done
 ![Information | 100x100](./documentation/images/Information.PNG)
 
 ## What are we doing today?
-> 1. App Service Plans
-> 1. Creating Web App (Linux) in Portal, and deploying it from VS Code
-> 1. Checking the code into GitHub.
-> 1. Creating Web App (Windows) using Azure CLI, and deploying using Azure CLI.
-> 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019.
-
+> 1. Introduction to Azure App Service
+> 1. Creating Web App (Windows) in Portal, and deploying it from VS Code
+> 1. Creating Web App (Linux), and deploying it from VS Code
+> 1. Create a static HTML web app using `az webapp up`
+> 1. Creating Web App (Angular 12), and deploying it using Azure CLI (Laptop) 
+> 1. SUMMARY / RECAP / Q&A 
 
 ![Seat Belt | 100x100](./documentation/images/SeatBelt.PNG)
 
@@ -85,18 +85,51 @@ az webapp up --location EastUs --name hellohtml04092021 --resource-group rg-az20
 ![az webapp up | 100x100](./documentation/images/WebAppUp_Html.PNG)
 
 
-## 5. Creating Web App, and deploying it using Azure CLI (Laptop) 
+## 5. Creating Web App (Angular 12), and deploying it using Azure CLI (Laptop) 
+
+**Note:** 
+Please refer *NgWeb_WebApp.sh* from **infrastructure** folder.
+
 > 1. Walk through of the **Angular 12** App
 > 1. Login using `az login`
 > 1. Verify the account `az account show`
-> 1. Set `Local Git` inside the `Deployment Center` in `Azure Portal`
+> 1. Create App Service Plan, App Service Web App using the Azure CLI
+> 1. Set `Local Git` as `Deployment` souce in `Azure CLI`
 > 1. Execute `npm run build`
-> 1. Create new folder called **publish** inside **dist** folder
-> 1. Execute `git clone https://app-azsxdcfv.scm.azurewebsites.net:443/app-azsxdcfv.git`
+> 1. Execute `git clone https://app-azsxdcfv.scm.azurewebsites.net:443/app-azsxdcfv.git` inside **dist** folder
+> 1. Copy the content from **dist/college-ngweb** to **dist/app-azsxdcfv**
+> 1. Change Directory into **dist/app-azsxdcfv**
+> 1. Execute `git add .` | `git commit -m "Initial Version` | `git push`
+> 1. Browse the site
+
+![Azure CLI Commands | 100x100](./documentation/images/DeployUsing_AzureCLI_1.PNG)
+
+```
+SUBSCRIPTION="SwamyPKV VSPS"
+RESOURCEGROUP="rg-az204-webapps-reactor-001"
+LOCATION="eastus"
+PLANNAME="plan-azsxdcfv2"
+PLANSKU="F1"
+SITENAME="app-azsxdcfv2"
+
+az login
+az account show -o table
+az account set --subscription $SUBSCRIPTION
+az group create --name $RESOURCEGROUP --location $LOCATION
+
+az appservice plan create --name $PLANNAME --location $LOCATION --sku $PLANSKU --resource-group $RESOURCEGROUP
+az webapp create --name $SITENAME --plan $PLANNAME --resource-group $RESOURCEGROUP
+
+az webapp deployment source config-local-git --name "app-azsxdcfv2" --resource-group "rg-az204-webapps-reactor-001"
+git clone https://app-azsxdcfv2.scm.azurewebsites.net/app-azsxdcfv2.git
 
 git add .
-> git commit -m "ase deploy with localgit"
-> git push
+git commit -m "Initial Version
+git push
+
+# browse to the site
+az webapp browse --name "app-azsxdcfv2" --resource-group "rg-az204-webapps-reactor-001"
+```
 
 ![Azure CLI 2 | 100x100](./documentation/images/DeployUsing_AzureCLI.PNG)
 
@@ -107,18 +140,12 @@ git add .
 > 2. Any open queries, I will get back through meetup chat/twitter.
 *****
 
-## What is Next? (`Session 2 of Azure App Services` on 29-Sep-2021)
+## What is Next? (`Session 2` of `Azure App Services` on 29-Sep-2021)
 > 1. Creating Web App, and deploying it using PowerShell
 > 1. Creating Web App Azure CLI (Cloud Shell) and deploying using VS 2019
 > 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019
-> 1. Creating Web App (Linux) in Portal, and deploying it from VS Code
-> 1. Creating Azure SQL Server and Database. Deploying .SQLPROJ to Azure SQL.
+> 1. Creating Azure SQL Server and Database. Deploying .SQLPROJ to Azure SQL
 > 1. Connecting Azure SQL from Local Web API
 > 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
 > 1. Deploying the Web API changes to Web App
 > 1. Configuring the SQL Azure Connection String in App Settings in Azure
-
-
-
-
-

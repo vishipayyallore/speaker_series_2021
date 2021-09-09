@@ -7,7 +7,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-projecttemplate": {
+    "college-ngweb": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-projecttemplate",
+            "outputPath": "dist/college-ngweb",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-projecttemplate:build:production"
+              "browserTarget": "college-ngweb:build:production"
             },
             "development": {
-              "browserTarget": "ng-projecttemplate:build:development",
+              "browserTarget": "college-ngweb:build:development",
               "port": 4005
             }
           },
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-projecttemplate:build"
+            "browserTarget": "college-ngweb:build"
           }
         },
         "test": {
@@ -116,11 +116,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ng-projecttemplate:serve"
+            "devServerTarget": "college-ngweb:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-projecttemplate:serve:production"
+              "devServerTarget": "college-ngweb:serve:production"
             }
           }
         },
@@ -134,18 +134,18 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ng-projecttemplate:serve",
+            "devServerTarget": "college-ngweb:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-projecttemplate:serve:production"
+              "devServerTarget": "college-ngweb:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ng-projecttemplate"
+  "defaultProject": "college-ngweb"
 }
