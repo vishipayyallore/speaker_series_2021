@@ -146,6 +146,7 @@ az webapp browse --name "app-azsxdcfv2" --resource-group "rg-az204-webapps-react
 > 1. Creating the Web App using ARM template using cloud shell, and deploying using VS 2019
 > 1. Creating Azure SQL Server and Database. Deploying .SQLPROJ to Azure SQL
 > 1. Connecting Azure SQL from Local Web API
-> 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
 > 1. Deploying the Web API changes to Web App
 > 1. Configuring the SQL Azure Connection String in App Settings in Azure
+> 1. Verifying the Web API using Postman
+
