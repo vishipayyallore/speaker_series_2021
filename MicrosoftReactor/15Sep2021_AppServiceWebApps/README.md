@@ -9,13 +9,21 @@
 
 ## Application Architecture Diagram 
 
-To be done
+NA
 
 ---
 
 ## Resources in Azure
 
-To be done
+```
+rg-az204-webapps-reactor-001
+
+app-collegeapi-win
+plan-collegeapi-win
+
+app-collegeapi-lnx
+plan-collegeapi-lnx
+```
 
 ## Information
 ![Information | 100x100](./documentation/images/Information.PNG)
@@ -41,10 +49,16 @@ To be done
 >    1. Automated
 
 ## 2. Creating Web App (Windows) in Portal, and deploying it from VS Code
-> 1. Creating Web App (Windows) in Portal
-> 1. Walk through simple Web API using .NET 6
+> 1. Creating Web App (Windows) in Portal (`app-collegeapi-win`)
+> 1. View the default `hostingstart.html` file
+> 1. Modify the `hostingstart.html` file with ```<h1>Hello World !!</h1>```
+> 1. Verify the output
+> 1. Walk through simple Web API using .NET 5
 > 1. Execute the below mentioned code to publish the binaries into a folder
-> 1. Deploying it from VS Code
+> 1. Right Click on the **publish** folder.
+> 1. Select *Deploy to Web App...* it from VS Code
+> 1. Select the existing Web App which was created using Azure Portal
+> 1. Navigate to `https://app-collegeapi-win.azurewebsites.net/weatherforecast` to view the output
 
 
 ```
@@ -55,31 +69,38 @@ dotnet publish -c release -o ./publish
 
 ## 3. Creating Web App (Linux), and deploying it from VS Code
 
-> 1. Creating Web App (Linux) in Portal
-> 1. Walk through simple Web API using .NET 6
-> 1. Execute the below mentioned code to publish the binaries into a folder
-> 1. Deploying it from VS Code
+**Note:** We do not have Shared plan in Linux Web Apps
 
+> 1. Walk through simple Web API using .NET 5
+> 1. Execute the below mentioned code to publish the binaries into a folder
+> 1. Right Click on the **publish** folder.
+> 1. Select *Deploy to Web App...* it from VS Code
+> 1. Select the `+ Create new Web App... Advanced` option
+> 1. Creating Web App (Linux) in Visual Studio Code (`app-collegeapi-lnx`)
+> 1. Navigate to `https://app-collegeapi-lnx.azurewebsites.net/weatherforecast` to view the output
+> 1. **SSH** into the **wwwroot** of the application to view the files
 
 ```
 dotnet publish -c release -o ./publish
+
+ls -a
 ```
+
 
 ![VS Code Deploy 2 | 100x100](./documentation/images/DeployUsingVSCode_Lnx.PNG)
 
 ## 4. Create a static HTML web app using `az webapp up`
 > 1. Walk through of the Html App
 > 1. Login using `az login`
-> 1. Verify the account `az account show`
+> 1. Verify the account `az account show -o table`
 > 1. Execute the `az webapp up`
 
 ```
 az login
 
-az account show
+az account show -o table
 
-az webapp up --location EastUs --name hellohtml04092021 --resource-group rg-az204-webapps-reactor-001
- --html
+az webapp up --location EastUs --name hellohtml04092021 --resource-group rg-az204-webapps-reactor-001 --html
 ```
 
 ![az webapp up | 100x100](./documentation/images/WebAppUp_Html.PNG)
