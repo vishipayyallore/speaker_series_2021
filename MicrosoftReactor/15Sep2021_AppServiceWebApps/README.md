@@ -95,10 +95,14 @@ ls -a
 > 1. Verify the account `az account show -o table`
 > 1. Execute the `az webapp up`
 
+URL: https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az_webapp_up
+
 ```
 az login
 
 az account show -o table
+
+az webapp list-runtimes
 
 az webapp up --location EastUs --name hellohtml04092021 --resource-group rg-az204-webapps-reactor-001 --html
 ```

@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
+import { ListProductsComponent } from './list-products/list-products.component';
 
 const routes: Routes = [
-  { path: '', component: PageNotfoundComponent },
+  { path: 'list-products', component: ListProductsComponent },
 ];
 
 @NgModule({
@@ -15,4 +14,4 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
-export class SharedRoutingModule { }
+export class ProductsRoutingModule { }

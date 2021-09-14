@@ -1,0 +1,29 @@
+.top-nav-bar-overrides {
+  background-color: #1976d2;
+}
+
+a {
+  color: white !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: aqua !important;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #1562af;
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.notif-bell {
+  margin: 0 10px 0 16px;
+}
+
+.logged-user {
+  margin: 0 20px 0 16px;
+}

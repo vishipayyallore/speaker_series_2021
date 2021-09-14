@@ -1,21 +1,39 @@
-# NgProjecttemplate
+# Ng12Products
 
-```TypeScript
 
-ng g module components/home --module=app
-ng g module components/home/home-routing --flat --module=app
+```
+ng new ng12-products --prefix sv
 
-ng g module components/shared --module=app
-ng g module components/shared/shared-routing --flat --module=app
+npm i bootstrap font-awesome guid-typescript
 ```
 
-```TypeScript
-  Cypress: ng add @cypress/schematic
-  Nightwatch: ng add @nightwatch/schematics
-  WebdriverIO: ng add @wdio/schematics
+```
+ng g module components/shared --module=app --dry-run
+
+ng g c components/shared/top-navbar --dry-run
+ng g c components/shared/footer --dry-run
+ng g c components/shared/notifications-button --dry-run
 ```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+
+```
+ng g module components/home --module=app --dry-run
+ng g module components/home/home-routing --flat --module=home --dry-run
+
+ng g c components/home/aboutus
+ng g c components/home/contactus
+ng g c components/home/dashboard
+ng g c components/home/page-notfound
+```
+
+```
+ng g module components/products --module=app --dry-run
+ng g module components/products/products-routing --flat --module=products --dry-run
+
+ng g c components/products/list-products
+```
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 ## Development server
 
