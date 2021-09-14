@@ -15,8 +15,8 @@ az appservice plan create --name $PLANNAME --location $LOCATION --sku $PLANSKU -
 az webapp create --name $SITENAME --plan $PLANNAME --resource-group $RESOURCEGROUP
 
 az webapp deployment source config-local-git --name $SITENAME --resource-group $RESOURCEGROUP
-git clone https://$USERNAME@app-azsxdcfv2.scm.azurewebsites.net/app-azsxdcfv2.git
 
+# Inside dist folder
 git clone https://app-collegeweb.scm.azurewebsites.net:443/app-collegeweb.git
 
 git add .

@@ -119,11 +119,11 @@ Please refer *NgWeb_WebApp.sh* from **infrastructure** folder.
 > 1. Login using `az login`
 > 1. Verify the account `az account show`
 > 1. Create App Service Plan, App Service Web App using the Azure CLI
-> 1. Set `Local Git` as `Deployment` souce in `Azure CLI`
+> 1. Set `Local Git` as `Deployment` source in `Azure CLI`
 > 1. Execute `npm run build`
-> 1. Execute `git clone https://app-azsxdcfv.scm.azurewebsites.net:443/app-azsxdcfv.git` inside **dist** folder
-> 1. Copy the content from **dist/college-ngweb** to **dist/app-azsxdcfv**
-> 1. Change Directory into **dist/app-azsxdcfv**
+> 1. Execute `git clone https://app-collegeweb.scm.azurewebsites.net:443/app-collegeweb.git` inside **dist** folder
+> 1. Copy the content from **dist/college-ngweb** to **dist/app-collegeweb**
+> 1. Change Directory into **dist/app-collegeweb**
 > 1. Execute `git add .` | `git commit -m "Initial Version` | `git push`
 > 1. Browse the site
 
@@ -133,9 +133,9 @@ Please refer *NgWeb_WebApp.sh* from **infrastructure** folder.
 SUBSCRIPTION="SwamyPKV VSPS"
 RESOURCEGROUP="rg-az204-webapps-reactor-001"
 LOCATION="eastus"
-PLANNAME="plan-azsxdcfv2"
+PLANNAME="plan-collegeweb"
 PLANSKU="F1"
-SITENAME="app-azsxdcfv2"
+SITENAME="app-collegeweb"
 
 az login
 az account show -o table
