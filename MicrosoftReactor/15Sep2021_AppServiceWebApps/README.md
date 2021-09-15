@@ -145,15 +145,15 @@ az group create --name $RESOURCEGROUP --location $LOCATION
 az appservice plan create --name $PLANNAME --location $LOCATION --sku $PLANSKU --resource-group $RESOURCEGROUP
 az webapp create --name $SITENAME --plan $PLANNAME --resource-group $RESOURCEGROUP
 
-az webapp deployment source config-local-git --name "app-azsxdcfv2" --resource-group "rg-az204-webapps-reactor-001"
-git clone https://app-azsxdcfv2.scm.azurewebsites.net/app-azsxdcfv2.git
+az webapp deployment source config-local-git --name "app-collegeweb" --resource-group "rg-az204-webapps-reactor-001"
+git clone https://app-collegeweb.scm.azurewebsites.net/app-collegeweb.git
 
 git add .
 git commit -m "Initial Version
 git push
 
 # browse to the site
-az webapp browse --name "app-azsxdcfv2" --resource-group "rg-az204-webapps-reactor-001"
+az webapp browse --name "app-collegeweb" --resource-group "rg-az204-webapps-reactor-001"
 ```
 
 ![Azure CLI 2 | 100x100](./documentation/images/DeployUsing_AzureCLI.PNG)
