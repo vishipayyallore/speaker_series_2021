@@ -1,3 +1,7 @@
+<div *ngIf='errorMessage' class='alert alert-danger shadow'>
+    Error: {{ errorMessage }}
+</div>
+
 <div class="row justify-content-between col-sm-12">
     <div class="container py-2" *ngIf="!employeesList">
         <h1 class="spinner">Loading Employees List ...</h1>
@@ -5,6 +9,7 @@
             <i class="fa fa-spinner fa-spin fa-4x"></i>
         </span>
     </div>
+
     <div class="div-container row col-sm-4 py-2 px-0 ml-0" *ngFor="let employee of employeesList">
         <div class="col-sm-12">
             <h3>{{employee.fullName}}</h3>
