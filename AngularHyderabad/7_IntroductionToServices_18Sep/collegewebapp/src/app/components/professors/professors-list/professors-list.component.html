@@ -34,7 +34,7 @@
           <td><i class="fa {{ professor.isPhd ? 'fa-thumbs-up' : 'fa-thumbs-down'}} fa-2x"></i></td>
           <td>
             <button type="button" class="btn btn-warning btn-sm move-right shadow text-white"
-              [routerLink]="['/edit-professor', professor.professorId]">
+              [routerLink]="['professors/edit', professor.professorId]">
               <i class="fa fa-pencil fa-fw fa-2x" aria-hidden="true"></i></button>
             <button type="button" class="btn btn-danger btn-sm ml-2 shadow"><i class="fa fa-trash-o fa-2x"></i>
             </button>

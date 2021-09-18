@@ -2,20 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { DashboardComponent } from './components/home/dashboard/dashboard.component';
-import { EmployeesListComponent } from './components/employees/employees-list/employees-list.component';
-import { ProfessorsListComponent } from './components/professors/professors-list/professors-list.component';
-import { PageNotfoundComponent } from './components/shared/page-notfound/page-notfound.component';
-import { EditProfessorComponent } from './components/professors/edit-professor/edit-professor.component';
-
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'employees', component: EmployeesListComponent },
-  { path: 'professors', component: ProfessorsListComponent },
-  { path: 'edit-professor/:professorId', component: EditProfessorComponent },
-  { path: 'pagenotfound', component: PageNotfoundComponent },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' }
+  {
+    path: 'home',
+    loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
+  },
+  {
+    path: 'employees',
+    loadChildren: () => import('./components/employees/employees.module').then(m => m.EmployeesModule),
+  },
+  {
+    path: 'professors',
+    loadChildren: () => import('./components/professors/professors.module').then(m => m.ProfessorsModule),
+  },
+  { path: '', redirectTo: 'home/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home/pagenotfound', pathMatch: 'full' }
 ];
 
 @NgModule({
