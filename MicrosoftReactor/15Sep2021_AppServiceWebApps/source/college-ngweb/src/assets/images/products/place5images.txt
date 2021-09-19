@@ -1,6 +1,0 @@
-garden_cart.png
-hammer.png
-leaf_rake.png
-logo.jpg
-saw.png
-xbox-controller.png
