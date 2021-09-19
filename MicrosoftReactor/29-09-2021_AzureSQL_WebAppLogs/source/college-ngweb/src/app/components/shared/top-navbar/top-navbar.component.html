@@ -1,0 +1,21 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top top-nav-bar-overrides py-0">
+        <a routerLink="/" class="navbar-brand mx-4">
+            <i class="fa fa-university"></i> College
+        </a>
+        <ul class='nav nav-pills'>
+            <li><a routerLink="/products/list-products" routerLinkActive='active' class="nav-link">Products</a></li>
+            <li><a routerLink="/home/aboutus" routerLinkActive='active' class="nav-link">About Us</a></li>
+            <li><a routerLink="/home/contactus" routerLinkActive='active' class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="spacer"></div>
+        <div class="notif-bell">
+            <sv-notifications-button [count]="notificationsCount"></sv-notifications-button>
+        </div>
+        <div class="logged-user">
+            <span style="color: white; cursor: pointer;">
+                <i class="material-icons">account_circle</i>
+            </span>
+        </div>
+    </nav>
+</header>
