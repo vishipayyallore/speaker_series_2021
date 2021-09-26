@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.SqlDal", "1common\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Bll", "1common\College.Bll\College.Bll.csproj", "{BB5FDFCE-3218-4047-86B5-A91490B116DC}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "college-datastore", "3database\college-datastore\college-datastore.sqlproj", "{D903ECBD-95FC-42DD-A4F9-3B3200162778}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{18C3F896-92F5-49D7-A5DB-0853DAE224A0} = {02C1105F-560D-4109-BA25-C62F9764A09D}
 		{AE602DED-8338-48F3-B152-A3D5646405BB} = {02C1105F-560D-4109-BA25-C62F9764A09D}
 		{BB5FDFCE-3218-4047-86B5-A91490B116DC} = {02C1105F-560D-4109-BA25-C62F9764A09D}
+		{D903ECBD-95FC-42DD-A4F9-3B3200162778} = {27B19D99-5155-4360-AB18-7D23ACCB6112}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F2D19C1-3728-42E3-95B6-DF3484A69106}
