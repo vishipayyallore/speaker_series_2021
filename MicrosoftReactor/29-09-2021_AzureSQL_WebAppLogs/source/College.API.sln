@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.API", "College.API.csproj", "{976216C4-ADD8-4EA3-A97E-6BA092C48B8F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1common", "1common", "{02C1105F-560D-4109-BA25-C62F9764A09D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2restapi", "2restapi", "{E7962FE4-D99B-4ADC-AF6D-836E346C656C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3database", "3database", "{27B19D99-5155-4360-AB18-7D23ACCB6112}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.API", "2restapi\College.API\College.API.csproj", "{15467C7C-5357-416F-9F54-A88481E02841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Core", "1common\College.Core\College.Core.csproj", "{18C3F896-92F5-49D7-A5DB-0853DAE224A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.SqlDal", "1common\College.SqlDal\College.SqlDal.csproj", "{AE602DED-8338-48F3-B152-A3D5646405BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "College.Bll", "1common\College.Bll\College.Bll.csproj", "{BB5FDFCE-3218-4047-86B5-A91490B116DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +23,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{976216C4-ADD8-4EA3-A97E-6BA092C48B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{976216C4-ADD8-4EA3-A97E-6BA092C48B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{976216C4-ADD8-4EA3-A97E-6BA092C48B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{976216C4-ADD8-4EA3-A97E-6BA092C48B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15467C7C-5357-416F-9F54-A88481E02841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15467C7C-5357-416F-9F54-A88481E02841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15467C7C-5357-416F-9F54-A88481E02841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15467C7C-5357-416F-9F54-A88481E02841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C3F896-92F5-49D7-A5DB-0853DAE224A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C3F896-92F5-49D7-A5DB-0853DAE224A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C3F896-92F5-49D7-A5DB-0853DAE224A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C3F896-92F5-49D7-A5DB-0853DAE224A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE602DED-8338-48F3-B152-A3D5646405BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE602DED-8338-48F3-B152-A3D5646405BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE602DED-8338-48F3-B152-A3D5646405BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE602DED-8338-48F3-B152-A3D5646405BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5FDFCE-3218-4047-86B5-A91490B116DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15467C7C-5357-416F-9F54-A88481E02841} = {E7962FE4-D99B-4ADC-AF6D-836E346C656C}
+		{18C3F896-92F5-49D7-A5DB-0853DAE224A0} = {02C1105F-560D-4109-BA25-C62F9764A09D}
+		{AE602DED-8338-48F3-B152-A3D5646405BB} = {02C1105F-560D-4109-BA25-C62F9764A09D}
+		{BB5FDFCE-3218-4047-86B5-A91490B116DC} = {02C1105F-560D-4109-BA25-C62F9764A09D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F2D19C1-3728-42E3-95B6-DF3484A69106}
