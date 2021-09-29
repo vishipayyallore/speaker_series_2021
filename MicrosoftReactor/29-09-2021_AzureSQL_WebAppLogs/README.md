@@ -81,7 +81,6 @@ Reference: https://docs.microsoft.com/en-us/azure/app-service/quickstart-arm-tem
 > 1. Create the SQL Server, and SQL Database in Azure Portal
 > 1. Create the SQL Server, and SQL Database in Azure Portal
 
-
 ## 5. Connecting Azure SQL from Local Web API
 > 1. Discuss the layered API
 > 1. Discussion on AppSettings.json, and Secrets.json
