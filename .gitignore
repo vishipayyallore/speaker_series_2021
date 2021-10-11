@@ -436,3 +436,5 @@ MicrosoftReactor/29-09-2021_AzureSQL_WebAppLogs/source/2restapi/College.API/Prop
 MicrosoftReactor/15Sep2021_AppServiceWebApps/source/College.API/Properties/ServiceDependencies/app-collegeapi - Zip Deploy/profile.arm.json
 MicrosoftReactor/15Sep2021_AppServiceWebApps/source/College.API/Properties/ServiceDependencies/app-collegeapi31465 - Zip Deploy/profile.arm.json
 MicrosoftReactor/29-09-2021_AzureSQL_WebAppLogs/source/2restapi/College.API/Properties/ServiceDependencies/CollegeAPI20210929104618 - Zip Deploy/profile.arm.json
+MicrosoftReactor/S2_2021Sep29_AzureSQL_WebAppLogs/source/2restapi/College.API/Properties/ServiceDependencies/CollegeAPI20210929104618 - Zip Deploy/profile.arm.json
+MicrosoftReactor/S3_2021Oct13_Windows_Ubuntu_VMs/source/2restapi/College.API/Properties/ServiceDependencies/CollegeAPI20210929104618 - Zip Deploy/profile.arm.json
