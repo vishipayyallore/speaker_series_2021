@@ -60,11 +60,14 @@ To Be Done
 ## 3. Creating Windows VM and installing IIS using PowerShell
 > 1. To be done
 
+![Windows VM and installing IIS using PowerShell | 100x100](./documentation/images/WindowsVM_PS1.PNG)
 
 ## 4. Creating Ubuntu VM and installing LAMP Server using Azure CLI
 **Note:** Use SSH Keys instead of password
 
 > 1. To be done
+
+![Ubuntu VM and installing LAMP using Azure CLI | 100x100](./documentation/images/UbuntuVM_CLI.PNG)
 
 ## 5. Creating Windows VM and installing IIS using Azure CLI
 > 1. To be done
