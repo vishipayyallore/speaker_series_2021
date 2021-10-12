@@ -42,29 +42,41 @@ To Be Done
 ## 1. Introduction to Virtual Machines
 > 1. To be done
 
-![Web App using PowerShell | 100x100](./documentation/images/WebApp_Using_PowerShell.PNG)
 
-## 2. Creating Ubuntu VM and installing nginx using PowerShell. Use SSH Keys instead of password. Accessing the default page
-> 1. To be done
 
-![VS Code Deploy 1 | 100x100](./documentation/images/WebApp_Using_VS2019.PNG)
+### Search VM Images
+`infrastructure\VMs\PowerShell\SearchVms.ps1`
 
-## 3. Creating Windows VM and installing IIS using PowerShell. Accessing the default page
-> 1. To be done
+![Search Windows VM Images | 100x100](./documentation/images/SearchVMs_1.PNG)
 
-![Web App using ARM Template | 100x100](./documentation/images/WebApp_Using_ARM.PNG)
+![Search Ubuntu VM Images | 100x100](./documentation/images/SearchVMs_2.PNG)
 
-## 4. Creating Ubuntu VM and installing LAMP Server using Azure CLI. Use SSH Keys instead of password. Accessing the default page
-> 1. To be done
+## 2. Creating Ubuntu VM and installing nginx using PowerShell
 
-## 5. Creating Windows VM and installing IIS using Azure CLI. Accessing the default page
-> 1. To be done
-
-## 6. Creating Ubuntu VM using ARM template and Azure CLI. Use SSH Keys instead of password. Accessing the default page
+**Note:** Use SSH Keys instead of password
 > 1. To be done
 
 
-## 7. Creating Windows VM using ARM template and Azure CLI. Accessing the default page
+## 3. Creating Windows VM and installing IIS using PowerShell
+> 1. To be done
+
+
+## 4. Creating Ubuntu VM and installing LAMP Server using Azure CLI
+**Note:** Use SSH Keys instead of password
+
+> 1. To be done
+
+## 5. Creating Windows VM and installing IIS using Azure CLI
+> 1. To be done
+
+![Windows VM and installing IIS using Azure CLI | 100x100](./documentation/images/WindowsVM_CLI.PNG)
+
+## 6. Creating Ubuntu VM using ARM template and Azure CLI
+**Note:** Use SSH Keys instead of password
+> 1. To be done
+
+
+## 7. Creating Windows VM using ARM template and Azure CLI
 > 1. To be done
 
 
@@ -79,6 +91,7 @@ To Be Done
 *****
 
 ## What is Next? (`Session 4` of `20 Sessions` on 27-Oct-2021)
+> 1. Availability Zone, Availability Set, Azure Spot Instance
 > 1. Deploying ASP.Net Core Web API into IIS inside Azure VM.
 > 1. Deploying ASP.Net Razor Application into IIS inside Azure VM.
 > 1. Integrating ASP.Razor and ASP.Net Core Web API.
