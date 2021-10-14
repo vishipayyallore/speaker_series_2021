@@ -110,9 +110,10 @@ To Be Done
 ## What is Next? (`Session 4` of `20 Sessions` on 27-Oct-2021)
 
 > 1. Secure your Azure SQL Database
-> 1. Availability Zone, Availability Set, Azure Spot Instance
-> 1. Deploying ASP.Net Core Web API into IIS inside Azure VM.
-> 1. Deploying ASP.Net Razor Application into IIS inside Azure VM.
-> 1. Integrating ASP.Razor and ASP.Net Core Web API.
-> 1. Deploying Blazor WASM Application into IIS inside Azure VM.
-> 1. Integrating Blazor WASM and ASP.Net Core Web API.
+> 1. Availability Zone, Availability Set, Proximity, Azure Spot Instance
+> 1. Back up your virtual machines, Azure Bastion
+> 1. Deploying ASP.Net Core Web API into IIS inside Azure VM
+> 1. Deploying ASP.Net Razor Application into IIS inside Azure VM
+> 1. Integrating ASP.Razor and ASP.Net Core Web API
+> 1. Deploying Blazor WASM Application into IIS inside Azure VM
+> 1. Integrating Blazor WASM and ASP.Net Core Web API
