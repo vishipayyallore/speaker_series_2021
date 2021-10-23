@@ -74,6 +74,37 @@ curl --request GET --url https://conferenceapi.azurewebsites.net/speaker/1/sessi
 
 ## 5. Creating Canvas App and using Custom Connector
 
+> 1. Create Canvas App from Blank
+> 1. Change the Layout
+> 1. Add Data -> Speakers
+> 1. Add TextBox, Two Galleries
+
+```
+SpeakerSessions.GetSpeakerSessions(TextInput1.Text).collection.items
+
+If(ThisItem.IsSelected, RGBA(214, 223, 238, 1), RGBA(241, 244, 249, 1))
+
+Gallery1.Selected.data
+
+PlainText(ThisItem.value)
+```
+
+![Canvas App Image 1 | 100x100](./documentation/images/CanvasApp_1.PNG)
+![Canvas App Image 2 | 100x100](./documentation/images/CanvasApp_2.PNG)
+![Canvas App Image 3 | 100x100](./documentation/images/CanvasApp_3.PNG)
+![Canvas App Image 4 | 100x100](./documentation/images/CanvasApp_4.PNG)
+![Canvas App Image 5 | 100x100](./documentation/images/CanvasApp_5.PNG)
+![Canvas App Image 6 | 100x100](./documentation/images/CanvasApp_6.PNG)
+![Canvas App Image 7 | 100x100](./documentation/images/CanvasApp_7.PNG)
+
+---
+
+## 6. SUMMARY / RECAP / Q&A
+
+---
+
+> 1. SUMMARY / RECAP / Q&A
+> 2. Any open queries, I will get back through meetup chat/twitter.
 
 ---
 
