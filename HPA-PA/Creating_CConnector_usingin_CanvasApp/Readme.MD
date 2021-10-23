@@ -15,13 +15,10 @@
 ## What are we doing today?
 
 > 1. Viewing the existing Web API
-> 1. Creating Ubuntu VM and installing nginx using PowerShell. Use SSH Keys instead of password. Accessing the default page
-> 1. Creating Windows VM and installing IIS using PowerShell. Accessing the default page
-> 1. Creating Ubuntu VM and installing LAMP Server using Azure CLI. Use SSH Keys instead of password. Accessing the default page
-> 1. Creating Windows VM and installing IIS using Azure CLI. Accessing the default page
-> 1. Creating Ubuntu VM using ARM template and Azure CLI. Use SSH Keys instead of password. Accessing the default page
-> 1. Creating Windows VM using ARM template and Azure CLI. Accessing the default page
-> 1. Secure your Azure SQL Database
+> 1. Introduction to Custom Connector
+> 1. Creating a Custom Connector from blank
+> 1. Testing the Custom Connector
+> 1. Creating Canvas App and using Custom Connector
 > 1. SUMMARY / RECAP / Q&A
 
 
