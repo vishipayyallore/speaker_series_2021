@@ -26,15 +26,16 @@ To Be Done
 
 ## What are we doing today?
 
-> 1. Availability Zone, Availability Set, Proximity,
+> 1. Fault Domain, Update Domain
+> 1. Availability Set
+> 1. Availability Zone
 > 1. Azure Spot Instance, Reserve Instance
-> 1. Back up your virtual machines, Azure Bastion
-> 1. Deploying ASP.Net Core Web API into IIS inside Azure VM
+> 1. Proximity
+> 1. Deploying ASP.Net Core Web API into Nginx inside Ubuntu VM
 > 1. Deploying ASP.Net Razor Application into IIS inside Azure VM
 > 1. Integrating ASP.Razor and ASP.Net Core Web API
-> 1. Deploying Blazor WASM Application into IIS inside Azure VM
-> 1. Integrating Blazor WASM and ASP.Net Core Web API
 > 1. SUMMARY / RECAP / Q&A
+
 
 ![Seat Belt | 100x100](./documentation/images/SeatBelt.PNG)
 
@@ -107,6 +108,9 @@ To Be Done
 
 ---
 
-## What is Next? (`Session 4` of `20 Sessions` on 27-Oct-2021)
+## What is Next? (`Session 5` of `20 Sessions` on XX-Nov-2021)
 
+> 1. Back up your virtual machines, Azure Bastion
+> 1. Deploying Blazor WASM Application into IIS inside Azure VM
+> 1. Integrating Blazor WASM and ASP.Net Core Web API
 > 1. Secure your Azure SQL Database
