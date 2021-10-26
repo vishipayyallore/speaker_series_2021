@@ -41,61 +41,43 @@ To Be Done
 
 ---
 
-## 1. Introduction to Virtual Machines
+## 1. Fault Domain, Update Domain
 
-> 1. To be done
+> 1. Discussion
 
-### Search VM Images
 
-`infrastructure\VMs\PowerShell\SearchVms.ps1`
-
-![Search Windows VM Images | 100x100](./documentation/images/SearchVMs_1.PNG)
-
-![Search Ubuntu VM Images | 100x100](./documentation/images/SearchVMs_2.PNG)
-
-## 2. Creating Ubuntu VM and installing nginx using PowerShell
-
-**Note:** Use SSH Keys instead of password
+## 2. Availability Set
 
 > 1. Discussion and Demo
 
-![Ubuntu VM and installing Nginx using PowerShell | 100x100](./documentation/images/UbuntuVM_PS1.PNG)
 
-## 3. Creating Windows VM and installing IIS using PowerShell
+## 3. Availability Zone
 
-> 1. Discussion and Demo
+> 1. Discussion
 
-![Windows VM and installing IIS using PowerShell | 100x100](./documentation/images/WindowsVM_PS1.PNG)
+## 4. Azure Spot Instance, Reserve Instance
 
-## 4. Creating Ubuntu VM and installing LAMP Server using Azure CLI
+> 1. Discussion
 
-**Note:** Use SSH Keys instead of password
 
-> 1. Discussion and Demo
+## 5. Proximity
 
-![Ubuntu VM and installing LAMP using Azure CLI | 100x100](./documentation/images/UbuntuVM_CLI.PNG)
+> 1. Discussion
 
-## 5. Creating Windows VM and installing IIS using Azure CLI
 
-> 1. Discussion and Demo
-
-![Windows VM and installing IIS using Azure CLI | 100x100](./documentation/images/WindowsVM_CLI.PNG)
-
-## 6. Creating Ubuntu VM using ARM template and Azure CLI
-
-**Note:** Use SSH Keys instead of password
+## 6. Deploying ASP.Net Core Web API into Nginx inside Ubuntu VM
 
 > 1. Discussion and Demo
 
 ![Ubuntu VM and installing Nginx using ARM | 100x100](./documentation/images/UbuntuVM_ARM.PNG)
 
-## 7. Creating Windows VM using ARM template and Azure CLI
+## 7. Deploying ASP.Net Razor Application into IIS inside Azure VM
 
 > 1. Discussion and Demo
 
-![Windows VM and installing IIS using ARM | 100x100](./documentation/images/WindowsVM_ARM.PNG)
+![Ubuntu VM and installing Nginx using ARM | 100x100](./documentation/images/UbuntuVM_ARM.PNG)
 
-## 8. Secure your Azure SQL Database
+## 8. Integrating ASP.Razor and ASP.Net Core Web API
 
 > 1. Discussion and Demo
 
@@ -108,7 +90,7 @@ To Be Done
 
 ---
 
-## What is Next? (`Session 5` of `20 Sessions` on XX-Nov-2021)
+## What is Next? (`Session 5` of `20 Sessions` on 10-Nov-2021)
 
 > 1. Back up your virtual machines, Azure Bastion
 > 1. Deploying Blazor WASM Application into IIS inside Azure VM
