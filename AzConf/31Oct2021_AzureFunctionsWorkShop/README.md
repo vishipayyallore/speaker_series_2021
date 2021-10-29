@@ -1,11 +1,10 @@
-# Repository for Speaking Event of Global Azure 2021 - India 
+# Hands On Azure Functions Workshop on 31-Oct-2021 at 10:00 AM IST
 
-> 1. Event Date: **17-Apr-2021**
-> 1. Event URL: [Global Azure 2021 - India](https://gab2021.azurewebsites.net/)
+## Event URL: [https://www.azconf.dev/](https://www.azconf.dev/)
 
-![Hands on Azure Functions |100x100](./Documentation/Images/ViswanathaSwamyPK.PNG)
+![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
 
-----------------------------------------------------------------------------------------------------------------
+---
 
 ## Pre-Requisites
 > 1. .NET SDK
@@ -15,7 +14,7 @@
 
 ### Software/Tools
 > 1. OS: win32 x64
-> 1. Node: **14.16.0**
+> 1. Node: **v14.17.5**
 > 1. Visual Studio Code
 > 1. Visual Studio 2019
 
@@ -34,7 +33,7 @@
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
 
-----------------------------------------------------------------------------------------------------------------
+---
 
 ## What are we doing today?
 > 1. Introduction to Azure Functions
@@ -42,14 +41,22 @@
 > 1. Creating Azure Functions using multiple methods
 > 1. Execute Azure Functions with triggers [Http, and Blob]
 > 1. Execute Azure Functions with input/output bindings
-> 1. Working with Durable Azure Functions
-> 1. Monitoring Azure Functions with Application Insights
 > 1. Deploying Azure Functions using Azure CLI
-----------------------------------------------------------------------------------------------------------------
+> 1. APIs using Azure Functions in Visual Studio Code in C#
+> 1. Retrieve GitHub Code Changes - HTTP Trigger
+> 1. Blazor WASM Web App UI to display those changes.
+> 1. Deploying the code to Azure
+> 1. Monitoring Azure Functions with Application Insights
+
+## Two Mini Projects
+> 1. Mini Project 1 - GitHub Code Change Tracker
+> 1. Mini Project 2 - Simple App with Azure Function & Blazor
+
+---
 
 ![Information | 100x100](./Documentation/Images/SeatBelt.PNG)
 
------
+---
 
 ## How to Build and Execute the solution
 
