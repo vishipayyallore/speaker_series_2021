@@ -32,8 +32,8 @@
 
 ## Information
 ![Information | 100x100](./Documentation/Images/Information.PNG)
-
 ---
+
 
 ## What are we doing today?
 > 1. Introduction to Azure Functions
@@ -58,12 +58,32 @@
 
 ---
 
+## What is Azure Functions?
+Faas (Function as a Service) is a service that allows you to create and run serverless functions on Azure.
+Triggers: Timer, Http, Blob, Queue, ServiceBus, EventHub, etc.
+Bindings: Input, Output, etc. (Queue, Blob, CosmosDb, ServiceBus, EventHub, etc.)
+Hosting Models: Consumption Plan, App Service, Premium, Docker Container.
+Environments: Azure Portal, VS 2019/2022, Azure Function Core tools, VS Code.
+Security, Identify Provider Integration, Function Chaining, Durable Functions 
+Function App: One or more functions with common configuration, scale together
+
+
+## Creating Azure Functions in Portal
+> 1. Create a new Azure Function App
+> 1. Create a new Azure Function
+> 1. Create a new Azure Function Trigger
+> 1. Create a new Azure Function Binding
+> 1. Create a new Azure Function Environment
+
+
+
 ## How to Build and Execute the solution
 
 ### **1. Introduction**
 
 #### 1.1. Introduction to Azure Functions
 Discussion
+
 
 #### 1.2. Creating Azure Functions in C#, and Node JS
 Discussion
