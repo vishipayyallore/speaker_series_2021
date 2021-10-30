@@ -8,7 +8,7 @@
 
 ## Pre-Requisites
 
-> 1. .NET SDK
+> 1. .NET 6 SDK
 > 1. Azure Function Core Tools
 > 1. Azure CLI
 > 1. Azure Functions VS Code Extension
@@ -53,8 +53,10 @@
 > 1. Deploying the code to Azure
 > 1. Monitoring Azure Functions with Application Insights
 
-## Two Mini Projects
+## One Hello World, One Warm up Project and Two Mini Projects
 
+> 1. Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
+> 1. Warm Up Project - Http Trigger - NodeJS - `ArrayOperations`
 > 1. Mini Project 1 - GitHub Code Change Tracker
 > 1. Mini Project 2 - Simple App with Azure Function & Blazor
 
@@ -63,12 +65,6 @@
 ![Information | 100x100](./Documentation/Images/SeatBelt.PNG)
 
 ---
-
-## Resource in Azure
-
-func-azportal-demo-dev-001
-
-rg-azconf-workshop-prod-001
 
 ## Introduction to Azure Functions
 
@@ -80,6 +76,15 @@ rg-azconf-workshop-prod-001
 > 1. Hosting Models: Consumption Plan, App Service, Premium, Docker Container.
 > 1. Environments: Azure Portal, VS 2019/2022, Azure Function Core tools, VS Code.
 > 1. Security, Identify Provider Integration, Function Chaining, Durable Functions
+
+URLs:
+> 1. https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp
+
+## Monitoring Azure Functions with Application Insights
+
+**Note:** Hands ON
+
+> 1. It will be ongoing activity throughout the workshop
 
 ## Creating Azure Functions using multiple methods
 
@@ -98,6 +103,7 @@ rg-azconf-workshop-prod-001
 > 1. Creating `Hello World` Azure Function using C#
 > 1. Creating `Hello World` Azure Function using Node JS
 
+
 ## Execute Azure Functions with triggers [Http, Timer and Queue]
 
 **Note:** Hands ON
@@ -114,28 +120,15 @@ rg-azconf-workshop-prod-001
 > 1. Adding Blob output binding for the Queue Trigger. It has Queue as Input binding
 > 1. Adding Queue output binding for the Timer Trigger
 
-Mini Project 1 - GitHub Code Change Tracker
-Deploying Azure Functions using Azure CLI
+## Warm up Project - `ArrayOperations`
 
-APIs using Azure Functions in Visual Studio Code in C#
-Retrieve GitHub Code Changes - HTTP Trigger
-Blazor WASM Web App UI to display those changes.
-Deploying the code to Azure
-Mini Project 2 - Simple App with Azure Function & Blazor
-Monitoring Azure Functions with Application Insights
-
----
-
-#### **2. Azure Functions in Portal using Node JS**
+**Note:** Http Trigger | NodeJS | `ArrayOperations`
 
 **Description:**
 
-We will create a Azure Function App named **func-azportal-demo-dev-001** with node runtime. It will have a Http Trigger Azure Function which will accept "name, and data" as part of POST call. We will also add "lodash" package using Kudu Console.
-
-### Consumption Plan
+We will create a Azure Function App named **func-azportal-demo-dev-004** with node runtime. It will have a Http Trigger Azure Function which will accept "name, and data" as part of POST call. We will also add "lodash" package using Kudu Console.
 
 **Steps:**
-
 1. Create a Function App called "func-azportal-demo-dev-001"
 1. Add a Function called **ArrayOperations**
 1. Code and Test Tab
@@ -146,15 +139,42 @@ We will create a Azure Function App named **func-azportal-demo-dev-001** with no
 1. Kudu Console
 1. Testing using Postman (POST)
 
-##### **Images for Reference**
+```
+npm init -y
+npm install lodash
+```
 
-##### **Receiving Http Status Code 400 when we don't send the proper inputs to Azure Function**
+**Note:** Images for Reference
 
-![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status400.PNG)
+![ArrayOperations Npm Init | 100x100](./Documentation/Images/ArrayOperations_NpmInit.PNG)
 
-##### **Receiving Http Status Code 200 when we send the proper inputs to Azure Function**
+**Receiving Http Status Code 400 when we don't send the proper inputs to Azure Function**
 
-![UI Look and Feel | 100x100](./Documentation/Images/ArrayOperations_Status200.PNG)
+![ArrayOperations Status 400 | 100x100](./Documentation/Images/ArrayOperations_Status400.PNG)
+
+**Receiving Http Status Code 200 when we send the proper inputs to Azure Function**
+
+![ArrayOperations Status 200 | 100x100](./Documentation/Images/ArrayOperations_Status200.PNG)
+
+
+## Mini Project 1 - `GitHub Code Change Tracker`
+**Note:** 
+> 1. Hands ON
+> 1. Using Azure Function Core Tools
+> 1. Using Azure Functions VS Code Extension
+
+## Deploying Azure Functions using Azure CLI
+
+
+## Mini Project 2 - `Simple App with Azure Function & Blazor`
+
+APIs using Azure Functions in Visual Studio Code in C#
+Retrieve GitHub Code Changes - HTTP Trigger
+Blazor WASM Web App UI to display those changes.
+Deploying the code to Azure
+
+---
+
 
 ---
 
@@ -274,3 +294,9 @@ rg-globalaz2021-india-prod-001
 -   Storage Account
 -   Application Insights
 -   App Service Plan
+
+## Resource in Azure
+
+func-azportal-demo-dev-001
+
+rg-azconf-workshop-prod-001
