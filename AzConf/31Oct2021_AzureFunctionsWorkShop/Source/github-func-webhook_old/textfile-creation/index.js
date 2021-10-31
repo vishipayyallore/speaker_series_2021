@@ -3,7 +3,7 @@ module.exports = async function (context, textfiles) {
 
     // Writing in Table Storage
     context.bindings.tableBinding = [];
-    
+
     context.bindings.tableBinding.push({
         PartitionKey: 'TextFiles',
         RowKey: uuidv4(),

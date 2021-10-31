@@ -8,7 +8,7 @@ module.exports = async function (context, req) {
         // Writing in Table Storage
         context.bindings.tableBinding = [];
 
-        const uniqueId = context.bindingData.after; // uuidv4();
+        const uniqueId = context.bindingData.invocationId; // uuidv4();
         const dataToBeStored = {
             PartitionKey: gitHubNotification.repository.owner.name,
             RowKey: uniqueId,
@@ -41,7 +41,6 @@ module.exports = async function (context, req) {
         status: 400,
         body: {
             success: false,
-            executedAt: process.env["COMPUTERNAME"],
             message: "We did not received the proper notification from GitHub."
         }
     };

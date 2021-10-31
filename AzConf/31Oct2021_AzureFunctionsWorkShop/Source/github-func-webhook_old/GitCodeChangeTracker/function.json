@@ -25,7 +25,7 @@
     {
       "name": "textfiles",
       "type": "blob",
-      "path": "samples-workitems/{after}.json",
+      "path": "samples-workitems/{invocationId}.json",
       "connection": "TableStorageConnectionAppSetting",
       "direction": "out"
     }

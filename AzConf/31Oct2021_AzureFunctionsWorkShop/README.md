@@ -8,7 +8,7 @@
 
 ## Pre-Requisites
 
-> 1. .NET 5/6 SDK
+> 1. .NET 3.1/6 SDK
 > 1. Azure Function Core Tools
 > 1. Azure CLI
 > 1. Azure Functions VS Code Extension
@@ -93,7 +93,7 @@ URLs:
 > 1. Create a new Azure Function App using Azure Portal
 > 1. Create a new Azure Function App using Azure Function Core Tools
 > 1. Create a new Azure Function App using Azure Functions VS Code Extension
-> 1. Create a new Azure Function App using Visual Studio 2022
+> 1. Create a new Azure Function App using Visual Studio 2019/2022
 
 ## Creating Azure Functions in C#, and Node JS
 
