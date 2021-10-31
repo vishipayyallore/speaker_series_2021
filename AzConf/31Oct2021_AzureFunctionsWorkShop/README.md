@@ -8,7 +8,7 @@
 
 ## Pre-Requisites
 
-> 1. .NET 6 SDK
+> 1. .NET 5/6 SDK
 > 1. Azure Function Core Tools
 > 1. Azure CLI
 > 1. Azure Functions VS Code Extension
@@ -163,40 +163,23 @@ npm install lodash
 > 1. Using Azure Function Core Tools
 > 1. Using Azure Functions VS Code Extension
 
-## Deploying Azure Functions using Azure CLI
-
-
-## Mini Project 2 - `Simple App with Azure Function & Blazor`
-
-APIs using Azure Functions in Visual Studio Code in C#
-Retrieve GitHub Code Changes - HTTP Trigger
-Blazor WASM Web App UI to display those changes.
-Deploying the code to Azure
-
----
-
-
----
-
-#### **3. GitHub Webhook, Http Trigger, Blob Trigger, and Function Chaining using Core Tools with Node JS**
-
 **Description:**
 
-We will create a Azure function App **func-azcoretools-demo-dev-001** using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post on any code changes to the repository.
+We will create a Azure function App **func-azcoretools-demo-dev-001** using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post any code changes to the repository.
 
 **A. GitCodeChangeTracker - Http Trigger**
 
-When code is commited to the repository, GitHub Webhook will invoke **GitCodeChangeTracker** function. This function has two Output (Table, and Blob) bindings. We will store information into the Table, and Blob. It will trigger the **textfile-creation** function when the blob is created (**Function Chaining**).
+When code is commited to the repository, GitHub Webhook will invoke **GitCodeChangeTracker** function. This function has two (Table, and Blob) Output  bindings. We will store information into the Table, and Blob. It will trigger the `textfile-creation` function when the blob is created (`Function Chaining`).
 
 **B. textfile-creation - Blob Trigger**
-On Blob creation this function we be invoked. It has Table output binding and will log the blob creation. It will also store the content of the blob inside **FileContents** column of the Table.
+On Blob creation this function we be invoked. It has `Table` output binding and will log the blob creation. It will also store the content of the blob inside `FileContents` column of the Table.
 
 **Steps:**
 
 1. Verify the Azure Functions Core Tools on local Laptop.
 1. Create the Azure Function project using **func init**
-1. Create two (_GitCodeChangeTracker_, and _textfile-creation_) new functions with **func new**
-1. Modify the code of both (_GitCodeChangeTracker_, and _textfile-creation_) azure functions. Please refer **StarterFiles** folder.
+1. Create two (`GitCodeChangeTracker`, and `textfile-creation`) new functions with **func new**
+1. Modify the code of both (`GitCodeChangeTracker`, and `textfile-creation`) azure functions. Please refer **StarterFiles** folder.
 1. Verify functions locally **func start**. We use **Postman** for testing it locally.
 1. **Debug** using Visual Studio Code.
 1. Function App is already create using **az functionapp create** command
@@ -233,6 +216,23 @@ func azure functionapp publish func-azcoretools-demo-dev-001
 ##### **Blob Trigger Function Storing the record in Table using Output binding**
 
 ![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img5.PNG)
+
+
+## Mini Project 2 - `Simple App with Azure Function & Blazor`
+
+APIs using Azure Functions in Visual Studio Code in C#
+Retrieve GitHub Code Changes - HTTP Trigger
+Blazor WASM Web App UI to display those changes.
+Deploying the code to Azure
+
+---
+
+
+---
+
+#### **3. GitHub Webhook, Http Trigger, Blob Trigger, and Function Chaining using Core Tools with Node JS**
+
+
 
 ---
 
