@@ -1,6 +1,6 @@
-# Hands On Azure Functions Workshop on 31-Oct-2021 at 10:00 AM IST
+# Hands-On working with Azure Functions | Virtual Internship on 16-Nov-2021 at 06:00 PM IST
 
-## Event URL: [https://www.azconf.dev/](https://www.azconf.dev/)
+## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281815793](https://www.meetup.com/microsoft-reactor-bengaluru/events/281815793)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
 
