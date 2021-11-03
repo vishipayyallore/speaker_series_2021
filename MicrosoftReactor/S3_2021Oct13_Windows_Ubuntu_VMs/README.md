@@ -10,7 +10,7 @@
 
 ## Application Architecture Diagram
 
-![Application Architecture 29-Sep-2021 |150x150](./documentation/images/AppArchitecture_13thOct.PNG)
+![Application Architecture 13-Oct-2021 |150x150](./documentation/images/AppArchitecture_13thOct.PNG)
 
 ---
 

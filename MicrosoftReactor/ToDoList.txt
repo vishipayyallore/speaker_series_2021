@@ -1,0 +1,6 @@
+> 1. Back up your virtual machines, Azure Bastion
+> 1. Deploying ASP.Net Core Web API into Nginx inside Ubuntu VM
+> 1. Deploying Blazor WASM Application into IIS inside Azure VM
+> 1. Integrating ASP.Razor and ASP.Net Core Web API
+> 1. Integrating Blazor WASM and ASP.Net Core Web API
+> 1. Secure your Azure SQL Database
