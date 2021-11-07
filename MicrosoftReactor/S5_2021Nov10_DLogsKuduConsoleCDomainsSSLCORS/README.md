@@ -39,7 +39,7 @@
 
 ---
 
-## 1. Deploy **.sqlproj** into Azure SQL Server
+## 1. Deploy **.sqlproj** into Azure SQL Server using VS 2022
 > 1. Discussion & Demo
 
 ![Deploy SQL Proj To Azure | 100x100](./documentation/images/DeploySQLProjToAzure.PNG)
@@ -80,6 +80,29 @@
 
 ## 6. Deploy Angular 12 Web App to Azure App Service
 > 1. Discussion & Demo
+> 1. Set the `Source` to `Local Git`
+> 1. Clone the repository into `dist` folder
+> 1. Execute `ng build` and copy the content from `dist/ng12-products` into `dist/app-collegeweb`
+> 1. Deploy the Web App to Azure App Service
+
+
+```
+https://$app-collegeweb@app-collegeweb.scm.azurewebsites.net:443/app-collegeweb.git
+
+git add .
+git commit -m "deploy angular 13 app"
+git push
+
+```
+
+### Clone into **dist** folder
+![Clone Into Local Dist Folder | 100x100](./documentation/images/CloneIntoLocalDistFolder.PNG)
+
+### Deploy Angular 13 To Azure
+![Deploy Angular 13 To Azure | 100x100](./documentation/images/DeployAngular13ToAzure.PNG)
+
+### Deployed Angular 13 In Azure
+![Angular 13 App In Azure | 100x100](./documentation/images/Angular13AppInAzure.PNG)
 
 ## 7. Custom Domains and attaching to the Web App
 > 1. Discussion & Demo
