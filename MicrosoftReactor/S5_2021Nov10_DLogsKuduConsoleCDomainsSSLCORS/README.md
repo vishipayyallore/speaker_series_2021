@@ -4,6 +4,8 @@
 
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281044187](https://www.meetup.com/microsoft-reactor-bengaluru/events/281044187)
 
+## Youtube URL: To be added
+
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamy_10thNov.PNG)
 
 ---
@@ -14,11 +16,6 @@
 
 ---
 
-## Resources in Azure
-
-```
-To Be Done
-```
 
 ## Information
 
@@ -26,8 +23,12 @@ To Be Done
 
 ## What are we doing today?
 
-> 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
+> 1. Deploy **.sqlproj** into Azure SQL Server
+> 1. Deploy .NET 6 Web API to Azure App Service
 > 1. Web App Console, App Service Editor, and Kudu Console
+> 1. Veiw Event Log inside Kudu Console
+> 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
+> 1. Deploy Angular 12 Web App to Azure App Service
 > 1. Custom Domains and attaching to the Web App
 > 1. Web App SSL
 > 1. Enabling CORS and accessing using Angular 12 App
@@ -38,29 +39,59 @@ To Be Done
 
 ---
 
-## 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
+## 1. Deploy **.sqlproj** into Azure SQL Server
+> 1. Discussion & Demo
+
+![Deploy SQL Proj To Azure | 100x100](./documentation/images/DeploySQLProjToAzure.PNG)
+
+## 2. Deploy .NET 6 Web API to Azure App Service using VS 2022
+> 1. Discussion & Demo
+
+![Deploy Web API To Azure | 100x100](./documentation/images/DeployWebAPIToAzure.PNG)
+
+## 3. Web App Console, App Service Editor, and Kudu Console
 
 > 1. Discussion & Demo
 
-## 2. Web App Console, App Service Editor, and Kudu Console
+### Web App Console
+![Web App Console | 100x100](./documentation/images/WebAppConsole.PNG)
 
-> 1. Discussion and Demo
+### App Service Editor
+![App Service Editor | 100x100](./documentation/images/AppServiceEditor.PNG)
 
-## 3. Custom Domains and attaching to the Web App
 
-> 1. Deploy Angular 12 App to Azure
-> 1. Create a Custom Domain
-> 1. Attach the Custom Domain to the Web App
+### Kudu Console
+![Kudu Console | 100x100](./documentation/images/KuduConsole.PNG)
 
-## 4. Web App SSL
 
+## 4. Veiw Event Log inside Kudu Console
 > 1. Discussion & Demo
 
-## 5. Enabling CORS and accessing using Angular 12 App
+![Event Log inside Kudu Console | 100x100](./documentation/images/EventLog_KuduConsole.PNG)
 
+## 5. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
 > 1. Discussion & Demo
 
-## 8. SUMMARY / RECAP / Q&A
+### Streaming Logs
+![Event Log inside Kudu Console | 100x100](./documentation/images/LogStreams.PNG)
+
+### Event Log files
+![Event Log inside Kudu Console | 100x100](./documentation/images/EventLog_1_KuduConsole.PNG)
+
+## 6. Deploy Angular 12 Web App to Azure App Service
+> 1. Discussion & Demo
+
+## 7. Custom Domains and attaching to the Web App
+> 1. Discussion & Demo
+
+## 8. Web App SSL
+> 1. Discussion & Demo
+
+## 9. Enabling CORS and accessing using Angular 12 App
+> 1. Discussion & Demo
+
+
+## 10. SUMMARY / RECAP / Q&A
 
 ---
 
@@ -69,11 +100,11 @@ To Be Done
 
 ---
 
-## What is Next? (`Session 5` of `20 Sessions` on 10-Nov-2021)
+## What is Next? (`Session 6` of `20 Sessions` on 24-Nov-2021)
 
-> 1. Back up your virtual machines, Azure Bastion
-> 1. Deploying ASP.Net Core Web API into Nginx inside Ubuntu VM
-> 1. Deploying Blazor WASM Application into IIS inside Azure VM
-> 1. Integrating ASP.Razor and ASP.Net Core Web API
-> 1. Integrating Blazor WASM and ASP.Net Core Web API
-> 1. Secure your Azure SQL Database
+> 1. Introduction to Docker
+> 1. Build and store images by using Azure Container Registry
+> 1. Deploy a web app by using an image from an Azure Container Registry repository
+> 1. Create and deploy a web app from a Docker image
+> 1. Update the image and automatically redeploy the web app
+> 1. Modify the image and redeploy the web app

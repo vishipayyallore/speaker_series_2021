@@ -4,3 +4,4 @@
 > 1. Integrating ASP.Razor and ASP.Net Core Web API
 > 1. Integrating Blazor WASM and ASP.Net Core Web API
 > 1. Secure your Azure SQL Database
+
