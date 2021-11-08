@@ -29,9 +29,9 @@
 > 1. Veiw Event Log inside Kudu Console
 > 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
 > 1. Deploy Angular 12 Web App to Azure App Service
+> 1. Enabling CORS and accessing using Angular 12 App
 > 1. Custom Domains and attaching to the Web App
 > 1. Web App SSL
-> 1. Enabling CORS and accessing using Angular 12 App
 > 1. SUMMARY / RECAP / Q&A
 
 
@@ -104,15 +104,14 @@ git push
 ### Deployed Angular 13 In Azure
 ![Angular 13 App In Azure | 100x100](./documentation/images/Angular13AppInAzure.PNG)
 
-## 7. Custom Domains and attaching to the Web App
+## 7. Enabling CORS and accessing using Angular 12 App
 > 1. Discussion & Demo
 
-## 8. Web App SSL
+## 8. Custom Domains and attaching to the Web App
 > 1. Discussion & Demo
 
-## 9. Enabling CORS and accessing using Angular 12 App
+## 9. Web App SSL
 > 1. Discussion & Demo
-
 
 ## 10. SUMMARY / RECAP / Q&A
 
