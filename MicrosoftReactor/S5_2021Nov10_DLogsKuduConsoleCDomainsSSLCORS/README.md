@@ -39,6 +39,11 @@
 
 ---
 
+**Note: ** 
+
+>1. `.sqlproj` and `Web API` GitHub: [https://github.com/vishipayyallore/azuresqlwebapicustomconnectorcanvasapp](https://github.com/vishipayyallore/azuresqlwebapicustomconnectorcanvasapp)
+> 1. `Angular 13 UI` GitHub: [https://github.com/vishipayyallore/learning_angular_in_2021/tree/master/ng12-products](https://github.com/vishipayyallore/learning_angular_in_2021/tree/master/ng12-products)
+
 ## 1. Deploy **.sqlproj** into Azure SQL Server using VS 2022
 > 1. Discussion & Demo
 
@@ -108,10 +113,28 @@ git push
 > 1. Discussion & Demo
 
 ## 8. Custom Domains and attaching to the Web App
-> 1. Discussion & Demo
+> 1. Create the `App Service Domain`
+> 1. It will create a `App Service Domain` and `DNS Zone`
+> 1. Go to Web App -> Custom Domains -> `+ Add Custom Domain`
+> 1. Enter the `App Service Domain` name `www.thesimpleshop.com` -> `Validate`
+> 1. Create `CNAME` and `TXT` inside the `DNS Zone`
+
+![DNS Zone Settings | 100x100](./documentation/images/DNSZone.PNG)
 
 ## 9. Web App SSL
-> 1. Discussion & Demo
+> 1. Web App -> TLS/SSL Settings -> `Http Only`
+> 1. Web App -> `Private Key Certificates (.pfx)` -> `+ Create App Service Managed Certificates`
+> 1. Web App -> TLS/SSL Settings -> `+ Add TLS/SSL Binding`
+
+### SSL Certificate Creation
+![SSL Cert Creation | 100x100](./documentation/images/SSL_Cert_Creation.PNG)
+
+### SSL Binding
+![SSL Binding | 100x100](./documentation/images/SSL_Binding.PNG)
+
+### Angular 13 App with Custom Domain and SSL Binding
+![Custom Domain SSL Ng 13 App | 100x100](./documentation/images/CustomDomain_SSL_Ng_App.PNG)
+
 
 ## 10. SUMMARY / RECAP / Q&A
 
