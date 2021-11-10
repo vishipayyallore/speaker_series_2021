@@ -112,6 +112,10 @@ git push
 ## 7. Enabling CORS and accessing using Angular 12 App
 > 1. Discussion & Demo
 
+**References:**
+> 1. https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain?tabs=cname
+> 1. https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings
+
 ## 8. Custom Domains and attaching to the Web App
 > 1. Create the `App Service Domain`
 > 1. It will create a `App Service Domain` and `DNS Zone`
