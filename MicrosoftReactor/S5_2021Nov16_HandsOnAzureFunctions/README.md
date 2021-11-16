@@ -1,5 +1,6 @@
-# Hands-On working with Azure Functions | Virtual Internship on 16-Nov-2021 at 06:00 PM IST
+# Hands-On working with Azure Functions | Virtual Internship
 
+## Date Time: 16-Nov-2021 at 06:00 PM IST
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281815793](https://www.meetup.com/microsoft-reactor-bengaluru/events/281815793)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
@@ -55,8 +56,8 @@
 
 ## One Hello World, One Warm up Project and Two Mini Projects
 
-> 1. Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
 > 1. Warm Up Project - Http Trigger - NodeJS - `ArrayOperations`
+> 1. Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
 > 1. Mini Project 1 - GitHub Code Change Tracker
 > 1. Mini Project 2 - Simple App with Azure Function & Blazor
 
@@ -103,22 +104,7 @@ URLs:
 > 1. Creating `Hello World` Azure Function using C#
 > 1. Creating `Hello World` Azure Function using Node JS
 
-
-## Execute Azure Functions with triggers [Http, Timer and Queue]
-
-**Note:** Hands ON
-
-> 1. Creating Azure Function using Http Trigger
-> 1. Creating Azure Function using Queue Trigger
-> 1. Creating Azure Function using Timer Trigger
-
-## Execute Azure Functions with input/output bindings
-
-**Note:** Hands ON
-
-> 1. Adding Blob output binding for the Http Trigger
-> 1. Adding Blob output binding for the Queue Trigger. It has Queue as Input binding
-> 1. Adding Queue output binding for the Timer Trigger
+---
 
 ## Warm up Project - `ArrayOperations`
 
@@ -155,6 +141,28 @@ npm install lodash
 **Receiving Http Status Code 200 when we send the proper inputs to Azure Function**
 
 ![ArrayOperations Status 200 | 100x100](./Documentation/Images/ArrayOperations_Status200.PNG)
+
+---
+
+## Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
+
+### Execute Azure Functions with triggers [Http, Timer and Queue]
+
+**Note:** Hands ON
+
+> 1. Creating Azure Function using Http Trigger
+> 1. Creating Azure Function using Queue Trigger
+> 1. Creating Azure Function using Timer Trigger
+
+### Execute Azure Functions with input/output bindings
+
+**Note:** Hands ON
+
+> 1. Adding Blob output binding for the Http Trigger
+> 1. Adding Blob output binding for the Queue Trigger. It has Queue as Input binding
+> 1. Adding Queue output binding for the Timer Trigger
+
+---
 
 
 ## Mini Project 1 - `GitHub Code Change Tracker`
@@ -218,25 +226,14 @@ func azure functionapp publish func-azcoretools-demo-dev-001
 ![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img5.PNG)
 
 
-## Mini Project 2 - `Simple App with Azure Function & Blazor`
-
-APIs using Azure Functions in Visual Studio Code in C#
-Retrieve GitHub Code Changes - HTTP Trigger
-Blazor WASM Web App UI to display those changes.
-Deploying the code to Azure
-
 ---
 
+## Mini Project 2 - Simple App with `Azure Functions` & `Blazor WASM`
 
----
-
-#### **3. GitHub Webhook, Http Trigger, Blob Trigger, and Function Chaining using Core Tools with Node JS**
-
-
-
----
-
-#### **4. APIs using Azure Functions in Visual Studio Code in C#**
+> 1. APIs using Azure Functions in Visual Studio Code in C#
+> 1. Retrieve GitHub Code Changes - HTTP Trigger
+> 1. Blazor WASM Web App UI to display those changes.
+> 1. Deploying the code to Azure
 
 **Description:**
 
