@@ -34,14 +34,20 @@
 ---
 
 ## 1. Introduction to Amazon EC2 - Discussion
-> 1. Discussion & Demo
+> 1. Amazon Machine Images (AMIs)
+> 1. Instance types
+> 1. Instance Purchasing Options
+> 1. Tenancy
+> 1. User Data
+> 1. Storage Options
+> 1. Security (Security Groups, Key Pairs, IAM Roles)
 
 ## 2. Hands-On Deploying Ubuntu EC2
 > 1. Discussion & Demo
 
-## 3. Web App Console, App Service Editor, and Kudu Console
+## 3. Hands-On Deploying Windows EC2
 
-> 1. Discussion & Demo
+> 1. Reboot the machine to show data loss
 
 ### Web App Console
 ![Web App Console | 100x100](./documentation/images/WebAppConsole.PNG)
