@@ -1,4 +1,4 @@
-# Working with Amazon EC2 Instances (Windows/Linux) for .NET Devs
+# Working with Amazon Elastic Compute Cloud (EC2) Instances (Windows/Linux) for .NET Devs
 
 ## Date Time: 20-Nov-2021 at 10:00 AM IST
 
@@ -42,8 +42,36 @@
 > 1. Storage Options
 > 1. Security (Security Groups, Key Pairs, IAM Roles)
 
+The VPC
+Security Groups
+Volumes
+Tags
+
+Temporary storage volumes are provided, which are called Instance Store Volumes.  Data stored in this gets deleted once the instance is terminated.
+
+Persistent storage volumes are available and are referred to as EBS (Elastic Block Store) volumes.
+
+### User Name:
+`ec2-user`
+`ubuntu`
+
+## 2. Hands-On Deploying Linux EC2
+> 1. Discussion & Demo
+
+### Login using SSH
+
+```
+ls -l
+chmod 400 linuxvm1.pem
+ssh -i "linuxvm1.pem" ec2-user@ec2-3-82-191-107.compute-1.amazonaws.com
+```
+
+### Connect using Putty in Windows
+
 ## 2. Hands-On Deploying Ubuntu EC2
 > 1. Discussion & Demo
+
+### EC2 Instance Connect (browser-based SSH connection)
 
 ## 3. Hands-On Deploying Windows EC2
 
