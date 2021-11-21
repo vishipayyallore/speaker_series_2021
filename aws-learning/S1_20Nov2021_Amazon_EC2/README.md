@@ -4,7 +4,7 @@
 
 ## Event URL: [https://www.meetup.com/dot-net-learners-house-hyderabad/events/281685433](https://www.meetup.com/dot-net-learners-house-hyderabad/events/281685433)
 
-## Youtube URL: To be added
+## Youtube URL: [https://www.youtube.com/watch?v=aaMYvwyE8EI](https://www.youtube.com/watch?v=aaMYvwyE8EI)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
 
@@ -38,13 +38,11 @@
 > 1. Amazon Machine Images (AMIs)
 > 1. Instance types
 > 1. Instance Purchasing Options
-> 1. Tenancy
-> 1. User Data
-> 1. Storage Options
 > 1. Security (Security Groups, Key Pairs, IAM Roles)
 > 1. The VPC
 > 1. Tags
 
+**Note:**
 Temporary storage volumes are provided, which are called Instance Store Volumes.  Data stored in this gets deleted once the instance is terminated. Persistent storage volumes are available and are referred to as EBS (Elastic Block Store) volumes.
 
 ---
@@ -55,6 +53,10 @@ Temporary storage volumes are provided, which are called Instance Store Volumes.
 ### EC2 Instance Connect (browser-based SSH connection)
 > 1. Demo
 
+### Login Into Linux VM Using Browser
+![Login Into Linux VM Using Browser | 100x100](./documentation/images/LoginIntoLinuxVM_UsingBrowser.PNG)
+
+
 ### Login using SSH in WSL2
 > 1. Demo
 
@@ -64,12 +66,23 @@ chmod 400 linuxvm1.pem
 ssh -i "linuxvm1.pem" ec2-user@ec2-3-82-191-107.compute-1.amazonaws.com
 ```
 
+
+### Setting `.pem` Key File Permission
+![KeyFilePermission | 100x100](./documentation/images/KeyFilePermission.PNG)
+
+### Login Into Linux VM Using SSH in WSL2
+![LoginIntoLinuxVM | 100x100](./documentation/images/LoginIntoLinuxVM.PNG)
+
 ### DEMO 1 LAMP/Nginx Server
 
 ```
 sudo apt update && sudo apt install -y lamp-server^
 curl -I http://localhost
 ```
+
+### Accessing the Apache  default page On Ubuntu VM
+![ApacheOnUbuntuVM | 100x100](./documentation/images/ApacheOnUbuntuVM.PNG)
+
 
 ```
 sudo apt-get -y update
@@ -90,8 +103,15 @@ icacls.exe linuxvm2.pem /reset
 icacls.exe linuxvm2.pem /grant:r "PK.Viswanatha-Swamy:r"
 icacls.exe linuxvm2.pem /inheritance:r
 ```
+### Setting File Permission To ReadOnly in `Windows 10`
+![SettingFilePermissionToReadOnly | 100x100](./documentation/images/SettingFilePermissionToReadOnly.PNG)
 
 Reference: [https://gist.github.com/jaskiratr/cfacb332bfdff2f63f535db7efb6df93](https://gist.github.com/jaskiratr/cfacb332bfdff2f63f535db7efb6df93)
+
+
+### Login Into Linux VM Using `SSH` in `Windows 10`
+![LoginIntoLinuxVM_Using_SSHInWindows | 100x100](./documentation/images/LoginIntoLinuxVM_Using_SSHInWindows.PNG)
+
 
 ### Connect using Putty in Windows
 > 1. Demo
@@ -106,9 +126,22 @@ sudo nginx
 curl -I http://localhost
 ```
 
+### Accessing the Nginx Server default page
+![NginxOnLinuxVM | 100x100](./documentation/images/NginxOnLinuxVM.PNG)
+
 ---
 
 ## 4. Hands-On Deploying Windows EC2
+> 1. Discussion and demo
+
+### Retrieve Windows VM Password
+![RetrieveWindowsVMPassword | 100x100](./documentation/images/RetrieveWindowsVMPassword.PNG)
+
+### Retrieve Windows VM Password
+![RetrieveWindowsVMPassword1 | 100x100](./documentation/images/RetrieveWindowsVMPassword1.PNG)
+
+### Login into Windows VM 
+![LoginIntoWindowsVM | 100x100](./documentation/images/LoginIntoWindowsVM.PNG)
 
 
 ```
@@ -118,12 +151,20 @@ DISM /online /enable-feature /featureName:IIS-DefaultDocument /All
 ### IIS Installation Using DISM
 ![IIS Installation Using DISM | 100x100](./documentation/images/DeployIIS.PNG)
 
+
+### Access Default Page of IIS Default Document
+![AccessDefaultPage1 | 100x100](./documentation/images/AccessDefaultPage1.PNG)
+
+
 ```
 PS > Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
 ### IIS Installation Using PowerShell
 ![IISInstallationUsingPowerShell | 100x100](./documentation/images/IISInstallationUsingPowerShell.PNG)
+
+### Access Default Page of IIS Default Document
+![AccessDefaultPage | 100x100](./documentation/images/AccessDefaultPage.PNG)
 
 ## 4. SUMMARY / RECAP / Q&A
 
@@ -138,7 +179,7 @@ PS > Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 **URL:** [https://www.meetup.com/dot-net-learners-house-hyderabad/events/281836958](https://www.meetup.com/dot-net-learners-house-hyderabad/events/281836958)
 
-**Date:** 18-Dec-2021 at 10:00 AM IST
+**Date:** `18-Dec-2021` at `10:00 AM IST`
 
 > 1. VPC, Subnets
 > 1. Availability Zones (AZs)
