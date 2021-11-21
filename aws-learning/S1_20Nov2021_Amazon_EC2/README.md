@@ -113,12 +113,17 @@ curl -I http://localhost
 
 ```
 DISM /online /enable-feature /featureName:IIS-DefaultDocument /All
+```
 
+### IIS Installation Using DISM
+![IIS Installation Using DISM | 100x100](./documentation/images/DeployIIS.PNG)
+
+```
 PS > Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-### Web App Console
-![Web App Console | 100x100](./documentation/images/WebAppConsole.PNG)
+### IIS Installation Using PowerShell
+![IISInstallationUsingPowerShell | 100x100](./documentation/images/IISInstallationUsingPowerShell.PNG)
 
 ## 4. SUMMARY / RECAP / Q&A
 
