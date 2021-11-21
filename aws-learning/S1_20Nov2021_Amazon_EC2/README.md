@@ -103,17 +103,17 @@ icacls.exe linuxvm2.pem /reset
 icacls.exe linuxvm2.pem /grant:r "PK.Viswanatha-Swamy:r"
 icacls.exe linuxvm2.pem /inheritance:r
 ```
-### Setting File Permission To ReadOnly in `Windows 10`
+### Setting File Permission To ReadOnly on `Windows 10`
 ![SettingFilePermissionToReadOnly | 100x100](./documentation/images/SettingFilePermissionToReadOnly.PNG)
 
 Reference: [https://gist.github.com/jaskiratr/cfacb332bfdff2f63f535db7efb6df93](https://gist.github.com/jaskiratr/cfacb332bfdff2f63f535db7efb6df93)
 
 
-### Login Into Linux VM Using `SSH` in `Windows 10`
+### Login Into Linux VM Using `SSH` on `Windows 10`
 ![LoginIntoLinuxVM_Using_SSHInWindows | 100x100](./documentation/images/LoginIntoLinuxVM_Using_SSHInWindows.PNG)
 
 
-### Connect using Putty in Windows
+### Connect using `Putty` on `Windows 10`
 > 1. Demo
 
 ### DEMO 2 Nginx Server
