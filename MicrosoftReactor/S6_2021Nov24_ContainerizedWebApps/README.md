@@ -1,12 +1,14 @@
-# Diagnostics Logs, Apps Kudu Console, Custom Domains, SSL, and CORS on 10-Nov-2021 at 09:00 AM IST
+# Deploy and run a containerized web app with Azure App Service
 
-## Session **5** of **20** Sessions
+## Session **6** of **20** Sessions
+
+## Date Time: 24-Nov-2021 at 09:00 AM IST
 
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281044187](https://www.meetup.com/microsoft-reactor-bengaluru/events/281044187)
 
 ## Youtube URL: To be added
 
-![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamy_10thNov.PNG)
+![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
 
 ---
 
@@ -23,15 +25,12 @@
 
 ## What are we doing today?
 
-> 1. Deploy **.sqlproj** into Azure SQL Server
-> 1. Deploy .NET 6 Web API to Azure App Service
-> 1. Web App Console, App Service Editor, and Kudu Console
-> 1. Veiw Event Log inside Kudu Console
-> 1. Configuring Diagnostics Logs. Streaming Logs, and Access Log files
-> 1. Deploy Angular 12 Web App to Azure App Service
-> 1. Enabling CORS and accessing using Angular 12 App
-> 1. Custom Domains and attaching to the Web App
-> 1. Web App SSL
+> 1. Introduction to Docker
+> 1. Build and store images by using Azure Container Registry
+> 1. Deploy a web app by using an image from an Azure Container Registry repository
+> 1. Create and deploy a web app from a Docker image
+> 1. Update the image and automatically redeploy the web app
+> 1. Modify the image and redeploy the web app
 > 1. SUMMARY / RECAP / Q&A
 
 
