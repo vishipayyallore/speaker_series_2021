@@ -1,0 +1,26 @@
+{
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ]
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "res"
+      },
+      {
+        "connection": "sb-formessages_RootManageSharedAccessKey_SERVICEBUS",
+        "name": "outputSbMsg",
+        "queueName": "sbq-formessages",
+        "direction": "out",
+        "type": "serviceBus"
+      }
+    ]
+  }

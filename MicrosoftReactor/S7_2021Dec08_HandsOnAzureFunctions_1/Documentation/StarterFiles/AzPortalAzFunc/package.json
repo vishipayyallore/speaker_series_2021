@@ -1,0 +1,15 @@
+{
+    "name": "ArrayOperations",
+    "version": "1.0.1",
+    "description": "Simple Azure Function with NodeJS",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Viswanatha Swamy",
+    "license": "ISC",
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
+}
