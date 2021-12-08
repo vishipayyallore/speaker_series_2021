@@ -1,0 +1,18 @@
+{
+    "bindings": [
+        {
+            "name": "myBlob",
+            "type": "blobTrigger",
+            "direction": "in",
+            "path": "asqoutcontainer/{name}",
+            "connection": "AzureWebJobsStorage"
+        },
+        {
+            "name": "outputTable",
+            "direction": "out",
+            "type": "table",
+            "connection": "AzureWebJobsStorage",
+            "tableName": "asqoutcontainerTable"
+        }
+    ]
+}

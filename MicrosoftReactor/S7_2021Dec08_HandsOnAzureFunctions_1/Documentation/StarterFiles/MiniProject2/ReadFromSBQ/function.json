@@ -1,0 +1,18 @@
+{
+    "bindings": [
+        {
+            "name": "mySbMsg",
+            "type": "serviceBusTrigger",
+            "direction": "in",
+            "queueName": "sbq-formessages",
+            "connection": "sb-formessages_RootManageSharedAccessKey_SERVICEBUS"
+        },
+        {
+            "name": "outputBlob",
+            "direction": "out",
+            "type": "blob",
+            "path": "outcontainer/{rand-guid}",
+            "connection": "AzureWebJobsStorage"
+        }
+    ]
+}

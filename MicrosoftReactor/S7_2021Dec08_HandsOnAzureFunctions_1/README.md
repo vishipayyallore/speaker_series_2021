@@ -45,21 +45,14 @@
 > 1. Introduction to Azure Functions
 > 1. Creating Azure Functions using multiple methods
 > 1. Creating Azure Functions in C#, and Node JS
-> 1. Execute Azure Functions with triggers [Http, and Blob]
+> 1. Execute Azure Functions with triggers [Http, Blob, and Timer]
 > 1. Execute Azure Functions with input/output bindings
-> 1. Deploying Azure Functions using Azure CLI
-> 1. APIs using Azure Functions in Visual Studio Code in C#
-> 1. Retrieve GitHub Code Changes - HTTP Trigger
-> 1. Blazor WASM Web App UI to display those changes.
-> 1. Deploying the code to Azure
 > 1. Monitoring Azure Functions with Application Insights
 
-## One Hello World, One Warm up Project and Two Mini Projects
+## Two Mini Projects
 
-> 1. Warm Up Project - Http Trigger - NodeJS - `ArrayOperations`
-> 1. Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
-> 1. Mini Project 1 - GitHub Code Change Tracker
-> 1. Mini Project 2 - Simple App with Azure Function & Blazor
+> 1. Mini Project 1 - Http Trigger - NodeJS - `ArrayOperations`
+> 1. Mini Project 2 - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
 
 ---
 
@@ -67,7 +60,7 @@
 
 ---
 
-## Introduction to Azure Functions
+## 1. Introduction to Azure Functions
 
 **Note:** Discussion
 
@@ -81,13 +74,13 @@
 URLs:
 > 1. https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp
 
-## Monitoring Azure Functions with Application Insights
+## 2. Monitoring Azure Functions with Application Insights
 
 **Note:** Hands ON
 
 > 1. It will be ongoing activity throughout the workshop
 
-## Creating Azure Functions using multiple methods
+## 3. Creating Azure Functions using multiple methods
 
 **Note:** Discussion
 
@@ -96,7 +89,7 @@ URLs:
 > 1. Create a new Azure Function App using Azure Functions VS Code Extension
 > 1. Create a new Azure Function App using Visual Studio 2019/2022
 
-## Creating Azure Functions in C#, and Node JS
+## 4. Creating Azure Functions in C#, and Node JS
 
 **Note:** Hands ON
 
@@ -106,7 +99,7 @@ URLs:
 
 ---
 
-## Warm up Project - `ArrayOperations`
+## 5. Mini Project 1 - `ArrayOperations`
 
 **Note:** Http Trigger | NodeJS | `ArrayOperations`
 
@@ -144,9 +137,12 @@ npm install lodash
 
 ---
 
-## Hello World Project - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
+## 6. Mini Project 2 - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
 
-### Execute Azure Functions with triggers [Http, Timer and Queue]
+**Note:**
+WriteToSBQ | ReadFromSBQ | ReadFromBlob | SendMsgToSBQ
+
+### Execute Azure Functions with triggers [Http, Timer, Blob and Service Bus Queue]
 
 **Note:** Hands ON
 
@@ -165,135 +161,27 @@ npm install lodash
 ---
 
 
-## Mini Project 1 - `GitHub Code Change Tracker`
-**Note:** 
-> 1. Hands ON
-> 1. Using Azure Function Core Tools
-> 1. Using Azure Functions VS Code Extension
-
-**Description:**
-
-We will create a Azure function App **func-azcoretools-demo-dev-001** using **Core Tools** with node runtime. It will have a A. Http Trigger, and B. Blob Trigger azure functions. We will also have a GitHub Webhook, which will post any code changes to the repository.
-
-**A. GitCodeChangeTracker - Http Trigger**
-
-When code is commited to the repository, GitHub Webhook will invoke **GitCodeChangeTracker** function. This function has two (Table, and Blob) Output  bindings. We will store information into the Table, and Blob. It will trigger the `textfile-creation` function when the blob is created (`Function Chaining`).
-
-**B. textfile-creation - Blob Trigger**
-On Blob creation this function we be invoked. It has `Table` output binding and will log the blob creation. It will also store the content of the blob inside `FileContents` column of the Table.
-
-**Steps:**
-
-1. Verify the Azure Functions Core Tools on local Laptop.
-1. Create the Azure Function project using **func init**
-1. Create two (`GitCodeChangeTracker`, and `textfile-creation`) new functions with **func new**
-1. Modify the code of both (`GitCodeChangeTracker`, and `textfile-creation`) azure functions. Please refer **StarterFiles** folder.
-1. Verify functions locally **func start**. We use **Postman** for testing it locally.
-1. **Debug** using Visual Studio Code.
-1. Function App is already create using **az functionapp create** command
-1. Publish the Function app to Azure using **func azure functionapp publish func-azcoretools-demo-dev-001**
-1. Ensure to update the Function App with Table Storage Connection String
-
-```
-func version
-func
-func init
-func new
-func start
-func azure functionapp publish func-azcoretools-demo-dev-001
-```
-
-##### **Images for Reference**
-
-##### **Publishing Azure Functions using _func azure functionapp publish_ command**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img1.PNG)
-
-##### **GitHub Webhook invoking Http Trigger Azure Function**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img2.PNG)
-
-##### **Http Trigger Function Storing the record in Table using Output binding**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img3.PNG)
-
-##### **Http Trigger Function Storing the JSON file in blob using Output binding**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img4.PNG)
-
-##### **Blob Trigger Function Storing the record in Table using Output binding**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Github-Func-WebHook-Img5.PNG)
-
+## 7. SUMMARY / RECAP / Q&A
 
 ---
 
-## Mini Project 2 - Simple App with `Azure Functions` & `Blazor WASM`
+> 1. SUMMARY / RECAP / Q&A
+> 2. Any open queries, I will get back through meetup chat/twitter.
 
+---
+
+## What is Next? (`Session 8` of `20 Sessions` on 15-Dec-2021)
+
+### Two Mini Projects
+> 1. Mini Project 1 - GitHub Code Change Tracker (Node JS)
+> 1. Mini Project 2 - Simple App with Azure Function (C#) & Blazor
+
+### Topics
+> 1. Monitoring Azure Functions with Application Insights
+> 1. Create Http Triggered Azure Function (Blob, and Table bindings)
+> 1. Configure WebHooks in GitHub
+> 1. Integrate GitHub WebHooks with Azure Functions
 > 1. APIs using Azure Functions in Visual Studio Code in C#
 > 1. Retrieve GitHub Code Changes - HTTP Trigger
 > 1. Blazor WASM Web App UI to display those changes.
 > 1. Deploying the code to Azure
-
-**Description:**
-
-We will create a Azure function App **func-vscode-demo-dev-001** using **Visual Studio Code** with dotnet runtime. It will have a A. Http Trigger auzre function. We will retrieve the GitHub Code Changes from Azure Table Storage. We have a Blazor WASM SPA application, which will invoke the Azure Function and display the content.
-
-**A. RetrieveGitHubCodeChanges - Http Trigger**
-
-It will retrieve the GitHub Code Changes from Azure Table Storage.
-
-**B. Blazor WASM Web App**
-We have a Blazor WASM SAP application, which will invoke the Azure Function and display the content.
-
-**Steps:**
-
-1. Create the Azure Function project using **VS Code**
-1. Create _RetrieveGitHubCodeChanges_ new function
-1. Modify the code of _RetrieveGitHubCodeChanges_ azure function. Please refer **StarterFiles** folder.
-1. Verify functions locally **func start**. We use **Postman** for testing it locally.
-1. **Debug** using Visual Studio Code.
-1. Function App is already create using **az functionapp create** command
-1. Publish the Function app to Azure using **VS Code**
-1. Ensure to update the Function App with Table Storage Connection String
-1. Ensure to update the CORS in the deployed Function App.
-
-##### **Images for Reference**
-
-##### **Publishing Azure Functions using _VS Code_ .**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Publish.PNG)
-
-##### **Retrieving Content using Postman**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Img1.PNG)
-
-##### **Integrating the Blazor WASM and Http Triggered Azure Function**
-
-![UI Look and Feel | 100x100](./Documentation/Images/Blazor_Wasm_Demo_Img2.PNG)
-
----
-
-```
-rg-globalaz2021-india-dev-001
-cosmos-globalaz2021-india-dev-001
-stglobalaz2021india001
-func-azcoretools-demo-dev-001
-
-func-vscode-demo-dev-001
-
-stazcoretoolsdemo001
-stvscodedemo001
-stvs2019demo001
-rg-globalaz2021-india-prod-001
-```
-
--   Storage Account
--   Application Insights
--   App Service Plan
-
-## Resource in Azure
-
-func-azportal-demo-dev-001
-
-rg-azconf-workshop-prod-001
