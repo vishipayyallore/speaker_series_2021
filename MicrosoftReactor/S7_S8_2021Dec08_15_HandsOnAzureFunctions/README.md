@@ -1,9 +1,17 @@
-# AZ-204 | Creating Azure Functions using Azure Portal with 2 Mini Projects
+# AZ-204 | Creating Azure Functions using Azure Portal with 2 Mini Projects 
+# AZ-204 | Creating Azure Functions using Azure CLI, VS Code (2 Mini Projects)
 
 ## Date Time: 08-Dec-2021 at 09:00 AM IST
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
+
+---
+
+## Date Time: 15-Dec-2021 at 09:00 AM IST
+## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836)
+
+![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK_15Dec2021.PNG)
 
 ---
 
@@ -147,7 +155,7 @@ WriteToSBQ | ReadFromSBQ | ReadFromBlob | SendMsgToSBQ
 **Note:** Hands ON
 
 > 1. Creating Azure Function using Http Trigger
-> 1. Creating Azure Function using Queue Trigger
+> 1. Creating Azure Function using Service Bus Queue Trigger
 > 1. Creating Azure Function using Timer Trigger
 
 ### Execute Azure Functions with input/output bindings
@@ -157,6 +165,36 @@ WriteToSBQ | ReadFromSBQ | ReadFromBlob | SendMsgToSBQ
 > 1. Adding Blob output binding for the Http Trigger
 > 1. Adding Blob output binding for the Queue Trigger. It has Queue as Input binding
 > 1. Adding Queue output binding for the Timer Trigger
+
+### 6.1. WriteToSBQ 
+
+**Note:**
+> 1. Http Trigger
+> 1. Output binding: Service Bus Queue
+
+![ServiceBus_And_Queue | 100x100](./Documentation/Images/ServiceBus_And_Queue.PNG)
+
+### 6.2. ReadFromSBQ 
+**Note:**
+> 1. Service Bus Trigger
+> 1. Output binding: Blob Storage
+
+![Application Configuration | 100x100](./Documentation/Images/AppConfiguration.PNG)
+
+### 6.3. ReadFromBlob 
+**Note:**
+> 1. Azure Blob Storage Trigger
+> 1. Output binding: Azure Table Storage
+
+### 6.4. TimerMsgToAQS
+**Note:**
+> 1. Timer Trigger
+> 1. Output binding: Azure Queue Storage
+
+### 6.4. TimerMsgToAQS
+**Note:**
+> 1. Timer Trigger
+> 1. Output binding: Azure Queue Storage
 
 ---
 
