@@ -65,8 +65,8 @@
 > 1. Mini Project 1 - Http Trigger - NodeJS - `ArrayOperations`
 > 1. Mini Project 2 - Http, and Queue `Trigger` with Blob, and Queue `Output Bindings`
 > 1. Mini Project 3 - Timer `Trigger` with Blob, and Queue `Output Bindings`
-> 1. To be done
-> 1. To be done
+> 1. Mini Project 4 - GitHub Code Change Tracker
+> 1. Mini Project 5 - API Using Azure Functions, and Blazor WASM UI
 
 ---
 
