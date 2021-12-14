@@ -1,7 +1,9 @@
-# AZ-204 | Creating Azure Functions using Azure Portal with 2 Mini Projects 
+# AZ-204 | Creating Azure Functions using Azure Portal with 2 Mini Projects
+
 # AZ-204 | Creating Azure Functions using Azure CLI, VS Code (2 Mini Projects)
 
 ## Date Time: 08-Dec-2021 at 09:00 AM IST
+
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
@@ -9,6 +11,7 @@
 ---
 
 ## Date Time: 15-Dec-2021 at 09:00 AM IST
+
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836)
 
 ![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK_15Dec2021.PNG)
@@ -57,10 +60,13 @@
 > 1. Execute Azure Functions with input/output bindings
 > 1. Monitoring Azure Functions with Application Insights
 
-## Two Mini Projects
+## Five Mini Projects
 
 > 1. Mini Project 1 - Http Trigger - NodeJS - `ArrayOperations`
-> 1. Mini Project 2 - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
+> 1. Mini Project 2 - Http, and Queue `Trigger` with Blob, and Queue `Output Bindings`
+> 1. Mini Project 3 - Timer `Trigger` with Blob, and Queue `Output Bindings`
+> 1. To be done
+> 1. To be done
 
 ---
 
@@ -80,6 +86,7 @@
 > 1. Security, Identify Provider Integration, Function Chaining, Durable Functions
 
 URLs:
+
 > 1. https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=csharp
 
 ## 2. Monitoring Azure Functions with Application Insights
@@ -116,6 +123,7 @@ URLs:
 We will create a Azure Function App named **func-azportal-demo-dev-004** with node runtime. It will have a Http Trigger Azure Function which will accept "name, and data" as part of POST call. We will also add "lodash" package using Kudu Console.
 
 **Steps:**
+
 1. Create a Function App called "func-azportal-demo-dev-001"
 1. Add a Function called **ArrayOperations**
 1. Code and Test Tab
@@ -145,61 +153,60 @@ npm install lodash
 
 ---
 
-## 6. Mini Project 2 - Http, Timer, and Queue `Trigger` with Blob, and Queue `Input/Output Bindings`
+## 6. Mini Project 2 - Http, Service Bus, and Blob `Trigger` with Service Bus, Blob, and Azure Table `Output Bindings`
 
-**Note:**
-WriteToSBQ | ReadFromSBQ | ReadFromBlob | SendMsgToSBQ
+### Execute Azure Functions with triggers [Http, Service Bus Queue, and Blob]
 
-### Execute Azure Functions with triggers [Http, Timer, Blob and Service Bus Queue]
-
-**Note:** Hands ON
+**Note:** Function Chaining
 
 > 1. Creating Azure Function using Http Trigger
 > 1. Creating Azure Function using Service Bus Queue Trigger
-> 1. Creating Azure Function using Timer Trigger
+> 1. Creating Azure Function using Blob Trigger
 
-### Execute Azure Functions with input/output bindings
-
-**Note:** Hands ON
-
-> 1. Adding Blob output binding for the Http Trigger
-> 1. Adding Blob output binding for the Queue Trigger. It has Queue as Input binding
-> 1. Adding Queue output binding for the Timer Trigger
-
-### 6.1. WriteToSBQ 
+### 6.1. WriteToSBQ
 
 **Note:**
+
 > 1. Http Trigger
 > 1. Output binding: Service Bus Queue
 
 ![ServiceBus_And_Queue | 100x100](./Documentation/Images/ServiceBus_And_Queue.PNG)
 
-### 6.2. ReadFromSBQ 
+### 6.2. ReadFromSBQ
+
 **Note:**
+
 > 1. Service Bus Trigger
 > 1. Output binding: Blob Storage
 
 ![Application Configuration | 100x100](./Documentation/Images/AppConfiguration.PNG)
 
-### 6.3. ReadFromBlob 
+### 6.3. ReadFromBlob
+
 **Note:**
+
 > 1. Azure Blob Storage Trigger
 > 1. Output binding: Azure Table Storage
 
-### 6.4. TimerMsgToAQS
+## 7. Mini Project 3 - Timer, and Queue Storage `Trigger` with Queue Storage, and Queue Blob `Output Bindings`
+
+### 7.1. TimerMsgToAQS
+
 **Note:**
+
 > 1. Timer Trigger
 > 1. Output binding: Azure Queue Storage
 
-### 6.4. TimerMsgToAQS
+### 7.2. ReadFromAQS
+
 **Note:**
-> 1. Timer Trigger
-> 1. Output binding: Azure Queue Storage
+
+> 1. Azure Queue Storage Trigger
+> 1. Output binding: Azure Blob Storage
 
 ---
 
-
-## 7. SUMMARY / RECAP / Q&A
+## 10. SUMMARY / RECAP / Q&A
 
 ---
 
@@ -208,18 +215,8 @@ WriteToSBQ | ReadFromSBQ | ReadFromBlob | SendMsgToSBQ
 
 ---
 
-## What is Next? (`Session 8` of `20 Sessions` on 15-Dec-2021)
-
-### Two Mini Projects
-> 1. Mini Project 1 - GitHub Code Change Tracker (Node JS)
-> 1. Mini Project 2 - Simple App with Azure Function (C#) & Blazor
+## What is Next? (`Session 9` of `20 Sessions` on XX-Jan-2022)
 
 ### Topics
-> 1. Monitoring Azure Functions with Application Insights
-> 1. Create Http Triggered Azure Function (Blob, and Table bindings)
-> 1. Configure WebHooks in GitHub
-> 1. Integrate GitHub WebHooks with Azure Functions
-> 1. APIs using Azure Functions in Visual Studio Code in C#
-> 1. Retrieve GitHub Code Changes - HTTP Trigger
-> 1. Blazor WASM Web App UI to display those changes.
-> 1. Deploying the code to Azure
+
+> 1. To Be Done
