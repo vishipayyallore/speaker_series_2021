@@ -34,7 +34,10 @@
 
 ## 1. Deploying .NET 6 Web API into Amazon EC2 (Ubuntu)
 
-### Installing Nginx on Ubuntu EC2
+**Note:**
+> 1. Port 80 is already open on EC2 instance
+
+### 1.1. Installing Nginx on Ubuntu EC2
 
 > 1. Discussion & Demo
 
@@ -46,8 +49,10 @@ curl -I http://localhost
 
 ![Install Nginx | 100x100](./documentation/images/InstallNginx.PNG)
 
-### Installing .NET 6 on Ubuntu EC2
+### 1.2. Installing .NET 6 on Ubuntu EC2
 > 1. Discussion & Demo
+
+Reference: https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu#2004-
 
 ```
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -56,27 +61,84 @@ rm packages-microsoft-prod.deb
 ```
 
 ```
-sudo apt-get update; \
-  sudo apt-get install -y apt-transport-https && \
-  sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0
+sudo apt-get update
+sudo apt-get install -y apt-transport-https 
+sudo apt-get update 
+sudo apt-get install -y dotnet-sdk-6.0
 ```
 
-Reference: https://docs.microsoft.com/en-gb/dotnet/core/install/linux-ubuntu#2004-
+![Install .Net 6 | 100x100](./documentation/images/InstallDotNet6.PNG)
 
-### Verifying the .NET 6 Web API on the local box
+### 1.3. Verifying the .NET 6 Web API on the local box
 > 1. Discussion & Demo
 
 ![Verify .NET 6 Web Api Locally | 100x100](./documentation/images/Verify.NET6WebApiLocally.PNG)
 
-### Publish and push the binaries into the Ubuntu EC2
-> 1. Discussion & Demo
+### 1.4. Publish and push the binaries into the Ubuntu EC2
+> 1. Publish the Web API to local folder
+> 1. Push the Web API to the Ubuntu EC2
 
-### Verify the .NET 6 Web API on Ubuntu EC2
+![Publish Web Api To local Folder | 100x100](./documentation/images/PublishWebApiToFolder.PNG)
+
+![Push The Binaries To EC2 using WinSCP | 100x100](./documentation/images/PushTheBinariesToEC2.PNG)
+
+### 1.5. Verify the .NET 6 Web API on Ubuntu EC2
 > 1. Discussion & Demo
+> 1. Execute `dotnet --list-sdks`
+> 1. Execute `dotnet WebApiInAws.dll`
+> 1. Open another instance of the terminal and execute `curl -I http://localhost:5000`
+> 1. netstat -tnlp
+> 1. Update appsettings.json file with the `"url": "http://0.0.0.0:5000;https://0.0.0.0:5001"`
+> 1. netstat -tnlp
+
+![Verify .NET 6 Web Api On EC2 | 100x100](./documentation/images/Verify.NET6WebApiOnEC2.PNG)
+
+![Web Api Using 5000 5001 | 100x100](./documentation/images/WebApiUsing5000_5001.PNG)
+
+### 1.6. Run .NET 6 Web API as a service on Ubuntu EC2
+
+> 1. Create a service file for our Web API
+> 1. Update the service file with the content given below
+> 1. Enable the service and run it
+
+```
+sudo nano /etc/systemd/system/webapiinaws.service
+```
+
+**Note:** 
+> 1. The service file is created in the `/etc/systemd/system` folder
+> 1. Update the permissions of the service file to `0644`
+
+```
+[Unit] 
+Description=First .NET 6 Core Web API on Ubuntu 
+
+[Service] 
+WorkingDirectory=/home/ubuntu/webapiinaws 
+ExecStart=/usr/bin/dotnet /home/ubuntu/webapiinaws/WebApiInAws.dll 
+Restart=always 
+RestartSec=10 # Restart service after 10 seconds if dotnet service crashes 
+SyslogIdentifier=offershare-web-app
+Environment=ASPNETCORE_ENVIRONMENT=Production 
+
+[Install] 
+WantedBy=multi-user.target
+```
+
+```
+systemctl daemon-reload
+sudo systemctl enable webapiinaws.service
+sudo systemctl start webapiinaws.service
+sudo systemctl status webapiinaws.service
+```
+
+### Configure Reverse proxy inside Nginx to route the traffic to the .NET 6 Web API
 
 ### Configure Reverse proxy inside Nginx to route the traffic to the .NET 6 Web API
 > 1. Discussion & Demo
+> 1. Navigate to `http://public-ip-address` in the browser
+> 1. We should be able to see the default page of the Nginx
+> 1. 
 
 ---
 
