@@ -128,7 +128,7 @@ Description=First .NET 6 Core Web API on Ubuntu
 WorkingDirectory=/home/ubuntu/webapiinaws
 ExecStart=/usr/bin/dotnet /home/ubuntu/webapiinaws/WebApiInAws.dll
 Restart=always
-RestartSec=10 # Restart service after 10 seconds if dotnet service crashes
+RestartSec=10
 SyslogIdentifier=offershare-web-app
 Environment=ASPNETCORE_ENVIRONMENT=Production
 
@@ -146,6 +146,9 @@ sudo systemctl enable webapiinaws.service
 sudo systemctl start webapiinaws.service
 sudo systemctl status webapiinaws.service
 ```
+
+**Note:**
+> 1. Few commands for reference
 
 ```
 sudo systemctl daemon-reload
@@ -178,6 +181,11 @@ server {
 }
 ```
 
+![Nginx File Changes | 100x100](./documentation/images/NginxFileChanges.PNG)
+
+**Note:**
+> 1. Few commands for reference
+
 ```
 sudo service nginx start
 sudo service nginx restart
@@ -187,48 +195,16 @@ sudo systemctl status nginx.service
 sudo journalctl -xe
 ```
 
+> 1. Open the Web Browser and navigate to `http://public-ip-address/WeatherForecast`
+
+![Accessing Web Api Using Nginx | 100x100](./documentation/images/AccessingWebApi_Using_Nginx.PNG)
+
 ---
 
 ## 2. Deploying .NET 6 Web App into Amazon EC2 (Windows)
 
 > 1. Discussion & Demo
 
-### EC2 Instance Connect (browser-based SSH connection)
-
-> 1. Demo
-
-### Login Into Linux VM Using Browser
-
-![Login Into Linux VM Using Browser | 100x100](./documentation/images/LoginIntoLinuxVM_UsingBrowser.PNG)
-
-### Login using SSH in WSL2
-
-> 1. Demo
-
-```
-ls -l
-chmod 400 linuxvm1.pem
-ssh -i "linuxvm1.pem" ec2-user@ec2-3-82-191-107.compute-1.amazonaws.com
-```
-
-### Setting `.pem` Key File Permission
-
-![KeyFilePermission | 100x100](./documentation/images/KeyFilePermission.PNG)
-
-### Login Into Linux VM Using SSH in WSL2
-
-![LoginIntoLinuxVM | 100x100](./documentation/images/LoginIntoLinuxVM.PNG)
-
-### DEMO 1 LAMP/Nginx Server
-
-```
-sudo apt update && sudo apt install -y lamp-server^
-curl -I http://localhost
-```
-
-### Accessing the Apache default page On Ubuntu VM
-
-![ApacheOnUbuntuVM | 100x100](./documentation/images/ApacheOnUbuntuVM.PNG)
 
 ## 3. SUMMARY / RECAP / Q&A
 
