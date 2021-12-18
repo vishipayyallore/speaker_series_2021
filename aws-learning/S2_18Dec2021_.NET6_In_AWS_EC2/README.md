@@ -96,7 +96,7 @@ sudo apt-get install -y dotnet-sdk-6.0
 
 ### 1.6. Accessing the .NET 6 Web API outside Ubuntu EC2
 
-> 1. Update appsettings.json file with the `"url": "http://0.0.0.0:5000;https://0.0.0.0:5001"`
+> 1. Update appsettings.json file with the `"urls": "http://0.0.0.0:5000;https://0.0.0.0:5001"`
 > 1. netstat -tnlp
 
 ![Web Api Using 5000 5001 | 100x100](./documentation/images/WebApiUsing5000_5001.PNG)
@@ -141,7 +141,7 @@ WantedBy=multi-user.target
 > 1. Enable the service and run it
 
 ```
-systemctl daemon-reload
+sudo systemctl daemon-reload
 sudo systemctl enable webapiinaws.service
 sudo systemctl start webapiinaws.service
 sudo systemctl status webapiinaws.service
@@ -221,6 +221,7 @@ sudo journalctl -xe
 
 **Date:** `15-Jan-2022` at `09:00 AM IST`
 
+> 1. Deploying .NET 6 Web App into Amazon EC2 (Windows)
 > 1. Introduction with Amazon S3 Bucket
 > 1. Working with S3 using .NET
 > 1. Deploying static websites on Amazon S3
