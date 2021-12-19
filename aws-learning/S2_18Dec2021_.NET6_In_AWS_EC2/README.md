@@ -12,7 +12,7 @@
 
 ## Application Architecture Diagram
 
-![Application Architecture 10-Nov-2021 |150x150](./documentation/images/AppArchitecture.PNG)
+> 1. To Be Done
 
 ---
 
@@ -23,7 +23,6 @@
 ## What are we doing today?
 
 > 1. Deploying .NET 6 Web API into Amazon EC2 (Ubuntu)
-> 1. Deploying .NET 6 Web App into Amazon EC2 (Windows)
 > 1. SUMMARY / RECAP / Q&A
 
 ![Seat Belt | 100x100](./documentation/images/SeatBelt.PNG)
@@ -201,12 +200,7 @@ sudo journalctl -xe
 
 ---
 
-## 2. Deploying .NET 6 Web App into Amazon EC2 (Windows)
-
-> 1. Discussion & Demo
-
-
-## 3. SUMMARY / RECAP / Q&A
+## 2. SUMMARY / RECAP / Q&A
 
 ---
 
