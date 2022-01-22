@@ -6,7 +6,7 @@
 
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837685)
 
-![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK.PNG)
+![Viswanatha Swamy P K |150x150](./Documentation/Images/ViswanathaSwamyPK.PNG)
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## Event URL: [https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836](https://www.meetup.com/microsoft-reactor-bengaluru/events/281837836)
 
-![Viswanatha Swamy P K |150x150](./documentation/images/ViswanathaSwamyPK_15Dec2021.PNG)
+![Viswanatha Swamy P K |150x150](./Documentation/Images/ViswanathaSwamyPK_15Dec2021.PNG)
 
 ---
 
