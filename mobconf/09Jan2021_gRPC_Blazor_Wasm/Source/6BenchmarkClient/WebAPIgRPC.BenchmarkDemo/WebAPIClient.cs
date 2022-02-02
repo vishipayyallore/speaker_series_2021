@@ -21,7 +21,7 @@ namespace WebAPIgRPC.BenchmarkDemo
             try
             {
                 HttpResponseMessage response = await _client
-                                                        .GetAsync("https://localhost:5002/api/v1/professors")
+                                                        .GetAsync("https://app-college-api-001.azurewebsites.net/api/professors")
                                                         .ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)

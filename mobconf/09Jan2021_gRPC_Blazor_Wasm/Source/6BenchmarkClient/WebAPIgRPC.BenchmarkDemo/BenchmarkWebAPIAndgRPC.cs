@@ -4,21 +4,21 @@ using System.Threading.Tasks;
 
 namespace WebAPIgRPC.BenchmarkDemo
 {
-    [SimpleJob(RunStrategy.ColdStart, launchCount: 2)]
+    [SimpleJob(RunStrategy.ColdStart, launchCount: 10)]
     public class BenchmarkWebAPIAndgRPC
     {
 
-        [Params(1, 2)]
+        [Params(10, 100)]
         public int IterationCount;
 
         readonly WebAPIClient restClient = new WebAPIClient();
         readonly GrpcClient grpcClient = new GrpcClient();
 
-        [Benchmark]
-        public async Task GrpcGetAllProfessorsAsync()
-        {
-            await grpcClient.GetAllProfessorsAsync().ConfigureAwait(false);
-        }
+        // [Benchmark]
+        // public async Task GrpcGetAllProfessorsAsync()
+        // {
+        //     await grpcClient.GetAllProfessorsAsync().ConfigureAwait(false);
+        // }
 
         [Benchmark]
         public async Task ApiGetAllProfessorsAsync()
